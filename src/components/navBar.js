@@ -9,7 +9,6 @@ import "../App.css";
 export function Navbar() {
     const [cats, setCats] = useState([]);
     const {allcats, prods_api} = useProps();
-    var cats2 = [];
 
     const getCats = () => {
         axios
@@ -47,11 +46,28 @@ export function Navbar() {
                         </Link>
                     </span>
                     :
-                    <span key={key+"b"}>Beance {cat.cat_name}</span>
+                    <span className="navbar" key={key+"b"}>Beance {toTitle(cat["cat_name"])}</span>
                 ))
             
             }
-            </div><br /><br /><br />
+            </div>
+            <div className="navbar-mob">
+                <span><Link to={{pathname: "/"}}>Home</Link></span><br />
+                {
+                    cats.map((cat, key) => (
+
+                        getty("all_cats") !== null && getty("all_cats").length > 0 && getty("all_cats").indexOf(cat["cat_name"]) !== -1 ?
+                        <span key={key+"mob"} className="navbar-mob">
+                            <Link to={{pathname: `../${cat.cat_name}`}}>
+                                {toTitle(cat.cat_name)}
+                            </Link><br/>
+                        </span>
+                        :
+                        <span className="navbar-mob" key={key+"b-mob"}>Beance mobile! {toTitle(cat["cat_name"])}!</span>
+                    ))
+                }
+            </div>
+            <br /><br /><br />
         </>
     );
     } else {
