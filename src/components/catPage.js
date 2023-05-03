@@ -20,8 +20,8 @@ export function CatPage() {
 
     const getSubcats = () => {
         axios
-            .get(`http://localhost:8000/api/subcat/`)
-            // .get(`https://polar-coast-39563.herokuapp.com/api/subcat/`)
+            // .get(`http://localhost:8000/api/subcat/`)
+            .get(`https://polar-coast-39563.herokuapp.com/api/subcat/`)
             .then((res) => setAllsubcats(res.data))
             .catch(err =>console.log("Error: ", err));
     };
