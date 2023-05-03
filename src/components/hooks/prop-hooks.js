@@ -40,6 +40,8 @@ export default function PropProvider({children}) {
     const [checked, setChecked] = useState(false);
     const [checking, setChecking] = useState(false);
     const [mand, setMand] = useState(false);
+    const [taxo, setTaxo] = useState([]);
+    const [allcats, setAllcats] = useState([]);
 
     function assertCateg(categ) {
         setCategory(categ);
@@ -79,7 +81,7 @@ export default function PropProvider({children}) {
             if (iQuant < 0) {
                 iQuant = 0;
             };
-            if (iPrices == undefined) {
+            if (iPrices === undefined) {
                 iPrices = 0;
             };
             currTotal += (iQuant * iPrices);
@@ -206,12 +208,38 @@ export default function PropProvider({children}) {
         console.log("Now I'm here! ", new_page);
     };
 
+    function getAllCats() {
+        var all_cats = [];
+        function goose(listu) {
+            for (let i in listu) {
+                console.log("Deus does not exist!");
+                if (all_cats.indexOf(listu[i]["prod_cat"]) === -1) {
+                    all_cats.push(listu[i]["prod_cat"]);
+                } else if (all_cats.indexOf(listu[i]["prod_subcat"]) === -1) {
+                    all_cats.push(listu[i]["prod_subcat"]);
+                };
+            };
+            setAllcats(all_cats);
+            setty("all_cats", all_cats);
+        };
+            axios(`http://localhost:8000/api/products/`)
+            .then((res) => goose(res.data))
+            .catch(err => console.log("Error: ", err));
+        return all_cats;
+}
+
+    async function prods_api() {
+        var quest = await getAllCats();
+        console.log("The subcats quest!", quest);
+    };
+
     return <PropContext.Provider value={{totally, totUp, updateTotal, setAmount, amount, insertPrice, 
     adjOrder, begin, dis, setDis, cou, setCou, category, setCategory, prods, setProds, vis, setVis,
     new_quant, setNew_quant, shortlist, raw, setRaw, setShortlist, searched, setSearched, 
     searchTyping, setSearchtyping, page, setPage, numbers, setNumbers, subset, setSubset, 
     section, page_click, fillingdeets, setFillingdeets, checked, setChecked, checking, setChecking, 
-    bought, setBought, boughtReset, setBoughtreset, mand, setMand, typingAddress, setTypingaddress}}>
+    bought, setBought, boughtReset, setBoughtreset, mand, setMand, typingAddress, setTypingaddress, 
+    allcats, prods_api, taxo, setTaxo}}>
         {children}
     </PropContext.Provider>
 };
