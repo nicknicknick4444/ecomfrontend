@@ -1,3 +1,6 @@
+/*START OF MAIN*/
+@media only screen and (min-width: 501px) {
+
 .App {
   text-align: center;
 }
@@ -17,14 +20,19 @@
 		-moz-appearance: textfield; 
 	};
 }
-.navbar {
-	padding-right: 11px;
-	margin: 2px;
-	float: left;
-	font-size: 25px;
-	clear: right;
-	background-color: #ffea00;
-}
+
+	.navbar {
+		padding-right: 11px;
+		margin: 2px;
+		float: left;
+		font-size: 25px;
+		clear: right;
+		background-color: #ffea00;
+	}
+
+	.navbar-mob {
+		display: none;
+	}
 
 .confirm {
 	font-size: 22px;
@@ -75,6 +83,13 @@ h1 {
 	cursor: pointer;
 }
 
+.navbar-mob {
+	#display: none;	
+}
+
+
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -104,3 +119,32 @@ h1 {
     transform: rotate(360deg);
   }
 }
+
+}
+/*END OF MAIN*/
+
+/*START OF MOB*/
+@media only screen and (max-width: 500px) {
+
+	@keyframes App-logo-spin {
+  		from {
+    			transform: rotate(0deg);
+  			}
+  		to {
+    			transform: rotate(360deg);
+  		}
+	}
+
+	.navbar-mob {
+		font-size: 20px;
+		background-color: #ffea00;
+		text-decoration: none;
+	}
+	
+	.navbar {
+		display: none;
+	}
+
+
+}
+/*END OF MOB */
