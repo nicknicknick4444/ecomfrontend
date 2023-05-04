@@ -8,12 +8,12 @@ import "../App.css";
 
 export function Navbar() {
     const [cats, setCats] = useState([]);
-    const {allcats, prods_api} = useProps();
+    const {allcats, prods_api, burger, setBurger} = useProps();
 
     const getCats = () => {
         axios
-            // .get(`http://localhost:8000/api/category/`)
-            .get(`https://polar-coast-39563.herokuapp.com/api/category/`)
+            .get(`http://localhost:8000/api/category/`)
+            // .get(`https://polar-coast-39563.herokuapp.com/api/category/`)
             .then((res) => setCats(res.data))
             .catch(err => console.log("Error: ", err));
     };
@@ -53,6 +53,7 @@ export function Navbar() {
             }
             </div>
             <div className="navbar-mob">
+            <div onClick={() => {setBurger(!burger)}}>BURGER! {burger.toString()}</div>
                 <span><Link to={{pathname: "/"}}>Home</Link></span><br />
                 {
                     cats.map((cat, key) => (
