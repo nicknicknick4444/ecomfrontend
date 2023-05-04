@@ -223,7 +223,8 @@ export default function PropProvider({children}) {
             setAllcats(all_cats);
             setty("all_cats", all_cats);
         };
-            axios(`http://localhost:8000/api/products/`)
+            // axios(`http://localhost:8000/api/products/`)
+            axios(`https://polar-coast-39563.herokuapp.com/api/products/`)
             .then((res) => goose(res.data))
             .catch(err => console.log("Error: ", err));
         return all_cats;
