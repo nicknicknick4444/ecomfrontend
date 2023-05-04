@@ -12,8 +12,8 @@ export function Navbar() {
 
     const getCats = () => {
         axios
-            .get(`http://localhost:8000/api/category/`)
-            // .get(`https://polar-coast-39563.herokuapp.com/api/category/`)
+            // .get(`http://localhost:8000/api/category/`)
+            .get(`https://polar-coast-39563.herokuapp.com/api/category/`)
             .then((res) => setCats(res.data))
             .catch(err => console.log("Error: ", err));
     };
@@ -76,6 +76,7 @@ export function Navbar() {
             <>
                 <div>
                     <span className="navbar"><Link to={{pathname: "/"}}>Home</Link></span>
+                    <p>GLURT!</p>
                 </div><br /><br /><br />
             </>
         );
