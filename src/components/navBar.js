@@ -20,7 +20,7 @@ export function Navbar() {
 
     useEffect(() => {
         getCats();
-        if (getty("all_cats") === null || getty("all_cats") === 0) {
+        if (getty("all_cats") === null || getty("all_cats").length === 0) {
             prods_api();
         };
         console.log("Blues! ", allcats);
