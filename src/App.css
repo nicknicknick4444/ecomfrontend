@@ -124,7 +124,7 @@ h1 {
 /*END OF MAIN*/
 
 /*START OF MOB*/
-@media only screen and (max-width: 300px) {
+@media only screen and (max-device-width: 300px) {
 
 	@keyframes App-logo-spin {
   		from {
