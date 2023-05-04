@@ -1,5 +1,5 @@
 /*START OF MAIN*/
-@media only screen and (min-width: 301px) {
+@media only screen and (min-width: 501px) {
 
 .App {
   text-align: center;
@@ -124,7 +124,7 @@ h1 {
 /*END OF MAIN*/
 
 /*START OF MOB*/
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 500px) {
 
 	@keyframes App-logo-spin {
   		from {
