@@ -12,16 +12,17 @@ export function Navbar() {
 
     const getCats = () => {
         axios
-            // .get(`http://localhost:8000/api/category/`)
-            .get(`https://polar-coast-39563.herokuapp.com/api/category/`)
+            .get(`http://localhost:8000/api/category/`)
+            // .get(`https://polar-coast-39563.herokuapp.com/api/category/`)
             .then((res) => setCats(res.data))
             .catch(err => console.log("Error: ", err));
     };
 
     useEffect(() => {
         getCats();
-        if (getty("all_cats") === null || getty("all_cats").length === 0) {
+        if (getty("all_cats") === null || getty("all_cats").length === 0 || getty("all_cats") === []) {
             prods_api();
+            console.log("FRIDGE TET");
         };
         console.log("Blues! ", allcats);
     }, []);
