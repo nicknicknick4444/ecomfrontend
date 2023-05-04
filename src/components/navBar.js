@@ -54,6 +54,8 @@ export function Navbar() {
             </div>
             <div className="navbar-mob">
             <div onClick={() => {setBurger(!burger)}}>BURGER! {burger.toString()}</div>
+                {burger ? 
+                <div>
                 <span><Link to={{pathname: "/"}}>Home</Link></span><br />
                 {
                     cats.map((cat, key) => (
@@ -68,6 +70,7 @@ export function Navbar() {
                         <span className="navbar-mob" key={key+"b-mob"}>Beance mobile! {toTitle(cat["cat_name"])}!</span>
                     ))
                 }
+                </div>: null}
             </div>
             <br /><br /><br />
         </>
