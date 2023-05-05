@@ -52,7 +52,7 @@ export function Navbar() {
             }
             </div>
             <div className="navbar-mob">
-            <div onClick={() => {setBurger(!burger)}}>BURGER! {burger.toString()}</div>
+            <div onClick={() => {setBurger(!burger)}}>☰ {burger.toString()}</div>
                 {burger ? 
                 <div>
                 <span><Link to={{pathname: "/"}}>Home</Link></span><br />
