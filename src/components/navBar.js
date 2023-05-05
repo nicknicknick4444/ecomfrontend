@@ -20,11 +20,11 @@ export function Navbar() {
 
     useEffect(() => {
         getCats();
-        // if (getty("all_cats") === null || getty("all_cats").length === 0 || getty("all_cats") === []) {
-        //     prods_api();
-        //     console.log("FRIDGE TET");
-        // };
-        // console.log("Blues! ", allcats);
+        if (getty("all_cats") === null || getty("all_cats").length === 0 || getty("all_cats") === []) {
+            prods_api();
+            console.log("FRIDGE TET");
+        };
+        console.log("Blues! ", allcats);
     }, []);
 
     useEffect(() => {
