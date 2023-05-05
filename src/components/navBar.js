@@ -20,11 +20,11 @@ export function Navbar() {
 
     useEffect(() => {
         getCats();
-        if (getty("all_cats") === null || getty("all_cats").length === 0 || getty("all_cats") === []) {
-            prods_api();
-            console.log("FRIDGE TET");
-        };
-        console.log("Blues! ", allcats);
+        // if (getty("all_cats") === null || getty("all_cats").length === 0 || getty("all_cats") === []) {
+        //     prods_api();
+        //     console.log("FRIDGE TET");
+        // };
+        // console.log("Blues! ", allcats);
     }, []);
 
     useEffect(() => {
@@ -40,14 +40,13 @@ export function Navbar() {
             <span className="navbar"><Link to={{pathname: "/"}}>Home</Link></span>
             {   
                 cats.map((cat, key) => (
-                    getty("all_cats") !== null && getty("all_cats").length > 0 && getty("all_cats").indexOf(cat["cat_name"]) !== -1 ? 
+
                     <span key={key} className="navbar">
                         <Link to={{pathname: `../${cat.cat_name}`}}>
                             {toTitle(cat.cat_name)}
                         </Link>
                     </span>
-                    :
-                    <span className="navbar" key={key+"b"}>Beance {toTitle(cat["cat_name"])}</span>
+
                 ))
             
             }
@@ -60,14 +59,13 @@ export function Navbar() {
                 {
                     cats.map((cat, key) => (
 
-                        getty("all_cats") !== null && getty("all_cats").length > 0 && getty("all_cats").indexOf(cat["cat_name"]) !== -1 ?
+                        
                         <span key={key+"mob"} className="navbar-mob">
                             <Link to={{pathname: `../${cat.cat_name}`}}>
                                 {toTitle(cat.cat_name)}
                             </Link><br/>
                         </span>
-                        :
-                        <span className="navbar-mob" key={key+"b-mob"}>Beance mobile! {toTitle(cat["cat_name"])}!</span>
+
                     ))
                 }
                 </div>: null}
