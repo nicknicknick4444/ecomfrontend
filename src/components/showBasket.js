@@ -22,7 +22,8 @@ export function ShowBasket() {
     // };
 
     const {dis, setDis, updateTotal, bought, setBought, 
-        setCou, setSearched, checking, setChecking, setFillingdeets} = useProps();
+        setCou, setSearched, setChecking, setFillingdeets, 
+        setBurger} = useProps();
 
     const goosey = (e) => {
         var gup = "";
@@ -124,25 +125,15 @@ export function ShowBasket() {
     // };
 
     useEffect(() => {
-        // NEWLY ADDED
-        // var codez = coupon();
-        // if (getty("codes") === null) {
-        //     setty("codes", codez);
-        // };
         if (getty("searchBox") !== []) {
             setSearched(false);
         };
-        // if (getty("order") === null) {
-        //     setty("order", []);
-        // };
-        // if (checking) {
-            setChecking(false);
-        // }
-        // back_reset(bought, setBought, setDis, updateTotal);
+        setChecking(false);
         if (bought) {
             setBought(false);
             empty(setDis, updateTotal, setFillingdeets);
-        }
+        };
+        setBurger(false);
     }, []);
 
     useEffect(() => {

@@ -16,7 +16,7 @@ export function CatPage() {
     const [subcat, setSubcat] = useState([]);
     const [catto, setCatto] = useState("");
     const {category, setCategory, setSearched, section, 
-        setChecking, prods_api} = useProps();
+        setChecking, setBurger} = useProps();
 
     const getSubcats = () => {
         axios
@@ -31,6 +31,7 @@ export function CatPage() {
         console.log("Ran the real API!");
         setSearched(false);
         setChecking(true);
+        setBurger(false);
     }, []);
 
     useEffect(() => {

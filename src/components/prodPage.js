@@ -15,7 +15,7 @@ import {getty, setty, toTitle} from "./hooks/hooks.js";
 export function ProdPage() {
     const [product, setProduct] = useState();
     const {insertPrice, searched, setSearched, 
-        setChecking} = useProps();
+        setChecking, setBurger} = useProps();
     let listy2 = localStorage.getItem("itemsList");
     let {id} = useParams();
 
@@ -30,6 +30,7 @@ export function ProdPage() {
         setSearched(false);
         console.log("Subs! ", searched.toString());
         setChecking(true);
+        setBurger(false);
     }, []);
 
     useEffect(() => {

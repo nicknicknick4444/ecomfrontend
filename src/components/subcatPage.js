@@ -18,7 +18,7 @@ export function SubcatPage() {
     const [allprods, setAllprods] = useState([]);
     // const [loading, setLoading] = useState(true);
     const {prods, setProds, category, setCategory, setVis, setSearched, section, 
-        page, setPage, setChecking} = useProps();
+        page, setPage, setChecking, setBurger} = useProps();
 
     // const setty = (place, val) => {
     //     return localStorage.setItem(place, JSON.stringify(val));
@@ -44,6 +44,7 @@ export function SubcatPage() {
         };
         setChecking(true);
         // setVis("Standby");
+        setBurger(false);
     }, []);
 
     // function guth() {

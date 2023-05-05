@@ -25,6 +25,7 @@ export function Navbar() {
             console.log("FRIDGE TET");
         };
         console.log("Blues! ", allcats);
+        setBurger(false);
     }, []);
 
     useEffect(() => {
