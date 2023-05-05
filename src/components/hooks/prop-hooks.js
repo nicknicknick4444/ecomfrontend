@@ -217,6 +217,7 @@ export default function PropProvider({children}) {
                 console.log("Deus does not exist!");
                 if (all_cats.indexOf(listu[i]["prod_cat"]) === -1) {
                     all_cats.push(listu[i]["prod_cat"]);
+                    console.log("The jark of the gethil! ", listu[i]["prod_cat"]);
                 } else if (all_cats.indexOf(listu[i]["prod_subcat"]) === -1) {
                     all_cats.push(listu[i]["prod_subcat"]);
                     console.log("The mark of the bevol! ", listu[i]["prod_subcat"]);
