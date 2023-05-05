@@ -211,6 +211,7 @@ export default function PropProvider({children}) {
 
     function getAllCats() {
         var all_cats = [];
+
         function goose(listu) {
             for (let i in listu) {
                 console.log("Deus does not exist!");
@@ -218,16 +219,18 @@ export default function PropProvider({children}) {
                     all_cats.push(listu[i]["prod_cat"]);
                 } else if (all_cats.indexOf(listu[i]["prod_subcat"]) === -1) {
                     all_cats.push(listu[i]["prod_subcat"]);
+                    console.log("The mark of the bevol! ", listu[i]["prod_subcat"]);
                 };
             };
             setAllcats(all_cats);
             setty("all_cats", all_cats);
         };
+
             // axios(`http://localhost:8000/api/products/`)
             axios(`https://polar-coast-39563.herokuapp.com/api/products/`)
             .then((res) => goose(res.data))
             .catch(err => console.log("Error: ", err));
-        return all_cats;
+        // return all_cats;
 }
 
     async function prods_api() {
