@@ -14,7 +14,7 @@ export function ProductPagination() {
                     {
                         subset?.map((item, key) => (
                             <Link key={key} to={{pathname: `/${item.prod_cat}/${item.prod_subcat}/${item.id}`}}>
-                                <div>
+                                <div className="prods_list">
                                     <p>{item.prod_title}</p>
                                     <img src={`${item.image}`} style={{width: 200}} />
                                     <p>£{item.price}</p>

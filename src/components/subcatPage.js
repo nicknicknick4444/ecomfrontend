@@ -16,20 +16,12 @@ import {ErrorBoundary} from "./errorBoundary.js";
 export function SubcatPage() {
     let {subcat_name} = useParams();
     const [allprods, setAllprods] = useState([]);
-    // const [loading, setLoading] = useState(true);
-    const {prods, setProds, category, setCategory, setVis, setSearched, section, 
-        page, setPage, setChecking, setBurger} = useProps();
-
-    // const setty = (place, val) => {
-    //     return localStorage.setItem(place, JSON.stringify(val));
-    // };
-
-    // const getty = (place) => {
-    //     return JSON.parse(localStorage.getItem(place));
-    // };
+    const {prods, setProds, category, setCategory, setBurger, setSearched, section, 
+        page, setPage, setChecking} = useProps();
 
     const getProds = () => {
         axios
+            // .get(`http://localhost:8000/api/products/`)
             .get(`https://polar-coast-39563.herokuapp.com/api/products/`)
             .then((res) => setAllprods(res.data))
             .catch(err => console.log("Error: ", err));
@@ -43,13 +35,8 @@ export function SubcatPage() {
             setty("disp", []);
         };
         setChecking(true);
-        // setVis("Standby");
         setBurger(false);
     }, []);
-
-    // function guth() {
-    //     console.log("Clark Kent?!");
-    // };
 
     useEffect(() => {
         console.log("Graphy! ", prods);
@@ -99,7 +86,7 @@ export function SubcatPage() {
             <h1>{toTitle(subcat_name)}</h1>
             {
                 prods.map((prod, key) => (
-                    <div key={key}>
+                    <div key={key} className="prods_list">
                         <Link to={{pathname: `${prod.id}`}}>
                             <span>{prod.prod_title}</span><br />
                             <img src={`${prod.image}`} style={{ width: 200 }} /><br />

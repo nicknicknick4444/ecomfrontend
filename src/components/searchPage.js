@@ -11,25 +11,13 @@ import {ProductPagination} from "./pagination.js";
 import {useProps} from "./hooks/prop-hooks.js";
 import {getty, setty, toTitle} from "./hooks/hooks.js";
 
-
 export function SearchPage() {
-    // const [page, setPage] = useState([0,1]);
-    // const [numbers, setNumbers] = useState([]);
-    // const [subset, setSubset] = useState([]);
     const {prods, raw, setRaw, setProds, shortlist, setShortlist, 
         searched, setSearched, page, setPage, numbers, setNumbers, 
         subset, setSubset, section, setChecking} = useProps();
     
-    // function page_click(page_num) {
-    //     var new_page = [page_num * page[1], page[1]];
-    //     setPage(new_page);
-    //     console.log("Good to be to back! ", new_page);
-    //     // section();
-    // };
-
     function search_summary() {
         var view_range_from = ((page[0] + 1));
-        // var view_range_to = ((page[0] + 1 * page[1]) - (page[1] > 1 ? page[1] : 0));
         var view_range_to = (view_range_from + subset.length - 1);
 
         console.log("PAGE! ", page);
@@ -61,19 +49,9 @@ export function SearchPage() {
         console.log("Stevie Martin is a thoughtful pillow! ", searched);
         setSearched(false);
         // SET NUMBER OF RESULTS PER-PAGE IN 2ND ELEMENT OF setPage!
-        setPage([0,1]);
+        setPage([0,4]);
         setChecking(true);
-        // section("searchList");
-        // if (getty("searchList") !== []) {
-        //     setSearched(false);
-        // }
     }, []);
-
-    // useEffect(() => {
-    //     if (getty("searchList") !== []) {
-    //         setty("searchList", shortlist);
-    //     }
-    // }, [shortlist]);
 
     useEffect(() => {
         if (searched === true) {
@@ -87,8 +65,6 @@ export function SearchPage() {
 
     if (getty("searchList") !== null && getty("searchList").length > 0 && getty("searchList")[0] !== "EMPTY!") {
 
-    // console.log("Pagey! ", getty("searchList").slice(0,2));
-    // console.log("Pageo! ", getty("searchList").slice(2,4));
     console.log("SUBSET! ", subset, numbers);
 
     return (
@@ -103,22 +79,7 @@ export function SearchPage() {
             <p><i>Showing {search_summary()[0]} - {search_summary()[1]} out of {prods.length} products</i></p>
             <Sorting list_name="searchList" />
             <ProductPagination />
-            {/* <div>
-                {
-                    prods?.map((item, key) => (
-                        <Link key={key} to={{pathname: `/${item.prod_cat}/${item.prod_subcat}/${item.id}`}}>
-                            <div>
-                                <p>{item.prod_title}</p>
-                                <img src={`${item.image}`} style={{width: 200}} />
-                                <p>£{item.price}</p>
-                            </div>
-                        </Link>
-                    ))
-                }
-            </div> */}
-            {/* <b>Cruddas!</b>
 
-            <ProductPagination /> */}
         </>
     );
     } else {
