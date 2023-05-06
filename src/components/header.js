@@ -22,7 +22,7 @@ export function Header() {
             {!bought ? 
             <span onClick={() => setBelb("NOt BOUGHT!")}><Navbar /></span> : 
             <span onClick={() => {setBought(false); empty(setDis, updateTotal, setFillingdeets)}}><Navbar/></span>}
-            <SearchBox />
+            <div style={{clear: "both"}}><SearchBox /></div>
             <p>{belb}</p>
         </>
     );

@@ -34,10 +34,10 @@ export function Navbar() {
         }
     }, [cats]);
 
-    if (cats) {
+    if (cats.length > 1) {
     return (
         <>
-            <div>
+            <div style={{clear: "right"}}>
             <span className="navbar"><Link to={{pathname: "/"}}>Home</Link></span>
             {   
                 cats.map((cat, key) => (
@@ -47,9 +47,7 @@ export function Navbar() {
                             {toTitle(cat.cat_name)}
                         </Link>
                     </span>
-
                 ))
-            
             }
             </div>
             <div className="navbar-mob">
@@ -64,23 +62,48 @@ export function Navbar() {
                         <span key={key+"mob"} className="navbar-mob">
                             <Link to={{pathname: `../${cat.cat_name}`}}>
                                 {toTitle(cat.cat_name)}
-                            </Link><br/>
+                            </Link><br />
                         </span>
 
                     ))
                 }
                 </div>: null}
             </div>
-            <br /><br /><br />
+            
         </>
     );
     } else {
         return (
             <>
                 <div>
-                    <span className="navbar"><Link to={{pathname: "/"}}>Home</Link></span>
-                    <p>GLURT!</p>
-                </div><br /><br /><br />
+                    <span className="navbar">
+                        <Link to={{pathname: "/"}}>Home</Link>
+                    </span>
+                    <span className="navbar">
+                        <Link to={{pathname: "/pets"}}>Pets</Link>
+                    </span>
+                    <span className="navbar">
+                        <Link to={{pathname: "/confectionary"}}>Confectionary</Link>
+                    </span>
+                    <span className="navbar">
+                        <Link to={{pathname: "/breads"}}>Breads</Link>
+                    </span>
+                    <p>GLURT!</p><br /><br /><br />
+
+                <div className="navbar-mob">
+                <div onClick={() => setBurger(!burger)}>☰ {burger.toString()}</div>
+                    {burger ? 
+                    <div>
+                        <span><Link pathname="/">Home</Link></span><br />
+                        <span><Link pathname="/pets">Pets</Link></span><br />
+                        <span><Link pathname="/confectionary">Confectionary</Link></span><br />
+                        <span><Link pathname="/breads">Breads</Link></span><br />
+                        <span>CLURTY!</span>
+                    </div> : null}
+                </div>
+
+
+                </div>
             </>
         );
     }
