@@ -139,6 +139,7 @@ h1 {
 		font-size: 20px;
 		background-color: #ffea00;
 		text-decoration: none;
+		cursor: pointer;
 	}
 	
 	.navbar {
