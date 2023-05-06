@@ -101,7 +101,7 @@ export function Navbar() {
                     </div> : null}
                     
                 </div>
-                <div style={{clear: "left"}}>Loading...!</div>
+                <div style={{clear: "left"}}>Loading...</div>
 
             </>
         );
