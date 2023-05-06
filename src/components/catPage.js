@@ -39,6 +39,7 @@ export function CatPage() {
         setCatto(cat_name);
         getSubcats();
         setCategory(cat_name);
+        setBurger(false);
         }
     }, [cat_name]);
 
