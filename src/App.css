@@ -120,6 +120,13 @@ h1 {
   }
 }
 
+	.prods_list {
+		display: inline;
+		float: left;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
 }
 /*END OF MAIN*/
 
@@ -144,6 +151,11 @@ h1 {
 	
 	.navbar {
 		display: none;
+	}
+
+	.prods_list {
+		padding-left: 5px;
+		padding-right: 5px;
 	}
 
 
