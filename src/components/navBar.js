@@ -88,7 +88,7 @@ export function Navbar() {
                     <span className="navbar">
                         <Link to={{pathname: "/breads"}}>Breads</Link>
                     </span>
-                    <p>GLURT!</p><br /><br /><br />
+                </div>
 
                 <div className="navbar-mob">
                 <div onClick={() => setBurger(!burger)}>☰ {burger.toString()}</div>
@@ -98,12 +98,11 @@ export function Navbar() {
                         <span><Link pathname="/pets">Pets</Link></span><br />
                         <span><Link pathname="/confectionary">Confectionary</Link></span><br />
                         <span><Link pathname="/breads">Breads</Link></span><br />
-                        <span>CLURTY!</span>
                     </div> : null}
+                    
                 </div>
+                <div style={{clear: "left"}}>Loading...!</div>
 
-
-                </div>
             </>
         );
     }
