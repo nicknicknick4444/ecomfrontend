@@ -1,6 +1,4 @@
 import React, {useState, useEffect, useLayoutEffect} from "react";
-import {useParams, Link, useLocation} from "react-router-dom";
-import axios from "axios";
 import {Basket} from "./basket.js";
 import {Navbar} from "./navBar.js";
 import {SearchBox} from "./searchBox.js";
@@ -70,7 +68,7 @@ export function SearchPage() {
     return (
         <>
             <h1>{toTitle("steady as it comes!")}</h1>
-            <Basket />
+            {/* <Basket /> */}
             {/* <Navbar />
             <SearchBox /> */}
             <Header />

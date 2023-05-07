@@ -63,28 +63,30 @@ export function CatPage() {
     if (subcat) {
     return (
         <>
-        <Basket />
+        {/* <Basket /> */}
         {/* <Navbar />
         <SearchBox /> */}
         <Header />
-        <Breadcrumb />
+        <div className="breadcrumb"><Breadcrumb /></div>
         <ErrorBoundary>
+        <div className="prods_list">
             <h1>{toTitle(catto)}</h1>
             <div>
                 {
                     subcat.map((subby, key) => (
                         getty("all_cats") !== null && getty("all_cats").length > 0 && getty("all_cats").indexOf(subby["subcat_name"]) !== -1 ? 
                             <div key={key} >
-                                <Link to={{pathname: `${subby.subcat_name}`}}>{subby.subcat_name}<br />
+                                <Link to={{pathname: `${subby.subcat_name}`}}>{toTitle(subby.subcat_name)}<br />
                                 <img src={`${subby.subcat_image}`} style={{ width: 200 }} />
                                 </Link>
                             </div>
                             :
-                            <span key={key+"a"}>Beancie</span>
+                            <span key={key+"a"}></span>
                     ))
                 }
             </div>
-            <div><i><Link to={{pathname: "/"}}>Home</Link></i></div>
+        </div>
+        {/* <div><i><Link to={{pathname: "/"}}>Home</Link></i></div> */}
         </ErrorBoundary>
     </>
     )

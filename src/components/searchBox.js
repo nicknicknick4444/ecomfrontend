@@ -30,6 +30,7 @@ export function SearchBox() {
         console.log("Searching!", searchTyping);
         if (searchTyping !== "") {
         axios
+            // .get(`http://localhost:8000/api/products/`)
             .get(`https://polar-coast-39563.herokuapp.com/api/products/`)
             .then((res) => setRaw(res.data))
             .catch(err => console.log("Error: ", err));
@@ -184,10 +185,11 @@ export function SearchBox() {
     return (
         <>
         {/* <form> */}
+        <div className="search-box">
             <input 
                 id="search-box" 
                 type="text"
-                placeholder="Search for Items"
+                placeholder="Enter search terms"
                 onChange={(e) => handleChange(e)} 
                 autoFocus
                 />
@@ -198,10 +200,11 @@ export function SearchBox() {
                 : 
                 <><button id="subby" 
                 onClick={() => {search(); empty(setDis, updateTotal, setFillingdeets)}} 
-                type="submit">Submit</button><br /></>
+                type="submit">Search</button><br /></>
                 }
                 {/* <p>{searchTyping}</p> */}
             {/* </form> */}
+            </div>
         </>
     );
 };

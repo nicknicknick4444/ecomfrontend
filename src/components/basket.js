@@ -19,18 +19,18 @@ export function Basket(){
         return (
             <>
                 <ErrorBoundary>
-                    
-                    <div>Number of Items: {!bought ? totally < 0 ? "0.00" : totally : 0 }</div>
-                    <div>Basket Total: £{!bought ? parseInt(amount) == 0 ? "0.00" : amount.toFixed(2) : "0.00"}</div> 
-   
-                    {!bought ?
-                    <div onClick={() => setChecking(false)}><Link to="/basket-page"><i>View Basket</i></Link></div>
-                    :
-                    <div onClick={() => {setChecking(false); empty(setDis, updateTotal, setFillingdeets)}}>
-                        <Link to="/basket-page"><i>View Basket</i></Link>
+                    <div className="basket-pc">
+                        <div>Number of Items: {!bought ? totally < 0 ? "0.00" : totally : 0 }</div>
+                        <div>Basket Total: £{!bought ? parseInt(amount) == 0 ? "0.00" : amount.toFixed(2) : "0.00"}</div> 
+    
+                        {!bought ?
+                        <div onClick={() => setChecking(false)}><Link to="/basket-page"><i>View Basket</i></Link></div>
+                        :
+                        <div onClick={() => {setChecking(false); empty(setDis, updateTotal, setFillingdeets)}}>
+                            <Link to="/basket-page"><i>View Basket</i></Link>
+                        </div>
+                        }
                     </div>
-                    }
-                    {/* <div><Link to="/checkout">Checkout</Link></div> */}
                 </ErrorBoundary>
             </>
         );

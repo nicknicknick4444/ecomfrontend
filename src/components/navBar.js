@@ -37,8 +37,10 @@ export function Navbar() {
     if (cats.length > 1) {
     return (
         <>
-            <div style={{clear: "right"}}>
-            <span className="navbar"><Link to={{pathname: "/"}}>Home</Link></span>
+            <div>
+            <span className="navbar">
+                <Link to={{pathname: "/"}}>Home</Link>
+            </span>
             {   
                 cats.map((cat, key) => (
 
