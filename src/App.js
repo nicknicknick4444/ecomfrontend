@@ -14,7 +14,7 @@ import {Basket} from "./components/basket.js";
 import {ShowBasket} from "./components/showBasket.js";
 import {Checkout} from "./components/checkout.js";
 import {SearchPage} from "./components/searchPage.js";
-import {Complete} from "./components/complete.js";
+// import {Complete} from "./components/complete.js";
 import {useProps} from "./components/hooks/prop-hooks.js";
 import {getty, setty, toTitle} from "./components/hooks/hooks.js";
 // import {ErrorBoundary} from "./components/errorBoundary.js";
@@ -293,7 +293,7 @@ function AppFront() {
     <>
       {/* <ErrorBoundary> */}
       {/* <h1>Yes!</h1> */}
-      <Basket />
+      {/* <Basket /> */}
       <Header />
       {/* <Navbar />
       <SearchBox /> */}
@@ -312,8 +312,8 @@ function App2() {
     {path: ":cat_name/:subcat_name/:id", element: <ProdPage />},
     {path: "basket-page", element: <ShowBasket />},
     {path: "checkout", element: <Checkout />},
-    {path: "search-results", element: <SearchPage />},
-    {path: "complete", element: <Complete />}
+    {path: "search-results", element: <SearchPage />}
+    // {path: "complete", element: <Complete />}
   ]);
   return element;
 };
