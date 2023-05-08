@@ -8,7 +8,7 @@ import "../App.css";
 
 export function Navbar() {
     const [cats, setCats] = useState([]);
-    const {allcats, prods_api, burger, setBurger} = useProps();
+    const {allcats, prods_api, bought, burger, setBurger} = useProps();
 
     const getCats = () => {
         axios
@@ -25,7 +25,12 @@ export function Navbar() {
             console.log("FRIDGE TET");
         };
         console.log("Blues! ", allcats);
-        setBurger(false);
+        // if (!bought) {
+        //     setBurger(false);
+        // };
+        // if (bought) {
+        //     setBurger(true);
+        // };
     }, []);
 
     useEffect(() => {
@@ -53,10 +58,10 @@ export function Navbar() {
             }
             </div>
             <div className="navbar-mob">
-            <div onClick={() => {setBurger(!burger)}}>☰ {burger.toString()}</div>
+            <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}}>☰ {burger.toString()}</div>
                 {burger ? 
                 <div>
-                <span><Link to={{pathname: "/"}}>Home</Link></span><br />
+                <span className="navbar-mob"><Link to={{pathname: "/"}}>Home</Link></span><br />
                 {
                     cats.map((cat, key) => (
 
@@ -93,13 +98,13 @@ export function Navbar() {
                 </div>
 
                 <div className="navbar-mob">
-                <div onClick={() => setBurger(!burger)}>☰ {burger.toString()}</div>
+                <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}}>☰ {burger.toString()}</div>
                     {burger ? 
                     <div>
-                        <span><Link pathname="/">Home</Link></span><br />
-                        <span><Link pathname="/pets">Pets</Link></span><br />
-                        <span><Link pathname="/confectionary">Confectionary</Link></span><br />
-                        <span><Link pathname="/breads">Breads</Link></span><br />
+                        <span className="navbar-mob"><Link pathname="/">Home</Link></span><br />
+                        <span className="navbar-mob"><Link pathname="/pets">Pets</Link></span><br />
+                        <span className="navbar-mob"><Link pathname="/confectionary">Confectionary</Link></span><br />
+                        <span classname="navbar-mob"><Link pathname="/breads">Breads</Link></span><br />
                     </div> : null}
                     
                 </div>

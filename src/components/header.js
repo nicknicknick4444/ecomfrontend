@@ -9,7 +9,8 @@ import "../App.css";
 
 export function Header() {
     const [belb, setBelb] = useState("");
-    const {bought, setBought, setDis, updateTotal, setFillingdeets} = useProps();
+    const {bought, setBought, setDis, updateTotal, setFillingdeets, 
+        burger, setBurger} = useProps();
 
     useEffect(() => {
         if (bought) {
@@ -27,7 +28,7 @@ export function Header() {
             <div className="nav-edge">
             {!bought ? 
             <span onClick={() => setBelb("NOt BOUGHT!")}><Navbar /></span> : 
-            <span onClick={() => {setBought(false); empty(setDis, updateTotal, setFillingdeets)}}><Navbar/></span>}
+            <span onClick={() => {setBought(false); empty(setDis, updateTotal, setFillingdeets); setBurger(true)}}><Navbar/></span>}
             </div>
             <div className="nav-edge"></div>
             {/* <div className="search-box"><SearchBox /></div> */}

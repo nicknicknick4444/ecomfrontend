@@ -21,7 +21,7 @@ export function Checkout() {
     const [coupons, setCoupons] = useState("");
     const {updateTotal, dis, cou, setCou, setDis, setSearched, fillingdeets, setFillingdeets, 
         checking, setChecking, bought, setBought, boughtReset, setBoughtreset, 
-        mand, setMand, typingAddress, setTypingaddress} = useProps();
+        mand, setMand, typingAddress, setTypingaddress, burger, setBurger} = useProps();
 
     var order_ref = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
 
@@ -70,6 +70,12 @@ export function Checkout() {
         };
         setty("delvq", delvq);
     }, [delvq]);
+
+    // useEffect(() => {
+    //     if (bought) {
+    //         setBurger(true);
+    //     };
+    // }, [burger]);
 
     useEffect(() => {
         setMand(false);
@@ -141,7 +147,7 @@ export function Checkout() {
         setBought(true);
         setChecking(false);
         // setFillingdeets(false);
-        console.log("CUNT WASTED MY TIME! ", getty("address"));
+        console.log("MAN WASTED MY TIME! ", getty("address"));
         // empty(setDis, updateTotal);
     };
 
