@@ -59,7 +59,7 @@ export function Checkout() {
         setCou("");
         };
         console.log("DELVQ: ", delvq);
-        console.log("ED SHEERAN! ", getty("address"), Object.keys(getty("address")).length);
+        console.log("ADDRESS! ", getty("address"), Object.keys(getty("address")).length);
     }, [])
     
     useEffect(() => {
