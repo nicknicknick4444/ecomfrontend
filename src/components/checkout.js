@@ -59,6 +59,7 @@ export function Checkout() {
         setCou("");
         };
         console.log("DELVQ: ", delvq);
+        console.log("ED SHEERAN! ", getty("address"), Object.keys(getty("address")).length);
     }, [])
     
     useEffect(() => {
@@ -75,6 +76,7 @@ export function Checkout() {
     }, [typingAddress])
 
     function api_call(id) {
+        // const promise = axios.get(`http://localhost:8000/api/products/${id}/`);
         const promise = axios.get(`https://polar-coast-39563.herokuapp.com/api/products/${id}/`);
         const promisedData = promise.then((res) => res.data);
         return promisedData;
@@ -139,7 +141,7 @@ export function Checkout() {
         setBought(true);
         setChecking(false);
         // setFillingdeets(false);
-        console.log("YES WASTED MY TIME! ", getty("address"));
+        console.log("CUNT WASTED MY TIME! ", getty("address"));
         // empty(setDis, updateTotal);
     };
 
@@ -257,10 +259,11 @@ export function Checkout() {
                         {/* <input onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); }} type="submit" value="Next" /> */}
                     </form>
                     {/* <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); }} type="submit">Next</button> */}
-                    {getty("address")["billing_name"] === null || getty("address")["billing_name"] === "" || 
-                    getty("address")["billing_email"] === null || getty("address")["billing_email"] === "" || 
-                    getty("address")["billing_tel"] == null || getty("address")["billing_tel"] === "" ? 
-                        <button onClick={() => {setMand(true)}}>Next</button> : 
+                    {getty("address")["billing_name"] === undefined || getty("address")["billing_name"] === "" || 
+                    getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
+                    getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
+                    getty("address") === null || Object.keys(getty("address")).length === 0 ? 
+                        <button onClick={() => {setMand(true)}}>CUNT</button> : 
                         <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>Next</button>
                     }
                 </div>
