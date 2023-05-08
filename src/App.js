@@ -282,11 +282,12 @@ import {basketUpdate, AllInput} from "./components/basketUpdate.js";
 // };
 
 function AppFront() {
-  const {setSearched, setChecking} = useProps();
+  const {setSearched, setChecking, setBurger} = useProps();
 
   useEffect(() => {
     setSearched(false);
     setChecking(true);
+    setBurger(false);
   }, []);
 
   return (
