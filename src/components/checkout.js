@@ -197,11 +197,11 @@ export function Checkout() {
         // back_reset(bought, setBought, setDis, updateTotal);
         return (
             <>
-                <h1>Checkout!</h1>
                 {/* <Navbar />
                 <SearchBox /> */}
-                <Basket />
-                {<Header />}
+                {/* <Basket /> */}
+                <Header />
+                <h1>Checkout!</h1>
                 <div className="AddressForm" style={{width: "100%"}}>
                     <form>
                         <div>
@@ -277,7 +277,7 @@ export function Checkout() {
                     <h1>Checkout</h1>
                     {/* <Navbar />
                     <SearchBox /> */}
-                    <Basket />
+                    {/* <Basket /> */}
                     <Header />
                     <BasketList />
                     <div><i><Link to="/">Home</Link></i></div>
@@ -289,7 +289,7 @@ export function Checkout() {
             <>
                 {/* <Navbar />
                 <SearchBox /> */}
-                    <Basket />
+                    {/* <Basket /> */}
                     <Header />
                 {!bought ? <h2>Review & Submit</h2> : <><h2>Thank you for your order!</h2><p>Your order number is: N{order_ref}</p></>}
                 {/* <div style={{color: "#2aaa41"}}>
