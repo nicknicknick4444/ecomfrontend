@@ -11,19 +11,9 @@ export function BasketList(){
     const [prod, setProd] = useState();
     const [basket, setBasket] = useState([]);
     const [arr, setArr] = useState([]);
-    
-
-    // const getty = (place) => {
-    //     return JSON.parse(localStorage.getItem(place));
-    // };
-
-    // const setty = (place, val) => {
-    //     return localStorage.setItem(place, JSON.stringify(val));
-    // };
 
     const refreshList = ()  => {
         var basketList = [];
-        // var curr = JSON.parse(localStorage.getItem("itemsList"));
         var curr = getty("itemsList");
         for (let i in curr) {
         i = parseInt(i);
@@ -40,8 +30,8 @@ export function BasketList(){
     };
 
     function api_call(id){
-        // const promise = axios.get(`http://localhost:8000/api/products/${id}/`);
-        const promise = axios.get(`https://polar-coast-39563.herokuapp.com/api/products/${id}/`);
+        const promise = axios.get(`http://localhost:8000/api/products/${id}/`);
+        // const promise = axios.get(`https://polar-coast-39563.herokuapp.com/api/products/${id}/`);
         const promisedData = promise.then((res) => res.data)
         return promisedData;
     };
@@ -197,10 +187,12 @@ export function BasketList(){
                     <div>Basket is sound empty!</div>
                 }
 
-                {getty("discount") !== 1 & getty("coupon_name") !== "" ? 
+                {get_location() === "/basket-page" || get_location() === "/checkout" ?
+                    
+                    getty("discount") !== 1 & getty("coupon_name") !== "" ? 
                     <div><b><span style={{color: "#2aaa41"}}>COUPON CODE {getty("coupon_name")} ADDED</span></b><br />
                     <del>Original total: £{(amount_total / getty("discount")).toFixed(2)}</del></div> : 
-                    cou === "NONE" ? <span style={{color: "#ff0000"}}><i>Coupon code not recognised</i></span> : ""}
+                    cou === "NONE" ? <span style={{color: "#ff0000"}}><i>Coupon code not recognised</i></span> : "" : null}
                     {/* {amount_total > 0 ? <div><b>{getty("discount") !== 1 ? "NEW" : ""} TOTAL: £{amount_total.toFixed(2)}</b></div> : null} */}
                     {get_location() === "/basket-page" || get_location() === "/checkout" ?
                     amount_total > 0 ? <div><b>{total_word()} TOTAL: £{amount_total.toFixed(2)}</b></div> : null
