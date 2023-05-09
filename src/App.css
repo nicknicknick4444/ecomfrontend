@@ -104,6 +104,7 @@
 		padding-right: 5px;
 		position: absolute;
 		z-index: 20;
+		cursor: pointer;
 	}
 
 	.dropdown-basket {
@@ -304,7 +305,11 @@ h1 {
 	}
 
 	.basket-pc {
-		margin-right: 5px;
+		cursor: pointer;
+	}
+
+	.dropdown-basket {
+		display: none;
 	}
 
 	.confirm {
