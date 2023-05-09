@@ -43,6 +43,7 @@ export default function PropProvider({children}) {
     const [taxo, setTaxo] = useState([]);
     const [allcats, setAllcats] = useState([]);
     const [burger, setBurger] = useState(false);
+    const [droplist, setDroplist] = useState(true);
 
     function assertCateg(categ) {
         setCategory(categ);
@@ -246,7 +247,7 @@ export default function PropProvider({children}) {
     searchTyping, setSearchtyping, page, setPage, numbers, setNumbers, subset, setSubset, 
     section, page_click, fillingdeets, setFillingdeets, checked, setChecked, checking, setChecking, 
     bought, setBought, boughtReset, setBoughtreset, mand, setMand, typingAddress, setTypingaddress, 
-    allcats, prods_api, taxo, setTaxo, burger, setBurger}}>
+    allcats, prods_api, taxo, setTaxo, burger, setBurger, droplist, setDroplist}}>
         {children}
     </PropContext.Provider>
 };
