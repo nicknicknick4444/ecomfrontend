@@ -43,7 +43,7 @@ export default function PropProvider({children}) {
     const [taxo, setTaxo] = useState([]);
     const [allcats, setAllcats] = useState([]);
     const [burger, setBurger] = useState(false);
-    const [droplist, setDroplist] = useState(true);
+    const [droplist, setDroplist] = useState(false);
 
     function assertCateg(categ) {
         setCategory(categ);
