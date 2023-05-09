@@ -22,7 +22,7 @@ export function ShowBasket() {
     // };
 
     const {dis, setDis, updateTotal, bought, setBought, 
-        setCou, setSearched, setChecking, setFillingdeets, 
+        setCou, setSearched, checking, setChecking, setFillingdeets, 
         setBurger} = useProps();
 
     const goosey = (e) => {
@@ -38,6 +38,7 @@ export function ShowBasket() {
         //     setty("codes", []);
         // }
         // setty("")
+        // const promise = axios.get(`http://localhost:8000/api/coupons/`);
         const promise = axios.get(`https://polar-coast-39563.herokuapp.com/api/coupons/`);
         promise.then((res) => setty("codes", JSON.stringify(res.data)));
         return promise.then((res) => res.data);
@@ -151,7 +152,7 @@ export function ShowBasket() {
 
     return (
         <>
-            <Basket />
+            {/* <Basket /> */}
             {/* <Navbar />
             <SearchBox /> */}
             <Header />

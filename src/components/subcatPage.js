@@ -75,7 +75,7 @@ export function SubcatPage() {
     if (prods) {
     return (
         <>
-            <Basket />
+            {/* <Basket /> */}
             {/* <Navbar />
             <SearchBox /> */}
             <Header />
@@ -104,7 +104,7 @@ export function SubcatPage() {
     } else {
         return (
             <>
-                <Basket />
+                {/* <Basket /> */}
                 <Header />
                 {/* <Breadcrumb /> */}
                 <h1>No subcategories to display.</h1>

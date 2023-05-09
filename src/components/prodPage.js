@@ -21,6 +21,7 @@ export function ProdPage() {
 
     const refreshDetails = () => {
         axios
+            // .get(`http://localhost:8000/api/products/${id}/`)
             .get(`https://polar-coast-39563.herokuapp.com/api/products/${id}/`)
             .then((res) => setProduct(res.data))
             .catch(err => console.log("Product API error: " + err));
@@ -56,7 +57,7 @@ export function ProdPage() {
     if (product) {
         return (
             <>
-                <Basket />
+                {/* <Basket /> */}
                 {/* <Navbar />
                 <SearchBox /> */}
                 <Header />
@@ -79,7 +80,7 @@ export function ProdPage() {
     } else {
         return (
             <>
-                <Basket />
+                {/* <Basket /> */}
                 <Header />
                 {/* <ErrorBoundary>
                     <Breadcrumb />
