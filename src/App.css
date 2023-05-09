@@ -55,8 +55,8 @@
 	}
 
 	.search-box {
-		margin-top: 26px;
-		margin-bottom: 26px;
+		margin-top: 21px;
+		margin-bottom: 21px;
 		margin-left: 5px;
 		float: left;
 	}
@@ -98,7 +98,28 @@
 
 	.basket-pc {
 		float: right;
-		margin-right: 5px;
+		right: 0;
+		/*margin-right: 5px;*/
+		padding-left: 5px;
+		padding-right: 5px;
+		position: absolute;
+		z-index: 20;
+	}
+
+	.dropdown-basket {
+		z-index: 20;
+		/*clear: both;*/
+		right: 0;
+		position: absolute;
+		float: right;
+		text-align: center;
+		width: 100%;
+		background-color: #ffffff;
+		border-left: 3px #1f4bd3 solid;
+		border-right: 3px #1f4bd3 solid;
+		border-bottom: 3px #1f4bd3 solid;
+		padding: 5px;
+		padding-top: 15px;
 	}
 
 
@@ -154,6 +175,8 @@ h1 {
 .navbar-mob {
 	#display: none;	
 }
+
+
 
 
 
