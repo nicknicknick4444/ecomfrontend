@@ -149,20 +149,24 @@ export function AllInput({item, words, placeholder, state, this2}) {
     } else if (getty("itemsList")[item.id] === undefined && getty("new") === 1) {
       console.log("Mr. E");
       setVis("Yes");
-    } else if (typing2 === "[]"){
-      setVis("Yes");
-      console.log("Mr. F");
-    } else if (getty("itemsList")[item.id] === 1 && getty("order")[item.id] === undefined || 
-    getty("itemsList")[item.id] === undefined || getty("order")[item.id] === undefined) {
+    } else if (typing2.length === 0 && typing2 !== 0 ){
+      if (getty("order").indexOf(item.id) > -1) {
+        setNew_quant(1);
+      setVis("First");
+      console.log("Mr. F. Gusk.");
+    } else if (getty("order").indexOf(item.id) === -1 || 
+    getty("itemsList")[item.id] === undefined || getty("itemsList")[item.id] === 0) {
       console.log("GAFFREY! PAUN!");
       setNew_quant(1);
       setVis("First");
     } else {
       setVis("Standby");
       console.log("GAYYYYY!!!!!", typing2);
-    };
+    }
+  };
     if (typing2) {
       setNew_quant(typing2);
+      console.log("BLANKO? ", typing2.length);
     }
     // } else {
     //   setNew_quant(getty("new"));

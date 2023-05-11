@@ -7,11 +7,15 @@ import axios from "axios";
 
 export function BasketList(){
     const {updateTotal, amount, cou, setCou, dis, setDis,  
-        checking, setChecking, bought} = useProps();
+        checking, setChecking, bought, loc, setLoc} = useProps();
     const [prod, setProd] = useState();
     const [basket, setBasket] = useState([]);
     const [arr, setArr] = useState([]);
-
+    const [arr2, setArr2] = useState([]);
+    const [long, setLong] = useState(false);
+    // const [loc, setLoc] = useState("");
+    const [arr3, setArr3] = useState([]);
+    
     const refreshList = ()  => {
         var basketList = [];
         var curr = getty("itemsList");
@@ -30,8 +34,8 @@ export function BasketList(){
     };
 
     function api_call(id){
-        const promise = axios.get(`http://localhost:8000/api/products/${id}/`);
-        // const promise = axios.get(`https://polar-coast-39563.herokuapp.com/api/products/${id}/`);
+        // const promise = axios.get(`http://localhost:8000/api/products/${id}/`);
+        const promise = axios.get(`https://polar-coast-39563.herokuapp.com/api/products/${id}/`);
         const promisedData = promise.then((res) => res.data)
         return promisedData;
     };
@@ -46,6 +50,17 @@ export function BasketList(){
         };
         console.log("Poggo! ", arro);
         setArr(arro);
+        if (arro.length > 4) {
+            setArr2(arro.slice(-3));
+            setLong(true);
+            // arr3 = arro.splice(-4, -1);
+        } else {
+            setArr2(arro);
+            setLong(false);
+            // arr3 = arro;
+        };
+
+
     };
 
     useEffect(() => {
@@ -53,8 +68,39 @@ export function BasketList(){
             setty("order", []);
         };
         loopyApi();
+        setLoc(get_location());
         // SOMETHING ABOUT COU DEFAULTING TO "" IF "NONE" on render
     }, []);
+
+    useEffect(() => {
+        // if (loc !== get_location) {
+        //     setLoc(get_location());
+            if (get_location() !== "/basket-page" && get_location() !== "/checkout") {
+                setArr3(arr2);
+            } else {
+                setArr3(arr);
+            };
+        // };
+        console.log("REFRESH!", loc, arr3);
+    }, [arr]);
+
+    // useEffect(() => {
+    //     // if (arr.length > 4) {
+    //     //     setArr2([arr.slice(-4, -1)]);
+    //     // } else {
+    //     //     console.log("BEAT!");
+    //     // }
+    //     // console.log("Arr2 Pothy! ", arr.slice(-4, -1), arr2, arr.length);
+    //     if (get_location() !== "/basket-page" || get_location() !== "/checkout") {
+    //         arr3 = arr2;
+    //     } else {
+    //         arr3 = arr;
+    //     }
+    // }, [arr2]);
+
+    useEffect(() => {
+        console.log("Granthy! ", arr2);
+    }, [arr2]);
 
 
     function amounty(id) {
@@ -89,16 +135,6 @@ export function BasketList(){
         } else {
             total();
         };
-
-        // };
-        // if (prod) {
-        //     total();
-        // };
-
-
-        // if (getty("order") === null) {
-        //     setty("order", []);
-        // };
     }, []);
 
     for (let i in prod){
@@ -161,11 +197,15 @@ export function BasketList(){
             console.log("Also AMOONT", amount);
             amount_total = amount;
         }
+        
         return (
             <>
+                {long && get_location() !== "/basket-page" && get_location() !== "/checkout" ?
+                <div>...</div>
+                : null}
                 {
-                    parseInt(getty("amount")) > 0 ?
-                    arr?.map((i, key) => (
+                    parseInt(getty("amount")) > 0 ? 
+                    arr3?.map((i, key) => (
                         getty("itemsList")[`${i.id}`] > 0 ?
                         <div key={key}>
                         <p>
@@ -180,12 +220,17 @@ export function BasketList(){
                             : null
                             }
                             </p>
+
                         </div>
                         : ""
                     ))
+                    
                     :
                     <div>Basket is sound empty!</div>
                 }
+                {long && get_location() !== "/basket-page" && get_location() !== "/checkout" ? 
+                    <div><Link to={{pathname: "/basket-page"}}>See All</Link></div> 
+                    : null}
 
                 {get_location() === "/basket-page" || get_location() === "/checkout" ?
                     
