@@ -6,9 +6,9 @@ const PropContext = createContext();
 export const useProps = () => useContext(PropContext);
 
 export default function PropProvider({children}) {
-    const getty = (place) => {
-        return JSON.parse(localStorage.getItem(place));
-    };
+    // const getty = (place) => {
+    //     return JSON.parse(localStorage.getItem(place));
+    // };
     console.log("GETTY1: ", getty("itemsList"));
 
     var counto = 0;
@@ -44,6 +44,7 @@ export default function PropProvider({children}) {
     const [allcats, setAllcats] = useState([]);
     const [burger, setBurger] = useState(false);
     const [droplist, setDroplist] = useState(false);
+    const [loc, setLoc] = useState("");
 
     function assertCateg(categ) {
         setCategory(categ);
@@ -57,16 +58,19 @@ export default function PropProvider({children}) {
             var priceL = getty("priceList");
             console.log("RIP Steve Mackey! ", item);
             priceL[item.id] = item.price;
-            localStorage.setItem("priceList", JSON.stringify(priceL));
+            // localStorage.setItem("priceList", JSON.stringify(priceL));
+            setty("priceList", priceL);
           } else {
             var priceL = {};
             priceL[item.id] = item.price;
-            localStorage.setItem("priceList", JSON.stringify(priceL));
+            // localStorage.setItem("priceList", JSON.stringify(priceL));
+            setty("priceList", priceL);
             };
         } else {
             var priceL = {};
             priceL[item.id] = item.price;
-            localStorage.setItem("priceList", JSON.stringify(priceL));
+            // localStorage.setItem("priceList", JSON.stringify(priceL));
+            setty("priceList", priceL);
         }
       };
 
@@ -105,11 +109,13 @@ export default function PropProvider({children}) {
     function begin() {
         // if (!"priceList" in localStorage) {
         if (getty("priceList") === null) {
-            localStorage.setItem("priceList", JSON.stringify({}));
+            // localStorage.setItem("priceList", JSON.stringify({}));
+            setty("priceList", {});
         };
         // if (!"itemsList" in localStorage) {
         if (getty("itemsList") === null) {
-            localStorage.setItem("itemsList", JSON.stringify({}));
+            // localStorage.setItem("itemsList", JSON.stringify({}));
+            setty("itemsList", {});
         };
         // if (!"discount" in localStorage) {
         if (getty("discount") === null) {
@@ -135,7 +141,8 @@ export default function PropProvider({children}) {
                 ord.push(index);
             };
             console.log("GAUDY! ", ord);
-            localStorage.setItem("order", JSON.stringify(ord));
+            // localStorage.setItem("order", JSON.stringify(ord));
+            setty("order", ord);
         } else {
             if ("order" in localStorage) {
                 // var ord = JSON.parse(localStorage.getItem("order"));
@@ -151,7 +158,8 @@ export default function PropProvider({children}) {
                 console.log("CABBAGE!", parseInt(getty("new")) + parseInt(getty("itemsList")[`${id}`]));
             }
             console.log("PUCE!!", ord);
-            localStorage.setItem("order", JSON.stringify(ord));
+            // localStorage.setItem("order", JSON.stringify(ord));
+            setty("order", ord);
         };
     };
 
@@ -247,7 +255,7 @@ export default function PropProvider({children}) {
     searchTyping, setSearchtyping, page, setPage, numbers, setNumbers, subset, setSubset, 
     section, page_click, fillingdeets, setFillingdeets, checked, setChecked, checking, setChecking, 
     bought, setBought, boughtReset, setBoughtreset, mand, setMand, typingAddress, setTypingaddress, 
-    allcats, prods_api, taxo, setTaxo, burger, setBurger, droplist, setDroplist}}>
+    allcats, prods_api, taxo, setTaxo, burger, setBurger, droplist, setDroplist, loc, setLoc}}>
         {children}
     </PropContext.Provider>
 };
