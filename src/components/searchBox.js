@@ -185,7 +185,7 @@ export function SearchBox() {
     return (
         <>
         {/* <form> */}
-        <div className="search-box">
+        <div>
             <input 
                 id="search-box" 
                 type="text"

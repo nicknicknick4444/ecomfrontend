@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {useProps} from "./hooks/prop-hooks.js";
 import {setty, getty, toTitle} from "./hooks/hooks.js";
-import {BasketPage} from "./basketList.js";
+import {SearchBox} from "./searchBox.js";
 import axios from "axios";
 import "../App.css";
 
@@ -61,6 +61,7 @@ export function Navbar() {
             <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}}>☰ {burger.toString()}</div>
                 {burger ? 
                 <div>
+                <span className="search-box-mob"><SearchBox /></span>
                 <span className="navbar-mob"><Link to={{pathname: "/"}}>Home</Link></span><br />
                 {
                     cats.map((cat, key) => (
@@ -74,6 +75,8 @@ export function Navbar() {
 
                     ))
                 }
+                <span className="navbar-mob"><Link to={{pathname: "/" }}>About Us</Link></span><br />
+                <span className="navbar-mob"><Link to={{pathname: "/"}}>Contact Us</Link></span>
                 </div>: null}
             </div>
             
@@ -101,10 +104,12 @@ export function Navbar() {
                 <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}}>☰ {burger.toString()}</div>
                     {burger ? 
                     <div>
-                        <span className="navbar-mob"><Link pathname="/">Home</Link></span><br />
-                        <span className="navbar-mob"><Link pathname="/pets">Pets</Link></span><br />
-                        <span className="navbar-mob"><Link pathname="/confectionary">Confectionary</Link></span><br />
-                        <span classname="navbar-mob"><Link pathname="/breads">Breads</Link></span><br />
+                        <span className="navbar-mob"><Link to={{pathname: "/"}}>Home</Link></span><br />
+                        <span className="navbar-mob"><Link to={{pathname: "/pets"}}>Pets</Link></span><br />
+                        <span className="navbar-mob"><Link to={{pathname: "/confectionary"}}>Confectionary</Link></span><br />
+                        <span className="navbar-mob"><Link to={{pathname: "/breads"}}>Breads</Link></span><br />
+                        <span className="navbar-mob"><Link to={{pathname: ""}}>About Us</Link></span><br />
+                        <span className="navbar-mob"><Link to={{pathname: "/"}}>Contact Us</Link></span>
                     </div> : null}
                     
                 </div>

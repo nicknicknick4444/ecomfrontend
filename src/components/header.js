@@ -23,7 +23,7 @@ export function Header() {
     return(
         <>
             <Topband />
-            <SearchBox />
+            <div className="search-box"><SearchBox /></div>
             <Basket />
             <div className="nav-edge">
             {!bought ? 

@@ -14,14 +14,17 @@ export function Topband() {
     return (
         <>
             <div className="top-band">
-                <span className="band-words-left">00000 111111</span>
-                <span className="band-words-left">info@email.com</span>
+                <div className="band-words-left1"><img className="icons" src="images/phone.png" />: 00000 111111</div>
+                <div className="band-words-left2"><img className="icons" src="images/email.png" />: info@email.com</div>
 
-                <span className="band-words-right">About Us</span>
-                <span className="band-words-right">Contact Us</span>
+                <div className="band-words-right">About Us</div>
+                <div className="band-words-right">Contact Us</div>
                 <div className="logo">
                     <img src="https://i.ibb.co/JsyBjLz/Logo-centre.png" />
                     {/* Use https://imgbb.com/ for image hosting */}
+                </div>
+                <div className="logo-mob">
+                    <img src="https://i.ibb.co/JsyBjLz/Logo-centre.png" />
                 </div>
             </div>
         </>
