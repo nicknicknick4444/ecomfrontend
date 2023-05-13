@@ -13,11 +13,11 @@ export function Header() {
     const {bought, setBought, setDis, updateTotal, setFillingdeets, 
         burger, setBurger, mag, setMag} = useProps();
 
-    useEffect(() => {
-        if (mag) {
-            setMag(false);
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (mag) {
+    //         setMag(false);
+    //     }
+    // }, []);
     
     useEffect(() => {
         if (bought) {
