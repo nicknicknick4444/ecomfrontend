@@ -65,6 +65,10 @@
 		display: none;
 	}
 
+	.click-search {
+		display: none;
+	}
+
 	.breadcrumb {
 		clear: both;
 	}
@@ -102,6 +106,12 @@
 	
 	.logo-mob {
 		display: none;
+	}	
+	
+	.icons {
+		width: 30px;	
+		margin-bottom: 3px;
+		margin-right: 2px;
 	}
 
 	.basket-pc {
@@ -109,7 +119,7 @@
 		right: 0;
 		/*margin-right: 5px;*/
 		padding-left: 5px;
-		padding-right: 5px;
+		margin-right: 20px;
 		position: relative;
 		z-index: 20;
 		cursor: pointer;
@@ -129,6 +139,10 @@
 		border-bottom: 3px #1f4bd3 solid;
 		padding: 5px;
 		padding-top: 15px;
+	}
+	
+	.price-pad {
+		margin-left: 1px;	
 	}
 
 
@@ -307,7 +321,13 @@ h1 {
 	}
 
 	.search-box-mob {
-		text-align: center;
+		float: left;
+		
+	}
+
+	.click-search {
+		
+		
 	}
 
 	.breadcrumb {
@@ -332,8 +352,19 @@ h1 {
 		clear: none;
 	}
 
+	.icons {
+		width: 30px;
+	}
+
 	.basket-pc {
 		cursor: pointer;
+		float: right;
+		font-size: 12px;
+		margin-right: 20px;
+	}
+
+	.price-pad {
+		margin-left: 1px;
 	}
 
 	.dropdown-basket {
