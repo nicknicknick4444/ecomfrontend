@@ -23,7 +23,7 @@ export function Topband() {
                     {/* Use https://imgbb.com/ for image hosting */}
                 </div>
                 <div className="logo-mob">
-                    <img src="https://i.ibb.co/JsyBjLz/Logo-centre.png" />
+                    <img className="logo-mob" src="https://i.ibb.co/JsyBjLz/Logo-centre.png" />
                 </div>
             </div>
         </>

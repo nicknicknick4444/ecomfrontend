@@ -8,7 +8,8 @@ import "../App.css";
 
 export function Navbar() {
     const [cats, setCats] = useState([]);
-    const {allcats, prods_api, bought, burger, setBurger} = useProps();
+    const {allcats, prods_api, bought, burger, setBurger, 
+            setMag} = useProps();
 
     const getCats = () => {
         axios
@@ -57,7 +58,7 @@ export function Navbar() {
                 ))
             }
             </div>
-            <div className="navbar-mob">
+            <div className="navbar-mob" onClick={() => setMag(false)} >
             <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}}>☰ {burger.toString()}</div>
                 {burger ? 
                 <div>

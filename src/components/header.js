@@ -9,10 +9,14 @@ import "../App.css";
 
 export function Header() {
     const [belb, setBelb] = useState("");
-    const [mag, setMag] = useState(false);
+    // const [mag, setMag] = useState(false);
     const {bought, setBought, setDis, updateTotal, setFillingdeets, 
-        burger, setBurger} = useProps();
+        burger, setBurger, mag, setMag} = useProps();
 
+    useEffect(() => {
+        setMag(false);
+    }, []);
+    
     useEffect(() => {
         if (bought) {
             setBelb("BOUGHT!")
@@ -23,21 +27,22 @@ export function Header() {
 
     return(
         <>
-            <Topband />
-            <div className="search-box"><SearchBox /></div>
-            <div className="click-search" onClick={() => setMag(!mag)}>
-                <div className="search-box-mob" style={{display: !mag ? "none" : "block"}}><SearchBox /></div>
-                <div style={{display: !mag ? "block" : "none"}}>GLASS!</div>
-            </div>
-            <Basket />
-            <div className="nav-edge">
-            {!bought ? 
-            <span onClick={() => setBelb("NOt BOUGHT!")}><Navbar /></span> : 
-            <span onClick={() => {setBought(false); empty(setDis, updateTotal, setFillingdeets); setBurger(true)}}><Navbar/></span>}
-            </div>
-            <div className="nav-edge"></div>
-            {/* <div className="search-box"><SearchBox /></div> */}
-            <p>{belb}</p>
+                <Topband />
+                <div className="search-box"><SearchBox /></div>
+                <div className="click-search" onClick={() => {setMag(true); setBurger(false)}}>
+                    <div className="search-box-mob" style={{display: !mag ? "none" : "block"}}><SearchBox /></div>
+                    <div style={{display: !mag ? "block" : "none"}}><img src="https://i.ibb.co/BnmP5Qq/glass.png" className="glass" /></div>
+                </div>
+                <div><img src="https://i.ibb.co/G31Vcrk/basket.png" className="basket" /></div>
+                <Basket />
+                <div className="nav-edge">
+                {!bought ? 
+                <span onClick={() => setBelb("NOt BOUGHT!")}><Navbar /></span> : 
+                <span onClick={() => {setBought(false); empty(setDis, updateTotal, setFillingdeets); setBurger(true)}}><Navbar/></span>}
+                </div>
+                <div className="nav-edge"></div>
+                {/* <div className="search-box"><SearchBox /></div> */}
+                <p>{belb}</p>
         </>
     );
 };

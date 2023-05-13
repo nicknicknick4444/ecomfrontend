@@ -16,7 +16,7 @@ export function CatPage() {
     const [subcat, setSubcat] = useState([]);
     const [catto, setCatto] = useState("");
     const {category, setCategory, setSearched, section, 
-        setChecking, setBurger} = useProps();
+        setChecking, setBurger, setMag} = useProps();
 
     const getSubcats = () => {
         axios
@@ -69,7 +69,7 @@ export function CatPage() {
         <Header />
         <div className="breadcrumb"><Breadcrumb /></div>
         <ErrorBoundary>
-        <div className="prods_list">
+        <div className="prods_list" onClick={() => setMag(false)}>
             <h1>{toTitle(catto)}</h1>
             <div>
                 {

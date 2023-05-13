@@ -17,7 +17,7 @@ export function SubcatPage() {
     let {subcat_name} = useParams();
     const [allprods, setAllprods] = useState([]);
     const {prods, setProds, category, setCategory, setBurger, setSearched, section, 
-        page, setPage, setChecking} = useProps();
+        page, setPage, setChecking, setMag} = useProps();
 
     const getProds = () => {
         axios
@@ -83,6 +83,7 @@ export function SubcatPage() {
             <ErrorBoundary>
             {/* <SearchPage /> */}
             <Sorting list_name="disp" />
+            <div onClick={() => setMag(false)} >
             <h1>{toTitle(subcat_name)}</h1>
             {
                 prods.map((prod, key) => (
@@ -96,6 +97,7 @@ export function SubcatPage() {
                 ))
             }
             <br />
+            </div>
             <ProductPagination />
             <p><i><Link to={{pathname: "/"}}>Home</Link></i></p>
             </ErrorBoundary>

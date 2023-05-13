@@ -23,7 +23,7 @@ export function ShowBasket() {
 
     const {dis, setDis, updateTotal, bought, setBought, 
         setCou, setSearched, checking, setChecking, setFillingdeets, 
-        setBurger} = useProps();
+        setBurger, setMag} = useProps();
 
     const goosey = (e) => {
         var gup = "";
@@ -156,7 +156,9 @@ export function ShowBasket() {
             {/* <Navbar />
             <SearchBox /> */}
             <Header />
-            <BasketList />
+            <div onClick={() => setMag(false)} >
+                <BasketList />
+            </div>
             {/* {getty("discount") === 1 && getty("order") !== null && getty("order").length > 0 ?  */}
             {getty("discount") === 1 && getty("order") !== null && getty("order").length > 0 ? 
             <div>

@@ -21,7 +21,8 @@ export function Checkout() {
     const [coupons, setCoupons] = useState("");
     const {updateTotal, dis, cou, setCou, setDis, setSearched, fillingdeets, setFillingdeets, 
         checking, setChecking, bought, setBought, boughtReset, setBoughtreset, 
-        mand, setMand, typingAddress, setTypingaddress, burger, setBurger} = useProps();
+        mand, setMand, typingAddress, setTypingaddress, burger, setBurger, 
+        setMag} = useProps();
 
     var order_ref = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
 
@@ -208,7 +209,7 @@ export function Checkout() {
                 {/* <Basket /> */}
                 <Header />
                 <h1>Checkout!</h1>
-                <div className="AddressForm" style={{width: "100%"}}>
+                <div className="AddressForm" style={{width: "100%"}} onClick={() => setMag(false)}>
                     <form>
                         <div>
                         <p><i>Fields marked * are mandatory</i></p>
@@ -269,7 +270,7 @@ export function Checkout() {
                     getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
                     getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
                     getty("address") === null || Object.keys(getty("address")).length === 0 ? 
-                        <button onClick={() => {setMand(true)}}>NOPE</button> : 
+                        <button onClick={() => {setMand(true)}}>CUNT</button> : 
                         <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>Next</button>
                     }
                 </div>
@@ -285,6 +286,7 @@ export function Checkout() {
                     <SearchBox /> */}
                     {/* <Basket /> */}
                     <Header />
+                    <div onClick={() => setMag(false) }></div>
                     <BasketList />
                     <div><i><Link to="/">Home</Link></i></div>
                 </>
@@ -297,41 +299,43 @@ export function Checkout() {
                 <SearchBox /> */}
                     {/* <Basket /> */}
                     <Header />
-                {!bought ? <h2>Review & Submit</h2> : <><h2>Thank you for your order!</h2><p>Your order number is: N{order_ref}</p></>}
-                {/* <div style={{color: "#2aaa41"}}>
-                    <b>{getty("discount") !== 1 
-                    ? 
-                        `DISCOUNT APPLIED: ${getty("coupon_name")}` 
-                    : 
-                        ""}</b>
-                </div> */}
-                <div><b>TOTAL: £{(getty("amount")).toFixed(2)}</b></div>
-                {getty("address") === null || getty("address") === {} ? "" : <div>Address Details:</div>}
-                <div>
-                <p><b>{addresses()["delv_name"] ? "Billing Address:" : null}</b></p>
-                <p>{addresses()["billing_name"] ? addresses()["billing_name"] : null}</p>
-                <p>{addresses()["billing_email"] ? addresses()["billing_email"] : null}</p>
-                <p>{addresses()["billing_tel"] ? addresses()["billing_tel"] : null}</p>
-                </div>
+                <div onClick={() => setMag(false)}>
+                    {!bought ? <h2>Review & Submit</h2> : <><h2>Thank you for your order!</h2><p>Your order number is: N{order_ref}</p></>}
+                    {/* <div style={{color: "#2aaa41"}}>
+                        <b>{getty("discount") !== 1 
+                        ? 
+                            `DISCOUNT APPLIED: ${getty("coupon_name")}` 
+                        : 
+                            ""}</b>
+                    </div> */}
+                    <div><b>TOTAL: £{(getty("amount")).toFixed(2)}</b></div>
+                    {getty("address") === null || getty("address") === {} ? "" : <div>Address Details:</div>}
+                    <div>
+                    <p><b>{addresses()["delv_name"] ? "Billing Address:" : null}</b></p>
+                    <p>{addresses()["billing_name"] ? addresses()["billing_name"] : null}</p>
+                    <p>{addresses()["billing_email"] ? addresses()["billing_email"] : null}</p>
+                    <p>{addresses()["billing_tel"] ? addresses()["billing_tel"] : null}</p>
+                    </div>
 
-                { getty("delvq") === true ? 
-                <div>
-                <p><br/ ><b>{addresses()["delv_name"] ? "Delivery Address:" : null}</b></p>
-                
-                <p>{addresses()["delv_name"] ? addresses()["delv_name"] : null}</p>
-                <p>{addresses()["delv_email"] ? addresses()["delv_email"] : null}</p>
-                <p>{addresses()["delv_tel"] ? addresses()["delv_tel"] : null}</p>
-                </div> : <span></span>}
-                <BasketList />
-                {!bought ? 
-                <>
-                    <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(false)}}>Edit Order</button>
-                    <button onClick={() => buy()}>Submit Order</button>
-                </> 
-                :
-                <span></span>}
-                {/* <button onClick={(() => buy())}>Reset</button> */}
-                <div><i><Link to="/">Home</Link></i></div>
+                    { getty("delvq") === true ? 
+                    <div>
+                    <p><br/ ><b>{addresses()["delv_name"] ? "Delivery Address:" : null}</b></p>
+                    
+                    <p>{addresses()["delv_name"] ? addresses()["delv_name"] : null}</p>
+                    <p>{addresses()["delv_email"] ? addresses()["delv_email"] : null}</p>
+                    <p>{addresses()["delv_tel"] ? addresses()["delv_tel"] : null}</p>
+                    </div> : <span></span>}
+                    <BasketList />
+                    {!bought ? 
+                    <>
+                        <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(false)}}>Edit Order</button>
+                        <button onClick={() => buy()}>Submit Order</button>
+                    </> 
+                    :
+                    <span></span>}
+                    {/* <button onClick={(() => buy())}>Reset</button> */}
+                    <div><i><Link to="/">Home</Link></i></div>
+                </div>
             </>
         )
     }

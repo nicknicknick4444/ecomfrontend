@@ -12,7 +12,7 @@ import {getty, setty, toTitle} from "./hooks/hooks.js";
 export function SearchPage() {
     const {prods, raw, setRaw, setProds, shortlist, setShortlist, 
         searched, setSearched, page, setPage, numbers, setNumbers, 
-        subset, setSubset, section, setChecking} = useProps();
+        subset, setSubset, section, setChecking, setMag} = useProps();
     
     function search_summary() {
         var view_range_from = ((page[0] + 1));
@@ -73,11 +73,12 @@ export function SearchPage() {
             <SearchBox /> */}
             <Header />
             <Breadcrumb />
-            <p>Search matches for <b>"{getty("term")}"</b>:</p>
-            <p><i>Showing {search_summary()[0]} - {search_summary()[1]} out of {prods.length} products</i></p>
-            <Sorting list_name="searchList" />
+            <div onClick={() => setMag(false)}>
+                <p>Search matches for <b>"{getty("term")}"</b>:</p>
+                <p><i>Showing {search_summary()[0]} - {search_summary()[1]} out of {prods.length} products</i></p>
+                <Sorting list_name="searchList" />
+            </div>
             <ProductPagination />
-
         </>
     );
     } else {

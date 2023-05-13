@@ -15,7 +15,7 @@ import {getty, setty, toTitle} from "./hooks/hooks.js";
 export function ProdPage() {
     const [product, setProduct] = useState();
     const {insertPrice, searched, setSearched, 
-        setChecking, setBurger} = useProps();
+        setChecking, setBurger, setMag} = useProps();
     let listy2 = localStorage.getItem("itemsList");
     let {id} = useParams();
 
@@ -64,17 +64,19 @@ export function ProdPage() {
                 <ErrorBoundary>
                     <Breadcrumb product={product.prod_title} />
                 </ErrorBoundary>
-                <h1>{toTitle(product.prod_title)}</h1>
-                {/* <p>{id}</p> */}
-                {/* <p>{product.prod_title}</p> */}
-                <p>Product Code: {product.prod_code}</p>
-                <p>{product.prod_desc}</p>
-                <p>£{product.price}</p>
-                <img src={`${product.image}`} style={{ width: 300 }} /><br />
-                <AllInput item={product} words="Add To Basket" placeholder="1" />
-                <br />
-                    <i><Link to="../">Home</Link></i>
-                <br /><ConfirmBox title={product.prod_title} see={"Maybe"} />
+                <div className="product" onClick={() => setMag(false)} >
+                    <h1>{toTitle(product.prod_title)}</h1>
+                    {/* <p>{id}</p> */}
+                    {/* <p>{product.prod_title}</p> */}
+                    <p>Product Code: {product.prod_code}</p>
+                    <p>{product.prod_desc}</p>
+                    <p>£{product.price}</p>
+                    <img src={`${product.image}`} style={{ width: 300 }} /><br />
+                    <AllInput item={product} words="Add To Basket" placeholder="1" />
+                    <br />
+                        <i><Link to="../">Home</Link></i>
+                    <br /><ConfirmBox title={product.prod_title} see={"Maybe"} />
+                </div>
             </>
         );
     } else {
