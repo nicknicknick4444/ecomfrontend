@@ -29,8 +29,8 @@ export function Basket() {
             <>
                 <ErrorBoundary>
                     <div className="basket-pc" onMouseOver={() => {setDroplist(true); get_location()}} onMouseLeave={() => setDroplist(false)}>
-                        <div>Number of Items: {!bought ? totally < 0 ? "0.00" : totally : 0 }</div>
-                        <div>Basket Total: £{!bought ? parseInt(amount) == 0 ? "0.00" : amount.toFixed(2) : "0.00"}</div> 
+                        <div>Items: <span clasName="basket_total">{!bought ? totally < 0 ? "0.00" : totally : 0 }</span></div>
+                        <div>Total: &nbsp;<span className="price-pad">£{!bought ? parseInt(amount) == 0 ? "0.00" : amount.toFixed(2) : "0.00"}</span></div> 
     
                         {!bought ?
                         <div onClick={() => setChecking(false)}><Link to="/basket-page"><i>View Basket</i></Link></div>

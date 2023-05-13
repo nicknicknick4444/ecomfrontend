@@ -9,6 +9,7 @@ import "../App.css";
 
 export function Header() {
     const [belb, setBelb] = useState("");
+    const [mag, setMag] = useState(false);
     const {bought, setBought, setDis, updateTotal, setFillingdeets, 
         burger, setBurger} = useProps();
 
@@ -24,6 +25,10 @@ export function Header() {
         <>
             <Topband />
             <div className="search-box"><SearchBox /></div>
+            <div className="click-search" onClick={() => setMag(!mag)}>
+                <div className="search-box-mob" style={{display: !mag ? "block" : "none"}}><SearchBox /></div>
+                <div style={{display: !mag ? "none" : "block"}}>GLASS!</div>
+            </div>
             <Basket />
             <div className="nav-edge">
             {!bought ? 

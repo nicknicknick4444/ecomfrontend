@@ -61,7 +61,7 @@ export function Navbar() {
             <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}}>☰ {burger.toString()}</div>
                 {burger ? 
                 <div>
-                <span className="search-box-mob"><SearchBox /></span>
+                {/* <span className="search-box-mob"><SearchBox /></span> */}
                 <span className="navbar-mob"><Link to={{pathname: "/"}}>Home</Link></span><br />
                 {
                     cats.map((cat, key) => (
@@ -108,7 +108,7 @@ export function Navbar() {
                         <span className="navbar-mob"><Link to={{pathname: "/pets"}}>Pets</Link></span><br />
                         <span className="navbar-mob"><Link to={{pathname: "/confectionary"}}>Confectionary</Link></span><br />
                         <span className="navbar-mob"><Link to={{pathname: "/breads"}}>Breads</Link></span><br />
-                        <span className="navbar-mob"><Link to={{pathname: ""}}>About Us</Link></span><br />
+                        <span className="navbar-mob"><Link to={{pathname: "/"}}>About Us</Link></span><br />
                         <span className="navbar-mob"><Link to={{pathname: "/"}}>Contact Us</Link></span>
                     </div> : null}
                     
