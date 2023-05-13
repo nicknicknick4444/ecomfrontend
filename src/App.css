@@ -65,6 +65,13 @@
 		display: none;
 	}
 
+	.basket {
+		width: 40px;
+		float: right;
+		margin-top: 9px;
+		margin-right: 5px;
+	}
+	
 	.click-search {
 		display: none;
 	}
@@ -298,17 +305,17 @@ h1 {
 
 	.band-words-left1 {
 		color: #ffffff;
-		font-size: 20px;
+		font-size: 14px;
 		display: inline;
-		margin-left: 10%;
+		margin-left: 5%;
 		float: left;
 	}
 
 	.band-words-left2 {
 		color: #ffffff;
-		font-size: 20px;
+		font-size: 14px;
 		display: inline;
-		margin-right: 10%;
+		margin-right: 5%;
 		float: right;
 	}
 
@@ -322,12 +329,25 @@ h1 {
 
 	.search-box-mob {
 		float: left;
+		margin-top: 12px;
+		margin-left: 5px;
+	}
 		
+	.glass {
+		float: left;
+		margin-top: 12px;
+		margin-left: 5px;
+		width: 30px;
+	}
+	
+	.basket {	
+		width: 32px;
+		margin-top: 6px;
+		margin-right: 5px;
+		float: right;
 	}
 
-	.click-search {
-		
-		
+	.click-search {	
 	}
 
 	.breadcrumb {
@@ -340,6 +360,7 @@ h1 {
 		padding-top: 16px;
 		background-color: #1f4bd3;
 		font-family: helvetica;
+		position: relative;
 	}
 
 	.logo {
@@ -348,12 +369,15 @@ h1 {
 
 	.logo-mob {
 		z-index: 30;
-		text-align: center;
-		clear: none;
+		left: 41%;
+		position: absolute;
+		width: 40px;	
+		height: 30px;
 	}
 
 	.icons {
 		width: 30px;
+		margin-bottom: 3px;
 	}
 
 	.basket-pc {

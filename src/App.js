@@ -282,7 +282,8 @@ import {basketUpdate, AllInput} from "./components/basketUpdate.js";
 // };
 
 function AppFront() {
-  const {setSearched, setChecking, setBurger} = useProps();
+  const {setSearched, setChecking, setBurger, 
+        setMag} = useProps();
 
   useEffect(() => {
     setSearched(false);
@@ -299,6 +300,9 @@ function AppFront() {
       {/* <Navbar />
       <SearchBox /> */}
       {/* </ErrorBoundary> */}
+      <body onClick={() => setMag(false)}>
+        Beans and content
+      </body>
     </>
   );
 };
