@@ -14,7 +14,9 @@ export function Header() {
         burger, setBurger, mag, setMag} = useProps();
 
     useEffect(() => {
-        setMag(false);
+        if (mag) {
+            setMag(false);
+        }
     }, []);
     
     useEffect(() => {
