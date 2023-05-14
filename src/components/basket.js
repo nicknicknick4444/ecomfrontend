@@ -29,17 +29,19 @@ export function Basket() {
             <>
                 <ErrorBoundary>
                     <div className="basket-pc" onMouseOver={() => {setDroplist(true); get_location()}} onMouseLeave={() => setDroplist(false)}>
+                    <div><img src="https://i.ibb.co/G31Vcrk/basket.png" className="basket-icon" /></div>
+                    <div className="basket-words">
                         <div>Items: <span clasName="basket_total">{!bought ? totally < 0 ? "0.00" : totally : 0 }</span></div>
                         <div>Total: &nbsp;<span className="price-pad">£{!bought ? parseInt(amount) == 0 ? "0.00" : amount.toFixed(2) : "0.00"}</span></div> 
     
                         {!bought ?
-                        <div onClick={() => setChecking(false)}><Link to="/basket-page"><i>View Basket</i></Link></div>
+                        <div id="view-basket" onClick={() => setChecking(false)}><Link to="/basket-page"><i>View Basket</i></Link></div>
                         :
-                        <div style={{margin: "auto"}} onClick={() => {setChecking(false); empty(setDis, updateTotal, setFillingdeets)}}>
+                        <div id="view-basket" onClick={() => {setChecking(false); empty(setDis, updateTotal, setFillingdeets)}}>
                             <Link to="/basket-page"><i>View Basket</i></Link>
                         </div>
                         }
-
+                    </div>
                     {droplist && get_location() !== "/basket-page" && get_location() !== "/checkout" ? 
                     <div className="dropdown-basket">
                         <BasketList />

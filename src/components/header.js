@@ -35,7 +35,7 @@ export function Header() {
                     <div className="search-box-mob" style={{display: !mag ? "none" : "block"}}><SearchBox /></div>
                     <div style={{display: !mag ? "block" : "none"}}><img src="https://i.ibb.co/BnmP5Qq/glass.png" className="glass" /></div>
                 </div>
-                <div><img src="https://i.ibb.co/G31Vcrk/basket.png" className="basket" /></div>
+                {/* <div><img src="https://i.ibb.co/G31Vcrk/basket.png" className="basket" /></div> */}
                 <Basket />
                 <div>
                 {!bought ? 
