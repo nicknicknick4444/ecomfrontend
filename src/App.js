@@ -300,7 +300,7 @@ function AppFront() {
       {/* <Navbar />
       <SearchBox /> */}
       {/* </ErrorBoundary> */}
-      <body onClick={() => setMag(false)}>
+      <body className="homepage-content" onClick={() => setMag(false)}>
         Beans and content
       </body>
     </>

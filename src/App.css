@@ -55,7 +55,7 @@
 	}
 
 	.search-box {
-		margin-top: 21px;
+		margin-top: 22px;
 		margin-bottom: 21px;
 		margin-left: 5px;
 		float: left;
@@ -63,13 +63,6 @@
 
 	.search-box-mob {
 		display: none;
-	}
-
-	.basket {
-		width: 40px;
-		float: right;
-		margin-top: 9px;
-		margin-right: 5px;
 	}
 	
 	.click-search {
@@ -86,9 +79,11 @@
 		padding-top: 16px;
 		background-color: #1f4bd3;
 		font-family: helvetica;
+		position: relative;
 	}
 
-	.band-words-left1, .band-words-left2, .band-words-right {
+	.band-words-left1, .band-words-left2, 
+	.band-words-right {
 		display: inline;
 		font-size: 20px;
 		color: #ffffff;
@@ -108,7 +103,9 @@
 
 	.logo {
 		z-index: 30;
-		text-align: center;
+		left: 46.5%;
+		top: 1%;
+		position: absolute;
 	}
 	
 	.logo-mob {
@@ -124,12 +121,26 @@
 	.basket-pc {
 		float: right;
 		right: 0;
+		width: 15%;
 		/*margin-right: 5px;*/
 		padding-left: 5px;
-		margin-right: 20px;
+		margin-right: 0px;
 		position: relative;
 		z-index: 20;
 		cursor: pointer;
+		text-align: left;
+	}
+
+	.basket-words {
+		padding-left: 20%;	
+	}
+
+	.basket-icon {
+		width: 30px;
+		float: left;
+		margin-top: 8.6%;
+		margin-right: 5px;
+		padding-bottom: 15px;
 	}
 
 	.dropdown-basket {
@@ -146,12 +157,16 @@
 		border-bottom: 3px #1f4bd3 solid;
 		padding: 5px;
 		padding-top: 15px;
+		margin-top: 1px;
 	}
 	
 	.price-pad {
 		margin-left: 1px;	
 	}
 
+	#view-basket {
+			
+	}
 
 .confirm {
 	font-size: 22px;
@@ -203,11 +218,8 @@ h1 {
 }
 
 .navbar-mob {
-	#display: none;	
+	display: none;	
 }
-
-
-
 
 
 
@@ -254,7 +266,7 @@ h1 {
 /*START OF MOB*/
 @media only screen and (max-width: 500px) {
 
-	body {
+	.homepage-content {
 		cursor: pointer;
 	}
 
@@ -288,6 +300,7 @@ h1 {
 		margin: 2px;
 		clear: right;
 		background-color: #ffffff;
+		padding-bottom: 1px;
 	}
 
 	.navbar-mob > a {
@@ -311,7 +324,7 @@ h1 {
 		color: #ffffff;
 		font-size: 14px;
 		display: inline;
-		margin-left: 5%;
+		margin-left: 1%;
 		float: left;
 	}
 
@@ -319,8 +332,9 @@ h1 {
 		color: #ffffff;
 		font-size: 14px;
 		display: inline;
-		margin-right: 5%;
-		float: right;
+		margin-left: 5%;
+		margin-right: 2%;
+		float: left;
 	}
 
 	.band-words-right {
@@ -333,22 +347,20 @@ h1 {
 
 	.search-box-mob {
 		float: left;
-		margin-top: 12px;
+		margin-top: 3.7%;
 		margin-left: 5px;
+	}
+
+	.search-box-mob input {
+		width: 150px;
 	}
 		
 	.glass {
 		float: left;
-		margin-top: 12px;
-		margin-left: 5px;
+		margin-top: 13px;
+		margin-left: 15px;
 		width: 30px;
-	}
-	
-	.basket {	
-		width: 32px;
-		margin-top: 6px;
-		margin-right: 5px;
-		float: right;
+		cursor: pointer;
 	}
 
 	.click-search {	
@@ -373,7 +385,7 @@ h1 {
 
 	.logo-mob {
 		z-index: 30;
-		left: 41%;
+		right: 4%;
 		position: absolute;
 		width: 40px;	
 		height: 30px;
@@ -388,7 +400,16 @@ h1 {
 		cursor: pointer;
 		float: right;
 		font-size: 12px;
-		margin-right: 20px;
+		margin-right: 15px;
+		width: 29%;	
+		padding-bottom: 2px;
+	}
+
+	.basket-icon {	
+		width: 32px;
+		margin-top: 6px;
+		margin-right: 5px;
+		float: left;
 	}
 
 	.price-pad {
