@@ -65,7 +65,7 @@ export function Navbar() {
             {burger ? 
                 <><span className="navbar-mob" style={{marginLeft: "-5.75%"}}>
                     <Link to={{pathname: "/"}}>
-                        Home!
+                        Home
                     </Link>
                 </span></> : 
             null}</div>
@@ -118,7 +118,7 @@ export function Navbar() {
                 <span style={{textAlign: "left", marginTop: -1, marginLeft: "2%"}}>☰ {burger.toString()}</span>
                     {burger ? <><span className="navbar-mob" style={{paddingLeft: "-5.75%"}}>
                     <Link to={{pathname: "/"}}>
-                        Home!
+                        Home
                     </Link></span><br /></> : null}
                     
                     </div>
