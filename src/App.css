@@ -309,11 +309,11 @@ h1 {
 	}
 
 	.navbar-mob {
-		padding-right: 11px;
+		/*padding-right: 11px;*/
 		margin: 2px;
 		clear: right;
 		background-color: #ffffff;
-		
+		text-align: center;
 	}
 
 	.navbar-mob > a {
@@ -322,7 +322,6 @@ h1 {
 		font-family: helvetica;
 		font-weight: bold;
 		font-size: 18px;
-		margin-left: 38%;
 	}
 
 	.navbar-mob > a:hover {
