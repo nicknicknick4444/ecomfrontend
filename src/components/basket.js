@@ -46,7 +46,7 @@ export function Basket() {
             <>
                 <ErrorBoundary>
                     <div className="basket-pc" onMouseOver={() => {setDroplist(true); get_location()}} onMouseLeave={() => setDroplist(false)} 
-                        style={{width: 140 + length_pixels()}}>
+                        style={{width: 130 + length_pixels()}}>
                     <Link to="/basket-page">
                     <div><img src="https://i.ibb.co/G31Vcrk/basket.png" className="basket-icon" /></div>
                     <div className="basket-words">
