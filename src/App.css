@@ -254,6 +254,10 @@ h1 {
 /*START OF MOB*/
 @media only screen and (max-width: 500px) {
 
+	body {
+		cursor: pointer;
+	}
+
 	@keyframes App-logo-spin {
   		from {
     			transform: rotate(0deg);
