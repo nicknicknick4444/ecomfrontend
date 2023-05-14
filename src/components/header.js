@@ -13,11 +13,11 @@ export function Header() {
     const {bought, setBought, setDis, updateTotal, setFillingdeets, 
         burger, setBurger, mag, setMag} = useProps();
 
-    // useEffect(() => {
-    //     if (mag) {
-    //         setMag(false);
-    //     }
-    // }, []);
+    useEffect(() => {
+        if (mag) {
+            setMag(false);
+        }
+    }, []);
     
     useEffect(() => {
         if (bought) {
@@ -37,12 +37,12 @@ export function Header() {
                 </div>
                 <div><img src="https://i.ibb.co/G31Vcrk/basket.png" className="basket" /></div>
                 <Basket />
-                <div className="nav-edge">
+                <div>
                 {!bought ? 
                 <span onClick={() => setBelb("NOt BOUGHT!")}><Navbar /></span> : 
                 <span onClick={() => {setBought(false); empty(setDis, updateTotal, setFillingdeets); setBurger(true)}}><Navbar/></span>}
                 </div>
-                <div className="nav-edge"></div>
+                {/* <div className="nav-edge"></div> */}
                 {/* <div className="search-box"><SearchBox /></div> */}
                 <p>{belb}</p>
         </>

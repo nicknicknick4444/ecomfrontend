@@ -43,6 +43,7 @@ export function Navbar() {
     if (cats.length > 1) {
     return (
         <>
+            <div className="nav-edge"></div>
             <div>
             <span className="navbar">
                 <Link to={{pathname: "/"}}>Home</Link>
@@ -80,13 +81,13 @@ export function Navbar() {
                 <span className="navbar-mob"><Link to={{pathname: "/"}}>Contact Us</Link></span>
                 </div>: null}
             </div>
-            
+            <div className="nav-edge"></div>
         </>
     );
     } else {
         return (
             <>
-                <div>
+                <div className="nav-edge">
                     <span className="navbar">
                         <Link to={{pathname: "/"}}>Home</Link>
                     </span>
@@ -99,9 +100,12 @@ export function Navbar() {
                     <span className="navbar">
                         <Link to={{pathname: "/breads"}}>Breads</Link>
                     </span>
+                    {/* <span className="navbar">Loading...</span> */}
+                    
                 </div>
 
                 <div className="navbar-mob">
+                
                 <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}}>☰ {burger.toString()}</div>
                     {burger ? 
                     <div>
@@ -113,7 +117,9 @@ export function Navbar() {
                         <span className="navbar-mob"><Link to={{pathname: "/"}}>Contact Us</Link></span>
                     </div> : null}
                     
+                    {/* <div style={{clear: "left"}}>Loading...</div> */}
                 </div>
+                <div className="nav-edge"></div>
                 <div style={{clear: "left"}}>Loading...</div>
 
             </>
