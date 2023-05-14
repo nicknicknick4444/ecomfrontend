@@ -13,8 +13,8 @@ export function Navbar() {
 
     const getCats = () => {
         axios
-            // .get(`http://localhost:8000/api/category/`)
-            .get(`https://polar-coast-39563.herokuapp.com/api/category/`)
+            .get(`http://localhost:8000/api/category/`)
+            // .get(`https://polar-coast-39563.herokuapp.com/api/category/`)
             .then((res) => setCats(res.data))
             .catch(err => console.log("Error: ", err));
     };
@@ -63,7 +63,7 @@ export function Navbar() {
             <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}}>
             <span style={{float: "left", marginTop: -1, marginLeft: "2%"}}>☰</span>
             {burger ? 
-                <><span className="navbar-mob" style={{marginLeft: "-6%"}}>
+                <><span className="navbar-mob" style={{marginLeft: "-6.4%"}}>
                     <Link to={{pathname: "/"}}>
                         Home
                     </Link>
@@ -116,7 +116,7 @@ export function Navbar() {
                 
                 <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}}>
                 <span style={{textAlign: "left", marginTop: -1, marginLeft: "2%"}}>☰ {burger.toString()}</span>
-                    {burger ? <><span className="navbar-mob" style={{paddingLeft: "-6%"}}>
+                    {burger ? <><span className="navbar-mob" style={{paddingLeft: "-6.4%"}}>
                     <Link to={{pathname: "/"}}>
                         Home
                     </Link></span><br /></> : null}
