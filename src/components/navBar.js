@@ -60,7 +60,8 @@ export function Navbar() {
             }
             </div>
             <div className="navbar-mob" onClick={() => setMag(false)} >
-            <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}}>☰ {burger.toString()}</div>
+            <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}} 
+                style={{textAlign: "left"}}>☰ {burger.toString()}</div>
                 {burger ? 
                 <div>
                 {/* <span className="search-box-mob"><SearchBox /></span> */}
@@ -106,7 +107,8 @@ export function Navbar() {
 
                 <div className="navbar-mob">
                 
-                <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}}>☰ {burger.toString()}</div>
+                <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}} 
+                    style={{textAlign: "left"}}>☰ {burger.toString()}</div>
                     {burger ? 
                     <div>
                         <span className="navbar-mob"><Link to={{pathname: "/"}}>Home</Link></span><br />
