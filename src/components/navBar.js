@@ -60,12 +60,16 @@ export function Navbar() {
             }
             </div>
             <div className="navbar-mob" onClick={() => setMag(false)} >
-            <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}} 
-                style={{textAlign: "left"}}>☰ {burger.toString()}</div>
+            <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}}>
+            <span style={{float: "left"}}>☰</span>{burger ? <><span className="navbar-mob" style={{paddingRight: "4.6%"}}>
+                <Link to={{pathname: "/"}}>
+                    Home!
+                </Link></span></> 
+                : null}</div>
                 {burger ? 
                 <div>
                 {/* <span className="search-box-mob"><SearchBox /></span> */}
-                <span className="navbar-mob"><Link to={{pathname: "/"}}>Home</Link></span><br />
+                {/* <span className="navbar-mob"><Link to={{pathname: "/"}}>Home</Link></span><br /> */}
                 {
                     cats.map((cat, key) => (
 
@@ -107,11 +111,17 @@ export function Navbar() {
 
                 <div className="navbar-mob">
                 
-                <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}} 
-                    style={{textAlign: "left"}}>☰ {burger.toString()}</div>
+                <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}}>
+                <span style={{textAlign: "left"}}>☰ {burger.toString()}</span>
+                    {burger ? <><span className="navbar-mob" style={{paddingRight: "4.2%"}}>
+                    <Link to={{pathname: "/"}}>
+                        Home!
+                    </Link></span><br /></> : null}
+                    
+                    </div>
                     {burger ? 
                     <div>
-                        <span className="navbar-mob"><Link to={{pathname: "/"}}>Home</Link></span><br />
+                        {/* <span className="navbar-mob"><Link to={{pathname: "/"}}>Home</Link></span><br /> */}
                         <span className="navbar-mob"><Link to={{pathname: "/pets"}}>Pets</Link></span><br />
                         <span className="navbar-mob"><Link to={{pathname: "/confectionary"}}>Confectionary</Link></span><br />
                         <span className="navbar-mob"><Link to={{pathname: "/breads"}}>Breads</Link></span><br />
