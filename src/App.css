@@ -107,7 +107,7 @@
 	.logo {
 		z-index: 30;
 		left: 46.5%;
-		top: 1%;
+		/*top: 1%;*/
 		position: absolute;
 	}
 	
@@ -346,8 +346,9 @@ h1 {
 		color: #ffffff;
 		font-size: 12px;
 		display: inline;
-		margin-left: 1%;
-		float: left;
+		margin-left: 5%;
+		margin-right: 4%;
+		float: right;
 	}
 
 	.band-words-left2 {
@@ -355,8 +356,8 @@ h1 {
 		font-size: 12px;
 		display: inline;
 		margin-left: 5%;
-		margin-right: 2%;
-		float: left;
+		margin-right: 4%;
+		float: right;
 	}
 
 	.band-words-right {
@@ -399,10 +400,10 @@ h1 {
 
 	.logo-mob {
 		z-index: 30;
-		right: 4%;
+		left: 4%;
 		position: absolute;
-		width: 40px;	
-		height: 30px;
+		/*width: 40px;*/
+		height: 32px;
 	}
 
 	.icons {
