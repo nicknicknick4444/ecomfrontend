@@ -14,16 +14,16 @@ export function Topband() {
     return (
         <>
             <div className="top-band">
-                <div className="band-words-left1"><img className="icons" src="https://i.ibb.co/7pgB00d/tel-icon.png" />00000 111111</div>
-                <div className="band-words-left2"><img className="icons" src="https://i.ibb.co/VMJYrSh/email-icon.png" />info@email.com</div>
+                <div className="band-words-left1"><img className="icons" src="https://i.ibb.co/ts1TSDD/tel-icon1.png" />00000 111111</div>
+                <div className="band-words-left2"><img className="icons" src="https://i.ibb.co/3h4vJ4c/email-icon1.png" />info@email.com</div>
                 <div className="band-words-right">About Us</div>
                 <div className="band-words-right">Contact Us</div>
                 <div className="logo">
-                    <img src="https://i.ibb.co/JsyBjLz/Logo-centre.png" />
+                    <img src="https://i.ibb.co/Qbwywck/Main-Logo3.png" />
                     {/* Use https://imgbb.com/ for image hosting */}
                 </div>
                 <div className="logo-mob">
-                    <img className="logo-mob" src="https://i.ibb.co/JsyBjLz/Logo-centre.png" />
+                    <img className="logo-mob" src="https://i.ibb.co/fkCNCLv/Main-Logo-Mob.png" />
                 </div>
             </div>
         </>
