@@ -283,7 +283,7 @@ import {basketUpdate, AllInput} from "./components/basketUpdate.js";
 
 function AppFront() {
   const {setSearched, setChecking, setBurger, 
-        setMag} = useProps();
+        setMag, setDroplist} = useProps();
 
   useEffect(() => {
     setSearched(false);
@@ -300,7 +300,7 @@ function AppFront() {
       {/* <Navbar />
       <SearchBox /> */}
       {/* </ErrorBoundary> */}
-      <body className="homepage-content" onClick={() => setMag(false)}>
+      <body className="homepage-content" onClick={() => {setMag(false); setDroplist(false)}}>
         Beans and content
       </body>
     </>
