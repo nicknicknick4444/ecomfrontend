@@ -18,6 +18,10 @@ export function Basket() {
     }, [totally]);
 
     useEffect(() => {
+        setDroplist(false);
+    }, []);
+
+    useEffect(() => {
         if (getty("itemsList") !== null) {
             setBasko(<BasketList />);
         }
