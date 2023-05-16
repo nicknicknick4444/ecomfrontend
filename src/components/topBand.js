@@ -18,12 +18,11 @@ export function Topband() {
                 <div className="band-words-left2"><img className="icons" src="https://i.ibb.co/3h4vJ4c/email-icon1.png" />info@email.com</div>
                 <div className="band-words-right">About Us</div>
                 <div className="band-words-right">Contact Us</div>
-                <div className="logo">
-                    <img src="https://i.ibb.co/Qbwywck/Main-Logo3.png" />
-                    {/* Use https://imgbb.com/ for image hosting */}
-                </div>
+
                 <div className="logo-mob">
-                    <img className="logo-mob" src="https://i.ibb.co/fkCNCLv/Main-Logo-Mob.png" />
+                    <Link to={{pathname: "/"}} >
+                        <img className="logo-mob" src="https://i.ibb.co/fkCNCLv/Main-Logo-Mob.png" />
+                    </Link>
                 </div>
             </div>
         </>

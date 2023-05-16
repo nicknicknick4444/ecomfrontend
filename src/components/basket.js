@@ -54,10 +54,10 @@ export function Basket() {
                         <div>Total: &nbsp;<span className="price-pad">£{!bought ? parseInt(amount) == 0 ? "0.00" : amount.toFixed(2) : "0.00"}</span></div> 
     
                         {!bought ?
-                        <div id="view-basket" onClick={() => setChecking(false)}><i>View Basket</i></div>
+                        <div id="view-basket" onClick={() => setChecking(false)}>View Basket</div>
                         :
                         <div id="view-basket" onClick={() => {setChecking(false); empty(setDis, updateTotal, setFillingdeets)}}>
-                            <Link to="/basket-page"><i>View Basket</i></Link>
+                            <Link to="/basket-page">View Basket</Link>
                         </div>
                         }
                     </div>

@@ -209,18 +209,25 @@ export function BasketList(){
                         getty("itemsList")[`${i.id}`] > 0 ?
                         <div key={key}>
                         <p>
-                            <Link to={{pathname: `/${i.prod_cat}/${i.prod_subcat}/${i.id}`}}>{i.prod_title}</Link><br />
-                            Quantity: {getty("itemsList")[`${i.id}`]}<br />
-                            Cost: £{amounty(i.id).toFixed(2)}<br />
-                            {(checking === false && bought === false) ? 
-                            <><AllInput item={i} words={"Edit Quantity"} placeholder={"1"} /><br />
-                            <button onClick={() => {deleteButton(parseInt(i.id))}}>Delete</button> 
-                            {bought.toString()} {checking.toString()}
-                            </>
-                            : null
-                            }
+                            <div className="prod_title">
+                                <Link to={{pathname: `/${i.prod_cat}/${i.prod_subcat}/${i.id}`}}>
+                                    <b>{i.prod_title}</b>
+                                </Link>
+                            </div>
+                            <div className="prod_details">
+                                Quantity: {getty("itemsList")[`${i.id}`]}<br />
+                                Cost: £{amounty(i.id).toFixed(2)}<br />
+                                {(checking === false && bought === false) ? 
+                                <><AllInput item={i} words={"Edit Quantity"} placeholder={"1"} /><br />
+                                <button onClick={() => {deleteButton(parseInt(i.id))}}>Delete</button> 
+                                {bought.toString()} {checking.toString()}
+                                </>
+                                
+                                : null
+                                }
+                            </div>
                             </p>
-
+                        
                         </div>
                         : ""
                     ))

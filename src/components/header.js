@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {Link} from "react-router-dom";
 import {setty, getty, empty} from "./hooks/hooks.js";
 import {useProps} from "./hooks/prop-hooks.js";
 import {Basket} from "./basket.js";
@@ -30,13 +31,21 @@ export function Header() {
     return(
         <>
                 <Topband />
-                <div className="search-box"><SearchBox /></div>
-                <div className="click-search" onClick={() => {setMag(true); setBurger(false)}}>
-                    <div className="search-box-mob" style={{display: !mag ? "none" : "block"}}><SearchBox /></div>
-                    <div style={{display: !mag ? "block" : "none"}}><img src="https://i.ibb.co/BnmP5Qq/glass.png" className="glass" /></div>
+                <div className="mid">
+                    <div className="search-box"><SearchBox /></div>
+                    <div className="click-search" onClick={() => {setMag(true); setBurger(false)}}>
+                        <div className="search-box-mob" style={{display: !mag ? "none" : "block"}}><SearchBox /></div>
+                        <div style={{display: !mag ? "block" : "none"}}><img src="https://i.ibb.co/BnmP5Qq/glass.png" className="glass" /></div>
+                    </div>
+                    <Link to={{pathname: "/"}}>
+                    <div className="logo">
+                        <img src="https://i.ibb.co/Qbwywck/Main-Logo3.png" />
+                        {/* Use https://imgbb.com/ for image hosting */}
+                    </div>
+                    </Link>
+                    {/* <div><img src="https://i.ibb.co/G31Vcrk/basket.png" className="basket" /></div> */}
+                    <Basket />
                 </div>
-                {/* <div><img src="https://i.ibb.co/G31Vcrk/basket.png" className="basket" /></div> */}
-                <Basket />
                 <div>
                 {!bought ? 
                 <span onClick={() => setBelb("NOt BOUGHT!")}><Navbar /></span> : 
