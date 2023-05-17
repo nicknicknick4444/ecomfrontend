@@ -10,6 +10,7 @@ import "../App.css";
 
 export function Header() {
     const [belb, setBelb] = useState("");
+    const widthy = document.querySelector("#icon2");
     // const [mag, setMag] = useState(false);
     const {bought, setBought, setDis, updateTotal, setFillingdeets, 
         burger, setBurger, mag, setMag} = useProps();
@@ -27,6 +28,16 @@ export function Header() {
             setBelb("NOT BOUGHT!")
         }
     }, [bought]);
+    
+    function resizeListen() {
+        return window.innerWidth;
+    };
+
+    useEffect(() => {
+        console.log("POOSE! ", window.onresize = resizeListen());
+    }, []);
+    
+    console.log("GLOOSE! ", window.onresize = resizeListen());
 
     return(
         <>
@@ -39,8 +50,11 @@ export function Header() {
                     </div>
                     <Link to={{pathname: "/"}}>
                     <div className="logo">
-                        <img src="https://i.ibb.co/Qbwywck/Main-Logo3.png" />
+                        <img src="https://i.ibb.co/wN5mz6D/Main-Logo5.png" />
                         {/* Use https://imgbb.com/ for image hosting */}
+                    </div>
+                    <div className="logo2" id="logo2" style={{ width: window.innerWidth /4 }}>
+                        <img src="https://i.ibb.co/wN5mz6D/Main-Logo5.png" />
                     </div>
                     </Link>
                     {/* <div><img src="https://i.ibb.co/G31Vcrk/basket.png" className="basket" /></div> */}
