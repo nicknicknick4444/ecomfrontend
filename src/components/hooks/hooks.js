@@ -95,6 +95,6 @@ export function back_reset(bought, setBought, setDis, updateTotal) {
 };
 
 export function get_location() {
-    console.log("Vespa!", window.location["pathname"]);
+    // console.log("Vespa!", window.location["pathname"]);
     return window.location["pathname"];
 };
