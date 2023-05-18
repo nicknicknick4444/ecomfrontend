@@ -300,9 +300,11 @@ function AppFront() {
       {/* <Navbar />
       <SearchBox /> */}
       {/* </ErrorBoundary> */}
-      <body className="homepage-content" onClick={() => {setMag(false); setDroplist(false)}}>
-        Beans and content
-      </body>
+      <div className="body">
+        <div className="homepage-content" onClick={() => {setMag(false); setDroplist(false)}}>
+          Beans and content
+        </div>
+      </div>
     </>
   );
 };
