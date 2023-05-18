@@ -208,7 +208,7 @@ export function BasketList(){
                     arr3?.map((i, key) => (
                         getty("itemsList")[`${i.id}`] > 0 ?
                         <div key={key}>
-                        <p>
+                        <div>
                             <div className="prod_title">
                                 <Link to={{pathname: `/${i.prod_cat}/${i.prod_subcat}/${i.id}`}}>
                                     <b>{i.prod_title}</b>
@@ -226,7 +226,7 @@ export function BasketList(){
                                 : null
                                 }
                             </div>
-                            </p>
+                            </div>
                         
                         </div>
                         : ""
