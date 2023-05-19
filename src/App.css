@@ -38,6 +38,7 @@
 	.logo2 {
 		display: none;	
 	}
+	
 }
 
 /* END OF MINI MAIN */
@@ -557,6 +558,14 @@ h1 {
 		margin-right: 5px;
 		padding-bottom: 6px;
 		float: left;
+	}
+
+	.buttons {	
+		display: none;
+	}
+
+	#view-basket, #view-checkout {
+		display: none;
 	}
 
 	.price-pad {
