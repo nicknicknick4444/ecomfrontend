@@ -1,9 +1,11 @@
 /* START OF MINI MAIN */
 
-@media only screen and (min-width: 501px) and (max-width: 1149px) {
+@media only screen and (min-width: 656px) and (max-width: 1149px) {
 
 	.logo2 {
 		margin: auto;
+		width: 100px;
+		padding-top: 15px;
 	}
 	
 	.logo2 > img {
@@ -41,7 +43,7 @@
 /* END OF MINI MAIN */
 
 /*START OF MAIN*/
-@media only screen and (min-width: 501px) {
+@media only screen and (min-width: 656px) {
 
 .App {
   	text-align: center;
@@ -134,6 +136,10 @@
 		font-size: 12px;
 		color: #ffffff;
 	}
+		
+	.contacts {
+		float: left;;	
+	}
 
 	.band-words-left1, .band-words-left2 {
 		margin-left: 18px;
@@ -169,13 +175,11 @@
 	}
 
 	.basket-pc {
-	
 		float: right;
 		right: 0;
 		top: 41px;	
 		width: 158px;
 		font-size: 11px;
-		/*margin-right: 5px;*/
 		padding-left: 5px;
 		position: absolute;
 		z-index: 20;
@@ -189,7 +193,8 @@
 	}
 
 	.basket-words {
-		padding-left: 20%;	
+		padding-left: 40px;
+		padding-top: 12px;	
 	}
 
 	.basket-icon {
@@ -216,7 +221,7 @@
 		padding: 5px;
 		/*padding-left: 20px;*/
 		padding-top: 14px;
-		margin-top: 5px;
+		margin-top: 9px;
 		margin-right: 0;
 	}
 	
@@ -228,18 +233,39 @@
 		color: #000000;
 	}
 	.prod_title > a:hover {
-		color: #7a4a4a;	
+		color: #903e3e;	
+	}
+		
+	.buttons {
+		margin-top: -40px;
+		margin-right: 5px;
+		float: right;	
 	}
 	
-	#view-basket {	
-		background-color: #903e3e;
+	#view-basket, #view-checkout {	
 		color: #ffffff;
 		width: 64px;
 		font-size: 11px;
 		margin-left: 15px;
 		margin-top: 4px;
-		padding-bottom: 2px;
+		padding-bottom: 1px;
+		padding-left: 0px;
+		padding-right: 0px;
 		text-align: center;
+		
+	}
+	
+	#view-basket > a, #view-checkout > a {
+		text-decoration: none;
+		color: #ffffff;
+	}
+
+	#view-basket {
+		background-color: #903e3e;	
+	}
+	
+	#view-checkout {	
+		background-color: #346db1;
 	}
 
 	.prod_details {	
@@ -349,7 +375,7 @@ h1 {
 
 
 /*START OF MOB*/
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 655px) {
 
 	.homepage-content {
 		cursor: pointer;
@@ -408,31 +434,39 @@ h1 {
 	.top-band {
 		width: 100%;
 		height: 42px;
-		padding-top: 6px;
+		/*padding-top: 6px;*/
 		background-color: #346db1;
 		font-family: helvetica;
 		position: relative;
 	}
 
-	.band-words-left1, 
+	.band-words-left1 {
+		color: #ffffff;
+		font-size: 12px;
+		display: inline;
+		margin-top: 12px;
+		margin-left: 30%;
+		float: left;
+	}
+
 	.band-words-left2 {
 		color: #ffffff;
 		font-size: 12px;
 		display: inline;
-		margin-left: 1%;
-		margin-right: 1%;
+		margin-left: 5%;
+		margin-right: 2%;
+		margin-top: 12px;
 		float: right;
-		margin-top: 5px;
+		right: 0;
 	}
 
-	/*.band-words-left2 {
-		color: #ffffff;
-		font-size: 12px;
-		display: inline;
-		margin-left: 5%;
-		margin-right: 4%;
+
+
+	.contacts {
 		float: right;
-	}*/
+		text-align: center;	
+		width: 80%;
+	}
 
 	.band-words-right {
 		display: none;
@@ -451,11 +485,12 @@ h1 {
 
 	.search-box-mob input {
 		width: 145px;
+		margin-right: 3px;
 	}
 		
 	.glass {
 		float: left;
-		margin-top: 16px;
+		margin-top: 15px;
 		margin-left: 15px;
 		width: 25px;
 		cursor: pointer;
@@ -489,9 +524,10 @@ h1 {
 	}
 
 	.icons {
-		width: 20px;
+		width: 13px;
 		margin-bottom: 2px;	
 		margin-right: 5px;
+		margin-top: 0px;
 	}
 
 	.basket-pc {
