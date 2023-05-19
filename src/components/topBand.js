@@ -14,14 +14,16 @@ export function Topband() {
     return (
         <>
             <div className="top-band">
-                <div className="band-words-left1"><img className="icons" src="https://i.ibb.co/ts1TSDD/tel-icon1.png" />00000 111111</div>
+            <div className="contacts">
+                <div className="band-words-left1"><img className="icons" id="yeg" src="https://i.ibb.co/ts1TSDD/tel-icon1.png" />00000 111111</div>
                 <div className="band-words-left2"><img className="icons" src="https://i.ibb.co/3h4vJ4c/email-icon1.png" />info@email.com</div>
+            </div>    
                 <div className="band-words-right">About Us</div>
                 <div className="band-words-right">Contact Us</div>
 
                 <div className="logo-mob">
                     <Link to={{pathname: "/"}} >
-                        <img className="logo-mob" src="https://i.ibb.co/fkCNCLv/Main-Logo-Mob.png" />
+                        <img className="logo-mob" src="https://i.ibb.co/1v0Lc13/Main-Logo-Mob2.png" />
                     </Link>
                 </div>
             </div>

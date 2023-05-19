@@ -52,11 +52,12 @@ export function Header() {
                     
                     <Link to={{pathname: "/"}}>
                     <div className="logo">
-                        <img src="https://i.ibb.co/wN5mz6D/Main-Logo5.png" />
+                        <img src="https://i.ibb.co/SV4RNV5/Main-Logo5.png" />
                         {/* Use https://imgbb.com/ for image hosting */}
+                        {/* https://i.ibb.co/wN5mz6D/Main-Logo5.png */}
                     </div>
-                    <div className="logo2" id="logo2" style={{ width: widthy / 4 }}>
-                        <img src="https://i.ibb.co/wN5mz6D/Main-Logo5.png" style={{ width: widthy / 4}} />
+                    <div className="logo2" id="logo2" style={{ width: widthy / 4.5 }}>
+                        <img src="https://i.ibb.co/SV4RNV5/Main-Logo5.png" style={{ width: widthy / 4.5}} />
                     </div>
                     </Link>
                     {/* <div><img src="https://i.ibb.co/G31Vcrk/basket.png" className="basket" /></div> */}

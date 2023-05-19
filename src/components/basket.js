@@ -50,7 +50,7 @@ export function Basket() {
             <>
                 <ErrorBoundary>
                     <div className="basket-pc" onMouseOver={() => {setDroplist(true); get_location()}} onMouseLeave={() => setDroplist(false)} 
-                        style={{width: 130 + length_pixels()}}>
+                        style={{width: 180 + length_pixels()}}>
                     <Link to="/basket-page">
                         <div><img src="https://i.ibb.co/pRNYvv3/basket1.png" className="basket-icon" /></div>
                     </Link>
@@ -58,12 +58,32 @@ export function Basket() {
                         <div>Items: <span className="basket_total">{!bought ? totally < 0 ? "0.00" : totally : 0 }</span></div>
                         <div>Total: &nbsp;<span className="price-pad">£{!bought ? parseInt(amount) == 0 ? "0.00" : amount.toFixed(2) : "0.00"}</span></div> 
     
-                        {!bought ?
+                        {/* {!bought ?
                         <div id="view-basket" onClick={() => setChecking(false)}>View Basket</div>
                         :
                         <div id="view-basket" onClick={() => {setChecking(false); empty(setDis, updateTotal, setFillingdeets)}}>
                             <Link to="/basket-page">View Basket</Link>
                         </div>
+                        } */}
+                    </div>
+                    <div class="buttons">
+                    {!bought ?
+                    <>
+                        <div id="view-basket" onClick={() => setChecking(false)}>
+                            <Link to="/basket-page">View Basket</Link>
+                        </div>
+                            <div id="view-checkout">
+                            <Link to="/checkout">Checkout</Link>
+                        </div>
+                        </>
+                        :
+                        <>
+                        <div id="view-basket" onClick={() => {setChecking(false); empty(setDis, updateTotal, setFillingdeets)}}>
+                            <Link to="/basket-page">View Basket</Link>
+                        </div>
+                        <div className="view-checkout">
+                            <Link to="/checkout">Checkout</Link>"</div>
+                        </>
                         }
                     </div>
                     {droplist && get_location() !== "/basket-page" && get_location() !== "/checkout" ? 
