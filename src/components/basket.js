@@ -46,7 +46,7 @@ export function Basket() {
 
     function widthCond() {
         if (window.innerWidth <= 655) {
-            return 100 + length_pixels();
+            return 103 + length_pixels();
         } else {
             return 190 + length_pixels();
         }
