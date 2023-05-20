@@ -106,12 +106,12 @@
 	}
 
 	.search-box {
-		margin-top: 16px;
+		margin-top: 18px;
 		margin-bottom: 14px;
 		margin-left: 5px;
 		float: left;
 		width: 250px;	
-		font-size: 14px;
+		font-size: 12px;
 	}
 	
 	#search-box {
