@@ -446,18 +446,19 @@ h1 {
 		font-size: 12px;
 		display: inline;
 		margin-top: 12px;
-		margin-left: 30%;
-		float: left;
+		margin-left: 0%;
+		/*float: left;*/
 	}
 
 	.band-words-left2 {
 		color: #ffffff;
 		font-size: 12px;
 		display: inline;
-		margin-left: 5%;
+		margin-left: 15px;
 		margin-right: 2%;
 		margin-top: 12px;
-		float: right;
+		/*float: right;*/
+		
 		right: 0;
 	}
 
@@ -465,8 +466,9 @@ h1 {
 
 	.contacts {
 		float: right;
-		text-align: center;	
+		text-align: right;	
 		width: 80%;
+		margin-top: 8px;
 	}
 
 	.band-words-right {
