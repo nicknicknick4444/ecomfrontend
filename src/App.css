@@ -114,8 +114,8 @@
 		font-size: 14px;
 	}
 	
-	.search-box > input {
-		
+	#search-box {
+		margin-right: 3px;
 	}
 
 	.search-box-mob {
