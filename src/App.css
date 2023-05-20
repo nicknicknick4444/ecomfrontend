@@ -17,6 +17,10 @@
 	.logo-mob {
 		display: none;
 	}
+	
+	/*.buttons {
+		margin-left: 100px;
+	}*/
 
 }
 
@@ -109,6 +113,10 @@
 		width: 250px;	
 		font-size: 14px;
 	}
+	
+	.search-box > input {
+		
+	}
 
 	.search-box-mob {
 		display: none;
@@ -199,9 +207,9 @@
 	}
 
 	.basket-icon {
-		width: 30px;
+		width: 25px;
 		float: left;
-		margin-top: 18px;
+		margin-top: 20px;
 		margin-right: 5px;
 		padding-bottom: 10px;
 	}
@@ -221,7 +229,7 @@
 		border-bottom: 3px #346db1 solid;
 		padding: 5px;
 		/*padding-left: 20px;*/
-		padding-top: 14px;
+		padding-top: 4px;
 		margin-top: 9px;
 		margin-right: 0;
 	}
@@ -238,7 +246,8 @@
 	}
 		
 	.buttons {
-		margin-top: -40px;
+		margin-top: -39px;
+		/*margin-left: 18px;*/
 		margin-right: 5px;
 		float: right;	
 	}
@@ -458,11 +467,8 @@ h1 {
 		margin-right: 2%;
 		margin-top: 12px;
 		/*float: right;*/
-		
 		right: 0;
 	}
-
-
 
 	.contacts {
 		float: right;
@@ -487,8 +493,8 @@ h1 {
 	}
 
 	.search-box-mob input {
-		width: 145px;
-		margin-right: 3px;
+		width: 125px;
+		margin-right: 5px;
 	}
 		
 	.glass {
@@ -539,8 +545,7 @@ h1 {
 		position: absolute;
 		right: 0;
 		font-size: 12px;
-		/*margin-right: 30px;*/
-		/*width: 34%;*/
+		margin-right: -80px;
 		padding-top: 0px;
 		padding-bottom: 1px;
 	}
@@ -551,7 +556,7 @@ h1 {
 	}
 		
 	.basket-pc > a:hover {
-		color: #7a4a4a;	
+		color: #903e3e;	
 	}
 	
 	.basket-icon {	
@@ -562,12 +567,20 @@ h1 {
 		float: left;
 	}
 
-	.buttons {	
-		display: none;
+	.buttons > a {	
 	}
 
-	#view-basket, #view-checkout {
+	#view-checkout {
 		display: none;
+	}
+	
+	#view-basket > a {
+		text-decoration: none;
+		color: #000000;	
+	}
+
+	#view-basket > a:hover {
+		color: #903e3e;
 	}
 
 	.price-pad {
