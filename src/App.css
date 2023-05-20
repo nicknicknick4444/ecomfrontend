@@ -487,14 +487,14 @@ h1 {
 
 	.search-box-mob {
 		float: left;
-		margin-top: 17px;
+		margin-top: 16px;
 		margin-left: 5px;
-		font-size: 12px;
+		font-size: 11px;
 	}
 
 	.search-box-mob input {
 		width: 125px;
-		margin-right: 5px;
+		margin-right: 2px;
 	}
 		
 	.glass {
@@ -544,10 +544,11 @@ h1 {
 		float: right;
 		position: absolute;
 		right: 0;
-		font-size: 12px;
-		margin-right: -80px;
-		padding-top: 0px;
-		padding-bottom: 1px;
+		font-size: 11px;
+		/*margin-right: -80px;*/
+		padding-top: 2px;
+		padding-bottom: 0px;
+		width: 150px;
 	}
 
 	.basket-pc > a {
@@ -560,11 +561,17 @@ h1 {
 	}
 	
 	.basket-icon {	
-		width: 28px;
-		margin-top: 15px;
+		width: 25px;
+		margin-top: 16px;
 		margin-right: 5px;
 		padding-bottom: 6px;
 		float: left;
+	}
+		
+	.basket-words {
+		/*float: right;
+		right: 30px;
+		width: 150px;*/
 	}
 
 	.buttons > a {	
@@ -576,7 +583,7 @@ h1 {
 	
 	#view-basket > a {
 		text-decoration: none;
-		color: #000000;	
+		color: #000000;
 	}
 
 	#view-basket > a:hover {
