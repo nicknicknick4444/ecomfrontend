@@ -270,7 +270,7 @@ export function Checkout() {
                     getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
                     getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
                     getty("address") === null || Object.keys(getty("address")).length === 0 ? 
-                        <button onClick={() => {setMand(true)}}>CUNT</button> : 
+                        <button onClick={() => {setMand(true)}}>NOPE</button> : 
                         <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>Next</button>
                     }
                 </div>
