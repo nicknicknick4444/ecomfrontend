@@ -44,13 +44,20 @@ export function Basket() {
         return extra;
     };
 
-    // if (localStorage.getItem("new") !== null) {
+    function widthCond() {
+        if (window.innerWidth <= 655) {
+            return 100 + length_pixels();
+        } else {
+            return 190 + length_pixels();
+        }
+    };
+
     if (getty("new") !== null) {
         return (
             <>
                 <ErrorBoundary>
                     <div className="basket-pc" onMouseOver={() => {setDroplist(true); get_location()}} onMouseLeave={() => setDroplist(false)} 
-                        style={{width: 190 + length_pixels()}}>
+                        style={{ width: widthCond()}}>
                     <Link to="/basket-page">
                         <div><img src="https://i.ibb.co/pRNYvv3/basket1.png" className="basket-icon" /></div>
                     </Link>

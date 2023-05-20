@@ -61,7 +61,7 @@ export function Navbar() {
             </div>
             <div className="navbar-mob" onClick={() => setMag(false)} >
             <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}}>
-            <span style={{float: "left", marginTop: 0, marginLeft: "2%"}}>☰</span>
+            <span style={{float: "left", marginBottom: -1, marginLeft: "2%"}}>☰</span>
             {burger ? 
                 <><span className="navbar-mob" style={{marginLeft: "-6.4%"}}>
                     <Link to={{pathname: "/"}}>
