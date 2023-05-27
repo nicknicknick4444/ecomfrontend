@@ -83,11 +83,11 @@ export function SubcatPage() {
             <ErrorBoundary>
             {/* <SearchPage /> */}
             <Sorting list_name="disp" />
-            <div onClick={() => setMag(false)} >
+            <div className="prods_list" onClick={() => setMag(false)} >
             <h1>{toTitle(subcat_name)}</h1>
             {
                 prods.map((prod, key) => (
-                    <div key={key} className="prods_list">
+                    <div key={key} className="prod_itself">
                         <Link to={{pathname: `${prod.id}`}}>
                             <span>{prod.prod_title}</span><br />
                             <img src={`${prod.image}`} style={{ width: 200 }} /><br />

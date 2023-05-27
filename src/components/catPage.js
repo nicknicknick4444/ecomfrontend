@@ -71,7 +71,7 @@ export function CatPage() {
         <ErrorBoundary>
         <div className="prods_list" onClick={() => setMag(false)}>
             <h1>{toTitle(catto)}</h1>
-            <div>
+            <div className="prod_itself">
                 {
                     subcat.map((subby, key) => (
                         getty("all_cats") !== null && getty("all_cats").length > 0 && getty("all_cats").indexOf(subby["subcat_name"]) !== -1 ? 
