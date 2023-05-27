@@ -374,9 +374,15 @@ h1 {
 
 	.prods_list {
 		display: inline;
-		float: left;
+		/*margin: auto;*/
+		text-align: center;
 		padding-left: 5px;
 		padding-right: 5px;
+	}
+
+	.prod_itself {
+		float: left;
+		/*text-align: center;*/
 	}
 
 }
