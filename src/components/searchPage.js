@@ -22,18 +22,8 @@ export function SearchPage() {
         return [view_range_from, view_range_to];
     };
 
-
-
-    // useLayoutEffect(() => {
-    //     section();
-    // }, []);
-
     useEffect(() => {
         console.log("LIST PAGE! ", shortlist);
-        // if (shortlist.length > 0) {
-        //     setty("searchList", shortlist);
-        // };
-        // setShortlist(getty("searchList"));
         if (getty("searchList") === null) {
             setty("searchList", []);
             setty("revert", []);
@@ -42,12 +32,11 @@ export function SearchPage() {
             setProds(getty("searchList"));
             setty("revert", getty("searchList"));
         };
-        // setSearched(false);
-        // setty("revert", getty("searchList"));
+
         console.log("Stevie Martin is a thoughtful pillow! ", searched);
         setSearched(false);
-        // SET NUMBER OF RESULTS PER-PAGE IN 2ND ELEMENT OF setPage!
-        setPage([0,4]);
+        // Set number of results per page in 2nd element of setPage!
+        setPage([0,9]);
         setChecking(true);
     }, []);
 
@@ -67,15 +56,11 @@ export function SearchPage() {
 
     return (
         <>
-            <h1>{toTitle("steady as it comes!")}</h1>
-            {/* <Basket /> */}
-            {/* <Navbar />
-            <SearchBox /> */}
             <Header />
             <Breadcrumb />
             <div onClick={() => setMag(false)}>
-                <p>Search matches for <b>"{getty("term")}"</b>:</p>
-                <p><i>Showing {search_summary()[0]} - {search_summary()[1]} out of {prods.length} products</i></p>
+                <h5>Product matches for <b>"{getty("term")}"</b>:</h5>
+                <p className="subhead"><i>Showing {search_summary()[0]} - {search_summary()[1]} out of {prods.length} products</i></p>
                 <Sorting list_name="searchList" />
             </div>
             <ProductPagination />
@@ -84,9 +69,6 @@ export function SearchPage() {
     } else {
         return (
             <>
-                <Basket />
-                {/* <Navbar />
-                <SearchBox /> */}
                 <Header />
                 <Breadcrumb />
                 <p>Search results for <b>"{getty("term")}"</b>:</p>

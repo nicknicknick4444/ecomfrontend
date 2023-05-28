@@ -41,7 +41,8 @@ export function SubcatPage() {
     useEffect(() => {
         console.log("Graphy! ", prods);
         section("disp");
-        setPage([0,1]);
+        // Set results-per-page by adjusting the second array item below
+        setPage([0,9]);
     }, [prods[0]]);
 
     useEffect(() => {
@@ -83,7 +84,8 @@ export function SubcatPage() {
             <ErrorBoundary>
             {/* <SearchPage /> */}
             <Sorting list_name="disp" />
-            <div className="prods_list" onClick={() => setMag(false)} >
+            <h1>{toTitle(category)}</h1>
+            {/* <div className="prods_list" onClick={() => setMag(false)} >
             <h1>{toTitle(subcat_name)}</h1>
             {
                 prods.map((prod, key) => (
@@ -97,9 +99,9 @@ export function SubcatPage() {
                 ))
             }
             <br />
-            </div>
+            </div> */}
             <ProductPagination />
-            <p><i><Link to={{pathname: "/"}}>Home</Link></i></p>
+            {/* <p><i><Link to={{pathname: "/"}}>Home</Link></i></p> */}
             </ErrorBoundary>
         </>
     );

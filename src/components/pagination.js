@@ -9,14 +9,13 @@ export function ProductPagination() {
     function ShowSubset() {
         return (
             <>
-                <h1>Hi fans!</h1>
-                <div>
+                <div className="prods_list">
                     {
                         subset?.map((item, key) => (
                             <Link key={key} to={{pathname: `/${item.prod_cat}/${item.prod_subcat}/${item.id}`}}>
-                                <div className="prods_list">
+                                <div className="prod_itself">
                                     <p>{item.prod_title}</p>
-                                    <img src={`${item.image}`} style={{width: 200}} />
+                                    <img src={`${item.image}`} className="prod_img" />
                                     <p>£{item.price}</p>
                                 </div>
                             </Link>
@@ -28,22 +27,6 @@ export function ProductPagination() {
     };
 
     function shortPage() {
-        // return (
-        //     <>
-        //         <h1>Hi fans!</h1>
-        //         <div>
-        //             {
-        //                 subset?.map((item, key) => (
-        //                     <Link key={key} to={{pathname: `/${item.prod_cat}/${item.prod_subcat}/${item.id}`}}>
-        //                         <div>
-        //                             <p>{item.prod_title}</p>
-        //                             <img src={`${item.image}`} style={{width: 200}} />
-        //                             <p>£{item.price}</p>
-        //                         </div>
-        //                     </Link>
-        //                 ))
-        //             }
-                //         </div>
         return (
             <>
                 <ShowSubset />
@@ -180,32 +163,4 @@ export function ProductPagination() {
         }
     }
 
-
-    // return (
-    //     <>
-    //         <h1>Hi fans!</h1>
-    //         <div>
-    //             {
-    //                 subset?.map((item, key) => (
-    //                     <Link key={key} to={{pathname: `/${item.prod_cat}/${item.prod_subcat}/${item.id}`}}>
-    //                         <div>
-    //                             <p>{item.prod_title}</p>
-    //                             <img src={`${item.image}`} style={{width: 200}} />
-    //                             <p>£{item.price}</p>
-    //                         </div>
-    //                     </Link>
-    //                 ))
-    //             }
-    //         </div>
-    //         <div className="search_pagination">
-    //             {
-    //                 numbers?.map((numbo, key2) => (
-    //                     <span key={key2} onClick={() => page_click(numbo)}>
-    //                         {numbo === page[0] / page[1] ? <b>{numbo + 1}  </b> : <u>{numbo + 1}  </u>}
-    //                     </span>
-    //                 ))
-    //             }
-    //         </div>
-    //     </>
-    // );
 };

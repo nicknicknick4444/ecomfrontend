@@ -45,7 +45,7 @@ export function Basket() {
     };
 
     function widthCond() {
-        if (window.innerWidth <= 655) {
+        if (window.innerWidth <= 676) {
             return 103 + length_pixels();
         } else {
             return 190 + length_pixels();
@@ -63,7 +63,7 @@ export function Basket() {
                     </Link>
                     <div className="basket-words">
                         <div>Items: <span className="basket_total">{!bought ? totally < 0 ? "0.00" : totally : 0 }</span></div>
-                        <div>Total: &nbsp;<span className="price-pad">£{!bought ? parseInt(amount) === 0 ? "0.00" : amount.toFixed(2) : "0.00"}</span></div> 
+                        <div>Total: &nbsp;<span className="price_pad">£{!bought ? parseInt(amount) === 0 ? "0.00" : amount.toFixed(2) : "0.00"}</span></div> 
     
                         {/* {!bought ?
                         <div id="view-basket" onClick={() => setChecking(false)}>View Basket</div>

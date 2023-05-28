@@ -6,7 +6,6 @@ import axios from "axios";
 import "../App.css";
 
 export function Breadcrumb(product) {
-    const band = "18 Wheeler";
     const [breadcrumb, setBreadcrumb] = useState([]);
     const [crumbstr, setCrumbstr] = useState("");
     const {prods, setProds, category, setCategory} = useProps();
@@ -48,8 +47,8 @@ export function Breadcrumb(product) {
 
     return (
         <>
-            <div>
-                <div>
+            <div className="breadcrumb_list">
+                <div className="">
                 {
                     breadcrumb.map((i, key) => (
                         key === (breadcrumb.length) -1 || i === ""
