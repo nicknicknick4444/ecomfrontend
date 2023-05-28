@@ -47,17 +47,18 @@ export function Breadcrumb(product) {
 
     return (
         <>
-            <div className="breadcrumb_list">
-                <div className="">
+            <div>
+                <div className="breadcrumb">
                 {
                     breadcrumb.map((i, key) => (
                         key === (breadcrumb.length) -1 || i === ""
                         ? 
-                        <span key={key}><Link to={{pathname: `/${crumbstr[key]}`}}>{toTitle(i.replace("%20", " "))}</Link></span>
+                        <span key={key}><Link to={{pathname: `/${crumbstr[key]}`}}>{toTitle(i.replace("%20", ""))}</Link></span>
                         :
-                        <span key={key}><Link to={{pathname: `/${crumbstr[key]}`}}>{toTitle(i.replace("%20", " ")) + " > "}</Link></span>
+                        <span key={key}><Link to={{pathname: `/${crumbstr[key]}`}}>{toTitle(i.replace("%20", "")) + " > "}</Link></span>
                     ))
-                }</div>
+                }
+                </div>
             </div>
         </>
     );
