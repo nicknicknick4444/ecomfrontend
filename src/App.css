@@ -125,9 +125,33 @@
 	.click-search {
 		display: none;
 	}
-
+ 
 	.breadcrumb {
+		margin-left: 5px;
+		text-decoraion: none;	
+	}
+
+	.breadcrumb > a {
 		clear: both;
+		text-decoration: none;
+		color: #346db1;
+	}
+	
+	.breadcrumb a:link {
+		text-decoration: none;
+		color: #346db1;
+	}
+	
+	.breadcrumb a:visited {	
+		color: #346db1;
+	}
+
+	.breadcrumb a:hover {
+		color: #903e3e;
+	}
+
+	.breadcrumb a:active {
+		color: #000000;
 	}
 
 	.top-band {
@@ -406,8 +430,15 @@ h5 {
 		height: 300px;
 		margin-left: 1.16%;
 		margin-right: 1.17%;
+	}
+	
+	.prod_itself a {
 		text-decoration: none;
 		color: #000000;
+	}
+	
+	.prod_itself a:hover {
+		color: #903e3e;	
 	}
 	
 	.prod_img {
