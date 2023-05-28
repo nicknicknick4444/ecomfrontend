@@ -190,10 +190,6 @@ export default function PropProvider({children}) {
         setAmount(totUp(beat));
     };
 
-    // const [page, setPage] = useState([0,1]);
-    // const [numbers, setNumbers] = useState([]);
-    // const [subset, setSubset] = useState([]);
-
     function section(array_list) {
         // if (prods) {
             var page_nums = [];
