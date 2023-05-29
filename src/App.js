@@ -7,6 +7,7 @@ import './App.css';
 import {Navbar} from "./components/navBar.js";
 import {SearchBox} from "./components/searchBox.js";
 import {Header} from "./components/header.js";
+import {Footer} from "./components/footer.js";
 import {ProdPage} from "./components/prodPage.js";
 import {CatPage} from "./components/catPage.js";
 import {SubcatPage} from "./components/subcatPage.js";
@@ -305,6 +306,7 @@ function AppFront() {
           Beans and content
         </div>
       </div>
+      <Footer />
     </>
   );
 };
