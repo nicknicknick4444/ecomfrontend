@@ -3,6 +3,7 @@ import {Basket} from "./basket.js";
 import {Navbar} from "./navBar.js";
 import {SearchBox} from "./searchBox.js";
 import {Header} from "./header.js";
+import {Footer} from "./footer.js";
 import {Breadcrumb} from "./breadcrumb.js";
 import {Sorting} from "./sorting.js";
 import {ProductPagination} from "./pagination.js";
@@ -64,6 +65,7 @@ export function SearchPage() {
                 <Sorting list_name="searchList" />
             </div>
             <ProductPagination />
+            <Footer />
         </>
     );
     } else {
@@ -73,6 +75,7 @@ export function SearchPage() {
                 <Breadcrumb />
                 <p>Search results for <b>"{getty("term")}"</b>:</p>
                 <h3>No words to dis-play.</h3>
+                <Footer />
             </>
         );
     }

@@ -6,6 +6,7 @@ import {Breadcrumb} from "./breadcrumb.js";
 import {Navbar} from "./navBar.js";
 import {SearchBox} from "./searchBox.js";
 import {Header} from "./header.js";
+import {Footer} from "./footer.js";
 import {useProps} from "./hooks/prop-hooks.js";
 import {getty, setty, toTitle} from "./hooks/hooks.js";
 import {ErrorBoundary} from "./errorBoundary.js";
@@ -88,12 +89,15 @@ export function CatPage() {
         </div>
         {/* <div><i><Link to={{pathname: "/"}}>Home</Link></i></div> */}
         </ErrorBoundary>
+        <Footer />
     </>
     )
     } else {
         return (
             <>
+                <Header />
                 <h1>No categories to display.</h1>
+                <Footer />
             </>
         );
     }

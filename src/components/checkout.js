@@ -7,6 +7,7 @@ import {Basket} from "./basket.js";
 import {Navbar} from "./navBar.js";
 import {SearchBox} from "./searchBox.js";
 import {Header} from "./header.js";
+import {Footer} from "./footer.js";
 import axios from "axios";
 
 export function Checkout() {
@@ -276,6 +277,7 @@ export function Checkout() {
                 </div>
                 <BasketList />
                 <div><i><Link to="/">Home</Link></i></div>
+                <Footer />
             </>
         );
         } else {
@@ -289,6 +291,7 @@ export function Checkout() {
                     <div onClick={() => setMag(false) }></div>
                     <BasketList />
                     <div><i><Link to="/">Home</Link></i></div>
+                    <Footer />
                 </>
             );
         }
@@ -336,6 +339,7 @@ export function Checkout() {
                     {/* <button onClick={(() => buy())}>Reset</button> */}
                     <div><i><Link to="/">Home</Link></i></div>
                 </div>
+                <Footer />
             </>
         )
     }

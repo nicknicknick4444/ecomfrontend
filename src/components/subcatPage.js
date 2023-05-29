@@ -5,6 +5,7 @@ import {Basket} from "./basket.js";
 import {Navbar} from "./navBar.js";
 import {SearchBox} from "./searchBox.js";
 import {Header} from "./header.js";
+import {Footer} from "./footer.js";
 import {Breadcrumb} from "./breadcrumb.js";
 import {Sorting} from "./sorting.js";
 import {ProductPagination} from "./pagination.js";
@@ -103,15 +104,16 @@ export function SubcatPage() {
             <ProductPagination />
             {/* <p><i><Link to={{pathname: "/"}}>Home</Link></i></p> */}
             </ErrorBoundary>
+            <Footer />
         </>
     );
     } else {
         return (
             <>
-                {/* <Basket /> */}
                 <Header />
-                {/* <Breadcrumb /> */}
-                <h1>No subcategories to display.</h1>
+                <Breadcrumb />
+                    <h1>No subcategories to display.</h1>
+                <Footer />
             </>
         );
     } 

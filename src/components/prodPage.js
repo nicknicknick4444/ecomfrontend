@@ -6,6 +6,7 @@ import {AllInput} from "./basketUpdate.js"
 import {Navbar} from "./navBar.js";
 import {SearchBox} from "./searchBox.js";
 import {Header} from "./header.js";
+import {Footer} from "./footer.js";
 import {Breadcrumb} from "./breadcrumb.js";
 import {ConfirmBox} from "./confirmBox.js";
 import {useProps} from "./hooks/prop-hooks.js";
@@ -77,17 +78,16 @@ export function ProdPage() {
                         <i><Link to="../">Home</Link></i>
                     <br /><ConfirmBox title={product.prod_title} see={"Maybe"} />
                 </div>
+                <Footer />
             </>
         );
     } else {
         return (
             <>
-                {/* <Basket /> */}
                 <Header />
-                {/* <ErrorBoundary>
                     <Breadcrumb />
-                </ErrorBoundary> */}
-                <h1>Loading...</h1>
+                    <h1>Loading...</h1>
+                <Footer />
             </>
         );
     };

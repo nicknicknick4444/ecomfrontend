@@ -5,6 +5,7 @@ import {Basket} from "./basket.js";
 import {Navbar} from "./navBar.js";
 import {SearchBox} from "./searchBox.js";
 import {Header} from "./header.js";
+import {Footer} from "./footer.js";
 import {useProps} from "./hooks/prop-hooks.js";
 import {getty, setty, toTitle, empty, back_reset} from "./hooks/hooks.js";
 import axios from "axios";
@@ -176,6 +177,7 @@ export function ShowBasket() {
             </div>}
             <div><Link to="/checkout">Checkout</Link></div>
             <div><i><Link to="/">Home</Link></i></div>
+            <Footer />
         </>
     );
 };
