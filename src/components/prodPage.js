@@ -85,7 +85,6 @@ export function ProdPage() {
         return (
             <>
                 <Header />
-                    <Breadcrumb />
                     <h1>Loading...</h1>
                 <Footer />
             </>
