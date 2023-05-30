@@ -55,6 +55,16 @@ export function ProdPage() {
 
     console.log("Borcey Thank U: ", listy2);
 
+    function price_halves(price_here) {
+        var point = 0;
+        for (let i in price_here) {
+            if (price_here[i] === ".") {
+                point = i;
+            }
+        }
+        return [price_here.slice(0, point), price_here.slice(point).slice(1)];
+    }
+
     if (product) {
         return (
             <>
@@ -69,9 +79,11 @@ export function ProdPage() {
                     <h1>{toTitle(product.prod_title)}</h1>
                     {/* <p>{id}</p> */}
                     {/* <p>{product.prod_title}</p> */}
-                    <p>Product Code: {product.prod_code}</p>
-                    <p>{product.prod_desc}</p>
-                    <p>£{product.price}</p>
+                    <div className="top_info">
+                    <span className="prod_desc" id="prod_code">Code: {product.prod_code}</span>
+                    {/* <p className="price">£{product.price}</p> */}
+                    <span className="price">£<span id="pounds">{price_halves(product.price)[0]}</span>.<span id="pennies">{price_halves(product.price)[1]}</span></span></div>
+                    <p className="prod_desc" id="desc_itself">{product.prod_desc}</p>
                     <img src={`${product.image}`} style={{ width: 300 }} /><br />
                     <AllInput item={product} words="Add To Basket" placeholder="1" />
                     <br />
