@@ -62,26 +62,28 @@
 	}
 	
 	.top_info {
-		/*display: inline;*/
-		display: flex;
-		align-items: flex-end;
+		display: inline;
+		/*display: flex;
+		align-items: flex-end;*/
 	}
 
 	#prod_code {	
 		font-size: 20px;
-		margin-left: 10%;
+		margin-left: 15%;
 		float: left;
-		line-height: 35px;
-		display: inline;
+		left: 100px;
+		line-height: 43px;
+		/*display: inline;*/
 	}
 		
 	.price {
-		display: inline;
+		/*display: inline;*/
 		font-size: 20px;
-		margin-right: 10%;
+		margin-right: 15%;
 		float: right;
+		right: 0;
 		color: #ff0000;
-		line-height: 35px;
+		/*line-height: 35px;*/
 	}
 
 	#pounds {	
@@ -95,6 +97,7 @@
 	#desc_itself {	
 		font-size: 15px;
 		text-align: center;
+		clear: both;
 	}
 
 /* START OF MINI MAIN */
@@ -854,6 +857,13 @@ h5 {
 		flex-direction: column;
 		background-color: #903e3e;	
 	}
-
+	
+	#pounds {
+		font-size: 25px;
+	}
+	
+	#pennies {	
+		font-size: 15px;
+	}
 }
 /*END OF MOB */
