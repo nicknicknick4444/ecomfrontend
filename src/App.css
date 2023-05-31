@@ -86,14 +86,6 @@
 		/*line-height: 35px;*/
 	}
 
-	#pounds {	
-		font-size: 35px;
-	}
-	
-	#pennies {
-		font-size: 15px;	
-	}
-
 	#desc_itself {	
 		font-size: 15px;
 		text-align: center;
@@ -357,8 +349,8 @@
 		margin-left: 15px;
 		margin-top: 4px;
 		padding-bottom: 1px;
-		padding-left: 0px;
-		padding-right: 0px;
+		padding-left: 2px;
+		padding-right: 2px;
 		text-align: center;
 	}
 	
@@ -537,6 +529,15 @@ h5 {
 		background-color: #346db1;
 		color: #ffffff;
 	}*/
+
+	#pounds {	
+		font-size: 35px;
+		line-height: 30px;
+	}
+	
+	#pennies {
+		font-size: 15px;
+	}
 
 }
 /*END OF MAIN*/
@@ -860,10 +861,23 @@ h5 {
 	
 	#pounds {
 		font-size: 25px;
+		line-height: 38px;
 	}
 	
 	#pennies {	
 		font-size: 15px;
 	}
+
+	.search-box-mob button {
+		background-color: #346db1;
+		color: #ffffff;
+		border: none;
+		height: 22px;
+		padding-bottom: 2px;
+	}
+	
+	.search-box-mob button:hover {
+		background-color: #903e3e;
+	} 
 }
 /*END OF MOB */
