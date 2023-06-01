@@ -7,6 +7,7 @@
 		clear: both;
 		text-decoration: none;
 		color: #346db1;
+		margin-right: 10px;
 	}
 	
 	.breadcrumb a:link {
@@ -25,12 +26,23 @@
 	.breadcrumb a:active {
 		color: #000000;
 	}
+	
+	.crumb {
+		padding-left: 3px;
+	}
 
 	.sorting button {
 		margin-left: 3px;
+		padding-top: 1px;
+		padding-bottom: 1px;
+		padding-left: 7px;
+		padding-right: 7px;
 		border: none;
+		height: 19px;
+		line-height: 16px;
 		background-color: #346db1;
 		color: #ffffff;
+		vertical-align: center;
 	}
 	
 	.sorting button:hover {	
@@ -54,7 +66,8 @@
 		border: none;
 		background-color: #346db1;
 		color: #ffffff;
-		height: 24px;
+		height: 21px;
+		border-top: 1px #ffffff solid;
 	}
 	
 	.search-box button:hover {	
@@ -344,7 +357,7 @@
 	
 	#view-basket, #view-checkout {	
 		color: #ffffff;
-		width: 64px;
+		width: 68px;
 		font-size: 11px;
 		margin-left: 15px;
 		margin-top: 4px;
@@ -517,18 +530,11 @@ h5 {
 	}
 	
 	.sorting {
-		font-size: 13px;
+		font-size: 12px;
 		/*margin-top: 3px;*/
 		margin-left: 5px;
 		/*margin-right: 5px;*/
 	}
-	
-	/*.sorting > button {
-		margin-left: 3px;
-		border: none;
-		background-color: #346db1;
-		color: #ffffff;
-	}*/
 
 	#pounds {	
 		font-size: 35px;
