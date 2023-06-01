@@ -42,7 +42,7 @@ export function Breadcrumb(product) {
         strbread.unshift("../");
         setBreadcrumb(bready);
         setCrumbstr(strbread);
-        console.log("Prozac Beats: ", category);
+        console.log("Prozac Beats: ", category, crumbstr);
     }, [prods, category]);
 
     return (
@@ -52,10 +52,10 @@ export function Breadcrumb(product) {
                 {
                     breadcrumb.map((i, key) => (
                         key === (breadcrumb.length) -1 || i === ""
-                        ? 
-                        <span key={key}><Link to={{pathname: `/${crumbstr[key]}`}}>{toTitle(i.replace("%20", ""))}</Link></span>
+                        ?
+                        <span className="crumb" key={key}><Link to={{pathname: `/${crumbstr[key]}`}}>{toTitle(i.replace("%20", ""))}</Link></span>
                         :
-                        <span key={key}><Link to={{pathname: `/${crumbstr[key]}`}}>{toTitle(i.replace("%20", "")) + " > "}</Link></span>
+                        <span className="crumb" key={key}><Link to={{pathname: `/${crumbstr[key]}`}}>{toTitle(i.replace("%20", "")) + " > "}</Link></span>
                     ))
                 }
                 </div>

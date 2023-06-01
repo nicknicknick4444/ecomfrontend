@@ -181,6 +181,14 @@ export function SearchBox() {
     // document.getElementById("search-box").addEventListener("keydown", () => {
     //     document.getElementById("search-box").focus();
     // })
+    
+    function setFocus() {
+        if (window.innerWidth >= 677) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     return (
         <>
@@ -191,7 +199,7 @@ export function SearchBox() {
                 type="text"
                 placeholder="Enter search terms"
                 onChange={(e) => handleChange(e)} 
-                autoFocus
+                autoFocus={setFocus()}
                 />
                 {!bought ? 
                 <><button id="subby" 
