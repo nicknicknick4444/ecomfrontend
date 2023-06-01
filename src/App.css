@@ -78,6 +78,7 @@
 		display: inline;
 		/*display: flex;
 		align-items: flex-end;*/
+		
 	}
 
 	#prod_code {	
@@ -97,12 +98,6 @@
 		right: 0;
 		color: #ff0000;
 		/*line-height: 35px;*/
-	}
-
-	#desc_itself {	
-		font-size: 15px;
-		text-align: center;
-		clear: both;
 	}
 
 /* START OF MINI MAIN */
@@ -525,10 +520,6 @@ h5 {
 		color: #903e3e;	
 	}
 	
-	.prod_img {
-		width: 200px;	
-	}
-	
 	.sorting {
 		font-size: 12px;
 		/*margin-top: 3px;*/
@@ -543,6 +534,23 @@ h5 {
 	
 	#pennies {
 		font-size: 15px;
+	}
+	
+	.product {
+		padding-left: 20%;
+		padding-right: 20%;
+	}
+	
+	.prod_img {
+		width: 200px;
+		float: right;
+	}
+	
+	#desc_itself {	
+		font-size: 15px;
+		text-align: left;
+		inline-size: 500px;
+		overflow: hidden;
 	}
 
 }
