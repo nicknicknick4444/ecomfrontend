@@ -99,6 +99,12 @@
 		color: #ff0000;
 		/*line-height: 35px;*/
 	}
+	
+	.prod_input {
+		clear: left;
+		float: right;
+		margin-bottom: 50px;
+	}
 
 /* START OF MINI MAIN */
 
@@ -541,16 +547,18 @@ h5 {
 		padding-right: 20%;
 	}
 	
-	.prod_img {
+	#prod_img {
 		width: 200px;
+		display: inline-block;
+	}
+
+	#img_contain {
+
 		float: right;
 	}
 	
 	#desc_itself {	
 		font-size: 15px;
-		text-align: left;
-		inline-size: 500px;
-		overflow: hidden;
 	}
 
 }
