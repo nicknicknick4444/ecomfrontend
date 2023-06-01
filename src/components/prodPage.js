@@ -86,9 +86,12 @@ export function ProdPage() {
                         </span>
                     </span>
                     </div><br />
-                    <div className="prod_input"><AllInput item={product} words="Add To Basket" placeholder="1" /></div><br />
-                    <img className="prod_img" src={`${product.image}`} style={{ width: 300 }} />
-                    <p className="prod_desc" id="desc_itself">{product.prod_desc}</p><br />
+                    <div className="prod_input"><AllInput item={product} words="Add To Basket" placeholder="1" /></div><br /><br /><br /><br />
+                    <div id="img_contain">
+                        <img id="prod_img" src={`${product.image}`} />
+                    </div>
+                    <p className="prod_desc" id="desc_itself">{product.prod_desc}</p>
+                    <br />
                     <br />
                         <i><Link to="../">Home</Link></i>
                     <br /><ConfirmBox title={product.prod_title} see={"Maybe"} />
