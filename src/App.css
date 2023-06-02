@@ -105,6 +105,11 @@
 		float: right;
 		margin-bottom: 50px;
 	}
+		
+	#changeBasket {
+		width: 30%;
+		padding-bottom: 4px;
+	}
 
 /* START OF MINI MAIN */
 
@@ -190,14 +195,16 @@
 		float: left;
 		clear: right;
 		background-color: #ffffff;
+		line-height: 17px;
 	}
 
 	.navbar > a {
 		text-decoration: none;
 		color: #903e3e;
-		font-family: helvetica;
+		font-family: rockwell;
 		font-weight: bold;
 		font-size: 18px;
+		padding-bottom: 1px;
 	}
 
 	.navbar > a:hover {
@@ -900,6 +907,11 @@ h5 {
 	
 	.search-box-mob button:hover {
 		background-color: #903e3e;
-	} 
+	}
+		
+	#prod_img {
+		width: 200px;
+		float: right;	
+	}
 }
 /*END OF MOB */
