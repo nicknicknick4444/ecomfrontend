@@ -100,15 +100,39 @@
 		/*line-height: 35px;*/
 	}
 	
-	.prod_input {
+	.bask-input {
+		width: 94px;	
+	}
+	
+	#prod_input {
 		clear: left;
 		float: right;
-		margin-bottom: 50px;
+		font-size: 11px;
 	}
 		
-	#changeBasket {
-		width: 30%;
-		padding-bottom: 4px;
+	.changeBasket {
+		padding-bottom: 2px;
+		width: 25px;
+		text-align: center;
+		background-color: #346db1;
+		color: #ffffff;
+		height: 25px;
+		border: none;
+		border-bottom: 1px #ffffff solid;
+	}
+	
+	.changeBasket:hover {
+		background-color: #903e3e;
+	}
+	
+	.number-input {
+		line-height: 18px;
+		padding-top: 1px;
+		padding-bottom: 1px;
+	}
+	
+	#update-button {
+		width: 94px;	
 	}
 
 /* START OF MINI MAIN */
@@ -527,10 +551,15 @@ h5 {
 	.prod_itself {
 		text-decoration: none;
 		color: #000000;
+		border: 1px #ffffff solid;
+		height: 250px;
+		padding: 5px;
 	}
 	
 	.prod_itself:hover {
 		color: #903e3e;	
+		border: 1px #d1d1d1 solid;
+		box-shadow: 2px 2px 2px #d1d1d1;
 	}
 	
 	.sorting {
@@ -826,7 +855,7 @@ h5 {
 		text-decoration: none;	
 		color: #000000;
 		font-size: 12px;
-		margin-left: 5px;
+		margin-left: 10px;
 	}
 
 	.breadcrumb {
