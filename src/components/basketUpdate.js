@@ -184,18 +184,20 @@ export function AllInput({item, words, placeholder, state, this2}) {
 
   return (
     <>
-      <button id="changeBasket" onClick={() => addToBasket(setTyping2, item, state, this2)}>+</button>
+    <div className="bask-input">
+      <button className="changeBasket" id="changeBasket1" onClick={() => addToBasket(setTyping2, item, state, this2)}>+</button>
       <input 
         id={`${item.id}`} 
-        className="numberInput" 
+        className="number-input" 
         type="number" 
         value={typing2} 
         placeholder={placeholder} 
         onChange={handleChange2} 
         style={{width: 44}}
       /> 
-    <button id="changeBasket" onClick={() => removeFromBasket(setTyping2, item)}>-</button><br />
-    <button onClick={() =>two(item)}>{words}</button>
+    <button className="changeBasket" id="changeBasket2" onClick={() => removeFromBasket(setTyping2, item)}>-</button><br />
+    <button id="update-button" className="changeBasket" onClick={() =>two(item)}>{words}</button>
+    </div>
     </>
   );
 };

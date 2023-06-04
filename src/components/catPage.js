@@ -76,9 +76,9 @@ export function CatPage() {
                 {
                     subcat.map((subby, key) => (
                         getty("all_cats") !== null && getty("all_cats").length > 0 && getty("all_cats").indexOf(subby["subcat_name"]) !== -1 ? 
-                            <div key={key} >
-                                <Link to={{pathname: `${subby.subcat_name}`}}>{toTitle(subby.subcat_name)}<br />
-                                <img src={`${subby.subcat_image}`} style={{ width: 200 }} />
+                            <div key={key}>
+                                <img src={`${subby.subcat_image}`} style={{ width: 200 }} /><br />
+                                <Link to={{pathname: `${subby.subcat_name}`}}>{toTitle(subby.subcat_name)}
                                 </Link>
                             </div>
                             :

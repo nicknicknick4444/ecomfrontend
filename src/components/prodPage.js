@@ -11,7 +11,7 @@ import {Breadcrumb} from "./breadcrumb.js";
 import {ConfirmBox} from "./confirmBox.js";
 import {useProps} from "./hooks/prop-hooks.js";
 import {ErrorBoundary} from "./errorBoundary.js";
-import {getty, setty, toTitle} from "./hooks/hooks.js";
+import {getty, toTitle} from "./hooks/hooks.js";
 
 export function ProdPage() {
     const [product, setProduct] = useState();
@@ -86,7 +86,7 @@ export function ProdPage() {
                         </span>
                     </span>
                     </div><br />
-                    <div className="prod_input"><AllInput item={product} words="Add To Basket" placeholder="1" /></div><br /><br /><br /><br />
+                    <div id="prod_input"><AllInput item={product} words="Add To Basket" placeholder="1" /></div><br /><br /><br /><br />
                     <div id="img_contain">
                         <img id="prod_img" src={`${product.image}`} />
                     </div>
