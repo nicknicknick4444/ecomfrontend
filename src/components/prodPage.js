@@ -80,20 +80,24 @@ export function ProdPage() {
                     {/* <p>{id}</p> */}
                     {/* <p>{product.prod_title}</p> */}
                     <div className="top_info">
-                    <span className="prod_desc" id="prod_code">Code: {product.prod_code}</span>
-                    {/* <p className="price">£{product.price}</p> */}
-                        <span className="price">£<span id="pounds">{price_halves(product.price)[0]}</span>.<span id="pennies">{price_halves(product.price)[1]}
-                        </span>
-                    </span>
-                    </div><br />
-                    <div id="prod_input"><AllInput item={product} words="Add To Basket" placeholder="1" /></div><br /><br /><br /><br />
                     <div id="img_contain">
                         <img id="prod_img" src={`${product.image}`} />
                     </div>
+                    <div className="prod_desc" id="prod_code">Code: {product.prod_code}</div>
+                    {/* <p className="price">£{product.price}</p> */}
+                    <div className="price">£<span id="pounds">{price_halves(product.price)[0]}</span>.<span id="pennies">{price_halves(product.price)[1]}
+                        </span>
+                    </div>
+                    </div><br />
+                    <div id="prod_input"><AllInput item={product} words="Add To Basket" placeholder="1" /></div><br /><br /><br /><br />
+                    {/* <div style={{borderTop: "1px #000000 solid", backgroundColor: "#000000"}}></div> */}
+                    {/* <div id="img_contain">
+                        <img id="prod_img" src={`${product.image}`} />
+                    </div> */}
                     <p className="prod_desc" id="desc_itself">{product.prod_desc}</p>
+                    {/* <br />
                     <br />
-                    <br />
-                        <i><Link to="../">Home</Link></i>
+                        <i><Link to="../">Home</Link></i> */}
                     <br /><ConfirmBox title={product.prod_title} see={"Maybe"} />
                 </div>
                 <Footer />
