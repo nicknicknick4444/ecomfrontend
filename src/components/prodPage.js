@@ -76,20 +76,25 @@ export function ProdPage() {
                     <Breadcrumb product={product.prod_title} />
                 </ErrorBoundary>
                 <div className="product" onClick={() => setMag(false)} >
-                    <h1>{toTitle(product.prod_title)}</h1>
+                    {/* <h1>{toTitle(product.prod_title)}</h1> */}
                     {/* <p>{id}</p> */}
                     {/* <p>{product.prod_title}</p> */}
                     <div className="top_info">
-                    <div id="img_contain">
-                        <img id="prod_img" src={`${product.image}`} />
+                        <div id="prod_title">
+                            <h1>{toTitle(product.prod_title)}</h1>
+                        </div>
+                        <div id="img_contain">
+                            <img id="prod_img" src={`${product.image}`} />
+                        </div>
+                        <div className="prod_desc" id="prod_code">Code: {product.prod_code}</div>
+                        {/* <p className="price">£{product.price}</p> */}
+                        <div className="price">£<span id="pounds">{price_halves(product.price)[0]}</span>.<span id="pennies">{price_halves(product.price)[1]}
+                            </span>
+                        </div>
+                        {/* </div> */}
+                        <div id="prod_input"><AllInput item={product} words="Add To Basket" placeholder="1" /></div>
                     </div>
-                    <div className="prod_desc" id="prod_code">Code: {product.prod_code}</div>
-                    {/* <p className="price">£{product.price}</p> */}
-                    <div className="price">£<span id="pounds">{price_halves(product.price)[0]}</span>.<span id="pennies">{price_halves(product.price)[1]}
-                        </span>
-                    </div>
-                    </div><br />
-                    <div id="prod_input"><AllInput item={product} words="Add To Basket" placeholder="1" /></div><br /><br /><br /><br />
+                    <br /><br /><br />
                     {/* <div style={{borderTop: "1px #000000 solid", backgroundColor: "#000000"}}></div> */}
                     {/* <div id="img_contain">
                         <img id="prod_img" src={`${product.image}`} />
