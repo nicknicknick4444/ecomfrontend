@@ -95,6 +95,11 @@
 		line-height: 43px;*/
 		/*display: inline;*/
 	}
+	
+	#info-and-add {
+		/*min-width: 300px;
+		border: 3px #000000 solid;*/
+	}
 		
 	.price {
 		font-size: 20px;
@@ -102,7 +107,6 @@
 		right: 0;
 		color: #d18202;
 		clear: left;
-		
 	}
 	
 	.bask-input {
@@ -208,7 +212,7 @@
 
 	.body {
 		/*min-width: 928px;*/
-		min-width: 700px;
+		/*width: 700px;*/
 	}
 
 .App-logo {
@@ -387,6 +391,7 @@
 	.prod_title {
 		text-align: center;
 	}
+
 	.prod_title > a {
 		text-decoration: none;	
 		color: #000000;
@@ -597,7 +602,7 @@ h5 {
 	.product {
 		padding-left: 20%;
 		padding-right: 20%;
-		min-width: 850px;
+		/*width: 850px;*/
 	}
 	
 	#prod_img {
