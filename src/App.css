@@ -628,12 +628,6 @@ h5 {
 		float: right;
 		top: 300px;
 	}
-	
-	/*#desc_itself {	
-		font-size: 15px;
-		border-top: 1px #d1d1d1 solid;
-		margin-top: 30px;
-	}*/
 
 }
 /*END OF MAIN*/
@@ -983,7 +977,8 @@ h5 {
 	}
 	
 	#info-and-add {
-		/*margin: auto;*/
+		border-top: 0 #ffffff solid;
+		width: 100%;
 	}
 	
 	.top_info {
@@ -995,6 +990,11 @@ h5 {
 		width: 100%;
 		clear: both;
 		text-align: center;
+		margin-bottom: -7px;
+	}
+
+	#prod_code {
+		padding-top: 5px;	
 	}
 	
 	#prod_code, .price {
@@ -1004,15 +1004,17 @@ h5 {
 	}
 	
 	#prod_input {
-		width: 94px;
+		width: 100%;
 		margin-top: 15px;
 		margin-left: auto;
 		margin-right: auto;
 	}
 	
 	.bask-input {
-		/*margin-left: auto;
-		margin-right: auto;*/
+		width: 94px;
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
 	}
 	
 	#img_contain {
@@ -1022,8 +1024,9 @@ h5 {
 
 	#prod_img {
 		margin-left: 5px;
-		float: left;
+		/*float: left;*/
 		width: 80%;
+		max-width: 250px;
 		margin-left: 10%;
 		margin-right: 10%;	
 	}
@@ -1031,6 +1034,7 @@ h5 {
 	#desc_itself {
 		margin-top: 5px;
 		float: left;
+		text-align: center;
 	}
 }
 /*END OF MOB */
