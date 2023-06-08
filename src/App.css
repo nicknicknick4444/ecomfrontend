@@ -85,6 +85,7 @@
 		float: left;
 		clear: left;
 		margin-bottom: 3px;
+		font-family: 'Kameron';
 	}
 	
 	#prod_code {	
@@ -152,6 +153,30 @@
 		font-size: 15px;
 		border-top: 1px #d1d1d1 solid;
 		margin-top: 32px;
+		padding-top: 7px;
+	}
+	
+	.confirm {
+		font-size: 18px;
+		font-family: helvetica;
+		background-color: #d9b3ff;
+		border: 3px #4d0099 solid;
+		text-align: center;
+		position: fixed;
+		opacity: 97%;
+		width: 100%;
+		/*margin-left: auto;
+		margin-right: auto;*/
+		/*margin-left: 5%;
+		margin-right: 5%;*/
+		top: 35%;
+		left: 0;
+		z-index: 50;
+		cursor: pointer;
+	}
+	
+	#close {
+		font-size: 14px;
 	}
 
 /* START OF MINI MAIN */
@@ -172,6 +197,11 @@
 	}
 	.logo-mob {
 		display: none;
+	}
+		
+	.confirm {
+		/*width: 600px;
+		margin: auto;*/	
 	}
 	
 	/*.buttons {
@@ -244,7 +274,7 @@
 	.navbar > a {
 		text-decoration: none;
 		color: #903e3e;
-		font-family: rockwell;
+		font-family: rockwell, 'Kameron', serif;
 		font-weight: bold;
 		font-size: 18px;
 		padding-bottom: 1px;
@@ -441,39 +471,18 @@
 	}
 
 	.confirm {
-		font-size: 22px;
-		font-family: helvetica;
-		background-color: #fff000;
-		text-align: center;
-		position: absolute;
-		top: 25%;
-		width: 100%;
-		z-index: 50;
-		cursor: pointer;
+		/*width: 600px;
+		margin: auto;*/
 	}
 
-/*.confirm2 {
-	font-size: 22px;
-	font-family: calibri;
-	background-color: #fff000;
-	text-align: center;
-	position: absolute;
-	top: 25%;
-	width: 100%;
-	z-index: 50;
-	animation: fadeOut ease 0.5s;
-	animation-fill-mode: forwards;
-	cursor: pointer;
-}*/
-
-@keyframes fadeOut {
+/*@keyframes fadeOut {
 	0% {
 		opacity: 1;
 	}
 	100% {
 		opacity: 0;
 	}
-};
+};*/
 
 .confirm3 {
 	opacity: 0;
@@ -484,7 +493,8 @@ h1 {
 	clear: both;
 	text-align: center;
 	font-size: 25px;
-	font-family: rockwell;
+	font-family: rockwell, 'Kameron', serif;
+	/*font-family: 'Kameron';*/
 	color: #171717;
 }
 
@@ -604,7 +614,7 @@ h5 {
 		padding-right: 20%;*/
 		/*width: 850px;*/
 		width: 80%;
-		/*min-width: 820px;*/
+		max-width: 750px;
 		margin: auto;
 	}
 	
@@ -664,16 +674,16 @@ h5 {
 
 	.navbar-mob {
 		/*padding-right: 11px;*/
-		/*margin: 2px;*/
+		margin: 5px;
 		clear: right;
 		background-color: #ffffff;
-		text-align: center;
+		text-align: left;
 	}
 
 	.navbar-mob > a {
 		text-decoration: none;
 		color: #903e3e;
-		font-family: helvetica;
+		font-family: rockwell, 'Kameron', serif;
 		font-weight: bold;
 		font-size: 18px;
 	}
@@ -847,9 +857,9 @@ h5 {
 	.confirm {
 		font-size: 17px;
 		font-family: helvetica;
-		background-color: #fff000;
 		text-align: center;
-		position: absolute;
+		position: fixed;
+		opacity: 97%;
 		top: 25%;
 		width: 100%;
 		z-index: 50;
@@ -861,7 +871,7 @@ h5 {
 		clear: both;
 		text-align: center;
 		font-size: 25px;
-		font-family: rockwell;
+		font-family: rockwell, 'Kameron', serif;
 		color: #903e3e;
 	}
 	
@@ -972,12 +982,25 @@ h5 {
 		background-color: #903e3e;
 	}
 	
-	#prod_title, #prod_code, .price {	
+	#info-and-add {
+		/*margin: auto;*/
+	}
+	
+	.top_info {
+		text-align: center;
+	}
+
+	#prod_title {	
+		display: block;
 		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
 		clear: both;
-		float: none;
+		text-align: center;
+	}
+	
+	#prod_code, .price {
+		clear: both;
+		width: 100%;
+		margin: auto;
 	}
 	
 	#prod_input {
