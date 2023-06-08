@@ -50,6 +50,11 @@ export function Header() {
                         <div style={{display: !mag ? "block" : "none"}}><img src="https://i.ibb.co/BnmP5Qq/glass.png" className="glass" /></div>
                     </div>
                     
+                    {/* CSS HERE */}
+                    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Kameron:wght@700&family=Trispace:wght@700&family=VT323&display=swap" rel="stylesheet">
+                    </link>
+
+
                     <Link to={{pathname: "/"}}>
                     <div className="logo">
                         <img src="https://i.ibb.co/SV4RNV5/Main-Logo5.png" />

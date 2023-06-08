@@ -183,7 +183,7 @@ export function SearchBox() {
     // })
     
     function setFocus() {
-        if (window.innerWidth >= 677) {
+        if (window.innerWidth >= 800) {
             return true;
         } else {
             return false;

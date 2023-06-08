@@ -87,7 +87,7 @@ export function ProdPage() {
                             <img id="prod_img" src={`${product.image}`} />
                         </div>
                         <div id="info-and-add">
-                            <div className="prod_desc" id="prod_code">Code: {product.prod_code}</div>
+                            <div id="prod_code">Code: {product.prod_code}</div>
                             {/* <p className="price">£{product.price}</p> */}
                             <div className="price">£<span id="pounds">{price_halves(product.price)[0]}</span>.<span id="pennies">{price_halves(product.price)[1]}
                                 </span>
@@ -105,7 +105,7 @@ export function ProdPage() {
                     {/* <br />
                     <br />
                         <i><Link to="../">Home</Link></i> */}
-                    <br /><ConfirmBox title={product.prod_title} see={"Maybe"} />
+                    <ConfirmBox title={product.prod_title} see={"Maybe"} />
                 </div>
                 <Footer />
             </>

@@ -32,19 +32,19 @@ export function ConfirmBox(title) {
             // setVis("Yes");
         };
         if (vis === "Yes"){
-            setTimeout(function(){setVis("No");}, 3000);
+            setTimeout(function(){setVis("No");}, 60000);
             // clearTimeout(endTime);
         }
         if (vis === "First") {
             console.log("Gorbets!!!!!");
-            setTimeout(function(){setVis("No");}, 3000);
+            setTimeout(function(){setVis("No");}, 60000);
         }
         if (vis === "No"){
             // clearTimeout(startTime);
             setTimeout(function(){setVis("Standby");}, 500);
         }
         if (vis === "Emptied") {
-            setTimeout(function(){setVis("No");}, 3000);
+            setTimeout(function(){setVis("No");}, 60000);
             // clearTimeout(endTime);
         }
     }, [vis]);
@@ -55,7 +55,7 @@ export function ConfirmBox(title) {
             <>
                 <div className="confirm">
                     <p>{new_quant > 0 ? `Added ${new_quant}` : `Removed ${new_quant * -1}`} x '{product_title}' {new_quant > 0 ? "to" : "from"} the basket!</p>
-                    <p><span onClick={() => {setVis("No")}}>Close(x)</span></p>
+                    <span id="close" onClick={() => {setVis("No")}}>Close(x)</span>
                 </div>
                 
             </>
@@ -65,7 +65,7 @@ export function ConfirmBox(title) {
             <>
         <div className="confirm">
             <p>Added {getty("new")} x '{product_title}' has to the basket!</p>
-            <p><span onClick={() => {setVis("No")}}>Close(x)</span></p>
+            <span id="close" onClick={() => {setVis("No")}}>Close(x)</span>
         </div>
         </>
         );
@@ -77,9 +77,8 @@ export function ConfirmBox(title) {
         return (
             <>
                 <div className="confirm">
-                    <p>Emptied every '{product_title}' from the basket!</p>
-                    <p><span onClick={() => {setVis("No")}}>Close(x)</span></p>
-
+                    Emptied every '{product_title}' from the basket!<br />
+                    <span id="close" onClick={() => {setVis("No")}}>Close(x)</span>
                 </div>
             </>
         );
