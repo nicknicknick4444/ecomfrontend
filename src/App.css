@@ -1,10 +1,10 @@
 	.breadcrumb {
 		margin-left: 5px;
 		text-decoraion: none;	
+		margin-bottom: 5px;
 	}
 
 	.breadcrumb > a {
-		clear: both;
 		text-decoration: none;
 		color: #346db1;
 		margin-right: 10px;
@@ -33,20 +33,28 @@
 
 	.sorting button {
 		margin-left: 3px;
-		padding-top: 1px;
+		padding-top: 0;
 		padding-bottom: 1px;
 		padding-left: 7px;
 		padding-right: 7px;
 		border: none;
-		height: 19px;
-		line-height: 16px;
+		height: 22px;
+		line-height: 20px;
 		background-color: #346db1;
 		color: #ffffff;
-		vertical-align: center;
 	}
 	
 	.sorting button:hover {	
 		background-color: #903e3e;
+	}
+	
+	.search_bits {
+		margin-left: 5px;
+	}
+	
+	.prods_contain {
+		max-width: 750px;
+		margin: auto;
 	}
 
 	.prods_list a {
@@ -59,7 +67,7 @@
 	}
 	
 	.prods_list p {
-		margin-bottom: 0;	
+		margin-bottom: 0;
 	}
 	
 	.search-box button {
@@ -84,6 +92,7 @@
 	#prod_title {
 		float: left;
 		clear: left;
+		padding-top: 1px;
 		margin-bottom: 3px;
 		font-family: 'Kameron';
 	}
@@ -101,7 +110,7 @@
 	#info-and-add {
 		width: 60%;
 		border-top: 1px #d1d1d1 solid;
-		margin-bottom: -3px;
+		margin-bottom: -2px;
 	}
 		
 	.price {
@@ -264,11 +273,12 @@
 	.navbar {	
 		padding-left: 3px;
 		padding-right: 11px;
-		margin: 2px;
+		/*margin: 2px;*/
 		float: left;
 		clear: right;
 		background-color: #ffffff;
 		line-height: 17px;
+		text-align: vertical;
 	}
 
 	.navbar > a {
@@ -277,7 +287,9 @@
 		font-family: rockwell, 'Kameron', serif;
 		font-weight: bold;
 		font-size: 18px;
-		padding-bottom: 1px;
+		margin-top: 0px;
+		/*padding-bottom: 1px;*/
+		
 	}
 
 	.navbar > a:hover {
@@ -418,15 +430,15 @@
 		margin-right: 0;
 	}
 	
-	.prod_title {
-		text-align: center;
+	.basket_title {
+		text-align: left;
 	}
 
-	.prod_title > a {
+	.basket_title > a {
 		text-decoration: none;	
 		color: #000000;
 	}
-	.prod_title > a:hover {
+	.basket_title > a:hover {
 		color: #903e3e;	
 	}
 		
@@ -463,7 +475,26 @@
 	}
 
 	.prod_details {	
-		text-align: center;
+		text-align: left;
+		margin-bottom: 3px;
+	}
+	
+	.basket_writing {
+		width: 60%;
+		float: left;
+		display: inline;
+	}
+	
+	.basket_image_contain {
+		width: 30%;
+		float: right;
+		display: inline;
+		margin-top: -30px;
+	}
+	
+	.basket_image {
+		width: 80%;
+		display: inline;
 	}
 
 	.price_pad {
@@ -496,10 +527,6 @@ h1 {
 	font-family: rockwell, 'Kameron', serif;
 	/*font-family: 'Kameron';*/
 	color: #171717;
-}
-
-h5 {
-	margin-left: 5px;	
 }
 
 .search_pagination {
@@ -594,10 +621,7 @@ h5 {
 	}
 	
 	.sorting {
-		font-size: 12px;
-		/*margin-top: 3px;*/
-		margin-left: 5px;
-		/*margin-right: 5px;*/
+		font-size: 14px;
 	}
 
 	#pounds {	
@@ -866,16 +890,21 @@ h5 {
 		text-align: center;
 		font-size: 25px;
 		font-family: rockwell, 'Kameron', serif;
-		color: #903e3e;
+		color: #171717;
 	}
 	
+	.search_bits {
+		margin-left: 0;	
+	}
+	
+	
 	h5 {
-		margin-left: 5px;
+		text-align: center;
 	}
 	
 	.subhead {
-		font-size: 13px;	
-		margin-left: 5px;
+		font-size: 13px;
+		text-align: center;
 	}
 
 	.search_pagination {
@@ -906,6 +935,10 @@ h5 {
 		color: #000000;
 	}
 	
+	.prods_contain {
+		width: 100%;
+	}
+	
 	.prods_list {	
 		text-align: center;
 	}
@@ -930,9 +963,9 @@ h5 {
 	}
 
 	.sorting {
-		font-size: 15px;
-		margin-left: 5px;
-		margin-top: 1px;
+		font-size: 14px;
+		text-align: center;
+		margin-bottom: 5px;
 	}
 	
 	.sorting > button {
@@ -977,6 +1010,7 @@ h5 {
 	}
 	
 	#info-and-add {
+		margin-top: 3px;
 		border-top: 0 #ffffff solid;
 		width: 100%;
 	}
@@ -1033,6 +1067,8 @@ h5 {
 	
 	#desc_itself {
 		margin-top: 5px;
+		margin-left: 4px;
+		margin-right: 4px;
 		float: left;
 		text-align: center;
 	}
