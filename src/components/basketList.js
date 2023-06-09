@@ -209,14 +209,20 @@ export function BasketList(){
                         getty("itemsList")[`${i.id}`] > 0 ?
                         <div key={key}>
                         <div>
-                            <div className="prod_title">
+                            {/* <div className="basket_title">
                                 <Link to={{pathname: `/${i.prod_cat}/${i.prod_subcat}/${i.id}`}}>
                                     <b>{i.prod_title}</b>
                                 </Link>
-                            </div>
+                            </div> */}
                             <div className="prod_details">
-                                Quantity: {getty("itemsList")[`${i.id}`]}<br />
-                                Cost: £{amounty(i.id).toFixed(2)}<br />
+                                <div className="basket_title">
+                                    <Link to={{pathname: `/${i.prod_cat}/${i.prod_subcat}/${i.id}`}}>
+                                        <b>{i.prod_title}</b>
+                                    </Link>
+                                </div>
+                                <span className="basket_writing">Qty: {getty("itemsList")[`${i.id}`]}<br />
+                                Cost: £{amounty(i.id).toFixed(2)}</span><br />
+                                <span className="basket_image_contain"><img className="basket_image" src={i.image} /></span>
                                 {(checking === false && bought === false) ? 
                                 <><AllInput item={i} words={"Edit Quantity"} placeholder={"1"} /><br />
                                 <button onClick={() => {deleteButton(parseInt(i.id))}}>Delete</button> 
@@ -225,6 +231,7 @@ export function BasketList(){
                                 
                                 : null
                                 }
+                                <br />
                             </div>
                             </div>
                         

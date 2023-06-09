@@ -59,7 +59,7 @@ export function SearchPage() {
         <>
             <Header />
             <Breadcrumb />
-            <div onClick={() => setMag(false)}>
+            <div className="search_bits" onClick={() => setMag(false)}>
                 <h5>Product matches for <b>"{getty("term")}"</b>:</h5>
                 <p className="subhead"><i>Showing {search_summary()[0]} - {search_summary()[1]} out of {prods.length} products</i></p>
                 <Sorting list_name="searchList" />

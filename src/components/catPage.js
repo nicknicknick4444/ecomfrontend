@@ -70,22 +70,24 @@ export function CatPage() {
         <Header />
         <div className="breadcrumb"><Breadcrumb /></div>
         <ErrorBoundary>
-        <div className="prods_list" onClick={() => setMag(false)}>
-            <h1>{toTitle(catto)}</h1>
-            <div className="prod_itself">
-                {
-                    subcat.map((subby, key) => (
-                        getty("all_cats") !== null && getty("all_cats").length > 0 && getty("all_cats").indexOf(subby["subcat_name"]) !== -1 ? 
-                            <div key={key}>
-                                <Link to={{pathname: `${subby.subcat_name}`}}>
-                                    <img src={`${subby.subcat_image}`} style={{ width: 200 }} /><br />
-                                {toTitle(subby.subcat_name)}
-                                </Link>
-                            </div>
-                            :
-                            <span key={key+"a"}></span>
-                    ))
-                }
+        <div className="prods_contain">
+            <div className="prods_list" onClick={() => setMag(false)}>
+                <h1>{toTitle(catto)}</h1>
+                <div className="prod_itself">
+                    {
+                        subcat.map((subby, key) => (
+                            getty("all_cats") !== null && getty("all_cats").length > 0 && getty("all_cats").indexOf(subby["subcat_name"]) !== -1 ? 
+                                <div key={key}>
+                                    <Link to={{pathname: `${subby.subcat_name}`}}>
+                                        <img src={`${subby.subcat_image}`} style={{ width: 200 }} /><br />
+                                    {toTitle(subby.subcat_name)}
+                                    </Link>
+                                </div>
+                                :
+                                <span key={key+"a"}></span>
+                        ))
+                    }
+                </div>
             </div>
         </div>
         {/* <div><i><Link to={{pathname: "/"}}>Home</Link></i></div> */}

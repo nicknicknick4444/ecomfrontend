@@ -9,19 +9,21 @@ export function ProductPagination() {
     function ShowSubset() {
         return (
             <>
-                <div className="prods_list">
-                    {
-                        subset?.map((item, key) => (
-                            <Link key={key} to={{pathname: `/${item.prod_cat}/${item.prod_subcat}/${item.id}`}}>
-                                <div className="prod_itself">
-                                    
-                                    <img src={`${item.image}`} style={{width: 200}} /><br />
-                                    <p>{item.prod_title}</p>
-                                    <p>£{item.price}</p>
-                                </div>
-                            </Link>
-                        ))
-                    }
+                <div className="prods_contain">
+                    <div className="prods_list">
+                        {
+                            subset?.map((item, key) => (
+                                <Link key={key} to={{pathname: `/${item.prod_cat}/${item.prod_subcat}/${item.id}`}}>
+                                    <div className="prod_itself">
+                                        
+                                        <img src={`${item.image}`} style={{width: 200}} /><br />
+                                        <p>{item.prod_title}</p>
+                                        <p>£{item.price}</p>
+                                    </div>
+                                </Link>
+                            ))
+                        }
+                    </div>
                 </div>
             </>
         );
