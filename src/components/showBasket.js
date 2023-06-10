@@ -13,14 +13,6 @@ import axios from "axios";
 export function ShowBasket() {
     const [typing, setTyping] = useState("");
     const [coupons, setCoupons] = useState({});
-    // const [cou, setCou] = useState("");
-
-    // const getty = (place) => {
-    //     return JSON.parse(localStorage.getItem(place));
-    // };
-    // const setty = (place, what) => {
-    //     return JSON.stringify(localStorage.setItem(place, what));
-    // };
 
     const {dis, setDis, updateTotal, bought, setBought, 
         setCou, setSearched, checking, setChecking, setFillingdeets, 
@@ -70,19 +62,11 @@ export function ShowBasket() {
 
         // for (let i in getty("codes")) {
         for (let i in coupon_codes) {
-        
-            // console.log("JOLF! ", JSON.parse(coupon_codes[i].coupon_code)[0]);
-            // console.log("TOLF! ", JSON.parse(coupon_codes[i].coupon_code)[1]);
-
             the_codes.push(looko(0, i));
-            console.log("GROOS! ", the_codes)
-            // const looko = (number, i) => {
-            //     return JSON.parse(coupon_codes[i].coupon_code)[number];
-            // };
+            console.log("GROOS! ", the_codes);
         };
 
-        
-            console.log("PLOT! ", coupon_codes[0]);
+        console.log("PLOT! ", coupon_codes[0]);
             
         for (let i in the_codes) {
             console.log("I!!!!!", the_codes[i]);
@@ -157,7 +141,7 @@ export function ShowBasket() {
             {/* <Navbar />
             <SearchBox /> */}
             <Header />
-            <div onClick={() => setMag(false)} >
+            <div className="basket_page" onClick={() => setMag(false)} >
                 <BasketList />
             </div>
             {/* {getty("discount") === 1 && getty("order") !== null && getty("order").length > 0 ?  */}
