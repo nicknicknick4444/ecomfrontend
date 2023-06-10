@@ -277,7 +277,7 @@
 		float: left;
 		clear: right;
 		background-color: #ffffff;
-		line-height: 17px;
+		line-height: 18px;
 		text-align: vertical;
 	}
 
@@ -425,8 +425,9 @@
 		border-bottom: 3px #346db1 solid;
 		padding: 5px;
 		/*padding-left: 20px;*/
-		padding-top: 4px;
-		margin-top: 9px;
+		padding-top: 6px;
+		margin-top: -1px;
+		padding-bottom: -10px;
 		margin-right: 0;
 	}
 	
@@ -447,6 +448,10 @@
 		/*margin-left: 18px;*/
 		margin-right: 5px;
 		float: right;	
+	}
+	
+	#view-checkout {	
+	margin-bottom: 10px;
 	}
 	
 	#view-basket, #view-checkout {	
@@ -493,7 +498,7 @@
 	}
 	
 	.basket_image {
-		width: 80%;
+		width: 100%;
 		display: inline;
 	}
 
@@ -651,6 +656,12 @@ h1 {
 	#img_contain {
 		float: right;
 		top: 300px;
+	}
+	
+	.basket_page {
+		max-width: 600px;
+		width: 100%;
+		margin: auto;	
 	}
 
 }
