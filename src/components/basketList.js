@@ -135,6 +135,7 @@ export function BasketList(){
         } else {
             total();
         };
+        console.log("Tsunami tsunami! ", get_location());
     }, []);
 
     for (let i in prod){
@@ -208,7 +209,7 @@ export function BasketList(){
                     arr3?.map((i, key) => (
                         getty("itemsList")[`${i.id}`] > 0 ?
                         <div key={key}>
-                        <div>
+                        <div id="basket-item">
                             {/* <div className="basket_title">
                                 <Link to={{pathname: `/${i.prod_cat}/${i.prod_subcat}/${i.id}`}}>
                                     <b>{i.prod_title}</b>
@@ -222,19 +223,29 @@ export function BasketList(){
                                 </div>
                                 <span className="basket_writing">Qty: {getty("itemsList")[`${i.id}`]}<br />
                                 Cost: £{amounty(i.id).toFixed(2)}</span><br />
-                                <span className="basket_image_contain"><img className="basket_image" src={i.image} /></span>
+                                <span className={get_location() !== "/basket-page" && get_location() !== "/checkout" ? 
+                                    "basket_image_contain" : 
+                                    "basket_image_contain2"}>
+                                    <img className="basket_image" src={i.image} />
+                                </span>
                                 {(checking === false && bought === false) ? 
-                                <><AllInput item={i} words={"Edit Quantity"} placeholder={"1"} /><br />
-                                <button onClick={() => {deleteButton(parseInt(i.id))}}>Delete</button> 
-                                {bought.toString()} {checking.toString()}
-                                </>
-                                
-                                : null
-                                }
-                                <br />
+                                <>
+                                <div id="basket-page-input">
+                                    <div id="prod_input">
+                                        <AllInput item={i} words={"Edit Quantity"} placeholder={"1"} />
+                                        <button id="update-button" className="changeBasket" onClick={() => {deleteButton(parseInt(i.id))}}>
+                                            Delete
+                                        </button>
+                                    </div>
+                                </div>
+                                    {/* {bought.toString()} {checking.toString()} */}
+                                    </>
+                                    
+                                    : null
+                                    }
+                                    <br />
+                                </div>
                             </div>
-                            </div>
-                        
                         </div>
                         : ""
                     ))

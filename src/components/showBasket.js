@@ -30,7 +30,6 @@ export function ShowBasket() {
         // if (getty("codes") ===  null) {
         //     setty("codes", []);
         // }
-        // setty("")
         // const promise = axios.get(`http://localhost:8000/api/coupons/`);
         const promise = axios.get(`https://polar-coast-39563.herokuapp.com/api/coupons/`);
         promise.then((res) => setty("codes", JSON.stringify(res.data)));
@@ -142,6 +141,7 @@ export function ShowBasket() {
             <SearchBox /> */}
             <Header />
             <div className="basket_page" onClick={() => setMag(false)} >
+                <h1>Your Basket</h1>
                 <BasketList />
             </div>
             {/* {getty("discount") === 1 && getty("order") !== null && getty("order").length > 0 ?  */}
