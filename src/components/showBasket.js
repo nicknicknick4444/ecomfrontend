@@ -30,6 +30,7 @@ export function ShowBasket() {
         // if (getty("codes") ===  null) {
         //     setty("codes", []);
         // }
+        // setty("")
         // const promise = axios.get(`http://localhost:8000/api/coupons/`);
         const promise = axios.get(`https://polar-coast-39563.herokuapp.com/api/coupons/`);
         promise.then((res) => setty("codes", JSON.stringify(res.data)));
@@ -142,11 +143,13 @@ export function ShowBasket() {
             <Header />
             <div className="basket_page" onClick={() => setMag(false)} >
                 <h1>Your Basket</h1>
-                <BasketList />
+                <div id="basket-list">
+                    <BasketList />
+                </div>
             </div>
             {/* {getty("discount") === 1 && getty("order") !== null && getty("order").length > 0 ?  */}
             {getty("discount") === 1 && getty("order") !== null && getty("order").length > 0 ? 
-            <div>
+            <div id="add-coupon">
                 <input type="text" 
                     value={typing}
                     onChange={goosey} 
@@ -156,7 +159,7 @@ export function ShowBasket() {
                 <span>10PC or 50PC</span>
             {/* </div> : getty("order").length < 1 ? "" : getty("order") === null ? "" :  */}
             </div> : getty("order") === null || getty("order").length === 0 ? "" : 
-            <div>
+            <div id="remove-coupon">
                 <button onClick={() => unCoupon()}>Remove Coupon</button>
             </div>}
             <div><Link to="/checkout">Checkout</Link></div>

@@ -221,7 +221,7 @@ export function BasketList(){
                                         <b>{i.prod_title}</b>
                                     </Link>
                                 </div>
-                                <span className="basket_writing">Qty: {getty("itemsList")[`${i.id}`]}<br />
+                                <span className="basket_writing">Quantity: {getty("itemsList")[`${i.id}`]}<br />
                                 Cost: £{amounty(i.id).toFixed(2)}</span><br />
                                 <span className={get_location() !== "/basket-page" && get_location() !== "/checkout" ? 
                                     "basket_image_contain" : 
@@ -232,7 +232,7 @@ export function BasketList(){
                                 <>
                                 <div id="basket-page-input">
                                     <div id="prod_input">
-                                        <AllInput item={i} words={"Edit Quantity"} placeholder={"1"} />
+                                        <AllInput item={i} words={"Edit/ Update"} placeholder={"1"} />
                                         <button id="update-button" className="changeBasket" onClick={() => {deleteButton(parseInt(i.id))}}>
                                             Delete
                                         </button>
@@ -243,7 +243,7 @@ export function BasketList(){
                                     
                                     : null
                                     }
-                                    <br />
+                                    
                                 </div>
                             </div>
                         </div>
