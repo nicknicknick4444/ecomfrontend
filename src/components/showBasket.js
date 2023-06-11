@@ -149,19 +149,26 @@ export function ShowBasket() {
             </div>
             {/* {getty("discount") === 1 && getty("order") !== null && getty("order").length > 0 ?  */}
             {getty("discount") === 1 && getty("order") !== null && getty("order").length > 0 ? 
-            <div id="add-coupon">
-                <input type="text" 
-                    value={typing}
-                    onChange={goosey} 
-                    placeholder={"Enter coupon code"} 
-                    />
-                <button onClick={() => coupon()}>Add Coupon</button><br />
-                <span>10PC or 50PC</span>
-            {/* </div> : getty("order").length < 1 ? "" : getty("order") === null ? "" :  */}
+            <div id="coupon-contain">
+                <div id="add-coupon">
+                    <input 
+                        id="coupon-box"
+                        type="text" 
+                        value={typing}
+                        onChange={goosey} 
+                        placeholder={"Enter coupon code"} 
+                        
+                        />
+                    <button id="coupon-buttons" onClick={() => coupon()} 
+                    style={{}}
+                    >Add Coupon</button><br />
+                    <span><i>(Psst! 10PC or 50PC)</i></span>
+                {/* </div> : getty("order").length < 1 ? "" : getty("order") === null ? "" :  */}
+                </div>
             </div> : getty("order") === null || getty("order").length === 0 ? "" : 
-            <div id="remove-coupon">
-                <button onClick={() => unCoupon()}>Remove Coupon</button>
-            </div>}
+            <div id="coupon-contain"><div id="remove-coupon">
+                <button id="coupon-buttons" onClick={() => unCoupon()}>Remove Coupon</button>
+            </div></div>}<br /><br /><br /><br />
             <div><Link to="/checkout">Checkout</Link></div>
             <div><i><Link to="/">Home</Link></i></div>
             <Footer />
