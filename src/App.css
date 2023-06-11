@@ -158,6 +158,26 @@
 		height: 30px;	
 	}
 	
+	#coupon-box {
+		vertical-align: bottom;
+		width: 150px;
+	}
+	
+	#coupon-buttons {
+		font-size: 14px;
+		width: 125px;
+		color: #ffffff;
+		background-color: #346db1;
+		border: 1px #346db1 solid;
+		height: 30px;
+		margin-left: 3px;
+	}
+	
+	#coupon-buttons:hover {
+		background-color: #903e3e;
+		border: 1px #903e3e solid;
+	}
+	
 	#desc_itself {	
 		font-size: 15px;
 		border-top: 1px #d1d1d1 solid;
@@ -202,21 +222,53 @@
 	}
 	
 	
-	.basket_title {
+	#basket_title {
 		text-align: left;
 		word-wrap: break-word;
 		padding-top: 5px;
 		width: 70%;
 	}
 	
-	.basket_title > a {
+	#basket_title > a {
 		text-decoration: none;	
 		color: #000000;
 	}
 
-	.basket_title > a:hover {
+	#basket_title > a:hover {
 		color: #903e3e;	
-	}	
+	}
+	
+	#coupon-contain {
+		max-width: 750px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	#add-coupon, #remove-coupon {
+		float: left;
+		/*margin-left: 5%;*/
+	}
+	
+	#add-coupon {
+		/*padding-right: 6px;*/
+		position: relative;
+	}
+
+	#remove-coupon {
+		margin-top: -41px;
+	}
+
+	#discount-info {
+		float: right;
+		text-align: right;
+	}
+
+	#grand-total {
+		margin-top: 5px;
+		float: right;
+		clear: right;
+	}
 
 /* START OF MINI MAIN */
 
@@ -317,7 +369,7 @@
 		font-family: rockwell, 'Kameron', serif;
 		font-weight: bold;
 		font-size: 18px;
-		margin-top: -1px;
+		margin-top: -2px;
 		/*padding-bottom: 1px;*/
 		
 	}
@@ -440,7 +492,7 @@
 	}
 
 	.dropdown-basket {
-		z-index: 20;
+		/*z-index: 20;*/
 		/*clear: both;*/
 		right: 0;
 		/*position: absolute;*/
@@ -1127,7 +1179,9 @@ h1 {
 	}
 	
 	#basket-list {
-		margin-top: 35px;
+		margin-top: 45px;
+		margin-left: 0;
+		margin-right: 0;
 	}
 
 	.basket_image_contain2 {
@@ -1140,7 +1194,6 @@ h1 {
 	
 	.basket_image {
 		width: 94px;
-		
 	}
 	
 	#basket-page-input {
@@ -1153,7 +1206,7 @@ h1 {
 	#basket-item {
 		width: 100%;
 		padding-bottom: 28px;
-		margin-top: -38px;
+		margin-top: -40px;
 		border-bottom: 1px #d1d1d1 solid;
 	}
 	
@@ -1168,6 +1221,52 @@ h1 {
 		overflow: hidden;*/
 		margin-left: 5%;
 		margin-top: 40px;
+	}
+		
+	#add-coupon {
+		float: right;
+	}
+	
+	#remove-coupon {
+		clear: right;
+		float: right;
+		margin-top: 0px;
+	}
+	
+	#coupon-contain {	
+		font-size: 12px;
+		width: 100%;
+		margin-right: 2.5%;
+		float: right;
+		text-align: right;
+		margin-top: 5px;
+	}
+
+	#coupon-buttons {
+		font-size: 12px;
+		height: 24px;
+		width: 105px;
+	}
+	
+	#coupon-error {
+		margin-top: -20px;
+		margin-bottom: 20px;
+		margin-right: 2.5%;
+		float: right;
+		font-size: 12px;
+	}
+
+	#grand-total {
+		font-size: 14px;
+		margin-top: -20px;
+		margin-right: 2.5%;
+	}
+	
+	#discount-info {
+		margin-top: -20px;
+		margin-bottom: 25px;
+		margin-right: 2.5%;
+		font-size: 12px;
 	}
 
 
