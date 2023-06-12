@@ -356,12 +356,15 @@
 	.navbar {	
 		padding-left: 3px;
 		padding-right: 11px;
+		margin-top: -1px;
 		/*margin: 2px;*/
 		float: left;
 		clear: right;
-		background-color: #ffffff;
+		/*background-color: #ffffff;*/
 		line-height: 17px;
-		text-align: vertical;
+		/*text-align: vertical;*/
+		display: inline;
+		vertical-align: middle;
 	}
 
 	.navbar > a {
@@ -797,6 +800,15 @@ h1 {
 	.prods_list {
 		padding-left: 5px;
 		padding-right: 5px;
+	}
+	
+	.burger-itself {	
+		float: left;
+		margin-left: 2%;
+		margin-top: -0.14%;
+		/*margin-bottom: -4px;*/
+		display: inline;
+		vertical-align: middle;
 	}
 
 	.navbar-mob {
