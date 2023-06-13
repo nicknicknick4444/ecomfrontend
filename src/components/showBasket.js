@@ -160,16 +160,21 @@ export function ShowBasket() {
                         
                         />
                     <button id="coupon-buttons" onClick={() => coupon()} 
-                    style={{}}
-                    >Add Coupon</button><br />
-                    <span><i>(Psst! 10PC or 50PC)</i></span>
+                    style={{}}>
+                        Add Coupon
+                    </button><br />
+                    <span style={{float: "left"}}><i>(Psst! 10PC or 50PC)</i></span>
                 {/* </div> : getty("order").length < 1 ? "" : getty("order") === null ? "" :  */}
-                </div>
+                {/* <button id="checkout-button"><Link to="/checkout">Checkout</Link></button> */}
+                </div><br /><br /><br /><div id="extra-line"><br /></div><button id="checkout-button"><Link to="/checkout">Checkout</Link></button>
             </div> : getty("order") === null || getty("order").length === 0 ? "" : 
             <div id="coupon-contain"><div id="remove-coupon">
                 <button id="coupon-buttons" onClick={() => unCoupon()}>Remove Coupon</button>
-            </div></div>}<br /><br /><br /><br />
-            <div><Link to="/checkout">Checkout</Link></div>
+            </div>
+            <div id="extra-line"><br /><br /></div>
+            <button id="checkout-button"><Link to="/checkout">Checkout</Link></button>
+            </div>}<br /><br /><br /><br />
+            {/* <button id="checkout-button"><Link to="/checkout">Checkout</Link></button> */}
             <div><i><Link to="/">Home</Link></i></div>
             <Footer />
         </>
