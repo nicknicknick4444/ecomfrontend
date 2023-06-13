@@ -356,12 +356,13 @@
 	.navbar {	
 		padding-left: 3px;
 		padding-right: 11px;
-		margin-top: -1px;
+		top: -1px;
 		/*margin: 2px;*/
-		float: left;
-		clear: right;
+		/*float: left;*/
+		/*clear: right;*/
 		/*background-color: #ffffff;*/
-		line-height: 17px;
+		/*line-height: 17px;*/
+		/*height: 35px;*/
 		/*text-align: vertical;*/
 		display: inline;
 		vertical-align: middle;
@@ -373,7 +374,7 @@
 		font-family: rockwell, 'Kameron', serif;
 		font-weight: bold;
 		font-size: 18px;
-		margin-top: -2px;
+		/*margin-top: -2px;*/
 		/*padding-bottom: 1px;*/
 		
 	}
@@ -805,10 +806,21 @@ h1 {
 	.burger-itself {	
 		float: left;
 		margin-left: 2%;
-		margin-top: -0.14%;
+		margin-top: -0.1%;
 		/*margin-bottom: -4px;*/
 		display: inline;
 		vertical-align: middle;
+	}
+
+	#header {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		background-color: #ffffff;
+	}
+	
+	#header-overflow {
+		height: 180px;	
 	}
 
 	.navbar-mob {
