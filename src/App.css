@@ -291,7 +291,7 @@
 	}
 
 	#grand-total {
-		margin-top: 5px;
+		top: 5px;
 		float: right;
 		clear: right;
 	}
@@ -1301,6 +1301,7 @@ h1 {
 		font-size: 12px;
 		height: 24px;
 		width: 105px;
+		padding-top: 3px;
 	}
 		
 	#checkout-button {
