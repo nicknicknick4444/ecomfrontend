@@ -162,6 +162,7 @@
 		vertical-align: bottom;
 		width: 150px;
 		margin-top: 13px;
+		margin-right: 3px;
 	}
 	
 	#coupon-buttons {
@@ -171,12 +172,37 @@
 		background-color: #346db1;
 		border: 1px #346db1 solid;
 		height: 30px;
-		margin-left: 3px;
+		/*margin-left: 3px;*/
+		padding-bottom: 2px;
 	}
 	
 	#coupon-buttons:hover {
 		background-color: #903e3e;
 		border: 1px #903e3e solid;
+	}
+		
+	#checkout-button {	
+		font-size: 14px;
+		background-color: #903e3e;
+		border: 1px #ffffff solid;
+		height: 30px;
+		width: 125px;
+		padding-bottom: 2px;
+		float: left;
+		display: inline;
+		left: 0;
+	}
+	
+	#checkout-button > a {
+		text-decoration: none;
+		color: #ffffff;
+		display: inline;
+		padding-right: 2px;
+		
+	}
+	
+	#checkout-button:hover {	
+		background-color: #346db1;
 	}
 	
 	#desc_itself {	
@@ -221,7 +247,6 @@
 	
 	#subby {
 	}
-	
 	
 	#basket_title {
 		text-align: left;
@@ -270,6 +295,7 @@
 		float: right;
 		clear: right;
 	}
+
 
 /* START OF MINI MAIN */
 
@@ -765,13 +791,17 @@ h1 {
 		width: 100%;
 		margin: auto;
 	}
+	
+	#extra-line {	
+		display: none;
+	}
 
 }
 /*END OF MAIN*/
 
 
 
-/*START OF MOB*/
+/*START OF MOBILE*/
 @media only screen and (max-width: 676px) {
 
 	.homepage-content {
@@ -1271,6 +1301,21 @@ h1 {
 		font-size: 12px;
 		height: 24px;
 		width: 105px;
+	}
+		
+	#checkout-button {
+		font-size: 12px;
+		height: 24px;
+		width: 105px;
+		text-align: center;
+		float: right;
+		margin-top: -10px;
+		border: 1px #903e3e solid;
+		padding-top: 2px;
+	}
+	
+	#checkout-button:hover {
+		border: 1px #346db1 solid;
 	}
 	
 	#coupon-error {
