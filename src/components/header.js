@@ -41,6 +41,7 @@ export function Header() {
 
     return(
         <>
+            <div id="header">
                 <Topband />
                 <div className="mid">
                     <div className="search-box"><SearchBox /></div>
@@ -76,6 +77,8 @@ export function Header() {
                 {/* <div className="nav-edge"></div> */}
                 {/* <div className="search-box"><SearchBox /></div> */}
                 <p>{belb}</p>
+            </div>
+            <div id="header-overflow"></div>
         </>
     );
 };
