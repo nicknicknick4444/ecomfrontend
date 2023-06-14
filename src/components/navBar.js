@@ -44,21 +44,21 @@ export function Navbar() {
     return (
         <>
             <div className="nav-edge"></div>
-            <div>
-            <span className="navbar">
-                <Link to={{pathname: "/"}}>Home</Link>
-            </span>
-            {   
-                cats.map((cat, key) => (
+                <div id="nav-main">
+                <span className="navbar">
+                    <Link to={{pathname: "/"}}>Home</Link>
+                </span>
+                {   
+                    cats.map((cat, key) => (
 
-                    <span key={key} className="navbar">
-                        <Link to={{pathname: `../${cat.cat_name}`}}>
-                            {toTitle(cat.cat_name)}
-                        </Link>
-                    </span>
-                ))
-            }
-            </div>
+                        <span key={key} className="navbar">
+                            <Link to={{pathname: `../${cat.cat_name}`}}>
+                                {toTitle(cat.cat_name)}
+                            </Link>
+                        </span>
+                    ))
+                }
+                </div>
             <div className="navbar-mob" onClick={() => setMag(false)} >
             <div onClick={() => {bought ? setBurger(true) : setBurger(!burger)}}>
             <span className="burger-itself">☰</span><br />
@@ -96,20 +96,21 @@ export function Navbar() {
         return (
             <>
                 <div className="nav-edge">
-                    <span className="navbar">
-                        <Link to={{pathname: "/"}}>Home</Link>
-                    </span>
-                    <span className="navbar">
-                        <Link to={{pathname: "/pets"}}>Pets</Link>
-                    </span>
-                    <span className="navbar">
-                        <Link to={{pathname: "/confectionary"}}>Confectionary</Link>
-                    </span>
-                    <span className="navbar">
-                        <Link to={{pathname: "/breads"}}>Breads</Link>
-                    </span>
+                    <div id="nav-main">
+                        <span className="navbar">
+                            <Link to={{pathname: "/"}}>Home</Link>
+                        </span>
+                        <span className="navbar">
+                            <Link to={{pathname: "/pets"}}>Pets</Link>
+                        </span>
+                        <span className="navbar">
+                            <Link to={{pathname: "/confectionary"}}>Confectionary</Link>
+                        </span>
+                        <span className="navbar">
+                            <Link to={{pathname: "/breads"}}>Breads</Link>
+                        </span>
                     {/* <span className="navbar">Loading...</span> */}
-                    
+                    </div>
                 </div>
 
                 <div className="navbar-mob">
