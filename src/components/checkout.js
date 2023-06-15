@@ -210,72 +210,74 @@ export function Checkout() {
                 {/* <Basket /> */}
                 <Header />
                 <h1>Checkout!</h1>
-                <div className="AddressForm" style={{width: "100%"}} onClick={() => setMag(false)}>
-                    <form>
-                        <div>
-                        <p><i>Fields marked * are mandatory</i></p>
-                        {mand ? <p style={{color: "#ff0000"}}>Please complete all mandatory fields</p> : <span></span>}
-                            <label htmlFor="name">Name:*&nbsp;
-                                <input type="text" name="name1" onChange={(e) => handleChange(e, "billing_name")} 
-                                    value={abbrev_add("billing_name")} 
-                                />
-                            </label><br />
-                            <label htmlFor="email">Email:*&nbsp;
-                                <input type="text" name="email1" onChange={(e) => handleChange(e, "billing_email")} 
-                                    value={abbrev_add("billing_email")} 
-                                />
-                            </label><br />
-                            <label htmlFor="tel1">Phone:*&nbsp;
-                                <input type="tel" name="tel1" onChange={(e) => handleChange(e, "billing_tel")} 
-                                    value={abbrev_add("billing_tel")} 
-                                />
-                            </label><br />
-                        </div>
-                        <div>
-                            <label htmlFor="delv_q">Different delivery address?&nbsp;
-                                {delvq ? 
-                                <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)}  
-                                checked={delvq} id="checkout_checkbox"
-                                    // value={getty("delvq")} 
-                                /> : 
-                                <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)} 
-                                    checked={delvq} id="checkout_checkbox" 
-                                />
-                                }
-                            </label>
-                        </div>
-                        
-                        <div style={{display: `${disp}`}}>
+                <div className="checkout_container">
+                    <div className="AddressForm" style={{width: "100%"}} onClick={() => setMag(false)}>
+                        <form>
                             <div>
-                                <label htmlFor="name2">Name:&nbsp;
-                                    <input type="text" name="name2" onChange={(e) => handleChange(e, "delv_name")} 
-                                        value={abbrev_add("delv_name")}
+                            <p><i>Fields marked * are mandatory</i></p>
+                            {mand ? <p style={{color: "#ff0000"}}>Please complete all mandatory fields</p> : <span></span>}
+                                <label htmlFor="name">Name:*&nbsp;
+                                    <input type="text" name="name1" onChange={(e) => handleChange(e, "billing_name")} 
+                                        value={abbrev_add("billing_name")} 
                                     />
                                 </label><br />
-                                <label htmlFor="email2">Email:&nbsp;
-                                    <input type="text" name="email2" onChange={(e) => handleChange(e, "delv_email")} 
-                                        value={abbrev_add("delv_email")}
+                                <label htmlFor="email">Email:*&nbsp;
+                                    <input type="text" name="email1" onChange={(e) => handleChange(e, "billing_email")} 
+                                        value={abbrev_add("billing_email")} 
                                     />
                                 </label><br />
-                                <label htmlFor="tel2">Phone:&nbsp;
-                                    <input type="tel" name="tel2" onChange={(e) => handleChange(e, "delv_tel")} 
-                                        value={abbrev_add("delv_tel")}
+                                <label htmlFor="tel1">Phone:*&nbsp;
+                                    <input type="tel" name="tel1" onChange={(e) => handleChange(e, "billing_tel")} 
+                                        value={abbrev_add("billing_tel")} 
                                     />
                                 </label><br />
                             </div>
-                        </div>
-                        {/* <input onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); }} type="submit" value="Next" /> */}
-                    </form>
-                    {/* <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); }} type="submit">Next</button> */}
-                    {getty("address")["billing_name"] === undefined || getty("address")["billing_name"] === "" || 
-                    getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
-                    getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
-                    getty("address") === null || Object.keys(getty("address")).length === 0 ? 
-                        <button onClick={() => {setMand(true)}}>NOPE</button> : 
-                        <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>Next</button>
-                    }
+                            <div>
+                                <label htmlFor="delv_q">Different delivery address?&nbsp;
+                                    {delvq ? 
+                                    <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)}  
+                                    checked={delvq} id="checkout_checkbox"
+                                        // value={getty("delvq")} 
+                                    /> : 
+                                    <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)} 
+                                        checked={delvq} id="checkout_checkbox" 
+                                    />
+                                    }
+                                </label>
+                            </div>
+                            
+                            <div style={{display: `${disp}`}}>
+                                <div>
+                                    <label htmlFor="name2">Name:&nbsp;
+                                        <input type="text" name="name2" onChange={(e) => handleChange(e, "delv_name")} 
+                                            value={abbrev_add("delv_name")}
+                                        />
+                                    </label><br />
+                                    <label htmlFor="email2">Email:&nbsp;
+                                        <input type="text" name="email2" onChange={(e) => handleChange(e, "delv_email")} 
+                                            value={abbrev_add("delv_email")}
+                                        />
+                                    </label><br />
+                                    <label htmlFor="tel2">Phone:&nbsp;
+                                        <input type="tel" name="tel2" onChange={(e) => handleChange(e, "delv_tel")} 
+                                            value={abbrev_add("delv_tel")}
+                                        />
+                                    </label><br />
+                                </div>
+                            </div>
+                            {/* <input onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); }} type="submit" value="Next" /> */}
+                        </form>
+                        {/* <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); }} type="submit">Next</button> */}
+                        {getty("address")["billing_name"] === undefined || getty("address")["billing_name"] === "" || 
+                        getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
+                        getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
+                        getty("address") === null || Object.keys(getty("address")).length === 0 ? 
+                            <button onClick={() => {setMand(true)}}>NOPE</button> : 
+                            <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>Next</button>
+                        }
+                    </div>
+                    <div className="checkout-basket"><BasketList /></div>
                 </div>
-                <BasketList />
                 <div><i><Link to="/">Home</Link></i></div>
                 <Footer />
             </>
