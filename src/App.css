@@ -623,10 +623,18 @@
 		background-color: #903e3e;	
 	}
 	
+	#view-basket:hover {
+		background-color: #346db1;
+	}
+	
 	#view-checkout {	
 		background-color: #346db1;
 	}
-
+	
+	#view-checkout:hover {
+		background-color: #903e3e;	
+	}
+	
 	.prod_details {	
 		text-align: left;
 		margin-bottom: 3px;
@@ -822,6 +830,23 @@ h1 {
 	
 	#extra-line {	
 		display: none;
+	}
+	
+	.see_all {
+		width: 100%;
+		text-align: center;
+		float: left;
+		margin: auto;
+		font-size: 13px;
+	}
+	
+	.see_all > a {
+		text-decoration: none;
+		color: #000000;
+	}
+
+	#see_all_itself > a:hover {
+		color: #903e3e;
 	}
 
 }
