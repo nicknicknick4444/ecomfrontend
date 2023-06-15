@@ -205,7 +205,7 @@ export function BasketList(){
         return (
             <>
                 {long && get_location() !== "/basket-page" && get_location() !== "/checkout" ?
-                <div>...</div>
+                <div className="see_all">...</div>
                 : null}
                 {
                     parseInt(getty("amount")) > 0 ? 
@@ -258,9 +258,9 @@ export function BasketList(){
                     :
                     <div>Basket is sound empty!</div>
                 }
-                {long && get_location() !== "/basket-page" && get_location() !== "/checkout" ? 
-                    <div><Link to={{pathname: "/basket-page"}}>See All</Link></div> 
-                    : null}
+                {/* {long && get_location() !== "/basket-page" && get_location() !== "/checkout" ? 
+                    <div id="see_all"><Link to={{pathname: "/basket-page"}}>See All</Link></div> 
+                    : null} */}
 
                 {get_location() === "/basket-page" || get_location() === "/checkout" ?
                     
@@ -273,6 +273,10 @@ export function BasketList(){
                     amount_total > 0 ? <div id="grand-total"><b>{total_word()} TOTAL: £{amount_total.toFixed(2)}</b></div> : null
                     : null
                     }
+
+                    {long && get_location() !== "/basket-page" && get_location() !== "/checkout" ? 
+                    <div className="see_all" id="see_all_itself"><Link to={{pathname: "/basket-page"}}>See All</Link></div> 
+                    : null}
             </>
         );
     } else {
