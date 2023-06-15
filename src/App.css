@@ -217,6 +217,11 @@
 		margin-top: -10px;
 	}
 	
+	#resume > a {
+		text-decoration: none;
+		color: #ffffff;	
+	}
+	
 	#resume:hover {
 		background-color: #903e3e;
 		border: 1px #903e3e solid;
@@ -397,10 +402,12 @@
 	}
 	
 	#nav-main {
-		height: 29px;
+		height: 35px;
+		border-top: 3px #346db1 solid;
+		border-bottom: 3px #346db1 solid;
 	}
 
-	.navbar {	
+	.navbar {
 		padding-left: 3px;
 		padding-right: 11px;
 		/*top: -1px;*/
@@ -838,9 +845,16 @@ h1 {
   		}
 	}
 
+	#header {
+		border-bottom: 3px #346db1 solid;
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+	}
+	
 	.navbar-mob {
 		font-size: 20px;
-		background-color: #ffea00;
+		/*background-color: #ffea00;*/
 		text-decoration: none;
 		cursor: pointer;
 	}
@@ -1350,6 +1364,11 @@ h1 {
 		border: 1px #346db1 solid;
 		padding-top: 2px;
 		margin-top: -15px;
+	}
+	
+	#resume > a {
+		text-decoration: none;
+		color: #ffffff;	
 	}
 	
 	#resume:hover {
