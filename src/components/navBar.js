@@ -43,7 +43,7 @@ export function Navbar() {
     if (cats.length > 1) {
     return (
         <>
-            <div className="nav-edge"></div>
+            {/* <div className="nav-edge"></div> */}
                 <div id="nav-main">
                 <span className="navbar">
                     <Link to={{pathname: "/"}}>Home</Link>
@@ -89,13 +89,13 @@ export function Navbar() {
                 <span className="navbar-mob"><Link to={{pathname: "/"}}>Contact Us</Link></span>
                 </div>: null}
             </div>
-            <div className="nav-edge"></div>
+            {/* <div className="nav-edge"></div> */}
         </>
     );
     } else {
         return (
             <>
-                <div className="nav-edge">
+                {/* <div className="nav-edge"> */}
                     <div id="nav-main">
                         <span className="navbar">
                             <Link to={{pathname: "/"}}>Home</Link>
@@ -111,7 +111,7 @@ export function Navbar() {
                         </span>
                     {/* <span className="navbar">Loading...</span> */}
                     </div>
-                </div>
+                {/* </div> */}
 
                 <div className="navbar-mob">
                 
@@ -133,7 +133,7 @@ export function Navbar() {
                     
                     {/* <div style={{clear: "left"}}>Loading...</div> */}
                 </div>
-                <div className="nav-edge"></div>
+                {/* <div className="nav-edge"></div> */}
                 <div style={{clear: "left"}}>Loading...</div>
 
             </>
