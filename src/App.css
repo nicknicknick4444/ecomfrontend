@@ -666,6 +666,29 @@
 		width: 100%;
 		
 	}
+	
+	.checkout-container {
+		width: 100%;
+		display: inline;
+		float: left;
+	}
+	
+	.checkout-basket {
+		width: 50%;
+		float: right;
+		display: inline;
+		margin-top: -280px;
+		border: 1px #000000 solid;
+		padding: 5px;
+	}
+	
+	.AddressForm {
+		width: 50%;
+		float: left;
+		display: inline;
+		border: 1px #ee0000 solid;
+		padding: 5px;
+	}
 
 	.price_pad {
 		margin-left: 1px;	
