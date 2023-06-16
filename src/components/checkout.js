@@ -13,10 +13,7 @@ import axios from "axios";
 export function Checkout() {
     const [delvq, setDelvq] = useState(false);
     const [disp, setDisp] = useState("none");
-    // const [fillingdeets, setFillingdeets] = useState(false);
-    // const [bought, setBought] = useState(false);
-    // const [checked, setChecked] = useState(false);
-    const [order, setOrder] = useState({gas: "YEs", gas2: "no", gas3: "posso!"});
+    const [order, setOrder] = useState({line: "Hello", line2: "Hello2", line3: "Hello3"});
     const [grandTotal, setGrandTotal] = useState(0.00);
     const [typing, setTyping] = useState("");
     const [coupons, setCoupons] = useState("");
@@ -31,8 +28,12 @@ export function Checkout() {
         if (getty("searchList") !== []) {
             setSearched(false);
         };
+        if (getty("itemsList") === null) {
+            setty([]);
+        };
         if (getty("delvq") === null) {
             setty("delvq", false);
+            setDelvq(false);
         };
         if (getty("boughtReset") === null) {
             setty("boughtReset", false);
@@ -41,24 +42,18 @@ export function Checkout() {
             setty("address", {"billing_name": "", "billing_email": "", 
             "billing_tel": ""});
         };
-        // if (disp) {
         setDisp("none");
         if (getty("boughtReset")) {
-            // console.log("YAG!");
             empty(setDis, updateTotal, setFillingdeets);
-            // setBoughtreset(false);
             setty("boughtReset", false);
-            // back_reset(bought, setBought, setDis, updateTotal);
         };
         if (checking) {
             setBought(false);
         };
-        // setFillingdeets(false);
-        // };
         console.log("Bought Reset", getty("boughtReset"));
         console.log("Checking! ", checking);
         if (cou === "NONE") {
-        setCou("");
+            setCou("");
         };
         console.log("DELVQ: ", delvq);
         console.log("ADDRESS! ", getty("address"), Object.keys(getty("address")).length);
@@ -121,17 +116,6 @@ export function Checkout() {
         console.log("Branksome! ", line2);
     };
 
-    // function empty() {
-    //     setty("itemsList", {});
-    //     setty("priceList", {});
-    //     setty("order", []);
-    //     setDis(getty("discount"));
-    //     setty("address", {});
-    //     updateTotal();
-    //     setty("discount", 1);
-    //     setty("coupon_name", "");
-    // };
-
     // function buy() {
     function buy() {
         // setBought(() => !bought);
@@ -188,79 +172,72 @@ export function Checkout() {
         if (addresses() !== false) {
             return addresses()[`${property}`] ? addresses()[`${property}`] : "";
         };
-        // return plyke;
     };
-
-    // function back_reset() {
-    //     if (bought) {
-    //         empty(setDis, updateTotal);
-    //         setBought(false);
-    //         console.log("GRIN!!");
-    //     };
-    // };
 
     if (!fillingdeets && getty("address") !== null) {
         if (getty("order").length > 0) {
         console.log("Amos aninmal. ", getty("coupon_name"));
-        // back_reset(bought, setBought, setDis, updateTotal);
         return (
             <>
-                {/* <Navbar />
-                <SearchBox /> */}
-                {/* <Basket /> */}
                 <Header />
-                <h1>Checkout!</h1>
-                <div className="checkout_container">
-                    <div className="AddressForm" style={{width: "100%"}} onClick={() => setMag(false)}>
+                <div className="checkout-container">
+                    <h1><Link to={"/basket-page"}><span className="past">1. Basket</span></Link>&nbsp;&nbsp;
+                    <span className="present">2. Checkout</span>&nbsp;&nbsp;
+                    <span className="future">3. Review</span>&nbsp;&nbsp;
+                    <span className="future">4. Finish</span>
+                    </h1>
+                    <div className="address-form" onClick={() => setMag(false)}>
                         <form>
-                            <div>
+                            <div id="billing">
                             <p><i>Fields marked * are mandatory</i></p>
                             {mand ? <p style={{color: "#ff0000"}}>Please complete all mandatory fields</p> : <span></span>}
-                                <label htmlFor="name">Name:*&nbsp;
+                                <div>
+                                <label htmlFor="name"><span className="form-label">Name:*</span>&nbsp;
                                     <input type="text" name="name1" onChange={(e) => handleChange(e, "billing_name")} 
-                                        value={abbrev_add("billing_name")} 
+                                        value={abbrev_add("billing_name")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="email">Email:*&nbsp;
+                                <label htmlFor="email"><span className="form-label">Email:*</span>&nbsp;
                                     <input type="text" name="email1" onChange={(e) => handleChange(e, "billing_email")} 
-                                        value={abbrev_add("billing_email")} 
+                                        value={abbrev_add("billing_email")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="tel1">Phone:*&nbsp;
+                                <label htmlFor="tel1"><span className="form-label">Phone:*</span>&nbsp;
                                     <input type="tel" name="tel1" onChange={(e) => handleChange(e, "billing_tel")} 
-                                        value={abbrev_add("billing_tel")} 
+                                        value={abbrev_add("billing_tel")} className="form-input"
                                     />
                                 </label><br />
-                            </div>
-                            <div>
-                                <label htmlFor="delv_q">Different delivery address?&nbsp;
-                                    {delvq ? 
-                                    <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)}  
-                                    checked={delvq} id="checkout_checkbox"
-                                        // value={getty("delvq")} 
-                                    /> : 
-                                    <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)} 
-                                        checked={delvq} id="checkout_checkbox" 
-                                    />
-                                    }
-                                </label>
+                                </div>
+                                {/* </div> */}
+                                <div>
+                                    <label htmlFor="delv_q">Different delivery address?&nbsp;
+                                        {delvq ? 
+                                        <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)}  
+                                            checked={delvq} id="checkout_checkbox"
+                                        /> : 
+                                        <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)} 
+                                            checked={delvq} id="checkout_checkbox" 
+                                        />
+                                        }
+                                    </label>
+                                </div>
                             </div>
                             
-                            <div style={{display: `${disp}`}}>
+                            <div id="delivery" style={{display: `${disp}`}}>
                                 <div>
-                                    <label htmlFor="name2">Name:&nbsp;
+                                    <label htmlFor="name2"><span className="form-label">Name:</span>&nbsp;
                                         <input type="text" name="name2" onChange={(e) => handleChange(e, "delv_name")} 
-                                            value={abbrev_add("delv_name")}
+                                            value={abbrev_add("delv_name")} className="form-input"
                                         />
                                     </label><br />
-                                    <label htmlFor="email2">Email:&nbsp;
+                                    <label htmlFor="email2"><span className="form-label">Email:</span>&nbsp;
                                         <input type="text" name="email2" onChange={(e) => handleChange(e, "delv_email")} 
-                                            value={abbrev_add("delv_email")}
+                                            value={abbrev_add("delv_email")} className="form-input"
                                         />
                                     </label><br />
-                                    <label htmlFor="tel2">Phone:&nbsp;
+                                    <label htmlFor="tel2"><span className="form-label">Phone:</span>&nbsp;
                                         <input type="tel" name="tel2" onChange={(e) => handleChange(e, "delv_tel")} 
-                                            value={abbrev_add("delv_tel")}
+                                            value={abbrev_add("delv_tel")} className="form-input"
                                         />
                                     </label><br />
                                 </div>
@@ -276,7 +253,7 @@ export function Checkout() {
                             <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>Next</button>
                         }
                     </div>
-                    <div className="checkout-basket"><BasketList /></div>
+                    {/* <div className="checkout-basket"><BasketList /></div> */}
                 </div>
                 <div><i><Link to="/">Home</Link></i></div>
                 <Footer />
@@ -285,12 +262,13 @@ export function Checkout() {
         } else {
             return (
                 <>
-                    <h1>Checkout</h1>
+                    {/* <h1>Checkout</h1> */}
                     {/* <Navbar />
                     <SearchBox /> */}
                     {/* <Basket /> */}
                     <Header />
                     <div onClick={() => setMag(false) }></div>
+                    <h1>Checkout</h1>
                     <BasketList />
                     <div><i><Link to="/">Home</Link></i></div>
                     <Footer />
@@ -313,7 +291,7 @@ export function Checkout() {
                         : 
                             ""}</b>
                     </div> */}
-                    <div><b>TOTAL: £{(getty("amount")).toFixed(2)}</b></div>
+                    {/* <div><b>TOTAL: £{(getty("amount")).toFixed(2)}</b></div> */}
                     {getty("address") === null || getty("address") === {} ? "" : <div>Address Details:</div>}
                     <div>
                     <p><b>{addresses()["delv_name"] ? "Billing Address:" : null}</b></p>

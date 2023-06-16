@@ -264,7 +264,7 @@ export function BasketList(){
 
                 {get_location() === "/basket-page" || get_location() === "/checkout" ?
                     
-                    getty("discount") !== 1 & getty("coupon_name") !== "" ? 
+                    getty("discount") !== 1 & getty("coupon_name") !== "" && getty("amount") > 0 && getty("amount") !== null ? 
                     <div id="discount-info"><b><span style={{color: "#2aaa41"}}>COUPON CODE {getty("coupon_name")} ADDED</span></b><br />
                     <del>Original total: £{(amount_total / getty("discount")).toFixed(2)}</del></div> : 
                     cou === "NONE" ? <span id="coupon-error" style={{color: "#ff0000"}}><i>Coupon code not recognised</i></span> : "" : null}

@@ -142,7 +142,11 @@ export function ShowBasket() {
             <SearchBox /> */}
             <Header />
             <div className="basket_page" onClick={() => setMag(false)} >
-                <h1>Your Basket</h1>
+                <h1><span className="present">1. Basket</span>&nbsp;&nbsp;
+                <span className="future">2. Checkout</span>&nbsp;&nbsp;
+                <span className="future">3. Review</span>&nbsp;&nbsp;
+                <span className="future">4. Finish</span>
+                </h1>
                 <div id="basket-list">
                     <BasketList />
                 </div>
