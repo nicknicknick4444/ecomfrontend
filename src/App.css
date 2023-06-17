@@ -25,28 +25,37 @@
 	}
 
 	.breadcrumb a:active {
-		color: #000000;
+		color: #6194d1;
 	}
 	
 	.crumb {
 		padding-left: 3px;
 	}
+	
+	#arrow {
+		color: #346db1;
+	}
+
+	.sorting {
+		font-size: 14px;
+		margin-left: 8px;
+	}	
+
 
 	.sorting button {
 		margin-left: 3px;
-		padding-top: 0;
-		padding-bottom: 1px;
 		padding-left: 7px;
 		padding-right: 7px;
 		border: none;
 		height: 22px;
-		line-height: 20px;
+		vertical-align: middle;
+		text-align: center;
 		background-color: #346db1;
 		color: #ffffff;
 	}
 	
 	.sorting button:hover {	
-		background-color: #903e3e;
+		background-color: #6194d1;
 	}
 	
 	.search_bits {
@@ -80,7 +89,7 @@
 	}
 	
 	.search-box button:hover {	
-		background-color: #903e3e;
+		background-color: #6194d1;
 	}
 	
 	.top_info {
@@ -145,7 +154,7 @@
 	}
 	
 	.changeBasket:hover {
-		background-color: #903e3e;
+		background-color: #6194d1;
 	}
 	
 	.number-input {
@@ -178,8 +187,8 @@
 	}
 	
 	#coupon-buttons:hover {
-		background-color: #903e3e;
-		border: 1px #903e3e solid;
+		background-color: #6194d1;
+		border: 1px #6194d1 solid;
 	}
 		
 	#checkout-button {	
@@ -192,6 +201,7 @@
 		float: left;
 		display: inline;
 		left: 0;
+		margin-top: -7px;
 	}
 	
 	#checkout-button > a {
@@ -203,7 +213,7 @@
 	}
 	
 	#checkout-button:hover {	
-		background-color: #346db1;
+		background-color: #bb6060;
 	}
 	
 	#resume {
@@ -215,7 +225,7 @@
 		float: left;
 		height: 30px;
 		padding-bottom: 2px;
-		margin-top: -10px;
+		margin-top: -21px;
 	}
 	
 	#resume > a {
@@ -224,7 +234,7 @@
 	}
 	
 	#resume:hover {
-		background-color: #903e3e;
+		background-color: #6194d1;
 		border: 1px #903e3e solid;
 	}
 	
@@ -437,7 +447,7 @@
 	}
 
 	.navbar > a:hover {
-		color: #346db1;
+		color: #bb6060;
 	}
 
 	.navbar-mob {
@@ -570,7 +580,7 @@
 		padding-right: 5px;
 		/*padding-left: 20px;*/
 		padding-top: 0px;
-		margin-top: -1px;
+		margin-top: 8px;
 		padding-bottom: 8px;
 		margin-right: 0;
 	}
@@ -601,9 +611,9 @@
 		float: right;	
 	}
 	
-	#view-checkout {	
-	margin-bottom: 10px;
-	}
+	/*#view-checkout {	
+		margin-bottom: 10px;
+	}*/
 	
 	#view-basket, #view-checkout {	
 		color: #ffffff;
@@ -627,15 +637,16 @@
 	}
 	
 	#view-basket:hover {
-		background-color: #346db1;
+		background-color: #bb6060;
 	}
 	
 	#view-checkout {	
+		margin-top: 5px;
 		background-color: #346db1;
 	}
 	
 	#view-checkout:hover {
-		background-color: #903e3e;	
+		background-color: #6194d1;	
 	}
 	
 	.prod_details {	
@@ -669,28 +680,11 @@
 	}
 	
 	.checkout-container {
-		width: 750px;
+		max-width: 950px;
 		margin: auto;
 		border: 1px #ee0000 solid;
-		height: 100%;
+		min-height: 300px;
 	}
-	
-	.checkout-basket {
-		width: 49%;
-		/*margin-left: 2px;
-		margin-right: 5px;*/
-		float: right;
-		display: inline;
-		border: 1px #000000 solid;
-		padding: 5px;
-	}
-	
-	/*.address-form {
-		width: 750px;
-		margin: auto;
-		border: 1px #ee0000 solid;
-		padding: 5px;
-	}*/
 	
 	#billing {
 		width: 49%;
@@ -851,10 +845,10 @@ h1 > a {
 		border: 1px #d1d1d1 solid;
 		box-shadow: 2px 2px 2px #d1d1d1;
 	}
-	
-	.sorting {
-		font-size: 14px;
-		margin-left: 8px;
+
+	#dropdowns {
+		vertical-align: middle;
+		height: 22px;
 	}
 
 	#pounds {	
@@ -994,7 +988,7 @@ h1 > a {
 	}
 
 	.navbar-mob > a:hover {
-		color: #346db1;
+		color: #bb6060;
 	}
 
 	.nav-edge {
@@ -1073,6 +1067,8 @@ h1 > a {
 		clear: both;
 		font-family: helvetica;
 	}
+	
+	
 	
 	.mid {	
 		height: 54px;
@@ -1442,7 +1438,7 @@ h1 > a {
 	}
 	
 	#checkout-button:hover {
-		border: 1px #346db1 solid;
+		border: 1px #6194d1 solid;
 	}
 	
 	#resume {
@@ -1451,10 +1447,9 @@ h1 > a {
 		width: 125px;
 		text-align: center;
 		float: right;
-		margin-top: -10px;
 		border: 1px #346db1 solid;
 		padding-top: 2px;
-		margin-top: -15px;
+		margin-top: -56px;
 	}
 	
 	#resume > a {
