@@ -1,26 +1,53 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {useProps} from "./hooks/prop-hooks.js";
+import {AllInput} from "./basketUpdate.js";
+import {ConfirmBox} from "./confirmBox.js";
 import {getty, setty} from "./hooks/hooks.js";
 
 export function ProductPagination() {
     const {page, subset, numbers, page_click} = useProps();
 
     function ShowSubset() {
+
+        function Add2Basket(id) {
+                if (getty("itemsList") !== null) {
+                    var this_dict = getty("itemsList");
+                    var this_order = getty("order");
+                    if (id in getty("itemsList") && getty("itemsList")[id] > 0) {
+                        console.log("Crespa! Goot.", getty("itemsList")[id]);
+                        var higher_number = this_dict[id] + 1;
+                        this_dict[id] = higher_number;
+                        setty("itemsList", this_dict);
+                    } else {
+                        console.log("Crespa! Add 1!");
+                        this_dict[id] = 1;
+                        this_order.push(id);
+                        console.log(this_dict, this_order);
+                        setty("itemsList", this_dict);
+                        setty("order", this_order);
+                    }
+                }
+        };
+
         return (
             <>
                 <div className="prods_contain">
                     <div className="prods_list">
                         {
                             subset?.map((item, key) => (
-                                <Link key={key} to={{pathname: `/${item.prod_cat}/${item.prod_subcat}/${item.id}`}}>
-                                    <div className="prod_itself">
-                                        
+                                
+                                <div className="prod_itself" key={key}>
+                                    <Link to={{pathname: `/${item.prod_cat}/${item.prod_subcat}/${item.id}`}}>
                                         <img src={`${item.image}`} style={{width: 200}} /><br />
-                                        <p>{item.prod_title}</p>
+                                        <p>{item.prod_title} ... {item.id}</p>
                                         <p>£{item.price}</p>
-                                    </div>
-                                </Link>
+                                    </Link>
+                                    <Link to={{pathname: "/basket-page"}}><button onClick={() => Add2Basket(item.id)}>Add!</button></Link>
+                                    {/* <div id="prod_input"><AllInput item={item} words="Add To Basket" placeholder="1" /></div> */}
+                                {/* <ConfirmBox title={item.prod_title} the_id={item.id} see="maybe" /> */}
+                                </div>
+                                
                             ))
                         }
                     </div>

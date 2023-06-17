@@ -24,6 +24,7 @@ export function BasketUpdate(item, typing, setItems2 = f => f, setTyping = f => 
   
   if ("itemsList" in localStorage) {
     var dict_now = JSON.parse(localStorage.getItem("itemsList"));
+    var dict_now = getty("itemsList");
     setItems2(dict_now);
   } else {
     var dict_now = {};

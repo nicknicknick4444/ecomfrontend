@@ -105,7 +105,7 @@ export function ProdPage() {
                     {/* <br />
                     <br />
                         <i><Link to="../">Home</Link></i> */}
-                    <ConfirmBox title={product.prod_title} see={"Maybe"} />
+                    <ConfirmBox title={product.prod_title} the_id={product.id} />
                 </div>
                 <Footer />
             </>

@@ -5,8 +5,9 @@ import {telber, getty, setty} from "./hooks/hooks.js";
 import axios from "axios";
 import "../App.css";
 
-export function ConfirmBox(title) {
-    var the_id = parseInt(useLocation()["pathname"].split("/").slice(-1));
+export function ConfirmBox(title, the_id) {
+    // var the_id = parseInt(useLocation()["pathname"].split("/").slice(-1));
+    var the_id = the_id.the_id;
     // const getty = (place) => {
     //     return JSON.parse(localStorage.getItem(place));
     // }
@@ -16,7 +17,7 @@ export function ConfirmBox(title) {
 
     useEffect(() => {
         setVis("Standby");
-        console.log("ID? ", the_id);
+        console.log("ID? ", title.the_id, title);
         telber();
         // NEW
         if (getty("itemsList") === null) {
@@ -32,6 +33,7 @@ export function ConfirmBox(title) {
             // setVis("Yes");
         };
         if (vis === "Yes"){
+            console.log("Baspie!")
             setTimeout(function(){setVis("No");}, 60000);
             // clearTimeout(endTime);
         }
@@ -41,6 +43,7 @@ export function ConfirmBox(title) {
         }
         if (vis === "No"){
             // clearTimeout(startTime);
+            console.log("GLAGGY!")
             setTimeout(function(){setVis("Standby");}, 500);
         }
         if (vis === "Emptied") {

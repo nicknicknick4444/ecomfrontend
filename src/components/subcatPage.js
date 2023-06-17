@@ -1,9 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {useParams, Link, useLocation} from "react-router-dom";
 import axios from "axios";
-import {Basket} from "./basket.js";
-import {Navbar} from "./navBar.js";
-import {SearchBox} from "./searchBox.js";
 import {Header} from "./header.js";
 import {Footer} from "./footer.js";
 import {Breadcrumb} from "./breadcrumb.js";
