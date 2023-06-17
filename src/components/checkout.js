@@ -245,12 +245,15 @@ export function Checkout() {
                             {/* <input onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); }} type="submit" value="Next" /> */}
                         </form>
                         {/* <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); }} type="submit">Next</button> */}
-                        {getty("address")["billing_name"] === undefined || getty("address")["billing_name"] === "" || 
-                        getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
-                        getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
-                        getty("address") === null || Object.keys(getty("address")).length === 0 ? 
+                        {
+                            getty("address")["billing_name"] === undefined || getty("address")["billing_name"] === "" || 
+                            getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
+                            getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
+                            getty("address") === null || Object.keys(getty("address")).length === 0 ? 
                             <button onClick={() => {setMand(true)}}>NOPE</button> : 
-                            <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>Next</button>
+                            <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>
+                                Next
+                            </button>
                         }
                     </div>
                     {/* <div className="checkout-basket"><BasketList /></div> */}

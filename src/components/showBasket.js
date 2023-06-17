@@ -170,14 +170,15 @@ export function ShowBasket() {
                     <span style={{float: "left"}}><i>(Psst! 10PC or 50PC)</i></span>
                 {/* </div> : getty("order").length < 1 ? "" : getty("order") === null ? "" :  */}
                 {/* <button id="checkout-button"><Link to="/checkout">Checkout</Link></button> */}
-                </div><br /><br /><br /><div id="extra-line"><br /></div><button id="checkout-button"><Link to="/checkout">Checkout</Link></button><br /><br />
+                </div><br /><br /><br /><div id="extra-line"><br /></div>
+                <button id="checkout-button"><Link to="/checkout">Checkout</Link></button><br /><br />
                 <button id="resume"><Link to="/">Resume Shopping</Link></button>
             </div> : getty("order") === null || getty("order").length === 0 ? "" : 
             <div id="coupon-contain"><div id="remove-coupon">
                 <button id="coupon-buttons" onClick={() => unCoupon()}>Remove Coupon</button>
             </div>
             <div id="extra-line"><br /><br /></div>
-            <button id="checkout-button"><Link to="/checkout">Checkout</Link></button><br /><br />
+            <button id="checkout-button"><Link to="/checkout">Checkout</Link></button><br /><br /><br /><br />
             <button id="resume"><Link to="/">Resume Shopping</Link></button>
             </div>}<br /><br /><br /><br />
             {/* <button id="checkout-button"><Link to="/checkout">Checkout</Link></button> */}

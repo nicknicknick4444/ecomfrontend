@@ -55,7 +55,10 @@ export function Breadcrumb(product) {
                         ?
                         <span className="crumb" key={key}><Link to={{pathname: `/${crumbstr[key]}`}}>{toTitle(i.replace("%20", ""))}</Link></span>
                         :
-                        <span className="crumb" key={key}><Link to={{pathname: `/${crumbstr[key]}`}}>{toTitle(i.replace("%20", "")) + " > "}</Link></span>
+                        <span className="crumb" key={key}>
+                            <Link to={{pathname: `/${crumbstr[key]}`}}>{toTitle(i.replace("%20", ""))}</Link>
+                            <span id="arrow"> > </span>
+                        </span>
                     ))
                 }
                 </div>
