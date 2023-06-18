@@ -228,50 +228,92 @@
 		border: 1px #bb6060 solid;
 	}
 	
-	#resume {
+	#resume, #back-to-shop {
 		font-size: 14px;
 		background-color: #346db1;
 		border: 1px #346db1 solid;
 		color: #ffffff;
 		display: inline;
-		float: left;
+		/*float: left;*/
 		height: 30px;
 		padding-bottom: 2px;
-		margin-top: -21px;
+		/*margin-top: -21px;*/
 	}
 	
-	#resume > a {
+	#back-to-shop {
+		background-color: #903e3e;
+		border: 1px #ffffff solid;
+		/*margin-top: 20px;*/
+		position: absolute;
+		bottom: -98px;
+		right: 78px;
+		float: right;
+	}
+	
+	#resume {
+		background-color: #346db1;
+		border: 1px #346db1 solid;
+		margin-top: -21px;
+		float: left;
+	}
+
+	#resume > a, #back-to-shop > a {
 		text-decoration: none;
 		color: #ffffff;	
 	}
 	
 	#resume:hover {
 		background-color: #6194d1;
-		border: 1px #903e3e solid;
+		border: 1px #6194d1 solid;
+	}
+	
+	#back-to-shop:hover {
+		background-color: #bb6060;
+		border: 1px #bb6060 solid;
+	}
+	
+	#delv-q {
+		float: left;
+		clear: left;
 	}
 
-	#next {
+	#next, #next2 {
 		width: auto;
 		height: 32px;
-		font-size: 17px;
-		line-height: 17px;
+		font-size: 14px;
+		line-height: 28px;
 		color: #ffffff;
 		text-align: center;
-		padding-right: 7px;
+		padding-left: 11px;
+		padding-right: 12px;
 		padding-bottom: 3px;
-		margin-top: 400px;
-		margin-left: -458px;
+		margin-top: -31px;
+		margin-left: -203px;
+		margin-right: auto;
+		float: left;
+		clear: right;
+		/*margin-left: -458px;
+		background-color: #346db1;
+		border: 1px #346db1 solid;*/
+		vertical-aign: middle;
+		cursor: pointer;
+	}
+	
+	#next {
 		background-color: #346db1;
 		border: 1px #346db1 solid;
-		vertical-aign: middle;
+	}
+
+	#next2 {	
+		background-color: #bcd2ec;
+		border: 1px #bcd2ec solid;
+		cursor: default;
 	}
 	
 	#next:hover {
 		background-color: #6194d1;
 		border: 1px #6194d1 solid;
 	}
-
-
 	
 	#desc_itself {	
 		font-size: 16px;
@@ -716,11 +758,13 @@
 	
 	.checkout-container {
 		max-width: 950px;
+		min-width: 750px;
 		padding-left: 5px;
 		padding-right: 5px;
+		padding-bottom: 40px;
 		margin: auto;
 		border: 1px #903e3e solid;
-		min-height: 500px;
+		min-height: 489px;
 	}
 	
 	#billing {
@@ -728,9 +772,20 @@
 		float: left;
 	}
 	
-	#delivery {
+	#delivery, #delivery-container {
 		width: 49%;
 		float: right;
+		margin-top: 40px;
+	}
+
+	#delivery {
+		width: 100%;
+		/*float: right;*/
+		margin-top: 12px;
+	}
+	
+	#sub-head {
+		font-size: 14px;
 	}
 	
 	#leave-line {
@@ -747,7 +802,7 @@
 	}
 	
 	.form-input {
-		width: 220px;
+		width: 310px;
 		float: right;
 		vertical-align: middle;
 	}
@@ -1523,6 +1578,8 @@ h1 > a {
 	}
 	
 	#resume {
+		background-color: #346db1;
+		color: #ffffff;
 		font-size: 12px;
 		height: 24px;
 		width: 125px;
@@ -1530,6 +1587,10 @@ h1 > a {
 		float: right;
 		border: 1px #346db1 solid;
 		padding-top: 2px;
+		/*margin-top: -56px;*/
+	}
+	
+	#resume {
 		margin-top: -56px;
 	}
 	
