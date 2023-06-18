@@ -26,11 +26,6 @@ export function ShowBasket() {
     };
 
     function coupon_api() {
-        // NEWLY ADDED
-        // if (getty("codes") ===  null) {
-        //     setty("codes", []);
-        // }
-        // setty("")
         // const promise = axios.get(`http://localhost:8000/api/coupons/`);
         const promise = axios.get(`https://polar-coast-39563.herokuapp.com/api/coupons/`);
         promise.then((res) => setty("codes", JSON.stringify(res.data)));
@@ -102,14 +97,6 @@ export function ShowBasket() {
         setCou("");
     };
 
-    // function back_reset() {
-    //     if (bought) {
-    //         empty(setDis, updateTotal);
-    //         setBought(false);
-    //         console.log("GRIN!!");
-    //     };
-    // };
-
     useEffect(() => {
         if (getty("searchBox") !== []) {
             setSearched(false);
@@ -120,6 +107,7 @@ export function ShowBasket() {
             empty(setDis, updateTotal, setFillingdeets);
         };
         setBurger(false);
+        window.moveTo(0, 0);
     }, []);
 
     useEffect(() => {
@@ -178,11 +166,11 @@ export function ShowBasket() {
                 <button id="coupon-buttons" onClick={() => unCoupon()}>Remove Coupon</button>
             </div>
             <div id="extra-line"><br /><br /></div>
-            <button id="checkout-button"><Link to="/checkout">Checkout</Link></button><br /><br /><br /><br />
-            <button id="resume"><Link to="/">Resume Shopping</Link></button>
-            </div>}<br /><br /><br /><br />
+            <Link to="/checkout"><button id="checkout-button">Checkout</button></Link><br /><br /><br /><br />
+            <Link to="/"><button id="resume">Resume Shopping</button></Link>
+            </div>}<br />
             {/* <button id="checkout-button"><Link to="/checkout">Checkout</Link></button> */}
-            <div><i><Link to="/">Home</Link></i></div>
+            {/* <div><i><Link to="/">Home</Link></i></div> */}
             <Footer />
         </>
     );

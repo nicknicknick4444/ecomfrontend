@@ -40,12 +40,14 @@ export function ProductPagination() {
                                 <div className="prod_itself" key={key}>
                                     <Link to={{pathname: `/${item.prod_cat}/${item.prod_subcat}/${item.id}`}}>
                                         <img src={`${item.image}`} style={{width: 200}} /><br />
-                                        <p>{item.prod_title} ... {item.id}</p>
+                                        <p>{item.prod_title}</p>
                                         <p>£{item.price}</p>
                                     </Link>
-                                    <Link to={{pathname: "/basket-page"}}><button onClick={() => Add2Basket(item.id)}>Add!</button></Link>
-                                    {/* <div id="prod_input"><AllInput item={item} words="Add To Basket" placeholder="1" /></div> */}
-                                {/* <ConfirmBox title={item.prod_title} the_id={item.id} see="maybe" /> */}
+                                    <Link to={{pathname: "/basket-page"}}>
+                                        <button id="add2" className="changeBasket" onClick={() => Add2Basket(item.id)}>
+                                            Add To Basket
+                                        </button>
+                                    </Link>
                                 </div>
                                 
                             ))

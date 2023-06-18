@@ -57,6 +57,7 @@ export function Checkout() {
         };
         console.log("DELVQ: ", delvq);
         console.log("ADDRESS! ", getty("address"), Object.keys(getty("address")).length);
+        window.moveTo(0, 0);
     }, [])
     
     useEffect(() => {
@@ -202,11 +203,61 @@ export function Checkout() {
                                         value={abbrev_add("billing_email")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="tel1"><span className="form-label">Phone:*</span>&nbsp;
+                                <label id="leave-line" htmlFor="tel1"><span className="form-label">Phone:*</span>&nbsp;
                                     <input type="tel" name="tel1" onChange={(e) => handleChange(e, "billing_tel")} 
                                         value={abbrev_add("billing_tel")} className="form-input"
                                     />
                                 </label><br />
+                                <label htmlFor="add_line_1">
+                                    <span className="form-label">Address Line 1:*</span>&nbsp;
+                                    <input type="text" name="add_line_1" 
+                                            onChange={(e) => handleChange(e, "add_line_1")} 
+                                            value={abbrev_add("add_line_1")} className="form-input"
+                                    />
+                                </label><br />
+                                <label htmlFor="add_line_2">
+                                    <span className="form-label">Address Line 2:</span>&nbsp;
+                                    <input type="text" name="add_line_2" 
+                                            onChange={(e) => handleChange(e, "add_line_2")} 
+                                            value={abbrev_add("add_line_2")} className="form-input"
+                                    />
+                                </label><br />
+                                <label htmlFor="add_line_3">
+                                    <span className="form-label">Address Line 3:</span>&nbsp;
+                                    <input type="text" name="add_line_3" 
+                                            onChange={(e) => handleChange(e, "add_line_3")}
+                                            value={abbrev_add("add_line_3")} className="form-input"
+                                    />
+                                </label><br />
+                                <label htmlFor="town">
+                                    <span className="form-label">Town/ City:*</span>&nbsp;
+                                    <input type="text" name="town" 
+                                            onChange={(e) => handleChange(e, "town")}
+                                            value={abbrev_add("town")} className="form-input"
+                                    />
+                                </label><br />
+                                <label htmlFor="county">
+                                    <span className="form-label">County:</span>&nbsp;
+                                    <input type="text" name="county" 
+                                            onChange={(e) => handleChange(e, "county")}
+                                            value={abbrev_add("county")} className="form-input"
+                                    />
+                                </label><br />
+                                <label htmlFor="postcode">
+                                    <span className="form-label">Postcode:*</span>&nbsp;
+                                    <input type="text" name="postcode" 
+                                            onChange={(e) => handleChange(e, "postcode")}
+                                            value={abbrev_add("postcode")} className="form-input"
+                                    />
+                                </label><br />
+                                <label htmlFor="country">
+                                    <span className="form-label">Country:</span>&nbsp;
+                                    <input type="text" name="country" 
+                                            onChange={(e) => handleChange(e, "country")}
+                                            value={abbrev_add("country")} className="form-input"
+                                    />
+                                </label><br />
+
                                 </div>
                                 {/* </div> */}
                                 <div>
@@ -225,21 +276,65 @@ export function Checkout() {
                             
                             <div id="delivery" style={{display: `${disp}`}}>
                                 <div>
-                                    <label htmlFor="name2"><span className="form-label">Name:</span>&nbsp;
+                                    <label htmlFor="name2" id="leave-line"><span className="form-label">Name:*</span>&nbsp;
                                         <input type="text" name="name2" onChange={(e) => handleChange(e, "delv_name")} 
                                             value={abbrev_add("delv_name")} className="form-input"
                                         />
                                     </label><br />
-                                    <label htmlFor="email2"><span className="form-label">Email:</span>&nbsp;
-                                        <input type="text" name="email2" onChange={(e) => handleChange(e, "delv_email")} 
-                                            value={abbrev_add("delv_email")} className="form-input"
-                                        />
-                                    </label><br />
-                                    <label htmlFor="tel2"><span className="form-label">Phone:</span>&nbsp;
-                                        <input type="tel" name="tel2" onChange={(e) => handleChange(e, "delv_tel")} 
-                                            value={abbrev_add("delv_tel")} className="form-input"
-                                        />
-                                    </label><br />
+                                    <label htmlFor="delv_add_line_1">
+                                    <span className="form-label">Address Line 1:*</span>&nbsp;
+                                    <input type="text" name="delv_add_line_1" 
+                                            onChange={(e) => handleChange(e, "delv_add_line_1")} 
+                                            value={abbrev_add("delv_add_line_1")} className="form-input"
+                                    />
+                                </label><br />
+                                <label htmlFor="delv_add_line_2">
+                                    <span className="form-label">Address Line 2:</span>&nbsp;
+                                    <input type="text" name="delv_add_line_2" 
+                                            onChange={(e) => handleChange(e, "delv_add_line_2")} 
+                                            value={abbrev_add("delv_add_line_2")} className="form-input"
+                                    />
+                                </label><br />
+                                <label htmlFor="delv_add_line_3">
+                                    <span className="form-label">Address Line 3:</span>&nbsp;
+                                    <input type="text" name="delv_add_line_3" 
+                                            onChange={(e) => handleChange(e, "delv_add_line_3")}
+                                            value={abbrev_add("delv_add_line_3")} className="form-input"
+                                    />
+                                </label><br />
+                                <label htmlFor="delv_town">
+                                    <span className="form-label">Town/ City:*</span>&nbsp;
+                                    <input type="text" name="delv_town" 
+                                            onChange={(e) => handleChange(e, "delv_town")}
+                                            value={abbrev_add("delv_town")} className="form-input"
+                                    />
+                                </label><br />
+                                <label htmlFor="county2">
+                                    <span className="form-label">County:</span>&nbsp;
+                                    <input type="text" name="county" 
+                                            onChange={(e) => handleChange(e, "county")}
+                                            value={abbrev_add("county")} className="form-input"
+                                    />
+                                </label><br />
+                                <label htmlFor="postcode">
+                                    <span className="form-label">Postcode:*</span>&nbsp;
+                                    <input type="text" name="postcode" 
+                                            onChange={(e) => handleChange(e, "postcode")}
+                                            value={abbrev_add("postcode")} className="form-input"
+                                    />
+                                </label><br />
+                                <label htmlFor="country">
+                                    <span className="form-label">Country:</span>&nbsp;
+                                    <input type="text" name="country" 
+                                            onChange={(e) => handleChange(e, "country")}
+                                            value={abbrev_add("country")} className="form-input"
+                                    />
+                                </label><br />
+                                        
+
+
+
+
                                 </div>
                             </div>
                             {/* <input onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); }} type="submit" value="Next" /> */}
@@ -249,11 +344,15 @@ export function Checkout() {
                             getty("address")["billing_name"] === undefined || getty("address")["billing_name"] === "" || 
                             getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
                             getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
+                            getty("address")["add_line_1"] === undefined || getty("address")["add_line_1"] === "" || 
+                            getty("address")["town"] === undefined || getty("address")["town"] === "" || 
+                            getty("address")["postcode"] === undefined || getty("address")["postcode"] === "" || 
+                            (delvq === true && getty("address")["delv_name"] == undefined) || (delvq === true && getty("address")["delv_name"] === "") || 
                             getty("address") === null || Object.keys(getty("address")).length === 0 ? 
                             <button onClick={() => {setMand(true)}}>NOPE</button> : 
-                            <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>
+                            <div style={{"paddingLeft": 50}}><button id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>
                                 Next
-                            </button>
+                            </button></div>
                         }
                     </div>
                     {/* <div className="checkout-basket"><BasketList /></div> */}
@@ -281,19 +380,9 @@ export function Checkout() {
     } else {
         return (
             <>
-                {/* <Navbar />
-                <SearchBox /> */}
-                    {/* <Basket /> */}
-                    <Header />
+                <Header />
                 <div onClick={() => setMag(false)}>
                     {!bought ? <h2>Review & Submit</h2> : <><h2>Thank you for your order!</h2><p>Your order number is: N{order_ref}</p></>}
-                    {/* <div style={{color: "#2aaa41"}}>
-                        <b>{getty("discount") !== 1 
-                        ? 
-                            `DISCOUNT APPLIED: ${getty("coupon_name")}` 
-                        : 
-                            ""}</b>
-                    </div> */}
                     {/* <div><b>TOTAL: £{(getty("amount")).toFixed(2)}</b></div> */}
                     {getty("address") === null || getty("address") === {} ? "" : <div>Address Details:</div>}
                     <div>
@@ -301,6 +390,13 @@ export function Checkout() {
                     <p>{addresses()["billing_name"] ? addresses()["billing_name"] : null}</p>
                     <p>{addresses()["billing_email"] ? addresses()["billing_email"] : null}</p>
                     <p>{addresses()["billing_tel"] ? addresses()["billing_tel"] : null}</p>
+                    <p>{addresses()["add_line_1"] ? addresses()["add_line_1"] : null}</p>
+                    <p>{addresses()["add_line_2"] ? addresses()["add_line_2"] : null}</p>
+                    <p>{addresses()["add_line_3"] ? addresses()["add_line_3"] : null}</p>
+                    <p>{addresses()["town"] ? addresses()["town"] : null}</p>
+                    <p>{addresses()["county"] ? addresses()["county"] : null}</p>
+                    <p>{addresses()["postcode"] ? addresses()["postcode"] : null}</p>
+                    <p>{addresses()["country"] ? addresses()["country"] : null}</p>
                     </div>
 
                     { getty("delvq") === true ? 
@@ -314,7 +410,9 @@ export function Checkout() {
                     <BasketList />
                     {!bought ? 
                     <>
-                        <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(false)}}>Edit Order</button>
+                        <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(false)}}>
+                            <Link to={{pathname: "/basket-page"}}>Edit Order</Link>
+                        </button>
                         <button onClick={() => buy()}>Submit Order</button>
                     </> 
                     :
