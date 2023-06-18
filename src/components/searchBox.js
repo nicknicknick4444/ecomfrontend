@@ -11,7 +11,7 @@ export function SearchBox() {
     const {searchTyping, setSearchtyping, raw, setRaw, shortlist, setShortlist, 
         searched, setSearched, section, bought, setDis, updateTotal, 
         setFillingdeets} = useProps();
-    var beatty = useLocation();
+    var this_location = useLocation();
     // var counto = 0;
 
     function handleChange(e) {
@@ -136,13 +136,13 @@ export function SearchBox() {
         // if (listo.length === 0) {
         //     listo.push("Empty");
         // };
-        // while (beatty.pathname !== "/search-results") {
+        // while (this_location.pathname !== "/search-results") {
             setShortlist(listo);
             setty("searchList", listo);
             setty("revert", listo);
             setty("term", searchTyping);
         // };
-        console.log("Where: ", beatty.pathname);
+        console.log("Where: ", this_location.pathname);
         setSearched(true);
         setRaw({});
         section("searchList");
@@ -172,7 +172,7 @@ export function SearchBox() {
         // if (searched === true) {
             setSearched(false);
             // section("searchList");
-            console.log("LOCATION! ", beatty);
+            console.log("LOCATION! ", this_location);
             console.log("Redirect!", shortlist, searched.toString());
             window.location.href = ("/search-results");
         };

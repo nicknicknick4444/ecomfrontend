@@ -183,7 +183,7 @@ export function Checkout() {
                 <Header />
                 <div className="checkout-container">
                     <h1><Link to={"/basket-page"}><span className="past">1. Basket</span></Link>&nbsp;&nbsp;
-                    <span className="present">2. Checkout</span>&nbsp;&nbsp;
+                    <span className="present">2. Address</span>&nbsp;&nbsp;
                     <span className="future">3. Review</span>&nbsp;&nbsp;
                     <span className="future">4. Finish</span>
                     </h1>
@@ -191,8 +191,9 @@ export function Checkout() {
                         <form>
                             <div id="billing">
                             <p><i>Fields marked * are mandatory</i></p>
-                            {mand ? <p style={{color: "#ff0000"}}>Please complete all mandatory fields</p> : <span></span>}
+                            {mand ? <p style={{color: "#ff0000"}}>Please complete all mandatory fields</p> : null}
                                 <div>
+                                <h1>{delvq ? "Billing " : null}Address</h1>
                                 <label htmlFor="name"><span className="form-label">Name:*</span>&nbsp;
                                     <input type="text" name="name1" onChange={(e) => handleChange(e, "billing_name")} 
                                         value={abbrev_add("billing_name")} className="form-input"
@@ -260,7 +261,28 @@ export function Checkout() {
 
                                 </div>
                                 {/* </div> */}
-                                <div>
+
+                                {/* <div id="delv-q">
+                                    <label htmlFor="delv_q">Different delivery address?&nbsp;
+                                        {delvq ? 
+                                        <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)}  
+                                            checked={delvq} id="checkout_checkbox"
+                                        /> : 
+                                        <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)} 
+                                            checked={delvq} id="checkout_checkbox" 
+                                        />
+                                        }
+                                    </label>
+                                </div> */}
+                            </div>
+                            
+
+                            {/* <div id="delivery" style={{display: `${disp}`}}> */}
+                                <div id="delivery-container">
+
+
+                            
+                                <div id="delv-q">
                                     <label htmlFor="delv_q">Different delivery address?&nbsp;
                                         {delvq ? 
                                         <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)}  
@@ -272,10 +294,29 @@ export function Checkout() {
                                         }
                                     </label>
                                 </div>
-                            </div>
+
+                                {
+                                        getty("address")["billing_name"] === undefined || getty("address")["billing_name"] === "" || 
+                                        getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
+                                        getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
+                                        getty("address")["add_line_1"] === undefined || getty("address")["add_line_1"] === "" || 
+                                        getty("address")["town"] === undefined || getty("address")["town"] === "" || 
+                                        getty("address")["postcode"] === undefined || getty("address")["postcode"] === "" || 
+                                        (delvq === true && getty("address")["delv_name"] === undefined) || (delvq === true && getty("address")["delv_name"] === "") || 
+                                        (delvq === true && getty("address")["delv_add_line_1"] === undefined) || (delvq === true && getty("address")["delv_add_line_1"] === "") || 
+                                        (delvq === true && getty("address")["delv_town"] === undefined) || (delvq === true && getty("address")["delv_town"] === "") || 
+                                        (delvq === true && getty("address")["delv_postcode"] === undefined) || (delvq === true && getty("address")["delv_postcode"] === "") || 
+                                        getty("address") === null || Object.keys(getty("address")).length === 0 ? 
+                                        <div id="next2" onClick={() => {setMand(true)}}>Next</div> : 
+                                        <div id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>
+                                            Next
+                                        </div>
+                                }
                             
                             <div id="delivery" style={{display: `${disp}`}}>
                                 <div>
+                                    <h1>Delivery Address</h1>
+                                    <h1 id="sub-head">Please ensure somebody is available to take delivery</h1>
                                     <label htmlFor="name2" id="leave-line"><span className="form-label">Name:*</span>&nbsp;
                                         <input type="text" name="name2" onChange={(e) => handleChange(e, "delv_name")} 
                                             value={abbrev_add("delv_name")} className="form-input"
@@ -309,53 +350,34 @@ export function Checkout() {
                                             value={abbrev_add("delv_town")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="county2">
+                                <label htmlFor="delv_county">
                                     <span className="form-label">County:</span>&nbsp;
-                                    <input type="text" name="county" 
-                                            onChange={(e) => handleChange(e, "county")}
-                                            value={abbrev_add("county")} className="form-input"
+                                    <input type="text" name="delv_county" 
+                                            onChange={(e) => handleChange(e, "delv_county")}
+                                            value={abbrev_add("delv_county")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="postcode">
+                                <label htmlFor="delv_postcode">
                                     <span className="form-label">Postcode:*</span>&nbsp;
-                                    <input type="text" name="postcode" 
-                                            onChange={(e) => handleChange(e, "postcode")}
-                                            value={abbrev_add("postcode")} className="form-input"
+                                    <input type="text" name="delv_postcode" 
+                                            onChange={(e) => handleChange(e, "delv_postcode")}
+                                            value={abbrev_add("delv_postcode")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="country">
+                                <label htmlFor="delv_country">
                                     <span className="form-label">Country:</span>&nbsp;
-                                    <input type="text" name="country" 
-                                            onChange={(e) => handleChange(e, "country")}
-                                            value={abbrev_add("country")} className="form-input"
+                                    <input type="text" name="delv_country" 
+                                        onChange={(e) => handleChange(e, "delv_country")}
+                                        value={abbrev_add("delv_country")} className="form-input"
                                     />
                                 </label><br />
                                         
-
-
-
-
                                 </div>
                             </div>
-                            {/* <input onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); }} type="submit" value="Next" /> */}
+                        </div>
                         </form>
-                        {/* <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); }} type="submit">Next</button> */}
-                        {
-                            getty("address")["billing_name"] === undefined || getty("address")["billing_name"] === "" || 
-                            getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
-                            getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
-                            getty("address")["add_line_1"] === undefined || getty("address")["add_line_1"] === "" || 
-                            getty("address")["town"] === undefined || getty("address")["town"] === "" || 
-                            getty("address")["postcode"] === undefined || getty("address")["postcode"] === "" || 
-                            (delvq === true && getty("address")["delv_name"] == undefined) || (delvq === true && getty("address")["delv_name"] === "") || 
-                            getty("address") === null || Object.keys(getty("address")).length === 0 ? 
-                            <button onClick={() => {setMand(true)}}>NOPE</button> : 
-                            <div style={{"paddingLeft": 50}}><button id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>
-                                Next
-                            </button></div>
-                        }
                     </div>
-                    {/* <div className="checkout-basket"><BasketList /></div> */}
+                    <Link to={{pathname: "/"}}><button id="back-to-shop">Continue Shopping</button></Link>
                 </div>
                 <div><i><Link to="/">Home</Link></i></div>
                 <Footer />
@@ -364,10 +386,6 @@ export function Checkout() {
         } else {
             return (
                 <>
-                    {/* <h1>Checkout</h1> */}
-                    {/* <Navbar />
-                    <SearchBox /> */}
-                    {/* <Basket /> */}
                     <Header />
                     <div onClick={() => setMag(false) }></div>
                     <h1>Checkout</h1>
@@ -382,31 +400,45 @@ export function Checkout() {
             <>
                 <Header />
                 <div onClick={() => setMag(false)}>
-                    {!bought ? <h2>Review & Submit</h2> : <><h2>Thank you for your order!</h2><p>Your order number is: N{order_ref}</p></>}
+                    <h1>
+                        <span className="past">1. Basket</span>&nbsp;&nbsp;
+                        <span className="past">2. Address</span>&nbsp;&nbsp;
+                        <span className="present">3. Review</span>&nbsp;&nbsp;
+                        <span className="future">4. Finish</span>&nbsp;&nbsp;
+                    </h1>
+                    {!bought ? null : <><h2>Thank you for your order!</h2><p>Your order number is: N{order_ref}</p></>}
                     {/* <div><b>TOTAL: £{(getty("amount")).toFixed(2)}</b></div> */}
-                    {getty("address") === null || getty("address") === {} ? "" : <div>Address Details:</div>}
+                    {/* {getty("address") === null || getty("address") === {} ? "" : <h1>Review & Complete</h1>} */}
                     <div>
-                    <p><b>{addresses()["delv_name"] ? "Billing Address:" : null}</b></p>
-                    <p>{addresses()["billing_name"] ? addresses()["billing_name"] : null}</p>
-                    <p>{addresses()["billing_email"] ? addresses()["billing_email"] : null}</p>
-                    <p>{addresses()["billing_tel"] ? addresses()["billing_tel"] : null}</p>
-                    <p>{addresses()["add_line_1"] ? addresses()["add_line_1"] : null}</p>
-                    <p>{addresses()["add_line_2"] ? addresses()["add_line_2"] : null}</p>
-                    <p>{addresses()["add_line_3"] ? addresses()["add_line_3"] : null}</p>
-                    <p>{addresses()["town"] ? addresses()["town"] : null}</p>
-                    <p>{addresses()["county"] ? addresses()["county"] : null}</p>
-                    <p>{addresses()["postcode"] ? addresses()["postcode"] : null}</p>
-                    <p>{addresses()["country"] ? addresses()["country"] : null}</p>
+                        <h1><b>{delvq ? "Billing Address:" : "Address"}</b></h1>
+                        <p>{addresses()["billing_name"] ? addresses()["billing_name"] : null}</p>
+                        <p>{addresses()["billing_email"] ? addresses()["billing_email"] : null}</p>
+                        <p>{addresses()["billing_tel"] ? addresses()["billing_tel"] : null}</p>
+                        <p>{addresses()["add_line_1"] ? addresses()["add_line_1"] : null}</p>
+                        <p>{addresses()["add_line_2"] ? addresses()["add_line_2"] : null}</p>
+                        <p>{addresses()["add_line_3"] ? addresses()["add_line_3"] : null}</p>
+                        <p>{addresses()["town"] ? addresses()["town"] : null}</p>
+                        <p>{addresses()["county"] ? addresses()["county"] : null}</p>
+                        <p>{addresses()["postcode"] ? addresses()["postcode"] : null}</p>
+                        <p>{addresses()["country"] ? addresses()["country"] : null}</p>
                     </div>
 
                     { getty("delvq") === true ? 
                     <div>
-                    <p><br/ ><b>{addresses()["delv_name"] ? "Delivery Address:" : null}</b></p>
+                        <h1><br/ ><b>{addresses()["delv_name"] ? "Delivery Address:" : null}</b></h1>
                     
-                    <p>{addresses()["delv_name"] ? addresses()["delv_name"] : null}</p>
-                    <p>{addresses()["delv_email"] ? addresses()["delv_email"] : null}</p>
-                    <p>{addresses()["delv_tel"] ? addresses()["delv_tel"] : null}</p>
-                    </div> : <span></span>}
+                        <p>{addresses()["delv_name"] ? addresses()["delv_name"] : null}</p>
+                        <p>{addresses()["delv_email"] ? addresses()["delv_email"] : null}</p>
+                        <p>{addresses()["delv_tel"] ? addresses()["delv_tel"] : null}</p>
+                        <p>{addresses()["delv_add_line_1"] ? addresses()["delv_add_line_1"] : null}</p>
+                        <p>{addresses()["delv_add_line_2"] ? addresses()["delv_add_line_2"] : null}</p>
+                        <p>{addresses()["delv_add_line_3"] ? addresses()["delv_add_line_3"] : null}</p>
+                        <p>{addresses()["delv_town"] ? addresses()["delv_town"] : null}</p>
+                        <p>{addresses()["delv_county"] ? addresses()["delv_county"] : null}</p>
+                        <p>{addresses()["delv_postcode"] ? addresses()["delv_postcode"] : null}</p>
+                        <p>{addresses()["delv_country"] ? addresses()["delv_country"] : null}</p>
+
+                    </div> : null}
                     <BasketList />
                     {!bought ? 
                     <>
