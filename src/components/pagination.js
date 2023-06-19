@@ -10,23 +10,37 @@ export function ProductPagination() {
 
     function ShowSubset() {
 
-        function Add2Basket(id) {
+        function Add2Basket(id, price) {
+                // ADD PRICES!!!!
                 if (getty("itemsList") !== null) {
-                    var this_dict = getty("itemsList");
+                    var this_items = getty("itemsList");
                     var this_order = getty("order");
+                    var this_prices = getty("priceList");
                     if (id in getty("itemsList") && getty("itemsList")[id] > 0) {
                         console.log("Crespa! Goot.", getty("itemsList")[id]);
-                        var higher_number = this_dict[id] + 1;
-                        this_dict[id] = higher_number;
-                        setty("itemsList", this_dict);
+                        var higher_number = this_items[id] + 1;
+                        this_items[id] = higher_number;
+                        setty("itemsList", this_items);
                     } else {
                         console.log("Crespa! Add 1!");
-                        this_dict[id] = 1;
+                        this_items[id] = 1;
                         this_order.push(id);
-                        console.log(this_dict, this_order);
-                        setty("itemsList", this_dict);
+                        this_prices[id] = price;
+                        console.log(this_items, this_order);
+                        setty("itemsList", this_items);
                         setty("order", this_order);
+                        setty("priceList", this_prices)
                     }
+                } else {
+                    var this_items = {};
+                    var this_order = [];
+                    var this_prices = {}
+                    this_items[id] = 1;
+                    this_order.push(id);
+                    this_prices[id] = price;
+                    setty("itemsList", this_items);
+                    setty("order", this_order);
+                    setty("priceList", this_prices);
                 }
         };
 
@@ -44,7 +58,7 @@ export function ProductPagination() {
                                         <p>£{item.price}</p>
                                     </Link>
                                     <Link to={{pathname: "/basket-page"}}>
-                                        <button id="add2" className="changeBasket" onClick={() => Add2Basket(item.id)}>
+                                        <button id="add2" className="changeBasket" onClick={() => Add2Basket(item.id, item.price)}>
                                             Add To Basket
                                         </button>
                                     </Link>
