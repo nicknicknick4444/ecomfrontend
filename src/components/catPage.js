@@ -33,6 +33,7 @@ export function CatPage() {
         setSearched(false);
         setChecking(true);
         setBurger(false);
+        window.moveTo(0, 0);
     }, []);
 
     useEffect(() => {

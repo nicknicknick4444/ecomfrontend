@@ -33,6 +33,7 @@ export function ProdPage() {
         console.log("Subs! ", searched.toString());
         setChecking(true);
         setBurger(false);
+        window.moveTo(0, 0);
     }, []);
 
     useEffect(() => {

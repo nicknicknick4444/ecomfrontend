@@ -39,6 +39,7 @@ export function SearchPage() {
         // Set number of results per page in 2nd element of setPage!
         setPage([0,9]);
         setChecking(true);
+        window.moveTo(0, 0);
     }, []);
 
     useEffect(() => {

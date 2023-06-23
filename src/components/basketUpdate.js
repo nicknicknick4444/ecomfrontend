@@ -229,7 +229,7 @@ export function AllInput({item, words, placeholder, state, this2}) {
         type="number" 
         value={typing2} 
         // placeholder={placeholder} 
-        placeholder={getty("itemsList")[item.id]}
+        placeholder={(getty("itemsList")[item.id] !== undefined && getty("itemsList")[item.id] !== 0) ? getty("itemsList")[item.id] : 0}
         onChange={handleChange2} 
         style={{width: 44}}
       /> 
