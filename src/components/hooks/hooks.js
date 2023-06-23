@@ -98,3 +98,42 @@ export function get_location() {
     // console.log("Vespa!", window.location["pathname"]);
     return window.location["pathname"];
 };
+
+export function Add2Basket(id, price, itemq, totally) {
+    // const {typing, setTyping} = useProps();
+
+    // ADD PRICES!!!!
+    if (getty("itemsList") !== null) {
+        var this_items = getty("itemsList");
+        var this_order = getty("order");
+        var this_prices = getty("priceList");
+        if (id in getty("itemsList") && getty("itemsList")[id] > 0) {
+            console.log("Crespa! Goot.", getty("itemsList")[id]);
+            var higher_number = this_items[id] + 1;
+            this_items[id] = higher_number;
+            setty("itemsList", this_items);
+        } else {
+            console.log("Crespa! Add 1!");
+            this_items[id] = 1;
+            this_order.push(id);
+            this_prices[id] = price;
+            console.log(this_items, this_order);
+            setty("itemsList", this_items);
+            setty("order", this_order);
+            setty("priceList", this_prices);
+            // setTyping("");
+        }
+    } else {
+        var this_items = {};
+        var this_order = [];
+        var this_prices = {}
+        this_items[id] = 1;
+        this_order.push(id);
+        this_prices[id] = price;
+        setty("itemsList", this_items);
+        setty("order", this_order);
+        setty("priceList", this_prices);
+    }
+    console.log("BOOTHY! BOOTHY!");
+};
+
