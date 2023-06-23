@@ -258,7 +258,31 @@ export function Checkout() {
                                             value={abbrev_add("country")} className="form-input"
                                     />
                                 </label><br />
-
+                                {/* <p>Gesp.</p> */}
+                                <Link to={{pathname: "/"}}><button id="back-to-shop">Continue Shopping</button></Link>
+                                
+                                {
+                                        getty("address")["billing_name"] === undefined || getty("address")["billing_name"] === "" || 
+                                        getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
+                                        getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
+                                        getty("address")["add_line_1"] === undefined || getty("address")["add_line_1"] === "" || 
+                                        getty("address")["town"] === undefined || getty("address")["town"] === "" || 
+                                        getty("address")["postcode"] === undefined || getty("address")["postcode"] === "" || 
+                                        (delvq === true && getty("address")["delv_name"] === undefined) || (delvq === true && getty("address")["delv_name"] === "") || 
+                                        (delvq === true && getty("address")["delv_add_line_1"] === undefined) || (delvq === true && getty("address")["delv_add_line_1"] === "") || 
+                                        (delvq === true && getty("address")["delv_town"] === undefined) || (delvq === true && getty("address")["delv_town"] === "") || 
+                                        (delvq === true && getty("address")["delv_postcode"] === undefined) || (delvq === true && getty("address")["delv_postcode"] === "") || 
+                                        getty("address") === null || Object.keys(getty("address")).length === 0 ? 
+                                        <div id="next2" onClick={() => {setMand(true)}}>Next</div> : 
+                                        <div id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>
+                                            Next
+                                        </div>
+                                }
+                                
+                                
+                                
+                                
+                                
                                 </div>
                                 {/* </div> */}
 
@@ -282,7 +306,7 @@ export function Checkout() {
 
 
                             
-                                <div id="delv-q">
+                                {/* <div id="delv-q">
                                     <label htmlFor="delv_q">Different delivery address?&nbsp;
                                         {delvq ? 
                                         <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)}  
@@ -293,9 +317,9 @@ export function Checkout() {
                                         />
                                         }
                                     </label>
-                                </div>
+                                </div> */}
 
-                                {
+                                {/* {
                                         getty("address")["billing_name"] === undefined || getty("address")["billing_name"] === "" || 
                                         getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
                                         getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
@@ -311,7 +335,7 @@ export function Checkout() {
                                         <div id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>
                                             Next
                                         </div>
-                                }
+                                } */}
                             
                             <div id="delivery" style={{display: `${disp}`}}>
                                 <div>
@@ -377,7 +401,24 @@ export function Checkout() {
                         </div>
                         </form>
                     </div>
-                    <Link to={{pathname: "/"}}><button id="back-to-shop">Continue Shopping</button></Link>
+                    
+
+
+                    <div id="delv-q" style={{bottom: delvq ? -40 : -368}}>
+                                    <label htmlFor="delv_q">Different delivery address?&nbsp;
+                                        {delvq ? 
+                                        <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)}  
+                                            checked={delvq} id="checkout_checkbox"
+                                        /> : 
+                                        <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)} 
+                                            checked={delvq} id="checkout_checkbox" 
+                                        />
+                                        }
+                                    </label>
+                    </div>
+
+
+                    {/* <Link to={{pathname: "/"}}><button id="back-to-shop">Continue Shopping</button></Link> */}
                 </div>
                 <div><i><Link to="/">Home</Link></i></div>
                 <Footer />
