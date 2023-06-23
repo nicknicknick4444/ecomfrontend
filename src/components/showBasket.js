@@ -161,7 +161,7 @@ export function ShowBasket() {
                 </div><br /><br /><br /><div id="extra-line"><br /></div>
                 <button id="checkout-button"><Link to="/checkout">Checkout</Link></button><br /><br />
                 <button id="resume"><Link to="/">Resume Shopping</Link></button>
-            </div> : getty("order") === null || getty("order").length === 0 ? "" : 
+            </div> : getty("order") === null || getty("order").length === 0 ? null : 
             <div id="coupon-contain"><div id="remove-coupon">
                 <button id="coupon-buttons" onClick={() => unCoupon()}>Remove Coupon</button>
             </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import {getty, setty} from "./hooks/hooks.js";
 
-export function addToBasket(setTyping2, item, state, this2, basket) {
+export function addToBasket(setTyping2, item, typing2) {
   var total = localStorage.getItem("new");
 
   if (parseInt(total) === -1) {
@@ -9,6 +9,8 @@ export function addToBasket(setTyping2, item, state, this2, basket) {
   } else {
     var new_total = parseInt(total) + 1;
   };
+
+  // if (typing2 === 1 && )
 
   localStorage.setItem("new", parseInt(new_total));
   setTyping2(new_total);

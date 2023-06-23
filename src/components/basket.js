@@ -8,7 +8,8 @@ import {ErrorBoundary} from "./errorBoundary.js";
 export function Basket() {
     const [basko, setBasko] = useState({});
     const {totally, setAmount, amount, begin, bought, setChecking, 
-        setDis, updateTotal, setFillingdeets, droplist, setDroplist} = useProps();
+        setDis, updateTotal, setFillingdeets, droplist, setDroplist, 
+        itemq, setItemq} = useProps();
 
     useEffect(() => {
         if (totally) {

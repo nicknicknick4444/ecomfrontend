@@ -165,7 +165,7 @@ export function BasketList(){
             setty("discount", 1);
             setty("coupon-name", "");
             setDis(1);
-        }
+        };
         // if (getty("order").length)
         // setDis()
         setCou("");

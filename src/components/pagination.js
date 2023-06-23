@@ -3,46 +3,48 @@ import {Link} from "react-router-dom";
 import {useProps} from "./hooks/prop-hooks.js";
 import {AllInput} from "./basketUpdate.js";
 import {ConfirmBox} from "./confirmBox.js";
-import {getty, setty} from "./hooks/hooks.js";
+import {getty, setty, Add2Basket} from "./hooks/hooks.js";
 
 export function ProductPagination() {
     const {page, subset, numbers, page_click} = useProps();
 
     function ShowSubset() {
 
-        function Add2Basket(id, price) {
-                // ADD PRICES!!!!
-                if (getty("itemsList") !== null) {
-                    var this_items = getty("itemsList");
-                    var this_order = getty("order");
-                    var this_prices = getty("priceList");
-                    if (id in getty("itemsList") && getty("itemsList")[id] > 0) {
-                        console.log("Crespa! Goot.", getty("itemsList")[id]);
-                        var higher_number = this_items[id] + 1;
-                        this_items[id] = higher_number;
-                        setty("itemsList", this_items);
-                    } else {
-                        console.log("Crespa! Add 1!");
-                        this_items[id] = 1;
-                        this_order.push(id);
-                        this_prices[id] = price;
-                        console.log(this_items, this_order);
-                        setty("itemsList", this_items);
-                        setty("order", this_order);
-                        setty("priceList", this_prices)
-                    }
-                } else {
-                    var this_items = {};
-                    var this_order = [];
-                    var this_prices = {}
-                    this_items[id] = 1;
-                    this_order.push(id);
-                    this_prices[id] = price;
-                    setty("itemsList", this_items);
-                    setty("order", this_order);
-                    setty("priceList", this_prices);
-                }
-        };
+
+
+        // function Add2Basket(id, price) {
+        //         // ADD PRICES!!!!
+        //         if (getty("itemsList") !== null) {
+        //             var this_items = getty("itemsList");
+        //             var this_order = getty("order");
+        //             var this_prices = getty("priceList");
+        //             if (id in getty("itemsList") && getty("itemsList")[id] > 0) {
+        //                 console.log("Crespa! Goot.", getty("itemsList")[id]);
+        //                 var higher_number = this_items[id] + 1;
+        //                 this_items[id] = higher_number;
+        //                 setty("itemsList", this_items);
+        //             } else {
+        //                 console.log("Crespa! Add 1!");
+        //                 this_items[id] = 1;
+        //                 this_order.push(id);
+        //                 this_prices[id] = price;
+        //                 console.log(this_items, this_order);
+        //                 setty("itemsList", this_items);
+        //                 setty("order", this_order);
+        //                 setty("priceList", this_prices)
+        //             }
+        //         } else {
+        //             var this_items = {};
+        //             var this_order = [];
+        //             var this_prices = {}
+        //             this_items[id] = 1;
+        //             this_order.push(id);
+        //             this_prices[id] = price;
+        //             setty("itemsList", this_items);
+        //             setty("order", this_order);
+        //             setty("priceList", this_prices);
+        //         }
+        // };
 
         return (
             <>
