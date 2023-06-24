@@ -261,7 +261,7 @@ export function Checkout() {
                                 {/* <p>Gesp.</p> */}
                                 
                                 <div id="bottom-buttons">
-                                <Link to={{pathname: "/"}}><button id="back-to-shop">Continue Shopping</button></Link>
+                                <Link to={{pathname: "/"}}><div id="back-to-shop"><Link to={{pathname: "/"}}>Continue Shopping</Link></div></Link>
                                     {
                                             getty("address")["billing_name"] === undefined || getty("address")["billing_name"] === "" || 
                                             getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
