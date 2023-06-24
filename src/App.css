@@ -242,13 +242,18 @@
 	
 	#back-to-shop {
 		background-color: #903e3e;
-		border: 1px #ffffff solid;
+		border: 1px #903e3e solid;
 		/*position: absolute;
 		bottom: -98px;*/
-		margin-top: 7px;
-		margin-right: 208px;
-		float: right;
+		margin-top: 5px;
+		margin-left: 0px;
+		padding-left: 5px;
+		padding-right: 5px;
+		float: left;
 		height: 32px;
+		line-height: 30px;
+		/*display: inline-flex;
+		align-itmes: center;*/
 	}
 	
 	#resume {
@@ -275,33 +280,40 @@
 	}
 	
 	#delv-q-on, #delv-q-off {
+		/*width: 100%;
+		height: 50px;
 		left: 19px;
-		position: relative;
+		position: relative;*/
+		margin-left: 361px;
+		display: block;
 	}
 	
 	#delv-q-on {
-		bottom: -41px;
+		/*bottom: -41px;
+		padding-left: -220px;*/
+		margin-top: 420px;
 	}
 
 	#delv-q-off {
-		bottom: -369px;
+		/*bottom: -369px;
+		width: 500px;*/
 	}
 
 	#next, #next2 {
 		width: auto;
-		height: 30px;
+		height: 31px;
 		font-size: 14px;
-		line-height: 27px;
+		line-height: 28px;
 		color: #ffffff;
 		text-align: center;
 		padding-left: 11px;
 		padding-right: 12px;
-		padding-bottom: 3px;
-		margin-top: -31px;
+		/*padding-bottom: 3px;*/
+		margin-top: 5px;
 		margin-left: 1px;
 		margin-right: auto;
-		float: left;
-		clear: right;
+		float: right;
+		/*clear: right;*/
 		/*margin-left: -458px;
 		background-color: #346db1;
 		border: 1px #346db1 solid;*/
@@ -767,15 +779,16 @@
 	}
 	
 	.address-form {
-		min-width: 830px;
+		/*min-width: 830px;*/
 	}
 	
 	.checkout-container {
-		max-width: 950px;
-		min-width: 750px;
+		/*max-width: 950px;*/
+		width: 660px;
+		/*min-width: 600px;*/
 		padding-left: 5px;
 		padding-right: 5px;
-		padding-bottom: 40px;
+		padding-bottom: 0px;
 		margin: auto;
 		border: 1px #903e3e solid;
 		min-height: 489px;
@@ -794,12 +807,13 @@
 
 	#delivery {
 		width: 100%;
-		/*float: right;*/
+		float: right;
 		margin-top: 0px;
 	}
 	
 	#sub-head {
-		font-size: 14px;
+		font-size: 13px;
+		margin-bottom: 15px;
 	}
 	
 	#leave-line {
@@ -809,14 +823,14 @@
 	.form-label {
 		font-size: 14px;
 		padding-top: 2px;
-		margin-right: 15px;
+		margin-right: 5px;
 		width: 100px;	
 		float: left;
 		vertical-align: middle;
 	}
 	
 	.form-input {
-		width:270px;
+		width: 207px;
 		float: right;
 		vertical-align: middle;
 	}
@@ -1639,43 +1653,43 @@ h1 > a {
 	}
 	
 	.checkout-container {
-		width: 95%;	
+		/*text-align: center;
+		width: 90%;*/
 	}
 	
 	.address-form {
-		width: 95%;
-		margin: auto;
+		/*width: 95%;
+		margin: auto;*/
 	}
 
 	.form-label {
-		width: 114px;
+		width: 87px;
+		font-size: 12px;
 		float: left;
 		margin-right: 5px;
 	}
 	
 	.form-input {
-		width: 220px;
+		width: 200px;
 	}
 
 	#bottom-buttons {	
-		width: 100%;
+		margin-left: 5%;
+		margin-right: 5%;
 		
-		margin-left: auto;
-		margin-right: auto;
-		display: inline;
 	}
 	
 	#next, #next2 {
 		/*margin-right: auto;
-		margin-top: 10px;*/
-		margin: auto;
+		margin-top: 10px;
+		margin-right: -40px;*/
 		float: right;
 	}
 	
 	#back-to-shop {
 		/*position: relative;
-		margin-top: 10px;*/
-		margin: auto;
+		margin-top: 10px;
+		margin: auto;*/
 		float: left;
 	}
 
@@ -1685,7 +1699,7 @@ h1 > a {
 		margin-top: 5px;
 		margin-bottom: 5px;
 		position: relative;
-		left: 11px;
+		margin-left: 10px;
 	}
 	
 	#delv-q-on {
@@ -1698,6 +1712,10 @@ h1 > a {
 	
 	#delivery-top {
 		padding-top: 50px;
+	}
+	
+	#billing, #delivery {
+		/*max-width: 300px;*/
 	}
 
 
