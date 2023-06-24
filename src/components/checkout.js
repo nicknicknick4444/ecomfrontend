@@ -259,27 +259,29 @@ export function Checkout() {
                                     />
                                 </label><br />
                                 {/* <p>Gesp.</p> */}
+                                
+                                <div id="bottom-buttons">
                                 <Link to={{pathname: "/"}}><button id="back-to-shop">Continue Shopping</button></Link>
-                                
-                                {
-                                        getty("address")["billing_name"] === undefined || getty("address")["billing_name"] === "" || 
-                                        getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
-                                        getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
-                                        getty("address")["add_line_1"] === undefined || getty("address")["add_line_1"] === "" || 
-                                        getty("address")["town"] === undefined || getty("address")["town"] === "" || 
-                                        getty("address")["postcode"] === undefined || getty("address")["postcode"] === "" || 
-                                        (delvq === true && getty("address")["delv_name"] === undefined) || (delvq === true && getty("address")["delv_name"] === "") || 
-                                        (delvq === true && getty("address")["delv_add_line_1"] === undefined) || (delvq === true && getty("address")["delv_add_line_1"] === "") || 
-                                        (delvq === true && getty("address")["delv_town"] === undefined) || (delvq === true && getty("address")["delv_town"] === "") || 
-                                        (delvq === true && getty("address")["delv_postcode"] === undefined) || (delvq === true && getty("address")["delv_postcode"] === "") || 
-                                        getty("address") === null || Object.keys(getty("address")).length === 0 ? 
-                                        <div id="next2" onClick={() => {setMand(true)}}>Next</div> : 
-                                        <div id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>
-                                            Next
-                                        </div>
-                                }
-                                
-                                
+                                    {
+                                            getty("address")["billing_name"] === undefined || getty("address")["billing_name"] === "" || 
+                                            getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
+                                            getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
+                                            getty("address")["add_line_1"] === undefined || getty("address")["add_line_1"] === "" || 
+                                            getty("address")["town"] === undefined || getty("address")["town"] === "" || 
+                                            getty("address")["postcode"] === undefined || getty("address")["postcode"] === "" || 
+                                            (delvq === true && getty("address")["delv_name"] === undefined) || (delvq === true && getty("address")["delv_name"] === "") || 
+                                            (delvq === true && getty("address")["delv_add_line_1"] === undefined) || (delvq === true && getty("address")["delv_add_line_1"] === "") || 
+                                            (delvq === true && getty("address")["delv_town"] === undefined) || (delvq === true && getty("address")["delv_town"] === "") || 
+                                            (delvq === true && getty("address")["delv_postcode"] === undefined) || (delvq === true && getty("address")["delv_postcode"] === "") || 
+                                            getty("address") === null || Object.keys(getty("address")).length === 0 ? 
+                                            <div id="next2" onClick={() => {setMand(true)}}>Next</div> : 
+                                            <div id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>
+                                                Next
+                                            </div>
+                                    }
+                                    {/* <Link to={{pathname: "/"}}><button id="back-to-shop">Continue Shopping</button></Link> */}
+                                    
+                                </div>
                                 
                                 
                                 
@@ -339,7 +341,7 @@ export function Checkout() {
                             
                             <div id="delivery" style={{display: `${disp}`}}>
                                 <div>
-                                    <h1>Delivery Address</h1>
+                                    <h1 id="delivery-top">Delivery Address</h1>
                                     <h1 id="sub-head">Please ensure somebody is available to take delivery</h1>
                                     <label htmlFor="name2" id="leave-line"><span className="form-label">Name:*</span>&nbsp;
                                         <input type="text" name="name2" onChange={(e) => handleChange(e, "delv_name")} 
@@ -404,7 +406,7 @@ export function Checkout() {
                     
 
 
-                    <div id="delv-q" style={{bottom: delvq ? -40 : -368}}>
+                    <div id={delvq ? "delv-q-on" : "delv-q-off"} >
                                     <label htmlFor="delv_q">Different delivery address?&nbsp;
                                         {delvq ? 
                                         <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)}  
