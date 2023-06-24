@@ -274,9 +274,17 @@
 		border: 1px #bb6060 solid;
 	}
 	
-	#delv-q {
-		left: 20px;
+	#delv-q-on, #delv-q-off {
+		left: 19px;
 		position: relative;
+	}
+	
+	#delv-q-on {
+		bottom: -41px;
+	}
+
+	#delv-q-off {
+		bottom: -369px;
 	}
 
 	#next, #next2 {
@@ -1628,6 +1636,68 @@ h1 > a {
 		margin-bottom: 25px;
 		margin-right: 2.5%;
 		font-size: 12px;
+	}
+	
+	.checkout-container {
+		width: 95%;	
+	}
+	
+	.address-form {
+		width: 95%;
+		margin: auto;
+	}
+
+	.form-label {
+		width: 114px;
+		float: left;
+		margin-right: 5px;
+	}
+	
+	.form-input {
+		width: 220px;
+	}
+
+	#bottom-buttons {	
+		width: 100%;
+		
+		margin-left: auto;
+		margin-right: auto;
+		display: inline;
+	}
+	
+	#next, #next2 {
+		/*margin-right: auto;
+		margin-top: 10px;*/
+		margin: auto;
+		float: right;
+	}
+	
+	#back-to-shop {
+		/*position: relative;
+		margin-top: 10px;*/
+		margin: auto;
+		float: left;
+	}
+
+	#delv-q-on, #delv-q-off {
+		width: 100%;
+		clear: both;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		position: relative;
+		left: 11px;
+	}
+	
+	#delv-q-on {
+		bottom: 396px;
+	}
+	
+	#delv-q-off {
+		bottom: -10px;
+	}
+	
+	#delivery-top {
+		padding-top: 50px;
 	}
 
 
