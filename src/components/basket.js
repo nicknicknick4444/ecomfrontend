@@ -61,7 +61,7 @@ export function Basket() {
                         style={{ width: widthCond()}}>
                     <Link to="/basket-page">
                         <div><img src="https://i.ibb.co/pRNYvv3/basket1.png" className="basket-icon" /></div>
-                    </Link>
+                    {/* </Link> */}
                     <div className="basket-words">
                         <div>Items: <span className="basket_total">{!bought ? totally < 0 ? "0.00" : totally : 0 }</span></div>
                         <div>Total: &nbsp;<span className="price_pad">£{!bought ? parseInt(amount) === 0 ? "0.00" : amount.toFixed(2) : "0.00"}</span></div> 
@@ -74,6 +74,7 @@ export function Basket() {
                         </div>
                         } */}
                     </div>
+                    </Link>
                     <div class="buttons">
                     {!bought ?
                     <>

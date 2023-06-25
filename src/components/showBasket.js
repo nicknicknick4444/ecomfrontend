@@ -107,7 +107,7 @@ export function ShowBasket() {
             empty(setDis, updateTotal, setFillingdeets);
         };
         setBurger(false);
-        window.moveTo(0, 0);
+        window.scrollTo(0, 0);
     }, []);
 
     useEffect(() => {

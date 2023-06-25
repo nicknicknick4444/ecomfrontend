@@ -57,7 +57,7 @@ export function Checkout() {
         };
         console.log("DELVQ: ", delvq);
         console.log("ADDRESS! ", getty("address"), Object.keys(getty("address")).length);
-        window.moveTo(0, 0);
+        window.scrollTo(0, 0);
     }, [])
     
     useEffect(() => {
@@ -178,6 +178,7 @@ export function Checkout() {
     if (!fillingdeets && getty("address") !== null) {
         if (getty("order").length > 0) {
         console.log("Amos aninmal. ", getty("coupon_name"));
+        window.scrollTo(0, 0);
         return (
             <>
                 <Header />
@@ -439,11 +440,12 @@ export function Checkout() {
             );
         }
     } else {
+        window.scrollTo(0, 0);
         return (
             <>
                 <Header />
                 <div onClick={() => setMag(false)}>
-                    <h1>
+                    <h1 id="progress">
                         <span className="past">1. Basket</span>&nbsp;&nbsp;
                         <span className="past">2. Address</span>&nbsp;&nbsp;
                         <span className="present">3. Review</span>&nbsp;&nbsp;
@@ -452,48 +454,52 @@ export function Checkout() {
                     {!bought ? null : <><h2>Thank you for your order!</h2><p>Your order number is: N{order_ref}</p></>}
                     {/* <div><b>TOTAL: £{(getty("amount")).toFixed(2)}</b></div> */}
                     {/* {getty("address") === null || getty("address") === {} ? "" : <h1>Review & Complete</h1>} */}
-                    <div>
-                        <h1><b>{delvq ? "Billing Address:" : "Address"}</b></h1>
-                        <p>{addresses()["billing_name"] ? addresses()["billing_name"] : null}</p>
-                        <p>{addresses()["billing_email"] ? addresses()["billing_email"] : null}</p>
-                        <p>{addresses()["billing_tel"] ? addresses()["billing_tel"] : null}</p>
-                        <p>{addresses()["add_line_1"] ? addresses()["add_line_1"] : null}</p>
-                        <p>{addresses()["add_line_2"] ? addresses()["add_line_2"] : null}</p>
-                        <p>{addresses()["add_line_3"] ? addresses()["add_line_3"] : null}</p>
-                        <p>{addresses()["town"] ? addresses()["town"] : null}</p>
-                        <p>{addresses()["county"] ? addresses()["county"] : null}</p>
-                        <p>{addresses()["postcode"] ? addresses()["postcode"] : null}</p>
-                        <p>{addresses()["country"] ? addresses()["country"] : null}</p>
+                    <div className={delvq ? "review-addresses" : "review-only-address"}>
+                        <div className={delvq ? "review-billing" : "only-address"}>
+                            <h1 className="review-title"><b>{delvq ? "Billing Address:" : "Address"}</b></h1>
+                            <p>{addresses()["billing_name"] ? addresses()["billing_name"] : null}</p>
+                            <p>{addresses()["billing_email"] ? addresses()["billing_email"] : null}</p>
+                            <p>{addresses()["billing_tel"] ? addresses()["billing_tel"] : null}</p>
+                            <p>{addresses()["add_line_1"] ? addresses()["add_line_1"] : null}</p>
+                            <p>{addresses()["add_line_2"] ? addresses()["add_line_2"] : null}</p>
+                            <p>{addresses()["add_line_3"] ? addresses()["add_line_3"] : null}</p>
+                            <p>{addresses()["town"] ? addresses()["town"] : null}</p>
+                            <p>{addresses()["county"] ? addresses()["county"] : null}</p>
+                            <p>{addresses()["postcode"] ? addresses()["postcode"] : null}</p>
+                            <p>{addresses()["country"] ? addresses()["country"] : null}</p>
+                        </div>
+
+                        { getty("delvq") === true ? 
+                        <div className="review-delivery">
+                            <h1 className="review-title"><b>{addresses()["delv_name"] ? "Delivery Address:" : null}</b></h1>
+                        
+                            <p>{addresses()["delv_name"] ? addresses()["delv_name"] : null}</p>
+                            <p>{addresses()["delv_email"] ? addresses()["delv_email"] : null}</p>
+                            <p>{addresses()["delv_tel"] ? addresses()["delv_tel"] : null}</p>
+                            <p>{addresses()["delv_add_line_1"] ? addresses()["delv_add_line_1"] : null}</p>
+                            <p>{addresses()["delv_add_line_2"] ? addresses()["delv_add_line_2"] : null}</p>
+                            <p>{addresses()["delv_add_line_3"] ? addresses()["delv_add_line_3"] : null}</p>
+                            <p>{addresses()["delv_town"] ? addresses()["delv_town"] : null}</p>
+                            <p>{addresses()["delv_county"] ? addresses()["delv_county"] : null}</p>
+                            <p>{addresses()["delv_postcode"] ? addresses()["delv_postcode"] : null}</p>
+                            <p>{addresses()["delv_country"] ? addresses()["delv_country"] : null}</p>
+
+                        </div> : null}
                     </div>
-
-                    { getty("delvq") === true ? 
-                    <div>
-                        <h1><br/ ><b>{addresses()["delv_name"] ? "Delivery Address:" : null}</b></h1>
-                    
-                        <p>{addresses()["delv_name"] ? addresses()["delv_name"] : null}</p>
-                        <p>{addresses()["delv_email"] ? addresses()["delv_email"] : null}</p>
-                        <p>{addresses()["delv_tel"] ? addresses()["delv_tel"] : null}</p>
-                        <p>{addresses()["delv_add_line_1"] ? addresses()["delv_add_line_1"] : null}</p>
-                        <p>{addresses()["delv_add_line_2"] ? addresses()["delv_add_line_2"] : null}</p>
-                        <p>{addresses()["delv_add_line_3"] ? addresses()["delv_add_line_3"] : null}</p>
-                        <p>{addresses()["delv_town"] ? addresses()["delv_town"] : null}</p>
-                        <p>{addresses()["delv_county"] ? addresses()["delv_county"] : null}</p>
-                        <p>{addresses()["delv_postcode"] ? addresses()["delv_postcode"] : null}</p>
-                        <p>{addresses()["delv_country"] ? addresses()["delv_country"] : null}</p>
-
-                    </div> : null}
                     <BasketList />
                     {!bought ? 
                     <>
-                        <button onClick={() => {setFillingdeets(!fillingdeets); setChecking(false)}}>
-                            <Link to={{pathname: "/basket-page"}}>Edit Order</Link>
-                        </button>
-                        <button onClick={() => buy()}>Submit Order</button>
+                        <div id="end-buttons">
+                            <div id="back-to-shop" onClick={() => {setFillingdeets(!fillingdeets); setChecking(false)}}>
+                                <Link to={{pathname: "/basket-page"}}>Edit Order</Link>
+                            </div>
+                            <div id="next" onClick={() => buy()}>Submit Order</div>
+                        </div>
                     </> 
                     :
                     <span></span>}
                     {/* <button onClick={(() => buy())}>Reset</button> */}
-                    <div><i><Link to="/">Home</Link></i></div>
+                    {/* <div><i><Link to="/">Home</Link></i></div> */}
                 </div>
                 <Footer />
             </>
