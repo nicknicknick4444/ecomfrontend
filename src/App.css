@@ -1721,6 +1721,7 @@ h1 > a {
 	
 	#delivery-top {
 		padding-top: 50px;
+		padding-bottom: -5px;
 	}
 	
 	#billing, #delivery {
