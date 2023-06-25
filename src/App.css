@@ -201,21 +201,30 @@
 		border: 1px #6194d1 solid;
 	}
 		
-	#checkout-button {	
+	#checkout-button, #checkout-button2 {	
 		font-size: 14px;
 		color: #ffffff;
 		background-color: #903e3e;
 		border: 1px #903e3e solid;
 		height: 30px;
 		width: 125px;
-		padding-bottom: 2px;
+		text-align: center;
 		float: left;
 		display: inline;
 		left: 0;
-		margin-top: -7px;
 	}
 	
-	#checkout-button > a {
+	#checkout-button {
+		padding-top: 1px;
+		margin-top: -6px;
+	}
+	
+	#checkout-button2 {
+		padding-top: 3px;
+		margin-top: -8px;
+	}
+	
+	#checkout-button > a, #checkout-button2 > a {
 		text-decoration: none;
 		color: #ffffff;
 		display: inline;
@@ -223,12 +232,12 @@
 		
 	}
 	
-	#checkout-button:hover {	
+	#checkout-button:hover, #checkout-button2:hover {	
 		background-color: #bb6060;
 		border: 1px #bb6060 solid;
 	}
 	
-	#resume, #back-to-shop {
+	#resume, #resume2, #back-to-shop {
 		font-size: 14px;
 		background-color: #346db1;
 		border: 1px #346db1 solid;
@@ -238,8 +247,8 @@
 	}
 	
 	#back-to-shop {
-		background-color: #903e3e;
-		border: 1px #903e3e solid;
+		/*background-color: #903e3e;
+		border: 1px #903e3e solid;*/
 		margin-top: 5px;
 		margin-left: 0px;
 		padding-left: 5px;
@@ -249,20 +258,32 @@
 		line-height: 31px;
 	}
 	
-	#resume {
-		background-color: #346db1;
-		border: 1px #346db1 solid;
+	#resume, #resume2 {
+		/*background-color: #346db1;
+		border: 1px #346db1 solid;*/
 		height: 30px;
-		margin-top: -21px;
+		margin-bottom: 5px;
 		float: left;
+		width: 125px;
+		text-align: center;
+	}
+	
+	#resume {
+		margin-top: -21px;
+		padding-top: -3px;
+	}
+	
+	#resume2 {
+		margin-top: -21px;
+		padding-top: 4px;
 	}
 
-	#resume > a, #back-to-shop > a {
+	#resume > a, #resume2 > a, #back-to-shop > a {
 		text-decoration: none;
 		color: #ffffff;	
 	}
 	
-	#resume:hover {
+	#resume:hover, #resume2:hover {
 		background-color: #6194d1;
 		border: 1px #6194d1 solid;
 	}
@@ -399,7 +420,7 @@
 	#coupon-contain {
 		max-width: 750px;
 		width: 100%;
-		margin-left: auto;
+		margin-left: 15%;
 		margin-right: auto;
 	}
 	
@@ -420,6 +441,7 @@
 	#discount-info {
 		float: right;
 		text-align: right;
+		margin-left: 25%;
 	}
 
 	#grand-total {
@@ -791,6 +813,11 @@
 	
 	.basket_image {
 		width: 100%;
+	}
+	
+	#basket-list {
+		margin-left: 15%;
+		margin-right: 15%;
 	}
 	
 	.address-form {
@@ -1512,6 +1539,10 @@ h1 > a {
 	#pennies {	
 		font-size: 15px;
 	}
+	
+	.changeBasket {
+		padding-top: 2px;
+	}
 
 	.search-box-mob button {
 		background-color: #346db1;
@@ -1661,28 +1692,31 @@ h1 > a {
 		padding-top: 3px;
 	}
 		
-	#checkout-button {
+	#checkout-button, #checkout-button2 {
 		font-size: 12px;
 		color: #ffffff;
 		height: 24px;
 		width: 105px;
 		text-align: center;
 		float: right;
-		margin-top: 8px;
 		border: 1px #903e3e solid;
 		padding-top: 2px;
 	}
 	
-	#checkout-button:hover {
-		border: 1px #6194d1 solid;
+	#checkout-button {	
+		margin-top: 8px;
 	}
 	
-	#resume {
+	#checkout-button2 {	
+		margin-top: 16px;
+	}
+	
+	#resume, #resume2 {
 		background-color: #346db1;
 		color: #ffffff;
 		font-size: 12px;
 		height: 24px;
-		width: 125px;
+		width: 105px;
 		text-align: center;
 		float: right;
 		border: 1px #346db1 solid;
@@ -1694,13 +1728,17 @@ h1 > a {
 		margin-top: -56px;
 	}
 	
-	#resume > a {
+	#resume2 {
+		margin-top: -82px;	
+	}
+	
+	#resume > a, #resume2 > a {
 		text-decoration: none;
 		color: #ffffff;	
 	}
 	
-	#resume:hover {
-		border: 1px #346db1 solid;
+	#resume:hover, #resume2:hover {
+		border: 1px #6194d1 solid;
 	}
 	
 	#coupon-error {
