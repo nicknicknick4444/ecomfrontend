@@ -1666,18 +1666,24 @@ h1 > a {
 	}
 	
 	#sub-head {
-		font-size: 15px;
+		font-size: 14px;
 	}
 
 	.form-label {
+		font-size: 5px;
 		width: 89px;
+		height: 25px;
+		line-height: 26px;
 		font-size: 12px;
 		float: left;
 		margin-right: 3px;
+		vertical-align: middle;
 	}
 	
 	.form-input {
 		width: 204px;
+		height: 29px;
+		vertical-align: middle;
 	}
 
 	#bottom-buttons {	
@@ -1705,23 +1711,23 @@ h1 > a {
 		width: 230px;
 		clear: both;
 		margin-top: 5px;
-		margin-bottom: 5px;
+		/*margin-bottom: 5px;*/
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
 	}
 	
 	#delv-q-on {
-		bottom: 363px;
+		bottom: 388px;
 	}
 	
 	#delv-q-off {
-		bottom: -10px;
+		bottom: -9px;
 	}
 	
 	#delivery-top {
 		padding-top: 50px;
-		padding-bottom: -5px;
+		margin-bottom: 10px;
 	}
 	
 	#billing, #delivery {
