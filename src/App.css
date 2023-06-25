@@ -439,6 +439,10 @@
 	.future {
 		color: #d1d1d1;
 	}
+	
+	h1 a {
+		text-decoration: none;
+	}
 
 
 /* START OF MINI MAIN */
@@ -802,6 +806,7 @@
 		padding-bottom: 0px;
 		margin: auto;
 		border: 1px #903e3e solid;
+		border-radius: 4px;
 		min-height: 489px;
 	}
 	
@@ -1111,6 +1116,11 @@ h1 > a {
 		margin-bottom: 3px;
 		text-align: left;
 		text-align: center;
+	}
+	
+	.review-basket {
+		margin-left: 25%;
+		margin-right: 25%;
 	}
 
 }
@@ -1714,10 +1724,7 @@ h1 > a {
 		font-size: 12px;
 	}
 	
-	.checkout-container {
-		/*text-align: center;
-		width: 90%;*/
-		
+	.checkout-container {		
 	}
 	
 	.address-form {
@@ -1831,6 +1838,12 @@ h1 > a {
 
 	.review-title {
 		font-size: 12px;
+	}
+	
+
+	.review-basket, .review-basket #basket_title {
+		text-align: center;
+		width: 100%;
 	}
 
 }

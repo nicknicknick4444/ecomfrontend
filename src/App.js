@@ -290,7 +290,7 @@ function AppFront() {
     setSearched(false);
     setChecking(true);
     setBurger(false);
-    window.moveTo(0, 0);
+    window.scrollTo(0, 0);
   }, []);
 
   return (
