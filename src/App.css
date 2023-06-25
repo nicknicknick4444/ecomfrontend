@@ -1670,10 +1670,10 @@ h1 > a {
 	}
 
 	.form-label {
-		width: 87px;
+		width: 89px;
 		font-size: 12px;
 		float: left;
-		margin-right: 5px;
+		margin-right: 3px;
 	}
 	
 	.form-input {
