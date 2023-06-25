@@ -486,7 +486,9 @@ export function Checkout() {
 
                         </div> : null}
                     </div>
-                    <BasketList />
+                    <div className="review-basket">
+                        <BasketList />
+                    </div>
                     {!bought ? 
                     <>
                         <div id="end-buttons">
