@@ -1077,7 +1077,8 @@ h1 > a {
 		border-bottom: 3px #346db1 solid;
 		margin-left: 0;
 		margin-right: 0;
-		width: 100%;
+		width: 100%;	
+		z-index: 50;
 	}
 	
 	.navbar-mob {
@@ -1655,11 +1656,17 @@ h1 > a {
 	.checkout-container {
 		/*text-align: center;
 		width: 90%;*/
+		
 	}
 	
 	.address-form {
 		/*width: 95%;
 		margin: auto;*/
+		width: 100%;
+	}
+	
+	#sub-head {
+		font-size: 15px;
 	}
 
 	.form-label {
@@ -1670,12 +1677,12 @@ h1 > a {
 	}
 	
 	.form-input {
-		width: 200px;
+		width: 204px;
 	}
 
 	#bottom-buttons {	
-		margin-left: 5%;
-		margin-right: 5%;
+		/*margin-left: 5%;
+		margin-right: 5%;*/
 		
 	}
 	
@@ -1694,16 +1701,18 @@ h1 > a {
 	}
 
 	#delv-q-on, #delv-q-off {
-		width: 100%;
+		/*width: 100%;*/
+		width: 230px;
 		clear: both;
 		margin-top: 5px;
 		margin-bottom: 5px;
 		position: relative;
-		margin-left: 10px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	
 	#delv-q-on {
-		bottom: 396px;
+		bottom: 363px;
 	}
 	
 	#delv-q-off {
@@ -1716,6 +1725,8 @@ h1 > a {
 	
 	#billing, #delivery {
 		/*max-width: 300px;*/
+		width: 301px;
+		margin: auto;
 	}
 
 
