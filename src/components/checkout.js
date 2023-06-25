@@ -194,64 +194,64 @@ export function Checkout() {
                             {mand ? <p style={{color: "#ff0000"}}>Please complete all mandatory fields</p> : null}
                                 <div>
                                 <h1>{delvq ? "Billing " : null}Address</h1>
-                                <label htmlFor="name"><span className="form-label">Name:*</span>&nbsp;
+                                <label for="name"><span className="form-label">Name:*</span>&nbsp;
                                     <input type="text" name="name1" onChange={(e) => handleChange(e, "billing_name")} 
                                         value={abbrev_add("billing_name")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="email"><span className="form-label">Email:*</span>&nbsp;
+                                <label for="email"><span className="form-label">Email:*</span>&nbsp;
                                     <input type="text" name="email1" onChange={(e) => handleChange(e, "billing_email")} 
                                         value={abbrev_add("billing_email")} className="form-input"
                                     />
                                 </label><br />
-                                <label id="leave-line" htmlFor="tel1"><span className="form-label">Phone:*</span>&nbsp;
+                                <label id="leave-line" for="tel1"><span className="form-label">Phone:*</span>&nbsp;
                                     <input type="tel" name="tel1" onChange={(e) => handleChange(e, "billing_tel")} 
                                         value={abbrev_add("billing_tel")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="add_line_1">
+                                <label for="add_line_1">
                                     <span className="form-label">Address Line 1:*</span>&nbsp;
                                     <input type="text" name="add_line_1" 
                                             onChange={(e) => handleChange(e, "add_line_1")} 
                                             value={abbrev_add("add_line_1")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="add_line_2">
+                                <label for="add_line_2">
                                     <span className="form-label">Address Line 2:</span>&nbsp;
                                     <input type="text" name="add_line_2" 
                                             onChange={(e) => handleChange(e, "add_line_2")} 
                                             value={abbrev_add("add_line_2")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="add_line_3">
+                                <label for="add_line_3">
                                     <span className="form-label">Address Line 3:</span>&nbsp;
                                     <input type="text" name="add_line_3" 
                                             onChange={(e) => handleChange(e, "add_line_3")}
                                             value={abbrev_add("add_line_3")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="town">
+                                <label for="town">
                                     <span className="form-label">Town/ City:*</span>&nbsp;
                                     <input type="text" name="town" 
                                             onChange={(e) => handleChange(e, "town")}
                                             value={abbrev_add("town")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="county">
+                                <label for="county">
                                     <span className="form-label">County:</span>&nbsp;
                                     <input type="text" name="county" 
                                             onChange={(e) => handleChange(e, "county")}
                                             value={abbrev_add("county")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="postcode">
+                                <label for="postcode">
                                     <span className="form-label">Postcode:*</span>&nbsp;
                                     <input type="text" name="postcode" 
                                             onChange={(e) => handleChange(e, "postcode")}
                                             value={abbrev_add("postcode")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="country">
+                                <label for="country">
                                     <span className="form-label">Country:</span>&nbsp;
                                     <input type="text" name="country" 
                                             onChange={(e) => handleChange(e, "country")}
@@ -289,7 +289,7 @@ export function Checkout() {
                                 {/* </div> */}
 
                                 {/* <div id="delv-q">
-                                    <label htmlFor="delv_q">Different delivery address?&nbsp;
+                                    <label for="delv_q">Different delivery address?&nbsp;
                                         {delvq ? 
                                         <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)}  
                                             checked={delvq} id="checkout_checkbox"
@@ -309,7 +309,7 @@ export function Checkout() {
 
                             
                                 {/* <div id="delv-q">
-                                    <label htmlFor="delv_q">Different delivery address?&nbsp;
+                                    <label for="delv_q">Different delivery address?&nbsp;
                                         {delvq ? 
                                         <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)}  
                                             checked={delvq} id="checkout_checkbox"
@@ -343,54 +343,54 @@ export function Checkout() {
                                 <div>
                                     <h1 id="delivery-top">Delivery Address</h1>
                                     <h1 id="sub-head">Please ensure somebody is available to take delivery</h1>
-                                    <label htmlFor="name2" id="leave-line"><span className="form-label">Name:*</span>&nbsp;
+                                    <label for="name2" id="leave-line"><span className="form-label">Name:*</span>&nbsp;
                                         <input type="text" name="name2" onChange={(e) => handleChange(e, "delv_name")} 
                                             value={abbrev_add("delv_name")} className="form-input"
                                         />
                                     </label><br />
-                                    <label htmlFor="delv_add_line_1">
+                                    <label for="delv_add_line_1">
                                     <span className="form-label">Address Line 1:*</span>&nbsp;
                                     <input type="text" name="delv_add_line_1" 
                                             onChange={(e) => handleChange(e, "delv_add_line_1")} 
                                             value={abbrev_add("delv_add_line_1")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="delv_add_line_2">
+                                <label for="delv_add_line_2">
                                     <span className="form-label">Address Line 2:</span>&nbsp;
                                     <input type="text" name="delv_add_line_2" 
                                             onChange={(e) => handleChange(e, "delv_add_line_2")} 
                                             value={abbrev_add("delv_add_line_2")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="delv_add_line_3">
+                                <label for="delv_add_line_3">
                                     <span className="form-label">Address Line 3:</span>&nbsp;
                                     <input type="text" name="delv_add_line_3" 
                                             onChange={(e) => handleChange(e, "delv_add_line_3")}
                                             value={abbrev_add("delv_add_line_3")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="delv_town">
+                                <label for="delv_town">
                                     <span className="form-label">Town/ City:*</span>&nbsp;
                                     <input type="text" name="delv_town" 
                                             onChange={(e) => handleChange(e, "delv_town")}
                                             value={abbrev_add("delv_town")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="delv_county">
+                                <label for="delv_county">
                                     <span className="form-label">County:</span>&nbsp;
                                     <input type="text" name="delv_county" 
                                             onChange={(e) => handleChange(e, "delv_county")}
                                             value={abbrev_add("delv_county")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="delv_postcode">
+                                <label for="delv_postcode">
                                     <span className="form-label">Postcode:*</span>&nbsp;
                                     <input type="text" name="delv_postcode" 
                                             onChange={(e) => handleChange(e, "delv_postcode")}
                                             value={abbrev_add("delv_postcode")} className="form-input"
                                     />
                                 </label><br />
-                                <label htmlFor="delv_country">
+                                <label for="delv_country">
                                     <span className="form-label">Country:</span>&nbsp;
                                     <input type="text" name="delv_country" 
                                         onChange={(e) => handleChange(e, "delv_country")}
@@ -407,7 +407,7 @@ export function Checkout() {
 
 
                     <div id={delvq ? "delv-q-on" : "delv-q-off"} >
-                                    <label htmlFor="delv_q">Different delivery address?&nbsp;
+                                    <label for="delv_q">Different delivery address?&nbsp;
                                         {delvq ? 
                                         <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)}  
                                             checked={delvq} id="checkout_checkbox"
