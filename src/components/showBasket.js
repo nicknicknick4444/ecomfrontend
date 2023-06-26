@@ -155,7 +155,7 @@ export function ShowBasket() {
                     style={{}}>
                         Add Coupon
                     </button><br />
-                    <span style={{float: "left"}}><i>(Psst! 10PC or 50PC)</i></span>
+                    <span id="hint"><i>(Psst! 10PC or 50PC)</i></span>
                 {/* </div> : getty("order").length < 1 ? "" : getty("order") === null ? "" :  */}
                 {/* <button id="checkout-button"><Link to="/checkout">Checkout</Link></button> */}
                 </div><br /><br /><br /><div id="extra-line"><br /></div>
