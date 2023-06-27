@@ -192,7 +192,7 @@
 		background-color: #346db1;
 		border: 1px #346db1 solid;
 		height: 30px;
-		/*margin-left: 3px;*/
+		margin-left: 0px;
 		padding-bottom: 2px;
 	}
 	
@@ -216,14 +216,15 @@
 	
 	#checkout-button {
 		padding-top: 0px;
-		margin-top: -6px;
-		margin-right: 224px;
+		margin-top: -54px;
+		/*margin-right: 224px;*/
 	}
 	
 	#checkout-button2 {
-		padding-top: 3px;
+		padding-top: 3.5px;
+		padding-right: 1px;
 		margin-top: 25px;
-		margin-right: -167px;
+		margin-right: -148px;
 	}
 	
 	#checkout-button > a, #checkout-button2 > a {
@@ -277,7 +278,7 @@
 	
 	#resume2 {
 		margin-top: -21px;
-		padding-top: 3px;
+		padding-top: 3.5px;
 	}
 
 	#resume > a, #resume2 > a, #back-to-shop > a {
@@ -321,7 +322,7 @@
 		margin-bottom: 40px;
 	}
 
-	#next, #next2 {
+	#next, #next2, #submit {
 		width: auto;
 		height: 32px;
 		font-size: 14px;
@@ -343,7 +344,7 @@
 		cursor: pointer;
 	}
 	
-	#next {
+	#next, #submit {
 		background-color: #346db1;
 		border: 1px #346db1 solid;
 	}
@@ -354,7 +355,7 @@
 		cursor: default;
 	}
 	
-	#next:hover {
+	#next:hover, #submit:hover {
 		background-color: #6194d1;
 		border: 1px #6194d1 solid;
 	}
@@ -421,9 +422,9 @@
 	
 	#coupon-contain {
 		max-width: 750px;
-		width: 100%;
+		/*width: 100%;
 		margin-left: 15%;
-		margin-right: auto;
+		margin-right: auto;*/
 	}
 	
 	#add-coupon, #remove-coupon {
@@ -443,7 +444,8 @@
 	#discount-info {
 		float: right;
 		text-align: right;
-		margin-left: 25%;
+		width: 100%;
+		/*margin-left: 25%;*/
 	}
 
 	#grand-total {
@@ -473,7 +475,15 @@
 		font-size: 12px;
 		padding-top: 2px;
 	}
-
+	
+	#thanks {
+		font-family: rockwell, 'Kameron', serif;
+		text-align: center;
+	}
+	
+	#order-ref {
+		color: #d18202;
+	}
 
 /* START OF MINI MAIN */
 
@@ -786,7 +796,7 @@
 	}
 	
 	#view-checkout {	
-		margin-top: 5px;
+		margin-top: 4.5px;
 		background-color: #346db1;
 	}
 	
@@ -817,6 +827,11 @@
 		float: right;
 		display: inline;
 		margin-top: -42px;
+	}
+	
+	#add-coupon {
+		width: 100%;
+		height: 118px;
 	}
 	
 	.basket_image {
@@ -1069,7 +1084,7 @@ h1 > a {
 		margin: auto;
 	}
 	
-	#extra-line {	
+	#extra-line {
 		display: none;
 	}
 	
@@ -1156,6 +1171,12 @@ h1 > a {
 	.review-basket {
 		margin-left: 25%;
 		margin-right: 25%;
+	}
+	
+	#basket-foot {
+		/*width: 100%;
+		margin-left: 15%;
+		margin-right: 15%;*/
 	}
 
 }
@@ -1682,6 +1703,7 @@ h1 > a {
 		clear: right;
 		float: right;
 		margin-top: 0px;
+		padding-top: 0px;
 	}
 	
 	#coupon-contain {	
@@ -1697,7 +1719,7 @@ h1 > a {
 		font-size: 12px;
 		height: 24px;
 		width: 105px;
-		padding-top: 3px;
+		padding-top: 2px;	
 	}
 		
 	#checkout-button, #checkout-button2 {
@@ -1712,14 +1734,17 @@ h1 > a {
 	}
 	
 	#checkout-button {	
-		margin-top: 8px;
+		margin-top: 6px;
 		margin-right: 0px;
 		padding-bottom: 3px;
+		padding-left: 8px;
+		margin-right: 0px;
 	}
 	
 	#checkout-button2 {	
-		margin-top: 16px;
-		margin-right: 0px;
+		margin-top: 34px;
+		margin-right: -105px;
+		padding-left: 5px;
 	}
 	
 	#resume, #resume2 {
@@ -1740,7 +1765,7 @@ h1 > a {
 	}
 	
 	#resume2 {
-		margin-top: -82px;	
+		margin-top: -64px;	
 	}
 	
 	#resume > a, #resume2 > a {
@@ -1764,6 +1789,7 @@ h1 > a {
 		font-size: 14px;
 		margin-top: -21px;
 		margin-right: 2.5%;
+		clear: both;
 	}
 	
 	#discount-info {
@@ -1812,11 +1838,20 @@ h1 > a {
 		clear: right;
 	}
 	
-	#next, #next2 {
+	#next, #next2, #submit {
 		/*margin-right: auto;
 		margin-top: 10px;
 		margin-right: -40px;*/
 		float: right;
+		text-align: center;
+	}
+	
+	#next {
+		padding-left: 14px;
+	}
+	
+	#submit {
+		padding-left: 13px;
 	}
 	
 	#back-to-shop {
