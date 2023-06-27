@@ -17,6 +17,7 @@ export function Checkout() {
     const [grandTotal, setGrandTotal] = useState(0.00);
     const [typing, setTyping] = useState("");
     const [coupons, setCoupons] = useState("");
+    const [emailval, setEmailval] = useState(false);
     const {updateTotal, dis, cou, setCou, setDis, setSearched, fillingdeets, setFillingdeets, 
         checking, setChecking, bought, setBought, boughtReset, setBoughtreset, 
         mand, setMand, typingAddress, setTypingaddress, burger, setBurger, 
@@ -84,6 +85,16 @@ export function Checkout() {
         const promise = axios.get(`https://polar-coast-39563.herokuapp.com/api/products/${id}/`);
         const promisedData = promise.then((res) => res.data);
         return promisedData;
+    };
+
+    function check_email() {
+        if (getty("address")["billing_email"].indexOf("@") === -1)  {
+            console.log("POOKSGREEN! THE BRAVERY!");
+            setEmailval(true);
+        } else {
+            console.log("FINEY FINEMAN FINE!");
+            setEmailval(false);
+        };
     };
 
     async function makeReceipt() {
@@ -193,6 +204,7 @@ export function Checkout() {
                             <div id="billing">
                             <p><i>Fields marked * are mandatory</i></p>
                             {mand ? <p style={{color: "#ff0000"}}>Please complete all mandatory fields</p> : null}
+                            {emailval ? <p style={{color: "#ff0000"}}>Please enter a valid email address</p> : null}
                                 <div>
                                 <h1>{delvq ? "Billing " : null}Address</h1>
                                 <label for="name"><span className="form-label">Name:*</span>&nbsp;
@@ -275,7 +287,7 @@ export function Checkout() {
                                             (delvq === true && getty("address")["delv_town"] === undefined) || (delvq === true && getty("address")["delv_town"] === "") || 
                                             (delvq === true && getty("address")["delv_postcode"] === undefined) || (delvq === true && getty("address")["delv_postcode"] === "") || 
                                             getty("address") === null || Object.keys(getty("address")).length === 0 ? 
-                                            <div id="next2" onClick={() => {setMand(true)}}>Next</div> : 
+                                            <div id="next2" onClick={() => {setMand(true); check_email()}}>Next</div> : 
                                             <div id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>
                                                 Next
                                             </div>
