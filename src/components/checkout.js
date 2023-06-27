@@ -178,7 +178,7 @@ export function Checkout() {
     if (!fillingdeets && getty("address") !== null) {
         if (getty("order").length > 0) {
         console.log("Amos aninmal. ", getty("coupon_name"));
-        window.scrollTo(0, 0);
+        // window.scrollTo(0, 0);
         return (
             <>
                 <Header />
@@ -201,7 +201,7 @@ export function Checkout() {
                                     />
                                 </label><br />
                                 <label for="email"><span className="form-label">Email:*</span>&nbsp;
-                                    <input type="text" name="email1" onChange={(e) => handleChange(e, "billing_email")} 
+                                    <input type="email" name="email1" onChange={(e) => handleChange(e, "billing_email")} 
                                         value={abbrev_add("billing_email")} className="form-input"
                                     />
                                 </label><br />
@@ -280,7 +280,6 @@ export function Checkout() {
                                                 Next
                                             </div>
                                     }
-                                    {/* <Link to={{pathname: "/"}}><button id="back-to-shop">Continue Shopping</button></Link> */}
                                     
                                 </div>
                                 
@@ -423,7 +422,7 @@ export function Checkout() {
 
                     {/* <Link to={{pathname: "/"}}><button id="back-to-shop">Continue Shopping</button></Link> */}
                 </div>
-                <div><i><Link to="/">Home</Link></i></div>
+                {/* <div><i><Link to="/">Home</Link></i></div> */}
                 <Footer />
             </>
         );
@@ -451,7 +450,12 @@ export function Checkout() {
                         <span className="present">3. Review</span>&nbsp;&nbsp;
                         <span className="future">4. Finish</span>&nbsp;&nbsp;
                     </h1>
-                    {!bought ? null : <><h2>Thank you for your order!</h2><p>Your order number is: N{order_ref}</p></>}
+                    {!bought ? null : <>
+                        <div id="thanks">
+                            <h2>Thank you for your order!</h2><p>Your order number is:&nbsp; 
+                            <span id="order-ref"><b>N{order_ref}</b></span></p>
+                        </div>
+                    </>}
                     {/* <div><b>TOTAL: £{(getty("amount")).toFixed(2)}</b></div> */}
                     {/* {getty("address") === null || getty("address") === {} ? "" : <h1>Review & Complete</h1>} */}
                     <div className={delvq ? "review-addresses" : "review-only-address"}>
@@ -495,7 +499,9 @@ export function Checkout() {
                             <div id="back-to-shop" onClick={() => {setFillingdeets(!fillingdeets); setChecking(false)}}>
                                 <Link to={{pathname: "/basket-page"}}>Edit Order</Link>
                             </div>
-                            <div id="next" onClick={() => buy()}>Submit Order</div>
+                            <div>
+                                <div id="submit" onClick={() => buy()}>Submit Order</div>
+                            </div>
                         </div>
                     </> 
                     :

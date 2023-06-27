@@ -130,45 +130,58 @@ export function ShowBasket() {
             <SearchBox /> */}
             <Header />
             <div className="basket_page" onClick={() => setMag(false)} >
-                <h1><span className="present">1. Basket</span>&nbsp;&nbsp;
+                <h1 id="progress">
+                <span className="present">1. Basket</span>&nbsp;&nbsp;
                 <span className="future">2. Checkout</span>&nbsp;&nbsp;
                 <span className="future">3. Review</span>&nbsp;&nbsp;
                 <span className="future">4. Finish</span>
                 </h1>
                 <div id="basket-list">
                     <BasketList />
-                </div>
-            </div>
+                {/* </div>
+            </div> */}
+
+
+
             {/* {getty("discount") === 1 && getty("order") !== null && getty("order").length > 0 ?  */}
-            {getty("discount") === 1 && getty("order") !== null && getty("order").length > 0 ? 
-            <div id="coupon-contain">
-                <div id="add-coupon">
-                    <input 
-                        id="coupon-box"
-                        type="text" 
-                        value={typing}
-                        onChange={goosey} 
-                        placeholder={"Enter coupon code"} 
-                        
-                        />
-                    <button id="coupon-buttons" onClick={() => coupon()} 
-                    style={{}}>
-                        Add Coupon
-                    </button><br />
-                    <span id="hint"><i>(Psst! 10PC or 50PC)</i></span>
-                {/* </div> : getty("order").length < 1 ? "" : getty("order") === null ? "" :  */}
-                {/* <button id="checkout-button"><Link to="/checkout">Checkout</Link></button> */}
-                </div><br /><br /><br /><div id="extra-line"><br /></div>
-                <button id="checkout-button"><Link to="/checkout">Checkout</Link></button><br /><br />
-                <button id="resume"><Link to="/">Keep Shopping</Link></button>
-            </div> : getty("order") === null || getty("order").length === 0 ? null : 
-            <div id="coupon-contain"><div id="remove-coupon">
-                <button id="coupon-buttons" onClick={() => unCoupon()}>Remove Coupon</button>
+            
+            <div id="basket-foot">
+                {getty("discount") === 1 && getty("order") !== null && getty("order").length > 0 ? 
+                <div id="coupon-contain">
+                    <div id="add-coupon">
+                        <input 
+                            id="coupon-box"
+                            type="text" 
+                            value={typing}
+                            onChange={goosey} 
+                            placeholder={"Enter coupon code"} 
+                            />
+                        <button id="coupon-buttons" onClick={() => coupon()} 
+                        style={{}}>
+                            Add Coupon
+                        </button><br />
+                        <span id="hint"><i>(Psst! 10PC or 50PC)</i></span>
+                    {/* </div> : getty("order").length < 1 ? "" : getty("order") === null ? "" :  */}
+                    {/* <button id="checkout-button"><Link to="/checkout">Checkout</Link></button> */}
+                    </div><br /><br /><br /><div id="extra-line"><br /></div>
+                    <button id="checkout-button"><Link to="/checkout">Checkout</Link></button><br /><br />
+                    <button id="resume"><Link to="/">Keep Shopping</Link></button>
+                </div> : getty("order") === null || getty("order").length === 0 ? null : 
+                <div id="coupon-contain"><div id="remove-coupon">
+                    <button id="coupon-buttons" onClick={() => unCoupon()}>Remove Coupon</button>
+                </div>
+                <div id="extra-line"><br /></div>
+                <Link to="/checkout"><div id="checkout-button2">Checkout</div></Link><br /><br /><br /><br />
+                <Link to="/"><div id="resume2">Keep Shopping</div></Link>
+                </div>}
             </div>
-            <div id="extra-line"><br /><br /></div>
-            <Link to="/checkout"><div id="checkout-button2">Checkout</div></Link><br /><br /><br /><br />
-            <Link to="/"><div id="resume2">Keep Shopping</div></Link>
-            </div>}
+        
+
+            </div>
+        </div>
+
+
+
             {/* <button id="checkout-button"><Link to="/checkout">Checkout</Link></button> */}
             {/* <div><i><Link to="/">Home</Link></i></div> */}
             <Footer />
