@@ -832,6 +832,7 @@
 	#add-coupon {
 		width: 100%;
 		height: 118px;
+		z-index: -100;
 	}
 	
 	.basket_image {
@@ -1882,6 +1883,7 @@ h1 > a {
 	
 	#delv-q-off {
 		bottom: -9px;
+		margin-bottom: 15px;
 	}
 	
 	#delivery-top {
