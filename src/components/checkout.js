@@ -90,10 +90,12 @@ export function Checkout() {
     function check_email() {
         if (getty("address")["billing_email"].indexOf("@") === -1)  {
             console.log("POOKSGREEN! THE BRAVERY!");
-            setEmailval(true);
+            // setEmailval(true);
+            return true;
         } else {
             console.log("FINEY FINEMAN FINE!");
-            setEmailval(false);
+            // setEmailval(false);
+            return false;
         };
     };
 
@@ -158,6 +160,7 @@ export function Checkout() {
             var dicto = {};
         } else {
             var dicto = getty("address");
+            
         };
         var word = "";
         word = e.target.value;
@@ -167,6 +170,9 @@ export function Checkout() {
         // localStorage.setItem("address", JSON.stringify(dicto));
         setty("address", dicto);
         setTypingaddress(dicto);
+        if (q === "billing_email") {
+            check_email();
+        };
         // if (mand) {
         //     setMand(false);
         // };
@@ -286,9 +292,9 @@ export function Checkout() {
                                             (delvq === true && getty("address")["delv_add_line_1"] === undefined) || (delvq === true && getty("address")["delv_add_line_1"] === "") || 
                                             (delvq === true && getty("address")["delv_town"] === undefined) || (delvq === true && getty("address")["delv_town"] === "") || 
                                             (delvq === true && getty("address")["delv_postcode"] === undefined) || (delvq === true && getty("address")["delv_postcode"] === "") || 
-                                            getty("address") === null || Object.keys(getty("address")).length === 0 ? 
-                                            <div id="next2" onClick={() => {setMand(true); check_email()}}>Next</div> : 
-                                            <div id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>
+                                            getty("address") === null || Object.keys(getty("address")).length === 0 || check_email() === true ? 
+                                            <div id="next2" onClick={() => {setMand(true); setEmailval(true)}}>Next</div> : 
+                                            <div id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false); setEmailval(false)}}>
                                                 Next
                                             </div>
                                     }
