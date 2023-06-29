@@ -216,14 +216,14 @@
 	
 	#checkout-button {
 		padding-top: 0px;
-		margin-top: -54px;
+		margin-top: -34px;
 		/*margin-right: 224px;*/
 	}
 	
 	#checkout-button2 {
 		padding-top: 3.5px;
 		padding-right: 1px;
-		margin-top: 25px;
+		margin-top: 27px;
 		margin-right: -157px;
 	}
 	
@@ -272,7 +272,7 @@
 	}
 	
 	#resume {
-		margin-top: -54px;
+		margin-top: -34px;
 		padding-top: -3px;
 	}
 	
@@ -317,8 +317,8 @@
 		
 	#end-buttons {	
 		clear: both;
-		margin-left: 2%;
-		margin-right: 2%;
+		margin-left: 25%;
+		margin-right: 25%;
 		margin-bottom: 40px;
 	}
 
@@ -422,9 +422,9 @@
 	
 	#coupon-contain {
 		max-width: 750px;
-		/*width: 100%;
 		margin-left: 15%;
-		margin-right: auto;*/
+		margin-right: 15%;
+		/*z-index: -50;*/
 	}
 	
 	#add-coupon, #remove-coupon {
@@ -433,8 +433,9 @@
 	}
 	
 	#add-coupon {
-		/*padding-right: 6px;*/
+		/*padding-right: 6px;
 		position: relative;
+		z-index: -50;*/
 	}
 
 	#remove-coupon {
@@ -483,6 +484,10 @@
 	
 	#order-ref {
 		color: #d18202;
+	}
+	
+	#mandatory, #email-val {
+		color: #ff0000;	
 	}
 
 /* START OF MINI MAIN */
@@ -831,8 +836,10 @@
 	
 	#add-coupon {
 		width: 100%;
-		height: 118px;
-		z-index: -100;
+		max-height: 118px;
+		z-index: 100;
+		position: relative;
+		margin-bottom: 40px;
 	}
 	
 	.basket_image {
@@ -856,9 +863,11 @@
 		padding-right: 5px;
 		padding-bottom: 0px;
 		margin: auto;
+		margin-bottom: 5px;
 		border: 1px #903e3e solid;
 		border-radius: 4px;
 		min-height: 489px;
+		overflow: auto;
 	}
 	
 	#billing {
@@ -1174,10 +1183,12 @@ h1 > a {
 		margin-right: 25%;
 	}
 	
-	#basket-foot {
-		/*width: 100%;
-		margin-left: 15%;
-		margin-right: 15%;*/
+	/*#basket-foot {
+		z-index: -50;
+	}*/
+	
+	#bottom-buttons {	
+		margin-bottom: 43px;
 	}
 
 }
@@ -1837,6 +1848,8 @@ h1 > a {
 	
 	#end-buttons {	
 		clear: right;
+		margin-left: 5px;
+		margin-right: 5px;
 	}
 	
 	#next, #next2, #submit {
