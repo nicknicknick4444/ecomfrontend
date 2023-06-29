@@ -17,10 +17,9 @@ export function Checkout() {
     const [grandTotal, setGrandTotal] = useState(0.00);
     const [typing, setTyping] = useState("");
     const [coupons, setCoupons] = useState("");
-    const [emailval, setEmailval] = useState(false);
     const {updateTotal, dis, cou, setCou, setDis, setSearched, fillingdeets, setFillingdeets, 
         checking, setChecking, bought, setBought, boughtReset, setBoughtreset, 
-        mand, setMand, typingAddress, setTypingaddress, burger, setBurger, 
+        mand, setMand, emailval, setEmailval, typingAddress, setTypingaddress, burger, setBurger, 
         setMag} = useProps();
 
     var order_ref = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
@@ -78,6 +77,7 @@ export function Checkout() {
 
     useEffect(() => {
         setMand(false);
+        setEmailval(false);
     }, [typingAddress])
 
     function api_call(id) {
