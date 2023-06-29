@@ -40,6 +40,7 @@ export default function PropProvider({children}) {
     const [checked, setChecked] = useState(false);
     const [checking, setChecking] = useState(false);
     const [mand, setMand] = useState(false);
+    const [emailval, setEmailval] = useState(false);
     const [taxo, setTaxo] = useState([]);
     const [allcats, setAllcats] = useState([]);
     const [burger, setBurger] = useState(false);
@@ -252,7 +253,7 @@ export default function PropProvider({children}) {
     new_quant, setNew_quant, shortlist, raw, setRaw, setShortlist, searched, setSearched, 
     searchTyping, setSearchtyping, page, setPage, numbers, setNumbers, subset, setSubset, 
     section, page_click, fillingdeets, setFillingdeets, checked, setChecked, checking, setChecking, 
-    bought, setBought, boughtReset, setBoughtreset, mand, setMand, typingAddress, setTypingaddress, 
+    bought, setBought, boughtReset, setBoughtreset, mand, setMand, emailval, setEmailval, typingAddress, setTypingaddress, 
     allcats, prods_api, taxo, setTaxo, burger, setBurger, droplist, setDroplist, loc, setLoc, 
     mag, setMag, itemq, setItemq}}>
         {children}
