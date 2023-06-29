@@ -87,6 +87,24 @@ export function Checkout() {
         return promisedData;
     };
 
+    function check_mand() {
+        if (getty("address")["billing_name"] === undefined || getty("address")["billing_name"] === "" || 
+        getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
+        getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
+        getty("address")["add_line_1"] === undefined || getty("address")["add_line_1"] === "" || 
+        getty("address")["town"] === undefined || getty("address")["town"] === "" || 
+        getty("address")["postcode"] === undefined || getty("address")["postcode"] === "" || 
+        (delvq === true && getty("address")["delv_name"] === undefined) || (delvq === true && getty("address")["delv_name"] === "") || 
+        (delvq === true && getty("address")["delv_add_line_1"] === undefined) || (delvq === true && getty("address")["delv_add_line_1"] === "") || 
+        (delvq === true && getty("address")["delv_town"] === undefined) || (delvq === true && getty("address")["delv_town"] === "") || 
+        (delvq === true && getty("address")["delv_postcode"] === undefined) || (delvq === true && getty("address")["delv_postcode"] === "") || 
+        getty("address") === null || Object.keys(getty("address")).length === 0) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
     function check_email() {
         if (getty("address")["billing_email"].indexOf("@") === -1)  {
             console.log("POOKSGREEN! THE BRAVERY!");
@@ -96,6 +114,26 @@ export function Checkout() {
             console.log("FINEY FINEMAN FINE!");
             // setEmailval(false);
             return false;
+        };
+    };
+
+    function set_red_messages() {
+        // Check mandataory fields set
+        if (check_mand()) {
+            setMand(true);
+            console.log("Missing some mand fields!");
+        } else {
+            setMand(false);
+            console.log("All mand fields set!");
+        };
+
+        // Check email contains @ symbol
+        if (check_email()) {
+            setEmailval(true);
+            console.log("Invalid email!");
+        } else {
+            setEmailval(false);
+            console.log("Valid email!");
         };
     };
 
@@ -209,8 +247,8 @@ export function Checkout() {
                         <form>
                             <div id="billing">
                             <p><i>Fields marked * are mandatory</i></p>
-                            {mand ? <p style={{color: "#ff0000"}}>Please complete all mandatory fields</p> : null}
-                            {emailval ? <p style={{color: "#ff0000"}}>Please enter a valid email address</p> : null}
+                            {mand ? <p id="mandatory">Please complete all mandatory fields</p> : null}
+                            {emailval ? <p id="email-val">Please enter a valid email address</p> : null}
                                 <div>
                                 <h1>{delvq ? "Billing " : null}Address</h1>
                                 <label for="name"><span className="form-label">Name:*</span>&nbsp;
@@ -282,18 +320,9 @@ export function Checkout() {
                                 <div id="bottom-buttons">
                                 <Link to={{pathname: "/"}}><div id="back-to-shop"><Link to={{pathname: "/"}}>Continue Shopping</Link></div></Link>
                                     {
-                                            getty("address")["billing_name"] === undefined || getty("address")["billing_name"] === "" || 
-                                            getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
-                                            getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
-                                            getty("address")["add_line_1"] === undefined || getty("address")["add_line_1"] === "" || 
-                                            getty("address")["town"] === undefined || getty("address")["town"] === "" || 
-                                            getty("address")["postcode"] === undefined || getty("address")["postcode"] === "" || 
-                                            (delvq === true && getty("address")["delv_name"] === undefined) || (delvq === true && getty("address")["delv_name"] === "") || 
-                                            (delvq === true && getty("address")["delv_add_line_1"] === undefined) || (delvq === true && getty("address")["delv_add_line_1"] === "") || 
-                                            (delvq === true && getty("address")["delv_town"] === undefined) || (delvq === true && getty("address")["delv_town"] === "") || 
-                                            (delvq === true && getty("address")["delv_postcode"] === undefined) || (delvq === true && getty("address")["delv_postcode"] === "") || 
-                                            getty("address") === null || Object.keys(getty("address")).length === 0 || check_email() === true ? 
-                                            <div id="next2" onClick={() => {setMand(true); setEmailval(true)}}>Next</div> : 
+                                            check_mand() === true || check_email() === true 
+                                            ? 
+                                            <div id="next2" onClick={() => {set_red_messages()}}>Next</div> : 
                                             <div id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false); setEmailval(false)}}>
                                                 Next
                                             </div>

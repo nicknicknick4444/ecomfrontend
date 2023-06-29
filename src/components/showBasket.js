@@ -142,10 +142,10 @@ export function ShowBasket() {
             </div> */}
 
 
-
+            </div>
             {/* {getty("discount") === 1 && getty("order") !== null && getty("order").length > 0 ?  */}
             
-            <div id="basket-foot">
+            {/* <div id="basket-foot"> */}
                 {getty("discount") === 1 && getty("order") !== null && getty("order").length > 0 ? 
                 <div id="coupon-contain">
                     <div id="add-coupon">
@@ -164,20 +164,23 @@ export function ShowBasket() {
                     {/* </div> : getty("order").length < 1 ? "" : getty("order") === null ? "" :  */}
                     {/* <button id="checkout-button"><Link to="/checkout">Checkout</Link></button> */}
                     </div><br /><br /><br /><div id="extra-line"><br /></div>
+                    
                     <Link to="/checkout"><button id="checkout-button">Checkout</button></Link><br /><br />
                     <Link to="/"><button id="resume">Keep Shopping</button></Link>
-                </div> : getty("order") === null || getty("order").length === 0 ? null : 
-                <div id="coupon-contain"><div id="remove-coupon">
+                </div> 
+                : getty("order") === null || getty("order").length === 0 ? null : 
+                <div id="coupon-contain">
+                <div id="remove-coupon">
                     <button id="coupon-buttons" onClick={() => unCoupon()}>Remove Coupon</button>
                 </div>
                 <div id="extra-line"><br /></div>
                 <Link to="/checkout"><div id="checkout-button2">Checkout</div></Link><br /><br /><br /><br />
                 <Link to="/"><div id="resume2">Keep Shopping</div></Link>
                 </div>}
-            </div>
+            {/* </div> */}
         
 
-            </div>
+            {/* </div> */}
         </div>
 
 
