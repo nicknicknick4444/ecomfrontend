@@ -653,6 +653,11 @@
 		font-size: 12px;
 		color: #ffffff;
 	}
+	
+	.band-words-right a {
+		text-decoration: none;
+		color: #ffffff;
+	}
 		
 	.contacts {
 		float: left;;	
@@ -1116,8 +1121,9 @@ h1 > a {
 	}
 	
 	.review-addresses, .review-only-address {
-		min-height: 180px;
-		max-height: 200px;
+		/*min-height: 180px;
+		max-height: 200px;*/
+		overflow: auto;
 		padding-top: 3px;
 		padding-bottom: 3px;
 		padding-left: 3px;
@@ -1189,6 +1195,11 @@ h1 > a {
 	
 	#bottom-buttons {	
 		margin-bottom: 43px;
+	}
+	
+	.general-words {
+		margin-left: 15%;
+		margin-right: 15%;
 	}
 
 }
@@ -1943,6 +1954,11 @@ h1 > a {
 	.review-basket, .review-basket #basket_title {
 		text-align: center;
 		width: 100%;
+	}
+	
+	.general-words {
+		margin-left: 5%;
+		margin-right: 5%;
 	}
 
 }
