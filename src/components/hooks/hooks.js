@@ -137,3 +137,246 @@ export function Add2Basket(id, price, itemq, totally) {
     console.log("BOOTHY! BOOTHY!");
 };
 
+export function rand_parag() {
+    var general_number = Math.floor(Math.random() * 21);
+    var paragraph = "";
+    switch (general_number) {
+        case 0:
+            paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquet sem dui, \
+                nec consequat nisl placerat tristique. Vestibulum lacinia pellentesque odio sit amet varius. \
+                Rallenta sed dui laoreet, tincidunt nisl vel, auctor magna. \
+                Nullam eget ex cursus, volutpat libero eget, sodales leo. \
+                Nunc quis purus felis. Suspendisse malesuada, enim vitae semper facilisis, \
+                sapien libero blandit nunc, vel tempus massa felis ac ante.";
+            break;
+        case 1:
+            paragraph = "Vestibulum condimentum ac magna vitae bibendum. Ut aliquet arcu at \
+                nibh bibendum tempus. Donec dictum interdum ligula. \
+                Phasellus id ultricies nulla. Praesent elementum mauris id tortor suscipit efficitur. \
+                Suspendisse eget erat vel lacus sagittis pharetra sodales nec nibh. \
+                Etiam turpis eros, vulputate non lobortis eu, ultrices eu tellus. \
+                Aliquam odio nisl, placerat sit amet felis vitae, egestas ultricies nisi.";
+            break;
+        case 2:
+            paragraph = "Donec elit leo, commodo non ullamcorper fringilla, dignissim quis risus. \
+                Proin libero dui, pulvinar a lectus vel, tristique tempus metus. \
+                Nunc vulputate mattis consectetur. Donec ac dui sit amet arcu aliquet \
+                pharetra id et tellus. Vivamus et nisi maximus quam porta dapibus. \
+                Vivamus faucibus, lorem vitae gravida hendrerit, urna quam volutpat nibh, \
+                ullamcorper finibus enim nunc vitae sem. Pellento sit amet elementum ante, \
+                at pulvinar mi. Ut ligula odio, sagittis id enim in, condimentum maximus libero. \
+                Vivamus varius, est et rutrum dictum, ante velit porttitor ipsum, quis cursus \
+                dolor turpis et quam. Proin felis lectus, ultrices molestie bibendum nec, \
+                maximus vel tellus.";
+            break;
+        case 3:
+            paragraph = "Vivamus blandit lectus ut lorem placerat feugiat. \
+                Donec ultricies magna vitae diam placerat, vitae maximus sem semper. \
+                Nullam enim ipsum, posuere sed dapibus at, vulputate at ante. \
+                Nam rhoncus felis risus, efficitur blandit elit finibus sed. \
+                Maecenas dapibus lorem in nisl vehicula, sed maximus ligula consectetur. \
+                In commodo odio ut vestibulum bolvius. Duis ut risus ac massa finibus varius. \
+                Quisque vel risus volutpat, porta nulla non, tincidunt risus. \
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra, \
+                per inceptos himenaeos. Nullam vitae lectus non magna pharetra tristique.";
+            break;
+        case 4:
+            paragraph = "Ut porttitor venenatis lectus. Sed accumsan, mauris eget \
+                fringilla imperdiet, risus lorem pulvinar ex, ac aliquet nulla nisl sed dolor. \
+                Proin mauris neque, venenatis in elit vitae, porttitor vehicula justo. Quisque accumsan \
+                facilisis egestas. Aliquam erat volutpat. Morbi lobortis euismod lacus eu tempor. Donec nulla risus, \
+                tempor non orci eget, commodo varius nunc. \
+                Bucle et manifesti pro borta balpus contra benifice!";
+            break;
+        case 5:
+            paragraph = "Etiam et feugiat dolor, sed sollicitudin odio. \
+                Quisque et libero odio. Donec placerat tellus eu tortor tincidunt, \
+                eu maximus risus condimentum. Sed a quam et quam elementum ultrices. \
+                Praesent faucibus vestibulum fringilla. Nam eleifend eros id dapibus fermentum. \
+                In fermentum cursus libero, sed tincidunt elit efficitur ut. Fusce nec \
+                semper mi, eu faucibus felis. Integer consequat fermentum dolor ac \
+                consectetur. Vestibulum scelerisque tortor ut nisi tempor faucibus. \
+                Aenean eleifend massa in massa placerat, non venenatis sapien sodales. \
+                Sed suscipit mauris at sem suscipit, eget gravida mi sodales. \
+                Fusce vehicula mauris non orci aliquet, at tristique massa viverra. \
+                Aenean sit amet augue nisl.";
+            break;
+        case 6:
+            paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+                Vivamus fringilla risus sit amet mi feugiat, vel semper leo hendrerit. \
+                Quisque sit amet sodales quam. Suspendisse malesuada porttitor feugiat. \
+                Sed tincidunt sapien sed mi varius suscipit. Integer et mi eu velit vehicula \
+                finibus. Integer vulputate maximus magna. Maecenas augue ex, finibus nec \
+                ultrices ac, facilisis vel metus. Maecenas pharetra feugiat condimentum. \
+                Mauris nisi risus, malesuada ut urna sed, tempor tempus enim. \
+                Quisque vel tortor eget tortor egestas interdum et vitae ex. \
+                Phasellus in ipsum felis. Sed vel ante sit amet arcu rhoncus tempus \
+                nec non est. In suscipit ex crubi sagittis cursus. Mauris \
+                vitae dapibus neque, et placerat est. Phasellus gravida turpis nec \
+                est vulputate, nec suscipit mauris suscipit. \
+                Vivamus sodales turpis a justo congue, ac venenatis ante vestibulum.";
+            break;
+        case 7:
+            paragraph = "Suspendisse tincidunt odio eget condimentum lobortis. \
+                Vestibulum sed tortor eget dui lobortis vulputate. \
+                Aenean ornare condimentum tellus vitae consequat. \
+                Orci varius natoque penatibus et magnis gus dis parturient montes, \
+                nascetur ridiculus mus. Maecenas interdum mattis nulla, nec \
+                blandit diam scelerisque eu. Nulla in lectus vel eros dapibus \
+                truculenti porttitor ut ac ex. Vestibulum tristique massa metus, \
+                lobortis suscipit dolor mollis id.";
+            break;
+        case 8:
+            paragraph = "Vivamus auctor placerat nisi, nec lobortis \
+                elit accumsan ac. Praesent convallis felis vitae justo \
+                suscipit sodales. Praesent faucibus sem at aliquam aliquam. \
+                Orci varius natoque penatibus et magnis dis parturient montes, \
+                nascetur ridiculus mus. Etiam pulvinar congue metus, quis \
+                sodales dui fermentum ut. Valdi parci sed ex bippi viverra, luctus \
+                diam id, aliquam odio. Nulla fermentum dolor quis condimentum tempus. \
+                Nullam id luctus arcu, non posuere rablin tortor. Nunc suscipit banjuice \
+                mauris risus, vitae euismod velit posuere quis. La tristesse durera.";
+            break;
+        case 9:
+            paragraph = "Cras et lectus velit. Nullam sodales arcu sed laoreet \
+                malesuada. Vestibulum mollis massa ac maximus dapibus. Nulla rutrum \
+                fermentum fringilla. Nulla sollicitudin, nibh sed iaculis eleifend, \
+                tellus massa porta ante, efficitur mattis ligula massa nec neque. Cras \
+                dictum lobortis tempus. Cras tincidunt sapien mi, at mattis ligula \
+                commodo eget. Mauris eu felis vitae ex pulvinar aliquam vel id sem. \
+                Vestibulum ac euismod lacus. Quisque focesci quam non dolor \
+                cursus, nec tempus tellus consequat. Aenean quis tortor consectetur, \
+                egestas nulla ac, dapibus tortor. Nullam mi quam, porttitor sit \
+                amet sem placerat, tristique tincidunt mauris. Proin a nulla \
+                rhoncus, porta tellus in, volutpat tellus. Sed tempor felis at \
+                rhoncus cursus. Ut nec elit sem. Praesent a velit lectus.";
+            break;
+        case 10:
+            paragraph = "Nam nec vestibulum orci. Fusce rhoncus, \
+                velit dapibus vehicula volutpat, leo massa luctus diam, id vestibulum belus \
+                tortor magna ut mi. Etiam vehicula augue vitae bulphic dolor vehicula, vel \
+                faucibus velit lobortis. Nunc eget suscipit risus. Vivamus risus urna, \
+                cursus non ullamcorper nec, sodales ornare tortor. Sed pretium, lacus id \
+                pretium sollicitudin, libero ligula dictus dolor, quis tempor est \
+                nisi vel ligula. Sed interdum neque at porttitor venenatis.";
+            break;
+        case 11:
+            paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+                Aenean euismod volutpat elit eget condimentum. Etiam consequat, eros ac \
+                porta volutpat, lacus mauris viverra erat, ut semper dolor orci a nisl. \
+                Ut erat turpis, sollicitudin a libraro tortor eget, tempus pretium elit. \
+                Fusce eleifend massa quis massa consectetur, ut vestibulum arcu blandit. \
+                Aliquam erat volutpat. Ut erat lectus, malesuada ac tincidunt \
+                sit amet, porttitor eu nibh. Sed dapibus ipsum venenatis turpis volutpat, \
+                in hendrerit purus sagittis. Proin ac metus nulla. Fusce dui tellus, \
+                varius eu tincidunt at, vehicula a quam. Donec volutpat mauris a hendrerit \
+                vestibulum. Etiam rhoncus mi quis dapibus cursus. Donec nunc neque, \
+                bibendum eu lacinia tempus, volutpat id sapien. Nulla volutpat venenatis \
+                dignissim. Fusce lacinia dignissim auctor.";
+            break;
+        case 12:
+            paragraph = "Cras eget eros eget velit volboxi cembus pulvinar in et nibh. \
+                Nullam interdum auctor mauris, et gravida dolor feugiat sed. Mauris vulputate \
+                fringilla nunc lacinia egestas. Morbi luctus diam ut blandit finibus. \
+                Mauris et elementum nunc, ac tristique ante. Class aptent taciti sociosqu \
+                ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam quis \
+                urna ultrices, consectetur quam non, rhoncus mauris. Suspendisse potenti. \
+                Nulla tempus eros dolor, eget dictum magna interdum id. Ut sed lobortis enim, \
+                ac aliquam mi. Milober at ipsum posuere lectus ultricies dignissim.";
+            break;
+        case 13:
+            paragraph = "In sit amet convallis dui, id interdum massa. Donec enim tellus, \
+                dignissim non hendrerit nec, tristique nec est. Curabitur dignissim pretium \
+                elit quis semper. Nam efficitur egestas velit. Vestibulum varius viverra \
+                consectetur. Integer sit amet velit arcu. Vestibulum consectetur auctor dolor \
+                sed tristique. Vestibulum feugiat scelerisque tellus, in congue dui scelerisque poda \
+                euismod. Fusce tincidunt pulvinar nisi molestie tempor. Proin fermentum urna \
+                quis interdum posuere. Proin convallis hendrerit justo eu sodales. Duis hendrerit \
+                euismod mauris, id iaculis odio laoreet eget. Sed porttitor mauris id commodo \
+                tincidunt. Etiam id congue supa data velit. Fusce feugiat semper dui, id blandit \
+                magna blandit vel.";
+            break;
+        case 14:
+            paragraph = "Quisque imperdiet gravida risus, bibendum auctor ligula malesuada eu. \
+                Donec condimentum augue non enim pharetra, vel placerat tellus pilo condimentum. \
+                Etiam championus facilisis nisi, accumsan varius ante elementum vehicula. \
+                Donec sed interdum augue, eu consequat lorem. Vestibulum ante ipsum primis in \
+                faucibus orci luctus et ultrices posuere cubilia curae; Etiam commodo quis tortor \
+                et tincidunt. Donec feugiat sapien ex, vel vulputate sapien volutpat ut. Pellento \
+                Etasque cruta ornare tortor sed bisp nisi euismod facilisis. \
+                Indextris vel commodo ipsum.";
+            break;
+        case 15:
+            paragraph = "Donec ac lectus id arcu blandit pretium. Donec non urna dapibus, posuere \
+                blandus ipsum sed, fringilla tortor. Quisque ullamcorper, libero sed tincidunt \
+                varius, ipsum ligula posuere sapien, eu posuere risus felis at lectus. \
+                Morbi imperdiet iaculis dignissim. Cras id libero tincidunt, iaculis mi vitae, \
+                ultrices ante. Phasellus pretium magna vitae diam porta, a sollicitudin eros \
+                consectetur. Quisque commodo tristique nulla vitae faucibus. \
+                Mauris sollicitudin nunc lectus.";
+            break;
+        case 16:
+            paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+                Cras ultrices mi sit amet sem efficitur, at ultricies quam interdum. Hecticor \
+                tincidunt, eros et scelerisque blandit, diam ex feugiat justo, et lobortis ipsum \
+                velit sit amet risus. Fusce ac turpis faucibus elit auctor suscipit. Nam egestas \
+                felis quis lorem eleifend laoreet. Vestibulum porta odio vitae posuere ultricies. \
+                In cursus tortor sed ornare lacinia. Donec fermentum sit amet tellus quis maximus. \
+                Mauris congue nulla ut dictum commodo. Nullam sagittis ornare risus ut sodales. \
+                Cras id massa ultricies, cursus lectus id, aliquam libero. Vestibulum ullamcorper \
+                halpa eleifend felis vitae euismod. Phasellus eu ex turpis.";
+            break;
+        case 17:
+            paragraph = "In magna ante, convallis a blandit vel, efficitur commodo est. \
+                In varius lorem odio, ac hendrerit turpis ultricies vitae. Aliquam dignissim malesuada \
+                massa, sed euismod neque pretium id. Sed semper aliquet nisl, id tincidunt sapien. Nunc vel \
+                velit metus. Mauris mattis accumsan orci, colbinec tempus mauris tempus id. Phasellus in \
+                telber magna non purus tempor congue. Fusce consectetur cursus urna vel pulvinar. \
+                Fusce est mauris, maximus ut scelerisque nec, pretium non nibh. Nulla condimentum \
+                lacinia risus, id suscipit lorem placerat quis. Donec et nibh augue. Praesent pulvinar, \
+                dui eget consectetur accumsan, ligula lorem molestie nulla, nec faucibus nisi nulla quis \
+                nibh. Sed venenatis, nibh ut dictum dignissim, ex metus facilisis urna, vel volutpat mi \
+                lorem lobortis ante. Donec sit amet tellus lacinia, dictumcus justo dapibus, porttitor nunc.";
+            break;
+        case 18:
+            paragraph = "Donec eleifend pharetra lorem, quis lacinia lacus sagittis nec. \
+                Proin eget ante eu erat scelerisque sodales vitae ut sapien. Praesent sit amet \
+                dignissim mauris. Curabitur vulputate metus nisl, eu pretium justo facilisis tincidunt. \
+                Duis in metus et eros feugiat pharetra at et orci. Morbi non tellus rutrum, \
+                auctor odio et, lobortis ante. Morbi dui lacus, gravida quis mollis consequat, \
+                consequat at mi. Phasellus facilisis venenatis pharetra. Maecenas nec diam luctus, \
+                mollis sapien et, rutrum nibh. Etiam sed augue vitae odio volutpat condimentum a et \
+                metus. Maecenas et erat a sem dignissim faucibus. Proin ac leo viverra neque aliquet \
+                dictum ac in mallofax tellus. In nisi purus, laoreet surbit id dolor et, pulvinar \
+                finibus urna. Sed at dui urna.";
+            break;
+        case 19:
+            paragraph = "Donec tellus neque, imperdiet faucibus velit lacinia, congue auctor \
+            massa. Pollum tendi sed arcu nulla. Nam in tincidunt leo, in auctor leo relbi. \
+            Duis ac purus tellus. Donec laoreet convallis leo, sed ultricies turpis suscipit at. \
+            Donec mollis egestas tincidunt. Belbi hamlum in eros condimentum, pharetra mauris sit \
+            amet, finibus lectus. Donec vulputate bilbius nibh ac mi varius, conferi in aliquam est \
+            tincidunt. In hac habitasse cellet platea dictumst. Phasellus sed post pultim dolor justo.";
+            break;
+        case 20:
+            paragraph = "Vivamus molestie leo eros, eu vestibulum est convallis vitae. \
+            In finibus lobortis nulla a consequat. Cras in ipsum porttitor, volutpat erat a, \
+            sollicitudin ex. Proin sodales posuere lacus nec sagittis. Quisque pretium felis \
+            erat, non auctor urna rhoncus sit amet. Morbi pretium mi a nunc cursus, et pretium nunc \
+            tincidunt. Nam bibendum in purus elementum jiggedi ornare. Sed dapibus mollis libero, eu congue \
+            mauris commodo eu. Morbi in rutrum granti dolor, sed pretium eros. Duis fermentum est varius \
+            feugiat auctor. Praesent aliquam risus tincidunt, elementum velit eget, gravida ex. \
+            Sed quis est at tellus sodales mattis id id libero. Duis et nibh arcu. \
+            Morbi sit amet erat ligula.";
+            break;
+    };
+    return paragraph;
+};
+
+export function get_parags() {
+    var holder = [];
+    for (let i = 0; i <= 2; i++) {
+        holder.push(rand_parag())
+    };
+    return holder;
+};
