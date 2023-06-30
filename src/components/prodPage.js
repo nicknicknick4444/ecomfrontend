@@ -11,10 +11,11 @@ import {Breadcrumb} from "./breadcrumb.js";
 import {ConfirmBox} from "./confirmBox.js";
 import {useProps} from "./hooks/prop-hooks.js";
 import {ErrorBoundary} from "./errorBoundary.js";
-import {getty, toTitle} from "./hooks/hooks.js";
+import {getty, toTitle, rand_parag, get_parags} from "./hooks/hooks.js";
 
 export function ProdPage() {
     const [product, setProduct] = useState();
+    const [desc, setDesc] = useState([]);
     const {insertPrice, searched, setSearched, 
         setChecking, setBurger, setMag} = useProps();
     let listy2 = localStorage.getItem("itemsList");
@@ -35,6 +36,11 @@ export function ProdPage() {
         setBurger(false);
         window.moveTo(0, 0);
     }, []);
+
+    useEffect(() => {
+        rand_parag();
+        setDesc(get_parags());
+    }, [id]);
 
     useEffect(() => {
         if (getty("searchItems") !== []) {
@@ -102,7 +108,14 @@ export function ProdPage() {
                     {/* <div id="img_contain">
                         <img id="prod_img" src={`${product.image}`} />
                     </div> */}
-                    <p className="prod_desc" id="desc_itself">{product.prod_desc}</p>
+                    <div className="prod_desc" id="desc_itself">
+                        <p>{desc[0]}</p>
+                        <p>{desc[1]}</p>
+                        <p>{desc[2]}</p>
+                    </div>
+                    {/* <p className="prod_desc" id="desc_itself">{desc[1]}</p>
+                    <p className="prod_desc" id="desc_itself">{desc[2]}</p> */}
+                    {/* <p className="prod_desc" id="desc_itself">{product.prod_desc}</p> */}
                     {/* <br />
                     <br />
                         <i><Link to="../">Home</Link></i> */}

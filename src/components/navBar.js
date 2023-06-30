@@ -85,8 +85,8 @@ export function Navbar() {
 
                     ))
                 }
-                <span className="navbar-mob"><Link to={{pathname: "/" }}>About Us</Link></span><br />
-                <span className="navbar-mob"><Link to={{pathname: "/"}}>Contact Us</Link></span>
+                <span className="navbar-mob"><Link to={{pathname: "/about-us" }}>About Us</Link></span><br />
+                <span className="navbar-mob"><Link to={{pathname: "/contact-us"}}>Contact Us</Link></span>
                 </div>: null}
             </div>
             {/* <div className="nav-edge"></div> */}
@@ -127,8 +127,8 @@ export function Navbar() {
                         <span className="navbar-mob"><Link to={{pathname: "/pets"}}>Pets</Link></span><br />
                         <span className="navbar-mob"><Link to={{pathname: "/confectionary"}}>Confectionary</Link></span><br />
                         <span className="navbar-mob"><Link to={{pathname: "/breads"}}>Breads</Link></span><br />
-                        <span className="navbar-mob"><Link to={{pathname: "/"}}>About Us</Link></span><br />
-                        <span className="navbar-mob"><Link to={{pathname: "/"}}>Contact Us</Link></span>
+                        <span className="navbar-mob"><Link to={{pathname: "/about-us"}}>About Us</Link></span><br />
+                        <span className="navbar-mob"><Link to={{pathname: "/contact-us"}}>Contact Us</Link></span>
                     </div> : null}
                     
                     {/* <div style={{clear: "left"}}>Loading...</div> */}

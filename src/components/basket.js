@@ -75,7 +75,7 @@ export function Basket() {
                         } */}
                     </div>
                     </Link>
-                    <div class="buttons">
+                    <div className="buttons">
                     {!bought ?
                     <>
                         <div id="view-basket" onClick={() => setChecking(false)}>
@@ -104,13 +104,6 @@ export function Basket() {
                     }
                     
                     </div>
-                    {/* {droplist ? 
-                    <div className="dropdown-basket">
-                        <BasketList />
-                        {droplist.toString()}
-                    </div>
-                    : null
-                    } */}
                 </ErrorBoundary>
             </>
         );

@@ -8,7 +8,7 @@ import {SearchBox} from "./searchBox.js";
 import {Header} from "./header.js";
 import {Footer} from "./footer.js";
 import {useProps} from "./hooks/prop-hooks.js";
-import {getty, setty, toTitle} from "./hooks/hooks.js";
+import {getty, toTitle, rand_parag, get_parags} from "./hooks/hooks.js";
 import {ErrorBoundary} from "./errorBoundary.js";
 
 export function CatPage() {
@@ -16,6 +16,7 @@ export function CatPage() {
     const [allsubcats, setAllsubcats] = useState([]);
     const [subcat, setSubcat] = useState([]);
     const [catto, setCatto] = useState("");
+    const [cat_desc, setCat_desc] = useState([]);
     const {category, setCategory, setSearched, section, 
         setChecking, setBurger, setMag} = useProps();
 
@@ -42,7 +43,9 @@ export function CatPage() {
         getSubcats();
         setCategory(cat_name);
         setBurger(false);
-        }
+        };
+        rand_parag();
+        setCat_desc(get_parags());
     }, [cat_name]);
 
     useEffect(() => {
@@ -74,6 +77,7 @@ export function CatPage() {
         <div className="prods_contain">
             <div className="prods_list" onClick={() => setMag(false)}>
                 <h1>{toTitle(catto)}</h1>
+                <div style={{textAlign: "center"}}>{cat_desc[0]}</div>
                 <div className="cat_itself">
                     {
                         subcat.map((subby, key) => (

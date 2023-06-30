@@ -18,8 +18,8 @@ export function Topband() {
                 <div className="band-words-left1"><img className="icons" id="yeg" src="https://i.ibb.co/ts1TSDD/tel-icon1.png" />00000 111111</div>
                 <div className="band-words-left2"><img className="icons" src="https://i.ibb.co/3h4vJ4c/email-icon1.png" />info@email.com</div>
             </div>    
-                <div className="band-words-right">About Us</div>
-                <div className="band-words-right">Contact Us</div>
+                <div className="band-words-right"><Link to={{pathname: "/about-us"}}>About Us</Link></div>
+                <div className="band-words-right"><Link to={{pathname: "/contact-us"}}>Contact Us</Link></div>
 
                 <div className="logo-mob">
                     <Link to={{pathname: "/"}} >

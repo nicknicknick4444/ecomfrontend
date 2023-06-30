@@ -60,22 +60,20 @@ export function Header() {
                     <div className="logo">
                         <img src="https://i.ibb.co/SV4RNV5/Main-Logo5.png" />
                         {/* Use https://imgbb.com/ for image hosting */}
-                        {/* https://i.ibb.co/wN5mz6D/Main-Logo5.png */}
                     </div>
                     <div className="logo2" id="logo2" style={{ width: widthy / 4.5 }}>
                         <img src="https://i.ibb.co/SV4RNV5/Main-Logo5.png" style={{ width: widthy / 4.5}} />
                     </div>
                     </Link>
-                    {/* <div><img src="https://i.ibb.co/G31Vcrk/basket.png" className="basket" /></div> */}
+                    
                     <Basket />
                 </div>
                 <div>
-                {!bought ? 
-                <span onClick={() => setBelb("NOt BOUGHT!")}><Navbar /></span> : 
-                <span onClick={() => {setBought(false); empty(setDis, updateTotal, setFillingdeets); setBurger(true)}}><Navbar/></span>}
+                    {!bought ? 
+                        <span onClick={() => setBelb("NOt BOUGHT!")}><Navbar /></span> : 
+                        <span onClick={() => {setBought(false); empty(setDis, updateTotal, setFillingdeets); setBurger(true)}}><Navbar/></span>
+                    }
                 </div>
-                {/* <div className="nav-edge"></div> */}
-                {/* <div className="search-box"><SearchBox /></div> */}
                 <p>{belb}</p>
             </div>
             <div id="header-overflow"></div>
