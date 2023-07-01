@@ -256,7 +256,7 @@ export function BasketList(){
                     ))
                     
                     :
-                    <div>Basket is sound empty!</div>
+                    <div id="empty-basket">Your basket is empty.</div>
                 }
                 {/* {long && get_location() !== "/basket-page" && get_location() !== "/checkout" ? 
                     <div id="see_all"><Link to={{pathname: "/basket-page"}}>See All</Link></div> 

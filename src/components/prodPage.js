@@ -108,7 +108,7 @@ export function ProdPage() {
                     {/* <div id="img_contain">
                         <img id="prod_img" src={`${product.image}`} />
                     </div> */}
-                    <div className="prod_desc" id="desc_itself">
+                    <div id="desc_itself">
                         <p>{desc[0]}</p>
                         <p>{desc[1]}</p>
                         <p>{desc[2]}</p>

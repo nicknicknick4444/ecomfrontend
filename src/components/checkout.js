@@ -16,8 +16,8 @@ export function Checkout() {
     const [coupons, setCoupons] = useState("");
     const {updateTotal, dis, cou, setCou, setDis, setSearched, fillingdeets, setFillingdeets, 
         checking, setChecking, bought, setBought, boughtReset, setBoughtreset, 
-        mand, setMand, emailval, setEmailval, typingAddress, setTypingaddress, burger, setBurger, 
-        setMag} = useProps();
+        mand, setMand, emailval, setEmailval, telval, setTelval, typingAddress, setTypingaddress, 
+        burger, setBurger, setMag} = useProps();
 
     var order_ref = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
 
@@ -75,6 +75,7 @@ export function Checkout() {
     useEffect(() => {
         setMand(false);
         setEmailval(false);
+        setTelval(false);
     }, [typingAddress])
 
     function api_call(id) {
@@ -114,6 +115,21 @@ export function Checkout() {
         };
     };
 
+    function check_number() {
+        if (getty("address")["billing_tel"] !== undefined) {
+            var tel = getty("address")["billing_tel"].replace(" ", "");
+        } else {
+            var tel = "";
+        }
+        if (tel.match(/^[0-9]+$/) !== null && tel !== undefined) {
+            console.log("VALID TEL!");
+            return false;
+        } else {
+            console.log("INVALID TEL!");
+            return true;
+        };
+    };
+
     function set_red_messages() {
         // Check mandataory fields set
         if (check_mand()) {
@@ -132,6 +148,12 @@ export function Checkout() {
             setEmailval(false);
             console.log("Valid email!");
         };
+
+        if (check_number()) {
+            setTelval(true);
+        } else {
+            setTelval(false);
+        }
     };
 
     async function makeReceipt() {
@@ -195,7 +217,6 @@ export function Checkout() {
             var dicto = {};
         } else {
             var dicto = getty("address");
-            
         };
         var word = "";
         word = e.target.value;
@@ -244,8 +265,9 @@ export function Checkout() {
                         <form>
                             <div id="billing">
                             <p><i>Fields marked * are mandatory</i></p>
-                            {mand ? <p id="mandatory">Please complete all mandatory fields</p> : null}
-                            {emailval ? <p id="email-val">Please enter a valid email address</p> : null}
+                            {mand ? <p id="mandatory"><i>Please complete all mandatory fields</i></p> : null}
+                            {emailval ? <p id="email-val"><i>Please enter a valid email address</i></p> : null}
+                            {telval ? <p id="email-val"><i>Please enter a valid telephone number</i></p> : null}
                                 <div>
                                 <h1>{delvq ? "Billing " : null}Address</h1>
                                 <label for="name"><span className="form-label">Name:*</span>&nbsp;
@@ -317,10 +339,11 @@ export function Checkout() {
                                 <div id="bottom-buttons">
                                 <Link to={{pathname: "/"}}><div id="back-to-shop"><Link to={{pathname: "/"}}>Continue Shopping</Link></div></Link>
                                     {
-                                            check_mand() === true || check_email() === true 
+                                            check_mand() === true || check_email() === true || check_email() === true
                                             ? 
                                             <div id="next2" onClick={() => {set_red_messages()}}>Next</div> : 
-                                            <div id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false); setEmailval(false)}}>
+                                            <div id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false); 
+                                                                            setEmailval(false); setTelval(false); window.scrollTo(0, 0)}}>
                                                 Next
                                             </div>
                                     }
@@ -469,7 +492,7 @@ export function Checkout() {
                 {/* <div><i><Link to="/">Home</Link></i></div> */}
                 <Footer />
             </>
-        );
+            );
         } else {
             return (
                 <>
@@ -477,7 +500,7 @@ export function Checkout() {
                     <div onClick={() => setMag(false) }></div>
                     <h1>Checkout</h1>
                     <BasketList />
-                    <div><i><Link to="/">Home</Link></i></div>
+                    {/* <div><i><Link to="/">Home</Link></i></div> */}
                     <Footer />
                 </>
             );
@@ -491,8 +514,8 @@ export function Checkout() {
                     <h1 id="progress">
                         <span className="past">1. Basket</span>&nbsp;&nbsp;
                         <span className="past">2. Address</span>&nbsp;&nbsp;
-                        <span className="present">3. Review</span>&nbsp;&nbsp;
-                        <span className="future">4. Finish</span>&nbsp;&nbsp;
+                        <span className={bought ? "past" : "present"}>3. Review</span>&nbsp;&nbsp;
+                        <span className={bought ? "present" : "future"}>4. Finish</span>&nbsp;&nbsp;
                     </h1>
                     {!bought ? null : <>
                         <div id="thanks">
@@ -544,7 +567,7 @@ export function Checkout() {
                                 <Link to={{pathname: "/basket-page"}}>Edit Order</Link>
                             </div>
                             <div>
-                                <div id="submit" onClick={() => buy()}>Submit Order</div>
+                                <div id="submit" onClick={() => {buy(); window.scrollTo(0, 0)}}>Submit Order</div>
                             </div>
                         </div>
                     </> 

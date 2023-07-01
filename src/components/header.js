@@ -32,7 +32,7 @@ export function Header() {
 
     useEffect(() => {
         function resizeListen() {
-            console.log("YEG!", widthy);
+            // console.log("YEG!", widthy);
             setWidthy(window.innerWidth);
             return window.innerWidth;
         };
