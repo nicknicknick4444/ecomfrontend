@@ -339,7 +339,7 @@ export function Checkout() {
                                 <div id="bottom-buttons">
                                 <Link to={{pathname: "/"}}><div id="back-to-shop"><Link to={{pathname: "/"}}>Continue Shopping</Link></div></Link>
                                     {
-                                            check_mand() === true || check_email() === true || check_email() === true
+                                            check_mand() === true || check_email() === true || check_number() === true
                                             ? 
                                             <div id="next2" onClick={() => {set_red_messages()}}>Next</div> : 
                                             <div id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false); 
