@@ -243,9 +243,7 @@ export function BasketList(){
                                         </button>
                                     </div>
                                 </div>
-                                    {/* {bought.toString()} {checking.toString()} */}
                                     </>
-                                    
                                     : null
                                     }
                                     
@@ -256,19 +254,15 @@ export function BasketList(){
                     ))
                     
                     :
-                    <div id="empty-basket">Your basket is empty.</div>
+                    <div id="empty-basket">Your basket is empty</div>
                 }
-                {/* {long && get_location() !== "/basket-page" && get_location() !== "/checkout" ? 
-                    <div id="see_all"><Link to={{pathname: "/basket-page"}}>See All</Link></div> 
-                    : null} */}
-
+                
                 {get_location() === "/basket-page" || get_location() === "/checkout" ?
                     
                     getty("discount") !== 1 & getty("coupon_name") !== "" && getty("amount") > 0 && getty("amount") !== null ? 
-                    <div id="discount-info"><b><span style={{color: "#2aaa41"}}>COUPON CODE {getty("coupon_name")} ADDED</span></b><br />
+                    <div id="discount-info"><b><span style={{color: "#2aaa41"}}>Coupon code {getty("coupon_name")} added</span></b><br />
                     <del>Original total: £{(amount_total / getty("discount")).toFixed(2)}</del></div> : 
                     cou === "NONE" ? <span id="coupon-error" style={{color: "#ff0000"}}><i>Coupon code not recognised</i></span> : "" : null}
-                    {/* {amount_total > 0 ? <div><b>{getty("discount") !== 1 ? "NEW" : ""} TOTAL: £{amount_total.toFixed(2)}</b></div> : null} */}
                     {get_location() === "/basket-page" || get_location() === "/checkout" ?
                     amount_total > 0 ? <div id="grand-total"><b>{total_word()} TOTAL: £{amount_total.toFixed(2)}</b></div> : null
                     : null

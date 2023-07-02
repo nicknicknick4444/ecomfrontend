@@ -77,14 +77,11 @@ export function ShowBasket() {
                 console.log("BLUG! ", the_codes[i]);
             } 
             if (typing.length >= 1 && the_codes.indexOf(typing.toUpperCase().trim()) === -1) {
-            // if (typing !== looko(0, i)) {
-                // setty("coupon_name", JSON.stringify("NONE"));
                 setCou("NONE");
             }
             if (getty("order").length === 0) {
                 console.log("CROOBY!");
             }
-            // console.log("Boons ", getty("order").length);
         };
         setTyping("");
     };
@@ -92,7 +89,6 @@ export function ShowBasket() {
     function unCoupon() {
         setty("discount", 1.0);
         setDis(1.0);
-        // localStorage.setItem("coupon_name", JSON.stringify(""));
         setty("coupon_name", "");
         setCou("");
     };

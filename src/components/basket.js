@@ -40,7 +40,7 @@ export function Basket() {
         } else if (amount >= 10000.00 && amount <= 99999.99) {
             extra = 25;
         } else if (amount >= 100000.01) {
-            extra = 30;
+            extra = 35;
         }
         return extra;
     };
@@ -66,13 +66,6 @@ export function Basket() {
                         <div>Items: <span className="basket_total">{!bought ? totally < 0 ? "0.00" : totally : 0 }</span></div>
                         <div>Total: &nbsp;<span className="price_pad">£{!bought ? parseInt(amount) === 0 ? "0.00" : amount.toFixed(2) : "0.00"}</span></div> 
     
-                        {/* {!bought ?
-                        <div id="view-basket" onClick={() => setChecking(false)}>View Basket</div>
-                        :
-                        <div id="view-basket" onClick={() => {setChecking(false); empty(setDis, updateTotal, setFillingdeets)}}>
-                            <Link to="/basket-page">View Basket</Link>
-                        </div>
-                        } */}
                     </div>
                     </Link>
                     <div className="buttons">
