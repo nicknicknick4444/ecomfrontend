@@ -176,6 +176,7 @@
 	#update-button {
 		width: 94px;
 		height: 30px;	
+		padding-top: 1px;
 	}
 	
 	#coupon-box {
@@ -500,6 +501,7 @@
 	
 	.cat_desc {
 		font-size: 14px;
+		text-align: left;
 	}
 
 /* START OF MINI MAIN */
@@ -1219,6 +1221,46 @@ h1 > a {
 		margin-right: 15%;
 	}
 
+	.front-box, .front-box-row {
+		width: 550px;
+		height: 220px;
+		margin: auto;
+		margin-bottom: 6px;
+		text-align: center;
+		clear: both;
+	}
+
+	.front-box-inner {	
+		width: 275px;
+		height: 220px;
+	}
+
+	#box1, #box4, #box5 {
+		width: 550px;
+		height: 220px;
+		background-color: #0000ff;
+	}
+	
+	#box2, #box3 {
+		height: 220px;
+		width: 272px;
+		float: left;
+		display: inline;
+		background-color: #00ffff;
+	}
+	
+	#box2 {
+		margin-right: 3px;
+	}
+	
+	#box3 {
+		margin-left: 3px;
+		}
+	
+	#header {
+		margin-bottom: 4px;
+	}
+
 }
 /*END OF MAIN*/
 
@@ -1281,7 +1323,7 @@ h1 > a {
 	}
 	
 	#header-overflow {
-		height: 180px;	
+		height: 142px;	
 	}
 
 	.navbar-mob {
@@ -1976,6 +2018,29 @@ h1 > a {
 	.general-words {
 		margin-left: 5%;
 		margin-right: 5%;
+	}
+	
+	.front-box, .front-box-row {
+		width: 90%;
+		margin: auto;
+		text-align: center;
+	}
+	
+	.front-box-inner {
+		
+	}
+	
+	#box1, #box4, #box5 {
+		background-color: #ee0000;
+		margin-bottom: 3px;
+		height: 300px;
+		
+	}
+	
+	#box2, #box3 {
+		background-color: #eeee00;
+		margin-bottom: 3px;
+		height: 300px;
 	}
 
 }

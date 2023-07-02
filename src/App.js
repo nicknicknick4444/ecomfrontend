@@ -37,7 +37,13 @@ function AppFront() {
       <Header />
       <div className="body">
         <div className="homepage-content" onClick={() => {setMag(false); setDroplist(false)}}>
-          Beans and content
+          <div className="front-box" id="box1">One</div>
+          <div className="front-box-row">
+          <div className="front-box-inner" id="box2">Two</div>
+          <div className="front-box-inner" id="box3">Three</div>
+          </div>
+          <div className="front-box" id="box4">Four</div>
+          <div className="front-box" id="box5">Five</div>
         </div>
       </div>
       <Footer />
