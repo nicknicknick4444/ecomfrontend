@@ -77,7 +77,7 @@ export function CatPage() {
         <div className="prods_contain">
             <div className="prods_list" onClick={() => setMag(false)}>
                 <h1>{toTitle(catto)}</h1>
-                <div className="cat_desc" style={{textAlign: "center"}}>{cat_desc[0]}</div>
+                <div className="cat_desc">{cat_desc[0]}</div>
                 <div className="cat_itself">
                     {
                         subcat.map((subby, key) => (

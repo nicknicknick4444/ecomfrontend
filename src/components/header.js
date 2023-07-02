@@ -56,7 +56,7 @@ export function Header() {
                     </link>
 
 
-                    <Link to={{pathname: "/"}}>
+                    <Link onClick={bought ? () => {empty(setDis, updateTotal, setFillingdeets)} : null} to={{pathname: "/"}}>
                     <div className="logo">
                         <img src="https://i.ibb.co/SV4RNV5/Main-Logo5.png" />
                         {/* Use https://imgbb.com/ for image hosting */}
@@ -71,10 +71,12 @@ export function Header() {
                 <div>
                     {!bought ? 
                         <span onClick={() => setBelb("NOt BOUGHT!")}><Navbar /></span> : 
-                        <span onClick={() => {setBought(false); empty(setDis, updateTotal, setFillingdeets); setBurger(true)}}><Navbar/></span>
+                        <span onClick={() => {setBought(false); empty(setDis, updateTotal, setFillingdeets); setBurger(true)}}>
+                            <Navbar/>
+                        </span>
                     }
                 </div>
-                <p>{belb}</p>
+                {/* <p>{belb}</p> */}
             </div>
             <div id="header-overflow"></div>
         </>

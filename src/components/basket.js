@@ -91,7 +91,7 @@ export function Basket() {
                             <Link to={{pathname: "/basket-page"}}>View Basket</Link>
                         </div>
                         <div id="view-checkout">
-                            <Link to={{pathname: "/checkout"}}>Checkout</Link>"</div>
+                            <Link to={{pathname: "/checkout"}}>Checkout</Link></div>
                         </>
                         }
                     </div>
