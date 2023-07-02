@@ -76,14 +76,6 @@ export function empty(setDis, updateTotal, setFillingdeets) {
     setFillingdeets(false);
 };
 
-// function back_reset() {
-//     if (bought) {
-//         empty(setDis, updateTotal);
-//         setBought(false);
-//         console.log("GRIN!!");
-//     };
-// };
-
 export function back_reset(bought, setBought, setDis, updateTotal) {
     console.log("BOUGHT: ", bought);
     if (bought) {
@@ -166,7 +158,7 @@ export function rand_parag() {
                 ullamcorper finibus enim nunc vitae sem. Pellento sit amet elementum ante, \
                 at pulvinar mi. Ut ligula odio, sagittis id enim in, condimentum maximus libero. \
                 Vivamus varius, est et rutrum dictum, ante velit porttitor ipsum, quis cursus \
-                dolor turpis et quam. Proin felis lectus, ultrices molestie bibendum nec, \
+                dolor turpis et quam. Proin felis lectus, ultrices pollexa bibendum nec, \
                 maximus vel tellus.";
             break;
         case 3:
@@ -290,7 +282,7 @@ export function rand_parag() {
                 elit quis semper. Nam efficitur egestas velit. Vestibulum varius viverra \
                 consectetur. Integer sit amet velit arcu. Vestibulum consectetur auctor dolor \
                 sed tristique. Vestibulum feugiat scelerisque tellus, in congue dui scelerisque poda \
-                euismod. Fusce tincidunt pulvinar nisi molestie tempor. Proin fermentum urna \
+                euismod. Fusce tincidunt pulvinar nisi locomus tempor. Proin fermentum urna \
                 quis interdum posuere. Proin convallis hendrerit justo eu sodales. Duis hendrerit \
                 euismod mauris, id iaculis odio laoreet eget. Sed porttitor mauris id commodo \
                 tincidunt. Etiam id congue supa data velit. Fusce feugiat semper dui, id blandit \
@@ -334,7 +326,7 @@ export function rand_parag() {
                 telber magna non purus tempor congue. Fusce consectetur cursus urna vel pulvinar. \
                 Fusce est mauris, maximus ut scelerisque nec, pretium non nibh. Nulla condimentum \
                 lacinia risus, id suscipit lorem placerat quis. Donec et nibh augue. Praesent pulvinar, \
-                dui eget consectetur accumsan, ligula lorem molestie nulla, nec faucibus nisi nulla quis \
+                dui eget consectetur accumsan, ligula lorem hexadim nulla, nec faucibus nisi nulla quis \
                 nibh. Sed venenatis, nibh ut dictum dignissim, ex metus facilisis urna, vel volutpat mi \
                 lorem lobortis ante. Donec sit amet tellus lacinia, dictumcus justo dapibus, porttitor nunc.";
             break;
