@@ -216,13 +216,13 @@
 	}
 	
 	#checkout-button {
-		padding-top: 0px;
+		padding-top: 1px;
 		margin-top: -34px;
 		/*margin-right: 224px;*/
 	}
 	
 	#checkout-button2 {
-		padding-top: 3.5px;
+		padding-top: 4px;
 		padding-right: 1px;
 		margin-top: 27px;
 		margin-right: -157px;
@@ -255,6 +255,7 @@
 		border: 1px #903e3e solid;*/
 		margin-top: 5px;
 		margin-left: 0px;
+		padding-top: 0.5px;
 		padding-left: 5px;
 		padding-right: 5px;
 		float: left;
@@ -274,7 +275,7 @@
 	
 	#resume {
 		margin-top: -34px;
-		padding-top: -3px;
+		padding-top: 2px;
 	}
 	
 	#resume2 {
@@ -348,6 +349,10 @@
 	#next, #submit {
 		background-color: #346db1;
 		border: 1px #346db1 solid;
+	}
+	
+	#submit {
+		padding-top: 0.5px;
 	}
 	
 	#next {
