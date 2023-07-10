@@ -23,7 +23,7 @@ import {basketUpdate, AllInput} from "./components/basketUpdate.js";
 
 function AppFront() {
   const {setSearched, setChecking, setBurger, 
-        setMag, setDroplist} = useProps();
+        setMag, setDroplist, cats} = useProps();
 
   useEffect(() => {
     setSearched(false);
@@ -36,6 +36,7 @@ function AppFront() {
     <>
       <Header />
       <div className="body">
+      {cats.length < 1 ? <div id="loading-pushdown"></div> : null}
         <div className="homepage-content" onClick={() => {setMag(false); setDroplist(false)}}>
           <div className="front-box" id="box1">
             <div className="overlay" id="overlay1">One</div>

@@ -508,6 +508,13 @@
 		font-size: 14px;
 		text-align: left;
 	}
+	
+	#loading {
+		clear: both;
+		width: 100px;
+		text-align: center;
+		margin: auto;
+	}
 
 /* START OF MINI MAIN */
 
@@ -1286,6 +1293,10 @@ h1 > a {
 	
 	#header {
 		margin-bottom: 4px;
+	}
+	
+	#loading-pushdown {
+		display: none;
 	}
 
 }
@@ -2088,6 +2099,11 @@ h1 > a {
 	
 	#overlay2, #overlay4 {	
 		background-color: #346db1;
+	}
+	
+	#loading-pushdown {
+		height: 23px;
+		width: 100%;	
 	}
 
 }
