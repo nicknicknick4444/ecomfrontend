@@ -7,9 +7,9 @@ import axios from "axios";
 import "../App.css";
 
 export function Navbar() {
-    const [cats, setCats] = useState([]);
+    // const [cats, setCats] = useState([]);
     const {allcats, prods_api, bought, burger, setBurger, 
-            setMag} = useProps();
+            setMag, cats, setCats} = useProps();
 
     const getCats = () => {
         axios
@@ -134,7 +134,7 @@ export function Navbar() {
                     {/* <div style={{clear: "left"}}>Loading...</div> */}
                 </div>
                 {/* <div className="nav-edge"></div> */}
-                <div style={{clear: "left"}}>Loading...</div>
+                <div id="loading">Loading...</div>
 
             </>
         );
