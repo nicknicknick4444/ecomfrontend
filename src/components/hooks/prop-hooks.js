@@ -49,6 +49,7 @@ export default function PropProvider({children}) {
     const [loc, setLoc] = useState("");
     const [mag, setMag] = useState(false);
     const [itemq, setItemq] = useState(0);
+    const [cats, setCats] = useState([]);
 
     function assertCateg(categ) {
         setCategory(categ);
@@ -256,7 +257,7 @@ export default function PropProvider({children}) {
     section, page_click, fillingdeets, setFillingdeets, checked, setChecked, checking, setChecking, 
     bought, setBought, boughtReset, setBoughtreset, mand, setMand, emailval, setEmailval, telval, setTelval, 
     typingAddress, setTypingaddress, allcats, prods_api, taxo, setTaxo, burger, setBurger, droplist, setDroplist, 
-    loc, setLoc, mag, setMag, itemq, setItemq}}>
+    loc, setLoc, mag, setMag, itemq, setItemq, cats, setCats}}>
         {children}
     </PropContext.Provider>
 };
