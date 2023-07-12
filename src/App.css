@@ -1085,6 +1085,11 @@ h1 > a {
 		height: 22px;
 	}
 
+	#reset_button {
+		
+		padding-top: 0px;
+	}
+
 	#pounds {	
 		font-size: 35px;
 		line-height: 45px;
