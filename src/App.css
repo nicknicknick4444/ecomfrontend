@@ -1086,7 +1086,6 @@ h1 > a {
 	}
 
 	#reset_button {
-		
 		padding-top: 0px;
 	}
 
@@ -1658,7 +1657,7 @@ h1 > a {
 	#add2 {
 		width: auto;
 		height: 32px;
-		margin-top: 5px;
+		margin-top: 4px;
 	}
 
 	.sorting {
@@ -2111,6 +2110,11 @@ h1 > a {
 	#loading-pushdown {
 		height: 24px;
 		width: 100%;	
+	}
+	
+	#dropdowns {
+		height: 22px;
+		vertical-align: middle;
 	}
 
 }
