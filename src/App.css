@@ -792,7 +792,8 @@
 	
 	#add2 {
 		width: auto;
-		text-align: middle;
+		/*vertical-align: middle;*/
+		line-height: 5px;
 		height: 32px;
 		margin-top: 6px;
 	}
