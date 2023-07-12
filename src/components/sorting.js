@@ -87,7 +87,7 @@ export function Sorting(list_name) {
                     <option value="a-z">A-Z</option>
                     <option value="z-a">Z-A</option>
                 </select>
-                <button onClick={() => reset_func()}>Reset</button>
+                <button id="reset_button" onClick={() => reset_func()}>Reset</button>
             </div>
         </>
      : <></>)
