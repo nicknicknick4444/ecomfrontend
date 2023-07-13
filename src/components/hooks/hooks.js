@@ -38,6 +38,7 @@ export function toTitle(word) {
             new_word += word[i];
         }
     }
+    new_word = new_word.replace(" X ", " x ");
     return new_word;
 };
 
