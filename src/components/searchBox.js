@@ -158,7 +158,7 @@ export function SearchBox() {
             setty("searchList", []);
         };
         console.log("Quell! ", searched.toString());
-        document.getElementById("search-box").value = "";
+        document.getElementsByClassName("search-boxy").value = "";
     }, [])
 
     useEffect(() => {
@@ -195,7 +195,7 @@ export function SearchBox() {
         {/* <form> */}
         <div>
             <input 
-                id="search-box" 
+                className="search-boxy" 
                 type="text"
                 placeholder="Enter search terms"
                 onChange={(e) => handleChange(e)} 
