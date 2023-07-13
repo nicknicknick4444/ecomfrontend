@@ -78,11 +78,12 @@ export function CatPage() {
             <div className="prods_list" onClick={() => setMag(false)}>
                 <h1>{toTitle(catto)}</h1>
                 <div className="cat_desc">{cat_desc[0]}</div>
-                <div className="cat_itself">
+                {/* <div className="cat_itself"> */}
+                <div>
                     {
                         subcat.map((subby, key) => (
                             getty("all_cats") !== null && getty("all_cats").length > 0 && getty("all_cats").indexOf(subby["subcat_name"]) !== -1 ? 
-                                <div key={key}>
+                                <div className="cat_itself" key={key}>
                                     <Link to={{pathname: `${subby.subcat_name}`}}>
                                         <img src={`${subby.subcat_image}`} style={{ width: 200 }} /><br />
                                     {toTitle(subby.subcat_name)}
