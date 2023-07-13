@@ -38,7 +38,11 @@
 
 	.sorting {
 		font-size: 14px;
-		margin-left: 8px;
+		/*margin-left: 8px;
+		position: absolute;
+    		right: 0;
+    		margin-right: 8px;
+    		margin-top: -25px;*/
 	}	
 
 
@@ -1302,6 +1306,13 @@ h1 > a {
 	
 	#loading-pushdown {
 		display: none;
+	}
+	
+	.sorting {
+		position: absolute;
+    		right: 0;
+    		margin-right: 8px;
+    		margin-top: -25px;
 	}
 
 }
