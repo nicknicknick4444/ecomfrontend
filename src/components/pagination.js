@@ -75,6 +75,14 @@ export function ProductPagination() {
     };
 
     function shortPage() {
+        if (numbers.length === 1) {
+            return (
+            <>
+                <ShowSubset />
+            </>
+            );
+        }
+        else {
         return (
             <>
                 <ShowSubset />
@@ -89,6 +97,7 @@ export function ProductPagination() {
                 </div>
             </>
         );
+                };
     };
 
     function longPageStart() {
@@ -191,16 +200,18 @@ export function ProductPagination() {
 
     if (numbers.length <= 4) {
         return shortPage();
-    } else if (numbers.length <= 2) {
-        return <h1>GRAAAH!</h1>;
-    } 
-    else if (numbers.length > 4) {
+    // } else if (numbers.length <= 2) {
+    //     return <h1>GRAAAH!</h1>;
+
+    } else if (numbers.length > 4) {
         if (page[0] === 0) {
             return longPageStart();
         } else if (page[0] > 0 && page[0] <= 2) {
-            // return <h1>BLEE!</h1>
             console.log("Woogy bread. ", page[0]);
             return longPageStartMid();
+        // } else if (page[0] === 1) {
+        //     console.log(page[0] + "BOOTHY!");
+        //     return null;
         } else if (page[0] >= 3 && page[0] < numbers.length - 2) {
             console.log("Tell it to the fields. ", numbers.length - 2, page[0]);
             return longPageMid();
