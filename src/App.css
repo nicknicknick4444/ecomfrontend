@@ -1043,11 +1043,15 @@ h1 > a {
 	.prods_list a:hover {
 		color: #903e3e;
 	}*/
+	
+	.cat_row {
+	}
 
 	.cat_itself {
 		border: 1px #ffffff solid;
 		width: 31%;
 		height: 234px;
+		float: left;
 		font-size: 17px;
 		padding: 5px;
 		margin-left: 1.16%;
