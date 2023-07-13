@@ -1656,12 +1656,13 @@ h1 > a {
 	
 	.prod_itself {
 		minimum-height: 303px;
+		width: 300px;
 		display: inline-block;
 		border: 1px #000000 solid;
 		padding: 3px;
 		margin-bottom: 3px;
-		margin-left: 15%;
-		margin-right: 15%;
+		margin-left: auto;
+		margin-right: auto;
 		font-size: 18px;
 	}
 	
