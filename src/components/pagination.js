@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Link} from "react-router-dom";
 import {useProps} from "./hooks/prop-hooks.js";
 import {AllInput} from "./basketUpdate.js";
@@ -7,6 +7,10 @@ import {getty, setty, Add2Basket} from "./hooks/hooks.js";
 
 export function ProductPagination() {
     const {page, subset, numbers, page_click} = useProps();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [page[0]]);
 
     function ShowSubset() {
 
@@ -45,6 +49,8 @@ export function ProductPagination() {
         //             setty("priceList", this_prices);
         //         }
         // };
+
+
 
         return (
             <>
