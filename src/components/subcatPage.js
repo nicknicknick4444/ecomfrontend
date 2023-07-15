@@ -16,6 +16,7 @@ export function SubcatPage() {
     const [allprods, setAllprods] = useState([]);
     const {prods, setProds, category, setCategory, setBurger, setSearched, section, 
         page, setPage, setChecking, setMag} = useProps();
+    var allprods2 = allprods;
 
     const getProds = () => {
         axios
@@ -38,6 +39,10 @@ export function SubcatPage() {
     }, []);
 
     useEffect(() => {
+        allprods2 = allprods;
+    }, [allprods]);
+
+    useEffect(() => {
         console.log("Graphy! ", prods);
         section("disp");
         // Set results-per-page by adjusting the second array item below
@@ -47,7 +52,7 @@ export function SubcatPage() {
     useEffect(() => {
         // if (allprods) {
             var prodbox = [];
-            var allprods2 = allprods;
+            // var allprods2 = allprods;
             allprods2 = allprods2.sort((a, b) => (a.prod_code < b.prod_code ? -1 : a.prod_code > b.prod_code ? 1 : 0));
             // Testing sorting by prod_code by reversing it!
             // allprods2 = allprods2.sort((a, b) => (a.prod_code < b.prod_code ? 1 : a.prod_code > b.prod_code ? -1 : 0));
@@ -72,10 +77,11 @@ export function SubcatPage() {
             setty("revert", prodbox);
         // };
             
-    }, [allprods]);
+    }, [allprods2]);
 
     useEffect(() => {
         section("disp");
+        // Change back?
     }, [page[0]]);
 
     if (prods) {
