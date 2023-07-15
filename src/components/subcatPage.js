@@ -47,16 +47,22 @@ export function SubcatPage() {
     useEffect(() => {
         // if (allprods) {
             var prodbox = [];
-            for (let i in allprods) {
-                var cuppo = {};
-                if (allprods[i].prod_subcat === subcat_name) {
-                    cuppo["id"] = allprods[i].id;
-                    cuppo["prod_title"] = allprods[i].prod_title;
-                    cuppo["image"] = allprods[i].image;
-                    cuppo["price"] = allprods[i].price;
-                    cuppo["prod_cat"] = allprods[i].prod_cat;
-                    cuppo["prod_subcat"] = allprods[i].prod_subcat;
-                    prodbox.push(cuppo);
+            var allprods2 = allprods;
+            allprods2 = allprods2.sort((a, b) => (a.prod_code < b.prod_code ? -1 : a.prod_code > b.prod_code ? 1 : 0));
+            // Testing sorting by prod_code by reversing it!
+            // allprods2 = allprods2.sort((a, b) => (a.prod_code < b.prod_code ? 1 : a.prod_code > b.prod_code ? -1 : 0));
+            for (let i in allprods2) {
+                var collect = {};
+                if (allprods2[i].prod_subcat === subcat_name) {
+                    collect["id"] = allprods2[i].id;
+                    collect["prod_code"] = allprods2[i].prod_code;
+                    collect["prod_title"] = allprods2[i].prod_title;
+                    collect["image"] = allprods2[i].image;
+                    collect["price"] = allprods2[i].price;
+                    collect["prod_cat"] = allprods2[i].prod_cat;
+                    collect["prod_subcat"] = allprods2[i].prod_subcat;
+                    prodbox.push(collect);
+                    console.log(collect["id"], collect["prod_code"], "New Amserdam!");
                     // prodbox.push(allprods[i]);
                 };
             };
