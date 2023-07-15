@@ -82,7 +82,7 @@ export function SubcatPage() {
     useEffect(() => {
         section("disp");
         // Change back?
-    }, [page[0]]);
+    }, [page]);
 
     if (prods) {
     return (
