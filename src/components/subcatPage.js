@@ -76,7 +76,7 @@ export function SubcatPage() {
 
     useEffect(() => {
         section("disp");
-    }, [page]);
+    }, [page[0]]);
 
     if (prods) {
     return (
