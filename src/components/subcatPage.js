@@ -15,13 +15,13 @@ export function SubcatPage() {
     let {subcat_name} = useParams();
     const [allprods, setAllprods] = useState([]);
     const {prods, setProds, category, setCategory, setBurger, setSearched, section, 
-        page, setPage, setChecking, setMag} = useProps();
+        page, setPage, setChecking, subset} = useProps();
     var allprods2 = allprods;
 
     const getProds = () => {
         axios
-            .get(`http://localhost:8000/api/products/`)
-            // .get(`https://polar-coast-39563.herokuapp.com/api/products/`)
+            // .get(`http://localhost:8000/api/products/`)
+            .get(`https://polar-coast-39563.herokuapp.com/api/products/`)
             .then((res) => setAllprods(res.data))
             .catch(err => console.log("Error: ", err));
     };
@@ -77,7 +77,7 @@ export function SubcatPage() {
             setty("revert", prodbox);
         // };
             
-    }, [allprods2]);
+    }, [allprods]);
 
     useEffect(() => {
         section("disp");
