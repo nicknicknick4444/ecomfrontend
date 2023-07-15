@@ -273,19 +273,22 @@ export function ProductPagination() {
 
     } else if (numbers.length > 4) {
         if (page[0] === 0) {
+            console.log("longPageStart2()");
             return longPageStart2();
         } else if (page[0] > 0 && page[0] <= 2) {
-            console.log("Woogy bread. ", page[0]);
+            console.log("Woogy bread. longPageStartMid2()", page[0]);
             return longPageStartMid2();
         // } else if (page[0] === 1) {
         //     console.log(page[0] + "BOOTHY!");
         //     return null;
         } else if (page[0] >= 3 && page[0] < numbers.length - 2) {
-            console.log("Tell it to the fields. ", numbers.length - 2, page[0]);
+            console.log("Tell it to the fields. longPageMid2()", numbers.length - 2, page[0]);
             return longPageMid2();
         } else if (page[0] === numbers.length - 2) {
+            console.log("longPage2ndLast2()");
             return longPage2ndLast2();
         } else if (page[0] === numbers.length - 1) {
+            console.log("longPageLast2()");
             return longPageLast2();
         }
     }
