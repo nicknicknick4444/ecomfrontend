@@ -84,14 +84,14 @@ export function ProductPagination() {
         if (numbers.length === 1) {
             return (
             <>
-                <ShowSubset />
+                {/* <ShowSubset /> */}
             </>
             );
         }
         else {
         return (
             <>
-                <ShowSubset />
+                {/* <ShowSubset /> */}
                 <div className="search_pagination">
                     {
                         numbers?.map((numbo, key2) => (
@@ -103,13 +103,24 @@ export function ProductPagination() {
                 </div>
             </>
         );
-                };
+        };
     };
+
+    function shortPage2() {
+        return (
+            <>
+                {shortPage()}
+                    <ShowSubset />
+                {shortPage()}
+            </>
+        );
+    };
+
 
     function longPageStart() {
         return (
             <>
-                <ShowSubset />
+                {/* <ShowSubset /> */}
                 <div className="search_pagination">
                     {/* {
                         numbers?.map((numbo, key3) => (
@@ -130,10 +141,20 @@ export function ProductPagination() {
         );
     };
 
+    function longPageStart2() {
+        return (
+            <>
+                {longPageStart()}
+                    <ShowSubset />
+                {longPageStart()}
+            </>
+        );
+    };
+
     function longPageStartMid() {
         return (
             <>
-                <ShowSubset />
+                {/* <ShowSubset /> */}
                 <div className="search_pagination">
                     <span onClick={() => page_click(numbers[0])}>{page[0] == 2 ? "1  " : ""}</span>
                     <span onClick={() => page_click(page[0] - 1)}>{page[0]}  </span>  
@@ -149,10 +170,20 @@ export function ProductPagination() {
         );
     };
 
+    function longPageStartMid2() {
+        return (
+            <>
+                {longPageStartMid()}
+                    <ShowSubset />
+                {longPageStartMid()}
+            </>
+        );
+    };
+
     function longPageMid() {
         return (
             <>
-                <ShowSubset />
+                {/* <ShowSubset /> */}
                 <div className="search_pagination">
                     <span onClick={() => page_click(numbers[0])}>
                         {page[0] < 1 ? "1  " : "First  "} 
@@ -173,10 +204,20 @@ export function ProductPagination() {
         );
     };
 
+    function longPageMid2() {
+        return (
+            <>
+                {longPageMid()}
+                    <ShowSubset />
+                {longPageMid()}
+            </>
+        );
+    };
+
     function longPage2ndLast() {
         return (
             <>
-                <ShowSubset />
+                {/* <ShowSubset /> */}
                 <div className="search_pagination">
                     <span onClick={() => page_click(numbers[0])}>First  </span>
                     <span>...  </span>
@@ -188,10 +229,21 @@ export function ProductPagination() {
         );
     };
 
+    function longPage2ndLast2() {
+        return (
+            <>
+                {longPage2ndLast()}
+                    <ShowSubset />
+                {longPage2ndLast()}
+            </>
+        );
+    };
+
+
     function longPageLast() {
         return (
             <>
-                <ShowSubset />
+                {/* <ShowSubset /> */}
                 <div className="search_pagination">
                     <span onClick={() => page_click(numbers[0])}>First  </span>
                     {numbers.length > 4 ? <span>...  </span> : <span></span>}
@@ -204,27 +256,40 @@ export function ProductPagination() {
         );
     };
 
+    function longPageLast2() {
+        return (
+            <>
+                {longPageLast()}
+                    <ShowSubset />
+                {longPageLast()}
+            </>
+        );
+    };
+
     if (numbers.length <= 4) {
-        return shortPage();
+        return shortPage2();
     // } else if (numbers.length <= 2) {
     //     return <h1>GRAAAH!</h1>;
 
     } else if (numbers.length > 4) {
         if (page[0] === 0) {
-            return longPageStart();
+            console.log("longPageStart2()");
+            return longPageStart2();
         } else if (page[0] > 0 && page[0] <= 2) {
-            console.log("Woogy bread. ", page[0]);
-            return longPageStartMid();
+            console.log("Woogy bread. longPageStartMid2()", page[0]);
+            return longPageStartMid2();
         // } else if (page[0] === 1) {
         //     console.log(page[0] + "BOOTHY!");
         //     return null;
         } else if (page[0] >= 3 && page[0] < numbers.length - 2) {
-            console.log("Tell it to the fields. ", numbers.length - 2, page[0]);
-            return longPageMid();
+            console.log("Tell it to the fields. longPageMid2()", numbers.length - 2, page[0]);
+            return longPageMid2();
         } else if (page[0] === numbers.length - 2) {
-            return longPage2ndLast();
+            console.log("longPage2ndLast2()");
+            return longPage2ndLast2();
         } else if (page[0] === numbers.length - 1) {
-            return longPageLast();
+            console.log("longPageLast2()");
+            return longPageLast2();
         }
     }
 
