@@ -88,7 +88,6 @@ export function SubcatPage() {
             <Breadcrumb />
             <ErrorBoundary>
             {/* <SearchPage /> */}
-            <ProductPagination />
             <Sorting list_name="disp" />
             <h1>{toTitle(category)}</h1>
             {/* <div className="prods_list" onClick={() => setMag(false)} >
