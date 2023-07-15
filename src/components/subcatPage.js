@@ -20,8 +20,8 @@ export function SubcatPage() {
 
     const getProds = () => {
         axios
-            // .get(`http://localhost:8000/api/products/`)
-            .get(`https://polar-coast-39563.herokuapp.com/api/products/`)
+            .get(`http://localhost:8000/api/products/`)
+            // .get(`https://polar-coast-39563.herokuapp.com/api/products/`)
             .then((res) => setAllprods(res.data))
             .catch(err => console.log("Error: ", err));
     };
@@ -81,6 +81,7 @@ export function SubcatPage() {
 
     useEffect(() => {
         section("disp");
+        console.log("PLAYDOH!", page[0], page);
         // Change back?
     }, [page]);
 
