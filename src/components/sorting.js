@@ -82,8 +82,8 @@ export function Sorting(list_name) {
             <div className="sorting">
                 <select onChange={() => sort_func()} id="dropdowns">
                     <option>-Sort By-</option>
-                    <option value="low-high">Low-High</option>
-                    <option value="high-low">High-Low</option>
+                    <option value="low-high">£ Low-High</option>
+                    <option value="high-low">£ High-Low</option>
                     <option value="a-z">A-Z</option>
                     <option value="z-a">Z-A</option>
                 </select>
