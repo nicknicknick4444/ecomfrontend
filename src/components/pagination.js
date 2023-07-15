@@ -12,6 +12,9 @@ export function ProductPagination() {
         window.scrollTo(0, 0);
     }, [page[0]]);
 
+    useEffect(() => {
+    }, [subset]);
+
     function ShowSubset() {
 
 
