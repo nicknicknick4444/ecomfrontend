@@ -13,7 +13,7 @@ export function ProductPagination() {
         const limit = page[1];
         window.scrollTo(0, 0);
         // setPage([5, 9]);
-        setPage([clicked, limit]);
+        setPage([clicked * limit, limit]);
         console.log("Subset? DUBSET!", clicked, limit);
         // console.log("SUBSET!", subset);
     }, [page[0]]);
