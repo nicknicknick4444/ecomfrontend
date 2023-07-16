@@ -30,7 +30,7 @@ export default function PropProvider({children}) {
     const [typingAddress, setTypingaddress] = useState({});
     const [shortlist, setShortlist] = useState([]);
     const [searched, setSearched] = useState(false);
-    const [page, setPage] = useState([0,2]);
+    const [page, setPage] = useState([0,9]);
     const [numbers, setNumbers] = useState([]);
     const [subset, setSubset] = useState([]);
     // const [bought, setBought] = useState(false);
