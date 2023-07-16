@@ -14,8 +14,8 @@ export function ProductPagination() {
         var new_page = (clicked * limit) + 1;
         window.scrollTo(0, 0);
         // setPage([5, 9]);
-        setPage([clicked, limit]);
-        console.log("Subset? DUBSET!", clicked + 1, limit, new_page);
+        setPage([new_page, limit]);
+        console.log("Subset? NEW_PAGE!", clicked + 1, limit, new_page);
         // console.log("SUBSET!", subset);
     }, [page[0]]);
 
