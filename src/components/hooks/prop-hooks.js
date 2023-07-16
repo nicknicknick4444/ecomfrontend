@@ -194,10 +194,11 @@ export default function PropProvider({children}) {
         setAmount(totUp(beat));
     };
 
-    function section(array_list) {
+    function section(array_list, subset) {
         // if (prods) {
             var page_nums = [];
-            var sub_section = getty(array_list).slice(page[0], page[0] + page[1]);
+            var new_section = page[0] * page[1];
+            var sub_section = getty(array_list).slice(new_section, new_section + page[1]);
             var many = [...Array(Math.ceil(prods.length/page[1])).keys()];
             console.log("Pages! ", many);
             for (let i in many) {
@@ -214,7 +215,7 @@ export default function PropProvider({children}) {
     };
 
     function page_click(page_num) {
-        var new_page = [page_num * page[1], page[1]];
+        var new_page = [page_num, page[1]];
         setPage(new_page);
         console.log("Now I'm here! ", new_page);
     };
