@@ -18,8 +18,6 @@ export function SubcatPage() {
         page, setPage, setChecking, subset} = useProps();
     var allprods2 = allprods;
 
-    // CODE
-
     const getProds = () => {
         axios
             // .get(`http://localhost:8000/api/products/`)
