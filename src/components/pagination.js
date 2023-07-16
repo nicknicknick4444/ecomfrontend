@@ -274,7 +274,7 @@ export function ProductPagination() {
     } else if (numbers.length > 4) {
         if (page[0] === 0) {
             console.log("longPageStart2()", numbers);
-            return longPageStart2();
+            return longPageStart();
         } else if (page[0] > 0 && page[0] <= 2) {
             console.log("Woogy bread. longPageStartMid2()", page[0]);
             return longPageStartMid2();
