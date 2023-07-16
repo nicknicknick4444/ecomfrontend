@@ -13,7 +13,7 @@ export function ProductPagination() {
         window.scrollTo(0, 0);
         // setPage([5, 9]);
         console.log("SUBSET!", subset);
-    }, [page, subset]);
+    }, [subset]);
 
     // useEffect(() => {
     //     setPage([clicked, 9]);
