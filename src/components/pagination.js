@@ -10,7 +10,6 @@ export function ProductPagination() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        setSubset(subset);
     }, [page[0]]);
 
     function ShowSubset() {
@@ -121,7 +120,7 @@ export function ProductPagination() {
     function longPageStart() {
         return (
             <>
-                {/* <ShowSubset /> */}
+                <ShowSubset />
                 <div className="search_pagination">
                     {/* {
                         numbers?.map((numbo, key3) => (
