@@ -6,14 +6,12 @@ import {ConfirmBox} from "./confirmBox.js";
 import {getty, setty, Add2Basket} from "./hooks/hooks.js";
 
 export function ProductPagination() {
-    const {page, subset, numbers, page_click} = useProps();
+    const {page, setSubset, subset, numbers, page_click} = useProps();
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        setSubset(subset);
     }, [page[0]]);
-
-    useEffect(() => {
-    }, [subset]);
 
     function ShowSubset() {
 
