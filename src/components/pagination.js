@@ -120,7 +120,7 @@ export function ProductPagination() {
     function longPageStart() {
         return (
             <>
-                <ShowSubset />
+                {/* <ShowSubset /> */}
                 <div className="search_pagination">
                     {/* {
                         numbers?.map((numbo, key3) => (
@@ -274,7 +274,7 @@ export function ProductPagination() {
     } else if (numbers.length > 4) {
         if (page[0] === 0) {
             console.log("longPageStart2()", numbers);
-            return longPageStart();
+            return longPageStart2();
         } else if (page[0] > 0 && page[0] <= 2) {
             console.log("Woogy bread. longPageStartMid2()", page[0]);
             return longPageStartMid2();

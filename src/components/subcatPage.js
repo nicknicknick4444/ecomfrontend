@@ -53,7 +53,7 @@ export function SubcatPage() {
         // if (allprods) {
             var prodbox = [];
             // var allprods2 = allprods;
-            allprods2 = allprods2.sort((a, b) => (a.prod_code < b.prod_code ? -1 : a.prod_code > b.prod_code ? 1 : 0));
+            allprods2 = allprods.sort((a, b) => (a.prod_code < b.prod_code ? -1 : a.prod_code > b.prod_code ? 1 : 0));
             // Testing sorting by prod_code by reversing it!
             // allprods2 = allprods2.sort((a, b) => (a.prod_code < b.prod_code ? 1 : a.prod_code > b.prod_code ? -1 : 0));
             for (let i in allprods2) {
