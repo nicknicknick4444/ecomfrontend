@@ -14,7 +14,7 @@ export function ProductPagination() {
         // setPage([5, 9]);
         setPage([clicked, 9]);
         // console.log("SUBSET!", subset);
-    }, [subset]);
+    }, [page[0]]);
 
     // useEffect(() => {
     //     setPage([clicked, 9]);
