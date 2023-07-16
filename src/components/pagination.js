@@ -165,10 +165,10 @@ export function ProductPagination() {
             <>
                 {/* <ShowSubset /> */}
                 <div className="search_pagination">
-                    <span onClick={() => page_click(numbers[0])}>{page[0] == 2 ? "1  " : ""}</span>
-                    <span onClick={() => page_click(page[0] - 1)}>{page[0]}  </span>  
+                    <span onClick={() => {page_click(numbers[0]); setClicked(numbers[0])}}>{page[0] === 2 ? "1  " : null}</span>
+                    <span onClick={() => {page_click(page[0] - 1); setClicked(page[0] - 1)}}>{page[0]}  </span>  
                     <span><b>{page[0] + 1}  </b></span>
-                    <span onClick={() => page_click(page[0] + 1)}>{page[0] + 2}  </span>
+                    <span onClick={() => {page_click(page[0] + 1); setClicked(page[0] + 1)}}>{page[0] + 2}  </span>
                     {/* {page[0] + 1 !== numbers.length - 1 ?  */}
                     {page[0] + 1 < 3 || numbers.length !== 5 ? <span>...  </span> : <span></span>}
                     <span onClick={() => page_click(numbers.length - 1)}>
