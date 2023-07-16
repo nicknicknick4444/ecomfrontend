@@ -10,9 +10,10 @@ export function ProductPagination() {
     const [clicked, setClicked] = useState(0);
 
     useEffect(() => {
+        const limit = page[1];
         window.scrollTo(0, 0);
         // setPage([5, 9]);
-        setPage([clicked, 9]);
+        setPage([clicked, limit]);
         // console.log("SUBSET!", subset);
     }, [page[0]]);
 
