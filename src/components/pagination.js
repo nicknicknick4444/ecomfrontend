@@ -7,10 +7,12 @@ import {getty, setty, Add2Basket} from "./hooks/hooks.js";
 
 export function ProductPagination() {
     const {setPage, page, setSubset, subset, numbers, page_click} = useProps();
+    const [clicked, setClicked] = useState(0);
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        setPage([page[0], 9]);
+        setPage([clicked, 9]);
+        console.log("CLICKED: ", clicked);
     }, [page[0]]);
 
     function ShowSubset() {
@@ -128,7 +130,7 @@ export function ProductPagination() {
                             <span key={key3}> */}
                             {/* { */}
                                 <span onClick={() => page_click(page[0])}><b>{numbers[0] + 1}  </b></span>
-                                <span onClick={() => page_click(page[0] + 1)}>{numbers[0] + 2}  </span>
+                                <span onClick={() => {page_click(page[0] + 1); setClicked(page[0] + 1)}}>{numbers[0] + 2}  </span>
                                 {/* <span onClick={() => page_click(page[0] + 2)}>{numbers[0] + 3}  </span> */}
                                 <span>...  </span>
                             {/* } */}
