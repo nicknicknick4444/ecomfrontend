@@ -46,7 +46,7 @@ export function SubcatPage() {
         console.log("Graphy! ", prods);
         section("disp");
         // Set results-per-page by adjusting the second array item below
-        setPage([0,9]);
+        setPage([0,1]);
     }, [prods[0]]);
 
     useEffect(() => {
