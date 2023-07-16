@@ -83,7 +83,7 @@ export function SubcatPage() {
         section("disp");
         console.log("PLAYDOH!", page[0], page);
         // Change back?
-    }, [page]);
+    }, [page[0]]);
 
     if (prods) {
     return (
