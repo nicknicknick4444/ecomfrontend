@@ -16,7 +16,7 @@ export function ProductPagination() {
         // setPage([5, 9]);
         // setPage([new_page, limit]);
         // section(getty("disp"));
-        console.log("Subset? NEWEST DEPLOY!", clicked + 1, limit, new_page);
+        console.log("Subset? NEWEST DEPLOY!!!", clicked + 1, limit, new_page);
         // console.log("SUBSET!", subset);
     }, [page[0]]);
 
