@@ -35,7 +35,7 @@ export function SubcatPage() {
         };
         setChecking(true);
         setBurger(false);
-        window.moveTo(0, 0);
+        window.scrollTo(0, 0);
     }, []);
 
     // useEffect(() => {
@@ -44,9 +44,9 @@ export function SubcatPage() {
 
     useEffect(() => {
         console.log("Graphy! ", prods);
-        section("disp");
-        // Set results-per-page by adjusting the second array item below
-        setPage([0,9]);
+        section("disp", subset);
+        // Set results-per-page by adjusting the second array item below!
+        setPage([0,3]);
     }, [prods[0]]);
 
     useEffect(() => {
