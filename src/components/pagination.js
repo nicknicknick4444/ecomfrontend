@@ -150,7 +150,6 @@ export function ProductPagination() {
     };
 
     function longPageStart2() {
-        console.log("SUBSET!", subset);
         return (
             <>
                 {longPageStart()}
@@ -282,6 +281,7 @@ export function ProductPagination() {
 
     } else if (numbers.length > 4) {
         if (page[0] === 0) {
+            console.log("SUBSET!", subset);
             console.log("longPageStart2()", numbers);
             return longPageStart2();
         } else if (page[0] > 0 && page[0] <= 2) {
