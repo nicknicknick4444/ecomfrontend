@@ -10,7 +10,7 @@ export function ProductPagination() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        // setPage([4, 9]);
+        setPage([page[0], 9]);
     }, [page[0]]);
 
     function ShowSubset() {
