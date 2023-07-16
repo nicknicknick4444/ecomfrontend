@@ -11,8 +11,7 @@ export function ProductPagination() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        setPage(5, 9);
-        console.log("CLICKED: ", clicked);
+        setPage([5, 9]);
     }, [page[0]]);
 
     // useEffect(() => {
@@ -65,7 +64,7 @@ export function ProductPagination() {
                 <div className="prods_contain">
                     <div className="prods_list">
                         {
-                            getty("sub_section")?.map((item, key) => (
+                            subset?.map((item, key) => (
                                 
                                 <div className="prod_itself" key={key}>
                                     <Link to={{pathname: `/${item.prod_cat}/${item.prod_subcat}/${item.id}`}}>
