@@ -12,7 +12,7 @@ export function ProductPagination() {
     useEffect(() => {
         window.scrollTo(0, 0);
         // setPage([5, 9]);
-        setPage([clicked, 9]);
+        setPage([clicked * 9, 9]);
         // console.log("SUBSET!", subset);
     }, [page[0]]);
 
@@ -165,8 +165,8 @@ export function ProductPagination() {
             <>
                 {/* <ShowSubset /> */}
                 <div className="search_pagination">
-                    <span onClick={() => page_click(numbers[0])}>{page[0] == 2 ? "1  " : null}</span>
-                    <span onClick={() => page_click(page[0] - 1)}>{page[0]}  </span>  
+                    <span onClick={() => {page_click(numbers[0]); setClicked(numbers[0])}}>{page[0] === 2 ? "1  " : null}</span>
+                    <span onClick={() => {page_click(page[0] - 1); setClicked(page[0] - 1)}}>{page[0]}  </span>  
                     <span><b>{page[0] + 1}  </b></span>
                     <span onClick={() => {page_click(page[0] + 1); setClicked(page[0] + 1)}}>{page[0] + 2}  </span>
                     {/* {page[0] + 1 !== numbers.length - 1 ?  */}
