@@ -53,10 +53,10 @@ export function Breadcrumb(product) {
                     breadcrumb.map((i, key) => (
                         key === (breadcrumb.length) -1 || i === ""
                         ?
-                        <span className="crumb" key={key}><Link to={{pathname: `/${crumbstr[key]}`}}>{toTitle(i.replace("%20", ""))}</Link></span>
+                        <span className="crumb" key={key}><Link to={{pathname: `/${crumbstr[key]}`}}>{toTitle(i.replace(/%20/gi, " "))}</Link></span>
                         :
                         <span className="crumb" key={key}>
-                            <Link to={{pathname: `/${crumbstr[key]}`}}>{toTitle(i.replace("%20", ""))}</Link>
+                            <Link to={{pathname: `/${crumbstr[key]}`}}>{toTitle(i.replace(/%20/gi, " "))}</Link>
                             <span id="arrow"> > </span>
                         </span>
                     ))
