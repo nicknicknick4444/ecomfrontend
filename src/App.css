@@ -1,7 +1,8 @@
 	.breadcrumb {
+		font-size: 12px;
 		margin-left: 5px;
 		text-decoraion: none;	
-		margin-bottom: 5px;
+		margin-bottom: -1px;
 		font-family: helvetica;
 	}
 
@@ -591,6 +592,7 @@
   pointer-events: none;
 }
 
+
 .numberInput {
 	input::-webkit-outer-spin-button, 
 	input::-webkit-inner-spin-button {
@@ -638,7 +640,7 @@
 	}
 
 	.search-box {
-		margin-top: 18px;
+		margin-top: 17px;
 		/*margin-top: 18px;*/
 		/*margin-bottom: 19px;*/
 		margin-left: 5px;
@@ -649,6 +651,10 @@
 	
 	#search-box {
 		margin-right: 3px;
+	}
+	
+	#subby {
+		height: 25px;
 	}
 
 	.search-box-mob {
@@ -980,10 +986,11 @@ h1 > a {
 	margin-left: 8px;
 	cursor: pointer;
 	clear: both;
+	margin-top: -20px;
 }
 
 .navbar-mob {
-	display: none;	
+	display: none;
 }
 
 .footer {
@@ -1317,7 +1324,7 @@ h1 > a {
 		position: absolute;
     		right: 0;
     		margin-right: 8px;
-    		margin-top: -25px;
+    		margin-top: -15px;
 	}
 
 }
@@ -1477,10 +1484,10 @@ h1 > a {
 	.click-search {	
 	}
 
-	.breadcrumb {
+	/*.breadcrumb {
 		clear: both;
 		font-family: helvetica;
-	}
+	}*/
 	
 	
 	
@@ -1618,8 +1625,10 @@ h1 > a {
 	}
 
 	.breadcrumb {
+		clear: both;
 		font-size: 12px;
 		margin-left: 5px;
+		margin-bottom: -3px;
 		text-decoration: none;
 		color: #000000;
 	}
