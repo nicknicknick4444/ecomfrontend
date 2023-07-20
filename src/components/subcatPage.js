@@ -46,7 +46,7 @@ export function SubcatPage() {
         console.log("Graphy! ", prods);
         section("disp", subset);
         // Set results-per-page by adjusting the second array item below!
-        setPage([0,3]);
+        setPage([0,9]);
     }, [prods[0]]);
 
     useEffect(() => {
@@ -98,6 +98,7 @@ export function SubcatPage() {
             <Sorting list_name="disp" />
             {cats.length < 1 ? <div id="loading-pushdown"></div> : null}
             <h1>{toTitle(category)}</h1>
+            {cats.length < 1 ? <div id="loading-pushdown"></div> : null}
             {/* LOADING PUSHDOWN TO GO HERE! */}
             {/* <div className="prods_list" onClick={() => setMag(false)} >
             <h1>{toTitle(subcat_name)}</h1>

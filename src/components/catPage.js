@@ -78,6 +78,7 @@ export function CatPage() {
             <div className="prods_list" onClick={() => setMag(false)}>
                 {cats.length < 1 ? <div id="loading-pushdown"></div> : null}
                 <h1>{toTitle(catto)}</h1>
+                {cats.length < 1 ? <div id="loading-pushdown"></div> : null}
                 {/* LOADING PUSHDOWN TO GO HERE! */}
                 <div className="cat_desc">{cat_desc[0]}</div>
                 {/* <div className="cat_itself"> */}
