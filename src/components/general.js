@@ -18,13 +18,18 @@ export function General() {
     };
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
         rand_parag();
         setChecking(true);
         setParags(get_parags());
         setBurger(false);
+        window.scrollTo(0, 0);
     }, [loc]);
     
-    return(
+    return (
         <>
             <Header />
                 <div className="general-words">

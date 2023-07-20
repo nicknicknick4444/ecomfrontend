@@ -34,7 +34,7 @@ export function ProdPage() {
         console.log("Subs! ", searched.toString());
         setChecking(true);
         setBurger(false);
-        window.moveTo(0, 0);
+        window.scrollTo(0, 0);
     }, []);
 
     useEffect(() => {
@@ -82,7 +82,7 @@ export function ProdPage() {
                 <ErrorBoundary>
                     <Breadcrumb product={product.prod_title} />
                 </ErrorBoundary>
-                <div className="product" onClick={() => setMag(false)} >
+                <div className="product" onClick={() => {setMag(false); setBurger(false)}} >
                     {/* <h1>{toTitle(product.prod_title)}</h1> */}
                     {/* <p>{id}</p> */}
                     {/* <p>{product.prod_title}</p> */}

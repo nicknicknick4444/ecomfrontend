@@ -6,7 +6,7 @@ import {ConfirmBox} from "./confirmBox.js";
 import {getty, setty, Add2Basket} from "./hooks/hooks.js";
 
 export function ProductPagination() {
-    const {setPage, page, setSubset, subset, section, numbers, page_click} = useProps();
+    const {setPage, page, setSubset, setBurger, subset, section, numbers, page_click} = useProps();
     const [clicked, setClicked] = useState(0);
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export function ProductPagination() {
         return (
             <>
                 <div className="prods_contain">
-                    <div className="prods_list">
+                    <div className="prods_list" onClick={() => setBurger(false)}>
                         {
                             subset?.map((item, key) => (
                                 
