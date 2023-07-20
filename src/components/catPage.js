@@ -18,7 +18,7 @@ export function CatPage() {
     const [catto, setCatto] = useState("");
     const [cat_desc, setCat_desc] = useState([]);
     const {category, setCategory, setSearched, section, 
-        setChecking, setBurger, setMag} = useProps();
+        setChecking, setBurger, setMag, cats} = useProps();
 
     const getSubcats = () => {
         axios
@@ -76,10 +76,12 @@ export function CatPage() {
         <ErrorBoundary>
         <div className="prods_contain">
             <div className="prods_list" onClick={() => setMag(false)}>
+                {cats.length < 1 ? <div id="loading-pushdown"></div> : null}
                 <h1>{toTitle(catto)}</h1>
+                {/* LOADING PUSHDOWN TO GO HERE! */}
                 <div className="cat_desc">{cat_desc[0]}</div>
                 {/* <div className="cat_itself"> */}
-                <div>
+                <div className="cat_row">
                     {
                         subcat.map((subby, key) => (
                             getty("all_cats") !== null && getty("all_cats").length > 0 && getty("all_cats").indexOf(subby["subcat_name"]) !== -1 ? 

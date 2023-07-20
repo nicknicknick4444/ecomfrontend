@@ -15,7 +15,7 @@ export function SubcatPage() {
     let {subcat_name} = useParams();
     const [allprods, setAllprods] = useState([]);
     const {prods, setProds, category, setCategory, setBurger, setSearched, section, 
-        page, setPage, setChecking, subset} = useProps();
+        page, setPage, setChecking, subset, cats} = useProps();
     var allprods2 = allprods;
 
     const getProds = () => {
@@ -44,9 +44,9 @@ export function SubcatPage() {
 
     useEffect(() => {
         console.log("Graphy! ", prods);
-        section("disp");
+        section("disp", subset);
         // Set results-per-page by adjusting the second array item below!
-        setPage([0,9]);
+        setPage([0,3]);
     }, [prods[0]]);
 
     useEffect(() => {
@@ -96,7 +96,9 @@ export function SubcatPage() {
             <ErrorBoundary>
             {/* <SearchPage /> */}
             <Sorting list_name="disp" />
+            {cats.length < 1 ? <div id="loading-pushdown"></div> : null}
             <h1>{toTitle(category)}</h1>
+            {/* LOADING PUSHDOWN TO GO HERE! */}
             {/* <div className="prods_list" onClick={() => setMag(false)} >
             <h1>{toTitle(subcat_name)}</h1>
             {
