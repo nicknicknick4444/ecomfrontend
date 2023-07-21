@@ -103,7 +103,7 @@ export function ProdPage() {
                             <div id="prod_input"><AllInput item={product} words="Add To Basket" placeholder="1" /></div>
                         </div>
                     </div>
-                    <br /><br /><br />
+                    
                     {/* <div style={{borderTop: "1px #000000 solid", backgroundColor: "#000000"}}></div> */}
                     {/* <div id="img_contain">
                         <img id="prod_img" src={`${product.image}`} />
