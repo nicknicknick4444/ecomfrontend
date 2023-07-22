@@ -58,6 +58,7 @@ export default function PropProvider({children}) {
     function insertPrice(item) {
         console.log("SCOOT! ", item);
         if ("priceList" in localStorage) {
+        // if (getty("priceList") !== undefined) {
           console.log("CREB!");
           if (localStorage.getItem("priceList")[`${item.id}`] !== undefined) {
             var priceL = getty("priceList");
@@ -66,12 +67,13 @@ export default function PropProvider({children}) {
             // localStorage.setItem("priceList", JSON.stringify(priceL));
             setty("priceList", priceL);
           } else {
-            var priceL = {};
+            var priceL = getty("priceList");
             priceL[item.id] = item.price;
-            // localStorage.setItem("priceList", JSON.stringify(priceL));
             setty("priceList", priceL);
+            console.log("MACK NO LIST FOUND! Getting it and adding to it.")
             };
         } else {
+            console.log("Not in local storage apparently. Macking new one and adding to it.")
             var priceL = {};
             priceL[item.id] = item.price;
             // localStorage.setItem("priceList", JSON.stringify(priceL));
