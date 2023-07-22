@@ -528,8 +528,7 @@
 	.logo2 {
 		margin: auto;
 		width: 100px;
-		padding-top: 10px;
-		padding-top: 16px;
+		padding-top: 15px;
 	}
 	
 	.logo2 > img {
@@ -982,7 +981,7 @@ h1 > a {
 	}
 
 .search_pagination {
-	font-size: 15px;
+	font-size: 17px;
 	margin-left: 8px;
 	cursor: pointer;
 	clear: both;
@@ -1615,7 +1614,7 @@ h1 > a {
 	}
 
 	.search_pagination {
-		font-size: 22px;
+		font-size: 24px;
 		margin-left: 5px;
 		position: relative;
 		margin-top: 5px;
