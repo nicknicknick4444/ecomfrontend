@@ -11,7 +11,7 @@ import {Breadcrumb} from "./breadcrumb.js";
 import {ConfirmBox} from "./confirmBox.js";
 import {useProps} from "./hooks/prop-hooks.js";
 import {ErrorBoundary} from "./errorBoundary.js";
-import {getty, toTitle, rand_parag, get_parags} from "./hooks/hooks.js";
+import {getty, setty, toTitle, rand_parag, get_parags} from "./hooks/hooks.js";
 
 export function ProdPage() {
     const [product, setProduct] = useState();
@@ -34,6 +34,12 @@ export function ProdPage() {
         console.log("Subs! ", searched.toString());
         setChecking(true);
         setBurger(false);
+        if (getty("order") === null) {
+            console.log("Make order!");
+            setty("order", []);
+        } else {
+            console.log("Order already there?");
+        }
         window.scrollTo(0, 0);
     }, []);
 
