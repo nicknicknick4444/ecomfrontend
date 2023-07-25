@@ -106,13 +106,13 @@ export function Navbar() {
                         <span className="navbar">
                             <Link to={{pathname: "/Kitchenware"}}>Kitchenware</Link>
                         </span>
-                        <span>
+                        <span className="navbar">
                             <Link to={{pathname: "/Furniture"}}>Furniture</Link>
                         </span>
-                        <span>
+                        <span className="navbar">
                             <Link to={{pathname: "/Appliances"}}>Appliances</Link>
                         </span>
-                        <span>
+                        <span className="navbar">
                             <Link to={{pathname: "/Cleaning%20&%20Hygiene"}}>Cleaning & Hygiene</Link>
                         </span>
                     {/* <span className="navbar">Loading...</span> */}
