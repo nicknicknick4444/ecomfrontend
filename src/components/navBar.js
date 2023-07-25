@@ -101,13 +101,19 @@ export function Navbar() {
                             <Link to={{pathname: "/"}}>Home</Link>
                         </span>
                         <span className="navbar">
-                            <Link to={{pathname: "/pets"}}>Pets</Link>
+                            <Link to={{pathname: "/Tableware"}}>Tableware</Link>
                         </span>
                         <span className="navbar">
-                            <Link to={{pathname: "/confectionary"}}>Confectionary</Link>
+                            <Link to={{pathname: "/Kitchenware"}}>Kitchenware</Link>
                         </span>
-                        <span className="navbar">
-                            <Link to={{pathname: "/breads"}}>Breads</Link>
+                        <span>
+                            <Link to={{pathname: "/Furniture"}}>Furniture</Link>
+                        </span>
+                        <span>
+                            <Link to={{pathname: "/Appliances"}}>Appliances</Link>
+                        </span>
+                        <span>
+                            <Link to={{pathname: "/Cleaning%20&%20Hygiene"}}>Cleaning & Hygiene</Link>
                         </span>
                     {/* <span className="navbar">Loading...</span> */}
                     </div>
@@ -124,10 +130,12 @@ export function Navbar() {
                     </div>
                     {burger ? 
                     <div>
-                        <span className="navbar-mob"><Link to={{pathname: "/pets"}}>Pets</Link></span><br />
-                        <span className="navbar-mob"><Link to={{pathname: "/confectionary"}}>Confectionary</Link></span><br />
-                        <span className="navbar-mob"><Link to={{pathname: "/breads"}}>Breads</Link></span><br />
-                        <span className="navbar-mob"><Link to={{pathname: "/about-us"}}>About Us</Link></span><br />
+                        <span className="navbar-mob"><Link to={{pathname: "/Tableware"}}>Tableware</Link></span><br />
+                        <span className="navbar-mob"><Link to={{pathname: "/Kitchenware"}}>Kitchenware</Link></span><br />
+                        <span className="navbar-mob"><Link to={{pathname: "/Furniture"}}>Furniture</Link></span><br />
+                        <span className="navbar-mob"><Link to={{pathname: "/Appliances"}}>Appliances</Link></span><br />
+                        <span className="navbar-mob"><Link to={{pathname: "/Cleaning%20&%20Hygiene"}}>Cleaning & Hygiene</Link></span>
+                        <span className="navbar-mob"><Link to={{pathname: "/about-us"}}>About Us</Link></span>
                         <span className="navbar-mob"><Link to={{pathname: "/contact-us"}}>Contact Us</Link></span>
                     </div> : null}
                     
