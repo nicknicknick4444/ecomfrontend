@@ -1314,11 +1314,7 @@ h1 > a {
 	}
 
 	.front-box:hover .overlay {
-		padding-top: 4px;
-	}
-	
-	.front-box-inner:hover .overlay {
-		
+		padding-top: 3px;
 	}
 		
 	.small-box {
@@ -1331,7 +1327,7 @@ h1 > a {
 		background-color: #903e3e;
 	}
 	
-	.homepage-content > a:hover {
+	.homepage-content > a {
 		text-decoration: none;
 		color: #ffffff;
 	}
@@ -2170,6 +2166,11 @@ h1 > a {
 	
 	#box5 {
 		background-image: url("https://i.ibb.co/m5V83Hc/Pots-And-Pans.png");
+	}
+	
+	.homepage-content > a {
+		text-decoration: none;
+		color: #ffffff;
 	}
 	
 	.overlay {
