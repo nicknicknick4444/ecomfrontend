@@ -1,13 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {Link} from "react-router-dom";
 import {useProps} from "./hooks/prop-hooks.js";
-import {setty, getty, toTitle} from "./hooks/hooks.js";
-import {SearchBox} from "./searchBox.js";
+import {getty, toTitle} from "./hooks/hooks.js";
 import axios from "axios";
 import "../App.css";
 
 export function Navbar() {
-    // const [cats, setCats] = useState([]);
     const {allcats, prods_api, bought, burger, setBurger, 
             setMag, cats, setCats} = useProps();
 
@@ -23,27 +21,18 @@ export function Navbar() {
         getCats();
         if (getty("all_cats") === null || getty("all_cats").length === 0 || getty("all_cats") === []) {
             prods_api();
-            console.log("FRIDGE TET");
         };
-        console.log("Blues! ", allcats);
-        // if (!bought) {
-        //     setBurger(false);
-        // };
-        // if (bought) {
-        //     setBurger(true);
-        // };
     }, []);
 
-    useEffect(() => {
-        if (cats) {
-            console.log("Garcey! ", cats);
-        }
-    }, [cats]);
+    // useEffect(() => {
+    //     if (cats) {
+    //         console.log("It works! ", cats);
+    //     }
+    // }, [cats]);
 
     if (cats.length > 1) {
     return (
         <>
-            {/* <div className="nav-edge"></div> */}
                 <div id="nav-main">
                 <span className="navbar">
                     <Link to={{pathname: "/"}}>Home</Link>
@@ -71,8 +60,6 @@ export function Navbar() {
             null}</div>
                 {burger ? 
                 <div>
-                {/* <span className="search-box-mob"><SearchBox /></span> */}
-                {/* <span className="navbar-mob"><Link to={{pathname: "/"}}>Home</Link></span><br /> */}
                 {
                     cats.map((cat, key) => (
 
@@ -85,17 +72,15 @@ export function Navbar() {
 
                     ))
                 }
-                <span className="navbar-mob"><Link to={{pathname: "/about-us" }}>About Us</Link></span><br />
-                <span className="navbar-mob"><Link to={{pathname: "/contact-us"}}>Contact Us</Link></span>
+                {/* <span className="navbar-mob"><Link to={{pathname: "/about-us" }}>About Us</Link></span><br />
+                <span className="navbar-mob"><Link to={{pathname: "/contact-us"}}>Contact Us</Link></span> */}
                 </div>: null}
             </div>
-            {/* <div className="nav-edge"></div> */}
         </>
     );
     } else {
         return (
             <>
-                {/* <div className="nav-edge"> */}
                     <div id="nav-main">
                         <span className="navbar">
                             <Link to={{pathname: "/"}}>Home</Link>
@@ -115,9 +100,7 @@ export function Navbar() {
                         <span className="navbar">
                             <Link to={{pathname: "/Cleaning%20&%20Hygiene"}}>Cleaning & Hygiene</Link>
                         </span>
-                    {/* <span className="navbar">Loading...</span> */}
                     </div>
-                {/* </div> */}
 
                 <div className="navbar-mob">
                 
@@ -134,14 +117,11 @@ export function Navbar() {
                         <span className="navbar-mob"><Link to={{pathname: "/Kitchenware"}}>Kitchenware</Link></span><br />
                         <span className="navbar-mob"><Link to={{pathname: "/Furniture"}}>Furniture</Link></span><br />
                         <span className="navbar-mob"><Link to={{pathname: "/Appliances"}}>Appliances</Link></span><br />
-                        <span className="navbar-mob"><Link to={{pathname: "/Cleaning%20&%20Hygiene"}}>Cleaning & Hygiene</Link></span>
-                        <span className="navbar-mob"><Link to={{pathname: "/about-us"}}>About Us</Link></span>
+                        <span className="navbar-mob"><Link to={{pathname: "/Cleaning%20&%20Hygiene"}}>Cleaning & Hygiene</Link></span><br />
+                        <span className="navbar-mob"><Link to={{pathname: "/about-us"}}>About Us</Link></span><br />
                         <span className="navbar-mob"><Link to={{pathname: "/contact-us"}}>Contact Us</Link></span>
                     </div> : null}
-                    
-                    {/* <div style={{clear: "left"}}>Loading...</div> */}
                 </div>
-                {/* <div className="nav-edge"></div> */}
                 <div id="loading">Loading...</div>
 
             </>

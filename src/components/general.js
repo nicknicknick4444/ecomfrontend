@@ -32,8 +32,8 @@ export function General() {
     return (
         <>
             <Header />
-                <div className="general-words">
-                    <h1>{toTitle(get_title())}</h1>
+                <div className="general-words" onClick={() => setBurger(false)}>
+                    <h1 style={{marginTop: 0}}>{toTitle(get_title()).replace("And-", "& ").replaceAll("-", " ")}</h1>
                     <p>{parags[0]}</p>
                     <p>{parags[1]}</p>
                 </div>
