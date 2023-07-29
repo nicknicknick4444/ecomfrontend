@@ -1137,6 +1137,7 @@ h1 > a {
 		width: 80%;
 		max-width: 750px;
 		margin: auto;
+		margin-top: 7px;
 	}
 	
 	#prod_img {
