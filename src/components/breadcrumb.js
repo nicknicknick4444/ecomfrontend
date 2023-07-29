@@ -1,17 +1,15 @@
 import React, {useEffect, useState} from "react";
 import {Link, useParams} from "react-router-dom";
 import {useProps} from "./hooks/prop-hooks.js";
-import {getty, toTitle} from "./hooks/hooks.js";
-import axios from "axios";
+import {toTitle} from "./hooks/hooks.js";
 import "../App.css";
 
 export function Breadcrumb(product) {
     const [breadcrumb, setBreadcrumb] = useState([]);
     const [crumbstr, setCrumbstr] = useState("");
-    const {prods, setProds, category, setCategory} = useProps();
+    const {prods, category} = useProps();
     var bready = [];
     var crumb = window.location.href.split("/");
-    // var crumb2 = crumb[3];
     var strbread = [];
     var inner = "";
     var page = useParams();
