@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {useParams, Link, useLocation} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import axios from "axios";
 import {Header} from "./header.js";
 import {Footer} from "./footer.js";
@@ -8,7 +8,6 @@ import {Sorting} from "./sorting.js";
 import {ProductPagination} from "./pagination.js";
 import {useProps} from "./hooks/prop-hooks.js";
 import {getty, setty, toTitle} from "./hooks/hooks.js";
-import {SearchPage} from "./searchPage.js";
 import {ErrorBoundary} from "./errorBoundary.js";
 
 export function SubcatPage() {
@@ -29,7 +28,6 @@ export function SubcatPage() {
     useEffect(() => {
         getProds();
         setSearched(false);
-        // NEW!!
         if (getty("disp") === null) {
             setty("disp", []);
         };
@@ -37,10 +35,6 @@ export function SubcatPage() {
         setBurger(false);
         window.scrollTo(0, 0);
     }, []);
-
-    // useEffect(() => {
-    //     allprods2 = allprods;
-    // }, [allprods]);
 
     useEffect(() => {
         console.log("Graphy! ", prods);
@@ -50,9 +44,7 @@ export function SubcatPage() {
     }, [prods[0]]);
 
     useEffect(() => {
-        // if (allprods) {
             var prodbox = [];
-            // var allprods2 = allprods;
             allprods2 = allprods2.sort((a, b) => (a.prod_code < b.prod_code ? -1 : a.prod_code > b.prod_code ? 1 : 0));
             // Testing sorting by prod_code by reversing it!
             // allprods2 = allprods2.sort((a, b) => (a.prod_code < b.prod_code ? 1 : a.prod_code > b.prod_code ? -1 : 0));
@@ -67,8 +59,6 @@ export function SubcatPage() {
                     collect["prod_cat"] = allprods2[i].prod_cat;
                     collect["prod_subcat"] = allprods2[i].prod_subcat;
                     prodbox.push(collect);
-                    console.log(collect["id"], collect["prod_code"], "New Amserdam!");
-                    // prodbox.push(allprods[i]);
                 };
             };
             setCategory(subcat_name);
@@ -81,42 +71,20 @@ export function SubcatPage() {
 
     useEffect(() => {
         section("disp");
-        console.log("PLAYDOH!", page[0], page);
-        // Change back?
+        // console.log("For testing - page numbers", page[0], page);
     }, [page]);
 
     if (prods) {
     return (
         <>
-            {/* <Basket /> */}
-            {/* <Navbar />
-            <SearchBox /> */}
             <Header />
             <Breadcrumb />
             <ErrorBoundary>
-            {/* <SearchPage /> */}
             <Sorting list_name="disp" />
             {cats.length < 1 ? <div id="loading-pushdown"></div> : null}
             <h1>{toTitle(category)}</h1>
             {cats.length < 1 ? <div id="loading-pushdown"></div> : null}
-            {/* LOADING PUSHDOWN TO GO HERE! */}
-            {/* <div className="prods_list" onClick={() => setMag(false)} >
-            <h1>{toTitle(subcat_name)}</h1>
-            {
-                prods.map((prod, key) => (
-                    <div key={key} className="prod_itself">
-                        <Link to={{pathname: `${prod.id}`}}>
-                            <span>{prod.prod_title}</span><br />
-                            <img src={`${prod.image}`} style={{ width: 200 }} /><br />
-                            <span>£{prod.price}</span>
-                        </Link>
-                    </div>
-                ))
-            }
-            <br />
-            </div> */}
             <ProductPagination />
-            {/* <p><i><Link to={{pathname: "/"}}>Home</Link></i></p> */}
             </ErrorBoundary>
             <Footer />
         </>

@@ -17,8 +17,8 @@ export function CatPage() {
     const [subcat, setSubcat] = useState([]);
     const [catto, setCatto] = useState("");
     const [cat_desc, setCat_desc] = useState([]);
-    const {category, setCategory, setSearched, section, 
-        setChecking, setBurger, setMag, cats} = useProps();
+    const {setCategory, setSearched, setChecking, 
+        setBurger, setMag, cats} = useProps();
 
     const getSubcats = () => {
         axios
@@ -30,7 +30,6 @@ export function CatPage() {
 
     useEffect(() => {
         getSubcats();
-        console.log("Ran the real API!");
         setSearched(false);
         setChecking(true);
         setBurger(false);
@@ -39,10 +38,10 @@ export function CatPage() {
 
     useEffect(() => {
         if (catto !== cat_name) {
-        setCatto(cat_name);
-        getSubcats();
-        setCategory(cat_name);
-        setBurger(false);
+            setCatto(cat_name);
+            getSubcats();
+            setCategory(cat_name);
+            setBurger(false);
         };
         rand_parag();
         setCat_desc(get_parags());
@@ -53,24 +52,16 @@ export function CatPage() {
             var subcatbox = [];
             for (let i in allsubcats) {
                 if (allsubcats[i].top_cat === cat_name) {
-    
-                    console.log("Top hat! ", allsubcats[i]); 
                     subcatbox.push(allsubcats[i]);
                 };
             };
             setSubcat(subcatbox);
         };
     }, [allsubcats]);
-
-    console.log("Bush Lula! ", allsubcats);
     
-    console.log("Subcats: ", subcat);
     if (subcat) {
     return (
         <>
-        {/* <Basket /> */}
-        {/* <Navbar />
-        <SearchBox /> */}
         <Header />
         <div className="breadcrumb"><Breadcrumb /></div>
         <ErrorBoundary>
@@ -79,16 +70,14 @@ export function CatPage() {
                 {cats.length < 1 ? <div id="loading-pushdown"></div> : null}
                 <h1>{toTitle(catto)}</h1>
                 {cats.length < 1 ? <div id="loading-pushdown"></div> : null}
-                {/* LOADING PUSHDOWN TO GO HERE! */}
                 <div className="cat_desc">{cat_desc[0]}</div>
-                {/* <div className="cat_itself"> */}
                 <div className="cat_row">
                     {
                         subcat.map((subby, key) => (
                             getty("all_cats") !== null && getty("all_cats").length > 0 && getty("all_cats").indexOf(subby["subcat_name"]) !== -1 ? 
                                 <div className="cat_itself" key={key}>
                                     <Link to={{pathname: `${subby.subcat_name}`}}>
-                                        <img src={`${subby.subcat_image}`} style={{ width: 200 }} /><br />
+                                        <img src={`${subby.subcat_image}`} style={{ width: 200 }} alt={`${subby.subcat_name} sub-category image`} /><br />
                                     {toTitle(subby.subcat_name)}
                                     </Link>
                                 </div>
@@ -99,7 +88,6 @@ export function CatPage() {
                 </div>
             </div>
         </div>
-        {/* <div><i><Link to={{pathname: "/"}}>Home</Link></i></div> */}
         </ErrorBoundary>
         <Footer />
     </>

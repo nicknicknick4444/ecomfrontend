@@ -6,7 +6,7 @@ import axios from "axios";
 import "../App.css";
 
 export function Navbar() {
-    const {allcats, prods_api, bought, burger, setBurger, 
+    const {prods_api, bought, burger, setBurger, 
             setMag, cats, setCats} = useProps();
 
     const getCats = () => {
@@ -23,12 +23,6 @@ export function Navbar() {
             prods_api();
         };
     }, []);
-
-    // useEffect(() => {
-    //     if (cats) {
-    //         console.log("It works! ", cats);
-    //     }
-    // }, [cats]);
 
     if (cats.length > 1) {
     return (
@@ -72,8 +66,6 @@ export function Navbar() {
 
                     ))
                 }
-                {/* <span className="navbar-mob"><Link to={{pathname: "/about-us" }}>About Us</Link></span><br />
-                <span className="navbar-mob"><Link to={{pathname: "/contact-us"}}>Contact Us</Link></span> */}
                 </div>: null}
             </div>
         </>

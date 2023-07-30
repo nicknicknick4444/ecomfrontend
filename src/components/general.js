@@ -1,14 +1,13 @@
 import React, {useEffect, useState} from "react";
-import {useParams, Link, useLocation} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 import {useProps} from "./hooks/prop-hooks.js";
 import {toTitle, rand_parag, get_parags} from "./hooks/hooks.js";
 import {Header} from "./header.js";
-import {Breadcrumb} from "./breadcrumb.js";
 import {Footer} from "./footer.js";
 
 export function General() {
     
-    const {checking, setChecking, setBurger} = useProps();
+    const {setChecking, setBurger} = useProps();
     var loc = useLocation();
     const [parags, setParags] = useState([]);
 

@@ -24,23 +24,17 @@ export function Breadcrumb(product) {
         };
         for (let i in bready) {
             if (bready[i] === page.id) {
-                console.log("BASHU!");
                 bready[i] = product.product;
-                console.log("Basp! ", product.product);
             } else if (bready[i] === "") {
-                console.log("GUMPTION!");
                 bready.splice(i, 1);
             } else if (bready[i] === "search-results") {
                 bready[i] = "Search Results";
             }
         };
-        console.log("Breadcrumbs! ", bready);
-        console.log("Gasomatic! ", breadcrumb, page.id, bready);
         bready.unshift("Home");
         strbread.unshift("../");
         setBreadcrumb(bready);
         setCrumbstr(strbread);
-        console.log("Prozac Beats: ", category, crumbstr);
     }, [prods, category]);
 
     return (
@@ -64,4 +58,3 @@ export function Breadcrumb(product) {
         </>
     );
 };
-

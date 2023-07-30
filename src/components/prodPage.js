@@ -31,14 +31,12 @@ export function ProdPage() {
 
     useEffect(() => {
         setSearched(false);
-        console.log("Subs! ", searched.toString());
         setChecking(true);
         setBurger(false);
         if (getty("order") === null) {
-            console.log("Make order!");
             setty("order", []);
         } else {
-            console.log("Order already there?");
+            console.log("For testing - order already there?");
         }
         window.scrollTo(0, 0);
     }, []);
@@ -50,7 +48,6 @@ export function ProdPage() {
 
     useEffect(() => {
         if (getty("searchItems") !== []) {
-            console.log("PANTOMIME HORSE!");
             setSearched(false);
         }
     }, [searched]);
@@ -62,11 +59,6 @@ export function ProdPage() {
             insertPrice(product);
         }
     }, [product]);
-
-    var gus = useLocation();
-    console.log("Gocky!", gus);
-
-    console.log("Borcey Thank U: ", listy2);
 
     function price_halves(price_here) {
         var point = 0;
@@ -81,50 +73,31 @@ export function ProdPage() {
     if (product) {
         return (
             <>
-                {/* <Basket /> */}
-                {/* <Navbar />
-                <SearchBox /> */}
                 <Header />
                 <ErrorBoundary>
                     <Breadcrumb product={product.prod_title} />
                 </ErrorBoundary>
                 <div className="product" onClick={() => {setMag(false); setBurger(false)}} >
-                    {/* <h1>{toTitle(product.prod_title)}</h1> */}
-                    {/* <p>{id}</p> */}
-                    {/* <p>{product.prod_title}</p> */}
                     <div className="top_info">
                         <div id="prod_title">
                             <h1>{toTitle(product.prod_title)}</h1>
                         </div>
                         <div id="img_contain">
-                            <img id="prod_img" src={`${product.image}`} />
+                            <img id="prod_img" src={`${product.image}`} alt={`${product.prod_title} image`} />
                         </div>
                         <div id="info-and-add">
                             <div id="prod_code">Code: {product.prod_code}</div>
-                            {/* <p className="price">£{product.price}</p> */}
                             <div className="price">£<span id="pounds">{price_halves(product.price)[0]}</span>.<span id="pennies">{price_halves(product.price)[1]}
                                 </span>
                             </div>
-                            {/* </div> */}
                             <div id="prod_input"><AllInput item={product} words="Add To Basket" placeholder="1" /></div>
                         </div>
                     </div>
-                    
-                    {/* <div style={{borderTop: "1px #000000 solid", backgroundColor: "#000000"}}></div> */}
-                    {/* <div id="img_contain">
-                        <img id="prod_img" src={`${product.image}`} />
-                    </div> */}
                     <div id="desc_itself">
                         <p>{desc[0]}</p>
                         <p>{desc[1]}</p>
                         <p>{desc[2]}</p>
                     </div>
-                    {/* <p className="prod_desc" id="desc_itself">{desc[1]}</p>
-                    <p className="prod_desc" id="desc_itself">{desc[2]}</p> */}
-                    {/* <p className="prod_desc" id="desc_itself">{product.prod_desc}</p> */}
-                    {/* <br />
-                    <br />
-                        <i><Link to="../">Home</Link></i> */}
                     <ConfirmBox title={product.prod_title} the_id={product.id} />
                 </div>
                 <Footer />
