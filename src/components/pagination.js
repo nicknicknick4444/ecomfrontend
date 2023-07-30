@@ -1,29 +1,15 @@
 import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {useProps} from "./hooks/prop-hooks.js";
-import {AllInput} from "./basketUpdate.js";
-import {ConfirmBox} from "./confirmBox.js";
-import {getty, setty, Add2Basket} from "./hooks/hooks.js";
+import {Add2Basket} from "./hooks/hooks.js";
 
 export function ProductPagination() {
-    const {setPage, page, setSubset, setBurger, subset, section, numbers, page_click} = useProps();
-    const [clicked, setClicked] = useState(0);
+    const {page, setBurger, subset, numbers, page_click} = useProps();
+    const [setClicked] = useState(0);
 
     useEffect(() => {
-        const limit = page[1];
-        var new_page = (clicked + 1) * limit;
         window.scrollTo(0, 0);
-        // setPage([5, 9]);
-        // setPage([new_page, limit]);
-        // section(getty("disp"));
-        console.log("Subset? NEWEST DEPLOY!", clicked + 1, limit, new_page);
-        // console.log("SUBSET!", subset);
     }, [page[0]]);
-
-    // useEffect(() => {
-    //     setPage([clicked, 9]);
-    //     console.log("CLICKED: ", clicked);
-    // }, [clicked]);
 
     function ShowSubset() {
         return (
@@ -57,15 +43,12 @@ export function ProductPagination() {
     function shortPage() {
         if (numbers.length === 1) {
             return (
-            <>
-                {/* <ShowSubset /> */}
-            </>
+            <></>
             );
         }
         else {
         return (
             <>
-                {/* <ShowSubset /> */}
                 <div className="search_pagination">
                     {
                         numbers?.map((numbo, key2) => (
@@ -94,23 +77,12 @@ export function ProductPagination() {
     function longPageStart() {
         return (
             <>
-                {/* <ShowSubset /> */}
                 <div className="search_pagination">
-                    {/* {
-                        numbers?.map((numbo, key3) => (
-                            <span key={key3}> */}
-                            {/* { */}
                                 <span onClick={() => page_click(page[0])}><b>{numbers[0] + 1}  </b></span>
                                 <span onClick={() => {page_click(page[0] + 1); setClicked(page[0] + 1)}}>{numbers[0] + 2}  </span>
-                                {/* <span onClick={() => page_click(page[0] + 2)}>{numbers[0] + 3}  </span> */}
                                 <span>...  </span>
-                            {/* } */}
-                        {/* ))
-                    } */}
                     <span onClick={() => page_click(numbers.length - 1)}>Last</span>
                 </div>
-                {/* <p>{numbo + 1}</p>
-                <p>{numbo + 2}</p> */}
             </>
         );
     };
@@ -128,13 +100,11 @@ export function ProductPagination() {
     function longPageStartMid() {
         return (
             <>
-                {/* <ShowSubset /> */}
                 <div className="search_pagination">
                     <span onClick={() => {page_click(numbers[0]); setClicked(numbers[0])}}>{page[0] === 2 ? "1  " : null}</span>
                     <span onClick={() => {page_click(page[0] - 1); setClicked(page[0] - 1)}}>{page[0]}  </span>  
                     <span><b>{page[0] + 1}  </b></span>
                     <span onClick={() => {page_click(page[0] + 1); setClicked(page[0] + 1)}}>{page[0] + 2}  </span>
-                    {/* {page[0] + 1 !== numbers.length - 1 ?  */}
                     {page[0] + 1 < 3 || numbers.length !== 5 ? <span>...  </span> : <span></span>}
                     <span onClick={() => page_click(numbers.length - 1)}>
                         {page[0] + 1 < 2 && numbers.length > 4  || numbers.length === 5 ? `${numbers.length}` : "Last"}
@@ -157,7 +127,6 @@ export function ProductPagination() {
     function longPageMid() {
         return (
             <>
-                {/* <ShowSubset /> */}
                 <div className="search_pagination">
                     <span onClick={() => page_click(numbers[0])}>
                         {page[0] < 1 ? "1  " : "First  "} 
@@ -191,7 +160,6 @@ export function ProductPagination() {
     function longPage2ndLast() {
         return (
             <>
-                {/* <ShowSubset /> */}
                 <div className="search_pagination">
                     <span onClick={() => page_click(numbers[0])}>First  </span>
                     <span>...  </span>
@@ -217,12 +185,9 @@ export function ProductPagination() {
     function longPageLast() {
         return (
             <>
-                {/* <ShowSubset /> */}
                 <div className="search_pagination">
                     <span onClick={() => page_click(numbers[0])}>First  </span>
                     {numbers.length > 4 ? <span>...  </span> : <span></span>}
-                    {/* <span onClick={() => page_click(page[0] - 2)}>{numbers.length - 2}  </span> */}
-                    {/* <span>... </span> */}
                     <span onClick={() => page_click(page[0] - 1)}>{numbers.length - 1}  </span>
                     <span><b>{numbers.length}</b></span>
                 </div>
@@ -241,31 +206,25 @@ export function ProductPagination() {
     };
 
     if (numbers.length <= 4) {
+        // console.log("For testing: shortPage2()");
         return shortPage2();
-    // } else if (numbers.length <= 2) {
-    //     return <h1>GRAAAH!</h1>;
 
     } else if (numbers.length > 4) {
         if (page[0] === 0) {
-            console.log("SUBSET!", subset);
-            console.log("longPageStart2()", numbers);
+            // console.log("For testing: longPageStart2()", numbers);
             return longPageStart2();
         } else if (page[0] > 0 && page[0] <= 2) {
-            console.log("Woogy bread. longPageStartMid2()", page[0]);
+            // console.log("For testing: longPageStartMid2()", page[0]);
             return longPageStartMid2();
-        // } else if (page[0] === 1) {
-        //     console.log(page[0] + "BOOTHY!");
-        //     return null;
         } else if (page[0] >= 3 && page[0] < numbers.length - 2) {
-            console.log("Tell it to the fields. longPageMid2()", numbers.length - 2, page[0]);
+            // console.log("For testing: longPageMid2()", numbers.length - 2, page[0]);
             return longPageMid2();
         } else if (page[0] === numbers.length - 2) {
-            console.log("longPage2ndLast2()");
+            // console.log("For testing: longPage2ndLast2()");
             return longPage2ndLast2();
         } else if (page[0] === numbers.length - 1) {
-            console.log("longPageLast2()");
+            // console.log("For testing: longPageLast2()");
             return longPageLast2();
         }
     }
-
 };
