@@ -28,39 +28,39 @@ function AppFront() {
     <>
       <Header />
        <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Kameron:wght@700&family=Aleo:wght@400&family=Trispace:wght@700&family=VT323&display=swap" rel="stylesheet" />
       <div className="body">
       {cats.length < 1 ? <div id="loading-pushdown"></div> : null}
         <div className="homepage-content" onClick={() => {setMag(false); setDroplist(false)}}>
           <Link to={{pathname: "/Tableware/Cutlery"}}>
-            <div className="front-box" id="box1">
+            <div className="front-box" id="box1" alt="Some knives and forks">
               <div className="overlay" id="overlay1">Explore our Cutlery</div>
             </div>
           </Link>
           <div className="front-box-row">
           <Link to={{pathname: "/Furniture"}}>
-            <div className="front-box-inner" id="box2">
+            <div className="front-box-inner" id="box2" alt="Cafe furniture">
               <div className="overlay" id="overlay2">
                 <span className="small-box">Relaxing Furniture</span>
               </div>
             </div>
           </Link>
           <Link to={{pathname: "/Appliances/Fridges%20&%20Freezers"}}>
-            <div className="front-box-inner" id="box3">
+            <div className="front-box-inner" id="box3" alt="Ice cubes">
               <div className="overlay" id="overlay3">
-                <span className="small-box">Find Refrigeration</span>
+                <span className="small-box" >Cool Refrigeration</span>
               </div>
             </div>
           </Link>
           </div>
           <Link to={{pathname: "/Tableware/Crockery"}}>
-            <div className="front-box" id="box4">
+            <div className="front-box" id="box4" alt="Crocery piccy">
               <div className="overlay" id="overlay4">Discover Our Crockery</div>
             </div>
           </Link>
           <Link to={{pathname: "Kitchenware/Pots%20&%20Pans"}}>
-            <div className="front-box" id="box5">
+            <div className="front-box" id="box5" alt="Onions in a pan">
               <div className="overlay" id="overlay5">Sizzling Cookware</div>
             </div>
           </Link>
