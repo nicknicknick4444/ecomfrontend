@@ -27,6 +27,9 @@ function AppFront() {
   return (
     <>
       <Header />
+       <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Kameron:wght@700&family=Aleo:wght@400&family=Trispace:wght@700&family=VT323&display=swap" rel="stylesheet" />
       <div className="body">
       {cats.length < 1 ? <div id="loading-pushdown"></div> : null}
         <div className="homepage-content" onClick={() => {setMag(false); setDroplist(false)}}>
@@ -46,7 +49,7 @@ function AppFront() {
           <Link to={{pathname: "/Appliances/Fridges%20&%20Freezers"}}>
             <div className="front-box-inner" id="box3">
               <div className="overlay" id="overlay3">
-                <span className="small-box">Refrigeration Nation</span>
+                <span className="small-box">Find Refrigeration</span>
               </div>
             </div>
           </Link>

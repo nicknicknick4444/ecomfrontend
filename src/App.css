@@ -1280,6 +1280,7 @@ h1 > a {
 		width: 550px;
 		height: 220px;
 		/*background-color: #0000ff;*/
+		font-family: aleo;
 	}
 	
 	#box2, #box3 {
@@ -1288,6 +1289,7 @@ h1 > a {
 		float: left;
 		display: inline;
 		/*background-color: #00ffff;*/
+		font-family: aleo;
 	}
 
 	#box1 {
@@ -1301,7 +1303,7 @@ h1 > a {
 	
 	#box3 {
 		margin-left: 3px;
-		background-image: url("https://i.ibb.co/tp0CPLm/Freezer.png");
+		background-image: url("https://i.ibb.co/LhKPphX/Freezer.png");
 	}
 
 	#box4 {
@@ -1317,7 +1319,7 @@ h1 > a {
 		overflow: hidden;
 		width: 100%;
 		height: 0;
-		transition: .4s ease;	
+		transition: .4s ease;
 	}
 	
 	.front-box:hover .overlay, 
@@ -1327,16 +1329,17 @@ h1 > a {
 		font-weight: bold;
 		color: #ffffff;
 		font-size: 25px;
-		font-family: helvetica;
+		/*font-family: helvetica;*/
+		font-family: aleo;
 	}
 
 	.front-box:hover .overlay {
-		padding-top: 3px;
+		padding-top: 4px;
 	}
 		
 	.small-box {
 		position: relative;
-		top: -15px;
+		top: -14px;
 	}
 
 	
@@ -1407,12 +1410,12 @@ h1 > a {
 		z-index: 50;
 	}
 	
-	.navbar-mob {
+	/*.navbar-mob {
 		font-size: 20px;
-		/*background-color: #ffea00;*/
+		
 		text-decoration: none;
 		cursor: pointer;
-	}
+	}*/
 	
 	.navbar {
 		display: none;
@@ -1445,10 +1448,14 @@ h1 > a {
 
 	.navbar-mob {
 		/*padding-right: 11px;*/
-		margin: 5px;
+		margin-left: 5px;
+		margin-bottom: 3px;
 		clear: right;
 		background-color: #ffffff;
 		text-align: left;
+		font-size: 20px;
+		text-decoration: none;
+		cursor: pointer;
 	}
 
 	.navbar-mob > a {
@@ -1664,11 +1671,12 @@ h1 > a {
 	}
 
 	.search_pagination {
-		font-size: 24px;
+		font-size: 28px;
 		margin-left: 5px;
 		position: relative;
 		margin-top: 5px;
 		top: -8px;
+		cursor: pointer;
 	}
 	
 	.breadcrumb_list {
@@ -2183,7 +2191,7 @@ h1 > a {
 	}
 	
 	#box3 {
-		background-image: url("https://i.ibb.co/tp0CPLm/Freezer.png");
+		background-image: url("https://i.ibb.co/LhKPphX/Freezer.png");
 	}
 	
 	#box4 {
@@ -2203,11 +2211,11 @@ h1 > a {
 		position: relative;
 		overflow: hidden;
 		width: 100%;
-		font-size: 20px;
+		font-size: 25px;
 		font-weight: bold;
 		color: #ffffff;
-		padding-top: 10px;
-		font-family: helvetica;
+		padding-top: 7px;
+		font-family: aleo;
 	}
 	
 	#overlay1, #overlay3, #overlay5 {
@@ -2229,7 +2237,6 @@ h1 > a {
 		height: 22px;
 		vertical-align: middle;
 	}
-	
 	
 	
 

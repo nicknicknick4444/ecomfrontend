@@ -1,23 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {Routes, Route, Router, BrowserRouter} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import App2 from './App';
-import {ErrorBoundary} from "./components/errorBoundary.js";
 import PropProvider from "./components/hooks/prop-hooks.js";
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.Fragment>
-    {/* <ErrorBoundary> */}
     <PropProvider>
       <BrowserRouter>
         <App2 />
       </BrowserRouter>
     </PropProvider>
-    {/* </ErrorBoundary> */}
   </React.Fragment>
 );
 
