@@ -627,6 +627,7 @@
 	
 	#nav-main {
 		height: 35px;
+		padding-left: 11px;
 		border-top: 3px #346db1 solid;
 		border-bottom: 3px #346db1 solid;
 	}
@@ -1381,6 +1382,7 @@ h1 > a {
     		right: 0;
     		margin-right: 8px;
     		margin-top: -15px;
+		z-index: 80;
 	}
 
 	#mobile-footer-only {
