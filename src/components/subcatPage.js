@@ -37,7 +37,6 @@ export function SubcatPage() {
     }, []);
 
     useEffect(() => {
-        console.log("Graphy! ", prods);
         section("disp", subset);
         // Set results-per-page by adjusting the second array item below!
         setPage([0,9]);
