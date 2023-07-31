@@ -8,14 +8,12 @@ import {ErrorBoundary} from "./errorBoundary.js";
 export function Basket() {
     const [basko, setBasko] = useState({});
     const {totally, setAmount, amount, begin, bought, setChecking, 
-        setDis, updateTotal, setFillingdeets, droplist, setDroplist, 
-        itemq, setItemq} = useProps();
+        setDis, updateTotal, setFillingdeets, droplist, setDroplist} = useProps();
 
     useEffect(() => {
         if (totally) {
             setAmount(begin());
         };
-        console.log("AMOOOONT! ", length_pixels());
     }, [totally]);
 
     useEffect(() => {
@@ -26,7 +24,6 @@ export function Basket() {
         if (getty("itemsList") !== null) {
             setBasko(<BasketList />);
         }
-        console.log("WHACKO! ", basko);
     }, [droplist]);
 
     function length_pixels() {
@@ -59,13 +56,11 @@ export function Basket() {
                 <ErrorBoundary>
                     <div className="basket-pc" onMouseOver={() => {setDroplist(true); get_location()}} onMouseLeave={() => setDroplist(false)} 
                         style={{ width: widthCond()}}>
-                    <Link to="/basket-page">
+                        <Link to="/basket-page">
                         <div><img src="https://i.ibb.co/pRNYvv3/basket1.png" className="basket-icon" /></div>
-                    {/* </Link> */}
-                    <div className="basket-words">
-                        <div>Items: <span className="basket_total">{!bought ? totally < 0 ? "0.00" : totally : 0 }</span></div>
-                        <div>Total: &nbsp;<span className="price_pad">£{!bought ? parseInt(amount) === 0 ? "0.00" : amount.toFixed(2) : "0.00"}</span></div> 
-    
+                        <div className="basket-words">
+                            <div>Items: <span className="basket_total">{!bought ? totally < 0 ? "0.00" : totally : 0 }</span></div>
+                            <div>Total: &nbsp;<span className="price_pad">£{!bought ? parseInt(amount) === 0 ? "0.00" : amount.toFixed(2) : "0.00"}</span></div>
                     </div>
                     </Link>
                     <div className="buttons">
@@ -91,7 +86,6 @@ export function Basket() {
                     {droplist && get_location() !== "/basket-page" && get_location() !== "/checkout" ? 
                     <div className="dropdown-basket">
                         <BasketList />
-                        {/* {droplist.toString()} */}
                     </div>
                     : null
                     }
@@ -101,7 +95,6 @@ export function Basket() {
             </>
         );
     } else {
-        // localStorage.setItem("new", 1);
         setty("new", 1);
     };
 };

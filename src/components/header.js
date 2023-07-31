@@ -11,9 +11,8 @@ import "../App.css";
 export function Header() {
     const [belb, setBelb] = useState("");
     const [widthy, setWidthy] = useState(window.innerWidth);
-    // const [mag, setMag] = useState(false);
     const {bought, setBought, setDis, updateTotal, setFillingdeets, 
-        burger, setBurger, mag, setMag} = useProps();
+        setBurger, mag, setMag} = useProps();
 
     useEffect(() => {
         if (mag) {
@@ -32,7 +31,6 @@ export function Header() {
 
     useEffect(() => {
         function resizeListen() {
-            // console.log("YEG!", widthy);
             setWidthy(window.innerWidth);
             return window.innerWidth;
         };
@@ -50,8 +48,6 @@ export function Header() {
                         <div className="search-box-mob" style={{display: !mag ? "none" : "block"}}><SearchBox /></div>
                         <div style={{display: !mag ? "block" : "none"}}><img src="https://i.ibb.co/BnmP5Qq/glass.png" className="glass" /></div>
                     </div>
-                    
-                    {/* CSS HERE */}
                     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Kameron:wght@700&family=Trispace:wght@700&family=VT323&display=swap" rel="stylesheet">
                     </link>
 
@@ -59,7 +55,6 @@ export function Header() {
                     <Link onClick={bought ? () => {empty(setDis, updateTotal, setFillingdeets)} : null} to={{pathname: "/"}}>
                     <div className="logo">
                         <img src="https://i.ibb.co/SV4RNV5/Main-Logo5.png" />
-                        {/* Use https://imgbb.com/ for image hosting */}
                     </div>
                     <div className="logo2" id="logo2" style={{ width: widthy / 4.5 }}>
                         <img src="https://i.ibb.co/SV4RNV5/Main-Logo5.png" style={{ width: widthy / 4.5}} />
@@ -76,7 +71,6 @@ export function Header() {
                         </span>
                     }
                 </div>
-                {/* <p>{belb}</p> */}
             </div>
             <div id="header-overflow"></div>
         </>
