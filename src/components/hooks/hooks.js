@@ -1,9 +1,3 @@
-// import React, {useEffect, useState} from "react";
-// import {Link, useParams, useLocation} from "react-router-dom";
-// import {useProps} from "./prop-hooks.js";
-// import axios from "axios";
-// import "../App.css";
-
 import React, {useEffect, useState} from "react";
 import {Link, useParams, useLocation} from "react-router-dom";
 import {useProps} from "./prop-hooks.js";
@@ -11,20 +5,17 @@ import axios from "axios";
 import "../../App.css";
 
 export function telber() {
-    console.log("YOOOOOOOO!!!");
+    // console.log("For testing: Tells us that hooks are working.");
 };
 
 export const getty = (place) => {
     return JSON.parse(localStorage.getItem(place));
 };
 
-// const {setDis} = useProps();
-
 export const setty = (place, val) => {
     return localStorage.setItem(place, JSON.stringify(val));
 };
 
-// DO NEW_WORD function!
 export function toTitle(word) {
     var new_word = "";
     for (let i in word) {
@@ -46,22 +37,16 @@ export function dedupe(a_list, iter, counter, data) {
     for (let n in a_list) {
         if (a_list[n].id !== data[iter].id) {
             counter += 1;
-            }
-    }
-        if (counter === a_list.length) {
-            console.log("BARKLEY! ", a_list);
-            // gatho(collect, data, a_list, iter);
-            return true;
-        } else {
-            console.log("UH OH!!!!");
-            return false;
         }
-        // console.log("BARKLEY! ", a_list);
-    // }
+    }
+    if (counter === a_list.length) {
+        return true;
+    } else {
+        return false;
+    }
 };
 
 export function empty(setDis, updateTotal, setFillingdeets) {
-    // const {setDis} = useProps();
     setty("itemsList", {});
     setty("priceList", {});
     setty("order", []);
@@ -78,43 +63,33 @@ export function empty(setDis, updateTotal, setFillingdeets) {
 };
 
 export function back_reset(bought, setBought, setDis, updateTotal) {
-    console.log("BOUGHT: ", bought);
+    // console.log("For testing: Bought?", bought);
     if (bought) {
         empty(setDis, updateTotal);
         setBought(false);
-        console.log("GRIN!");
     };
-    console.log("IT RAN!");
 };
 
 export function get_location() {
-    // console.log("Vespa!", window.location["pathname"]);
     return window.location["pathname"];
 };
 
 export function Add2Basket(id, price, itemq, totally) {
-    // const {typing, setTyping} = useProps();
-
-    // ADD PRICES!!!!
     if (getty("itemsList") !== null) {
         var this_items = getty("itemsList");
         var this_order = getty("order");
         var this_prices = getty("priceList");
         if (id in getty("itemsList") && getty("itemsList")[id] > 0) {
-            console.log("Crespa! Goot.", getty("itemsList")[id]);
             var higher_number = this_items[id] + 1;
             this_items[id] = higher_number;
             setty("itemsList", this_items);
         } else {
-            console.log("Crespa! Add 1!");
             this_items[id] = 1;
             this_order.push(id);
             this_prices[id] = price;
-            console.log(this_items, this_order);
             setty("itemsList", this_items);
             setty("order", this_order);
             setty("priceList", this_prices);
-            // setTyping("");
         }
     } else {
         var this_items = {};
@@ -127,7 +102,6 @@ export function Add2Basket(id, price, itemq, totally) {
         setty("order", this_order);
         setty("priceList", this_prices);
     }
-    console.log("BOOTHY! BOOTHY!");
 };
 
 export function rand_parag() {
@@ -154,11 +128,8 @@ export function rand_parag() {
             paragraph = "Donec elit leo, commodo non ullamcorper fringilla, dignissim quis risus. \
                 Proin libero dui, pulvinar a lectus vel, tristique tempus metus. \
                 Nunc vulputate mattis consectetur. Donec ac dui sit amet arcu aliquet \
-                pharetra id et tellus. Vivamus et nisi maximus quam porta dapibus. \
-                Vivamus faucibus, lorem vitae gravida hendrerit, urna quam volutpat nibh, \
-                ullamcorper finibus enim nunc vitae sem. Pellento sit amet elementum ante, \
-                at pulvinar mi. Ut ligula odio, sagittis id enim in, condimentum maximus libero. \
-                Vivamus varius, est et rutrum dictum, ante velit porttitor ipsum, quis cursus \
+                pharetra id et tellus. Pellento sit amet elementum ante, \
+                Vivamus varius, est et rutrum dictum, quis cursus \
                 dolor turpis et quam. Proin felis lectus, ultrices pollexa bibendum nec, \
                 maximus vel tellus.";
             break;
@@ -167,9 +138,6 @@ export function rand_parag() {
                 Donec ultricies magna vitae diam placerat, vitae maximus sem semper. \
                 Nullam enim ipsum, posuere sed dapibus at, vulputate at ante. \
                 Nam rhoncus felis risus, efficitur blandit elit finibus sed. \
-                Maecenas dapibus lorem in nisl vehicula, sed maximus ligula consectetur. \
-                In commodo odio ut vestibulum bolvius. Duis ut risus ac massa finibus varius. \
-                Quisque vel risus volutpat, porta nulla non, tincidunt risus. \
                 Class aptent taciti sociosqu ad litora torquent per conubia nostra, \
                 per inceptos himenaeos. Nullam vitae lectus non magna pharetra tristique.";
             break;
@@ -187,25 +155,15 @@ export function rand_parag() {
                 eu maximus risus condimentum. Sed a quam et quam elementum ultrices. \
                 Praesent faucibus vestibulum fringilla. Nam eleifend eros id dapibus fermentum. \
                 In fermentum cursus libero, sed tincidunt elit efficitur ut. Fusce nec \
-                semper mi, eu faucibus felis. Integer consequat fermentum dolor ac \
-                consectetur. Vestibulum scelerisque tortor ut nisi tempor faucibus. \
-                Aenean eleifend massa in massa placerat, non venenatis sapien sodales. \
-                Sed suscipit mauris at sem suscipit, eget gravida mi sodales. \
                 Fusce vehicula mauris non orci aliquet, at tristique massa viverra. \
                 Aenean sit amet augue nisl.";
             break;
         case 6:
             paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
                 Vivamus fringilla risus sit amet mi feugiat, vel semper leo hendrerit. \
-                Quisque sit amet sodales quam. Suspendisse malesuada porttitor feugiat. \
-                Sed tincidunt sapien sed mi varius suscipit. Integer et mi eu velit vehicula \
-                finibus. Integer vulputate maximus magna. Maecenas augue ex, finibus nec \
-                ultrices ac, facilisis vel metus. Maecenas pharetra feugiat condimentum. \
-                Mauris nisi risus, malesuada ut urna sed, tempor tempus enim. \
                 Quisque vel tortor eget tortor egestas interdum et vitae ex. \
                 Phasellus in ipsum felis. Sed vel ante sit amet arcu rhoncus tempus \
                 nec non est. In suscipit ex crubi sagittis cursus. Mauris \
-                vitae dapibus neque, et placerat est. Phasellus gravida turpis nec \
                 est vulputate, nec suscipit mauris suscipit. \
                 Vivamus sodales turpis a justo congue, ac venenatis ante vestibulum.";
             break;
@@ -214,7 +172,6 @@ export function rand_parag() {
                 Vestibulum sed tortor eget dui lobortis vulputate. \
                 Aenean ornare condimentum tellus vitae consequat. \
                 Orci varius natoque penatibus et magnis gus dis parturient montes, \
-                nascetur ridiculus mus. Maecenas interdum mattis nulla, nec \
                 blandit diam scelerisque eu. Nulla in lectus vel eros dapibus \
                 truculenti porttitor ut ac ex. Vestibulum tristique massa metus, \
                 lobortis suscipit dolor mollis id.";
@@ -224,8 +181,6 @@ export function rand_parag() {
                 elit accumsan ac. Praesent convallis felis vitae justo \
                 suscipit sodales. Praesent faucibus sem at aliquam aliquam. \
                 Orci varius natoque penatibus et magnis dis parturient montes, \
-                nascetur ridiculus mus. Etiam pulvinar congue metus, quis \
-                sodales dui fermentum ut. Valdi parci sed ex bippi viverra, luctus \
                 diam id, aliquam odio. Nulla fermentum dolor quis condimentum tempus. \
                 Nullam id luctus arcu, non posuere rablin tortor. Nunc suscipit banjuice \
                 mauris risus, vitae euismod velit posuere quis. La tristesse durera.";
@@ -236,11 +191,6 @@ export function rand_parag() {
                 fermentum fringilla. Nulla sollicitudin, nibh sed iaculis eleifend, \
                 tellus massa porta ante, efficitur mattis ligula massa nec neque. Cras \
                 dictum lobortis tempus. Cras tincidunt sapien mi, at mattis ligula \
-                commodo eget. Mauris eu felis vitae ex pulvinar aliquam vel id sem. \
-                Vestibulum ac euismod lacus. Quisque focesci quam non dolor \
-                cursus, nec tempus tellus consequat. Aenean quis tortor consectetur, \
-                egestas nulla ac, dapibus tortor. Nullam mi quam, porttitor sit \
-                amet sem placerat, tristique tincidunt mauris. Proin a nulla \
                 rhoncus, porta tellus in, volutpat tellus. Sed tempor felis at \
                 rhoncus cursus. Ut nec elit sem. Praesent a velit lectus.";
             break;
@@ -258,12 +208,7 @@ export function rand_parag() {
                 Aenean euismod volutpat elit eget condimentum. Etiam consequat, eros ac \
                 porta volutpat, lacus mauris viverra erat, ut semper dolor orci a nisl. \
                 Ut erat turpis, sollicitudin a libraro tortor eget, tempus pretium elit. \
-                Fusce eleifend massa quis massa consectetur, ut vestibulum arcu blandit. \
-                Aliquam erat volutpat. Ut erat lectus, malesuada ac tincidunt \
-                sit amet, porttitor eu nibh. Sed dapibus ipsum venenatis turpis volutpat, \
-                in hendrerit purus sagittis. Proin ac metus nulla. Fusce dui tellus, \
                 varius eu tincidunt at, vehicula a quam. Donec volutpat mauris a hendrerit \
-                vestibulum. Etiam rhoncus mi quis dapibus cursus. Donec nunc neque, \
                 bibendum eu lacinia tempus, volutpat id sapien. Nulla volutpat venenatis \
                 dignissim. Fusce lacinia dignissim auctor.";
             break;
@@ -272,7 +217,6 @@ export function rand_parag() {
                 Nullam interdum auctor mauris, et gravida dolor feugiat sed. Mauris vulputate \
                 fringilla nunc lacinia egestas. Morbi luctus diam ut blandit finibus. \
                 Mauris et elementum nunc, ac tristique ante. Class aptent taciti sociosqu \
-                ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam quis \
                 urna ultrices, consectetur quam non, rhoncus mauris. Suspendisse potenti. \
                 Nulla tempus eros dolor, eget dictum magna interdum id. Ut sed lobortis enim, \
                 ac aliquam mi. Milober at ipsum posuere lectus ultricies dignissim.";
@@ -282,9 +226,7 @@ export function rand_parag() {
                 dignissim non hendrerit nec, tristique nec est. Curabitur dignissim pretium \
                 elit quis semper. Nam efficitur egestas velit. Vestibulum varius viverra \
                 consectetur. Integer sit amet velit arcu. Vestibulum consectetur auctor dolor \
-                sed tristique. Vestibulum feugiat scelerisque tellus, in congue dui scelerisque poda \
                 euismod. Fusce tincidunt pulvinar nisi locomus tempor. Proin fermentum urna \
-                quis interdum posuere. Proin convallis hendrerit justo eu sodales. Duis hendrerit \
                 euismod mauris, id iaculis odio laoreet eget. Sed porttitor mauris id commodo \
                 tincidunt. Etiam id congue supa data velit. Fusce feugiat semper dui, id blandit \
                 magna blandit vel.";
@@ -294,7 +236,6 @@ export function rand_parag() {
                 Donec condimentum augue non enim pharetra, vel placerat tellus pilo condimentum. \
                 Etiam championus facilisis nisi, accumsan varius ante elementum vehicula. \
                 Donec sed interdum augue, eu consequat lorem. Vestibulum ante ipsum primis in \
-                faucibus orci luctus et ultrices posuere cubilia curae; Etiam commodo quis tortor \
                 et tincidunt. Donec feugiat sapien ex, vel vulputate sapien volutpat ut. Pellento \
                 Etasque cruta ornare tortor sed bisp nisi euismod facilisis. \
                 Indextris vel commodo ipsum.";
@@ -313,9 +254,7 @@ export function rand_parag() {
                 Cras ultrices mi sit amet sem efficitur, at ultricies quam interdum. Hecticor \
                 tincidunt, eros et scelerisque blandit, diam ex feugiat justo, et lobortis ipsum \
                 velit sit amet risus. Fusce ac turpis faucibus elit auctor suscipit. Nam egestas \
-                felis quis lorem eleifend laoreet. Vestibulum porta odio vitae posuere ultricies. \
                 In cursus tortor sed ornare lacinia. Donec fermentum sit amet tellus quis maximus. \
-                Mauris congue nulla ut dictum commodo. Nullam sagittis ornare risus ut sodales. \
                 Cras id massa ultricies, cursus lectus id, aliquam libero. Vestibulum ullamcorper \
                 halpa eleifend felis vitae euismod. Phasellus eu ex turpis.";
             break;
@@ -323,11 +262,8 @@ export function rand_parag() {
             paragraph = "In magna ante, convallis a blandit vel, efficitur commodo est. \
                 In varius lorem odio, ac hendrerit turpis ultricies vitae. Aliquam dignissim malesuada \
                 massa, sed euismod neque pretium id. Sed semper aliquet nisl, id tincidunt sapien. Nunc vel \
-                velit metus. Mauris mattis accumsan orci, colbinec tempus mauris tempus id. Phasellus in \
                 telber magna non purus tempor congue. Fusce consectetur cursus urna vel pulvinar. \
                 Fusce est mauris, maximus ut scelerisque nec, pretium non nibh. Nulla condimentum \
-                lacinia risus, id suscipit lorem placerat quis. Donec et nibh augue. Praesent pulvinar, \
-                dui eget consectetur accumsan, ligula lorem hexadim nulla, nec faucibus nisi nulla quis \
                 nibh. Sed venenatis, nibh ut dictum dignissim, ex metus facilisis urna, vel volutpat mi \
                 lorem lobortis ante. Donec sit amet tellus lacinia, dictumcus justo dapibus, porttitor nunc.";
             break;
@@ -338,8 +274,6 @@ export function rand_parag() {
                 Duis in metus et eros feugiat pharetra at et orci. Morbi non tellus rutrum, \
                 auctor odio et, lobortis ante. Morbi dui lacus, gravida quis mollis consequat, \
                 consequat at mi. Phasellus facilisis venenatis pharetra. Maecenas nec diam luctus, \
-                mollis sapien et, rutrum nibh. Etiam sed augue vitae odio volutpat condimentum a et \
-                metus. Maecenas et erat a sem dignissim faucibus. Proin ac leo viverra neque aliquet \
                 dictum ac in mallofax tellus. In nisi purus, laoreet surbit id dolor et, pulvinar \
                 finibus urna. Sed at dui urna.";
             break;
@@ -356,7 +290,6 @@ export function rand_parag() {
             In finibus lobortis nulla a consequat. Cras in ipsum porttitor, volutpat erat a, \
             sollicitudin ex. Proin sodales posuere lacus nec sagittis. Quisque pretium felis \
             erat, non auctor urna rhoncus sit amet. Morbi pretium mi a nunc cursus, et pretium nunc \
-            tincidunt. Nam bibendum in purus elementum jiggedi ornare. Sed dapibus mollis libero, eu congue \
             mauris commodo eu. Morbi in rutrum granti dolor, sed pretium eros. Duis fermentum est varius \
             feugiat auctor. Praesent aliquam risus tincidunt, elementum velit eget, gravida ex. \
             Sed quis est at tellus sodales mattis id id libero. Duis et nibh arcu. \

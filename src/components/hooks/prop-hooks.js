@@ -1,4 +1,4 @@
-import React, {createContext, useState, useEffect, useContext} from "react";
+import React, {createContext, useState, useContext} from "react";
 import {getty, setty} from "./hooks.js";
 import axios from "axios";
 
@@ -6,16 +6,11 @@ const PropContext = createContext();
 export const useProps = () => useContext(PropContext);
 
 export default function PropProvider({children}) {
-    // const getty = (place) => {
-    //     return JSON.parse(localStorage.getItem(place));
-    // };
-    console.log("GETTY1: ", getty("itemsList"));
 
     var counto = 0;
     for (let i in getty("itemsList")) {
         counto += getty("itemsList")[`${i}`];
     };
-    console.log("Main counto!", counto);
 
     const [totally, setTotal] = useState(counto);
     const [amount, setAmount] = useState(0.00);
@@ -56,27 +51,19 @@ export default function PropProvider({children}) {
     };
     
     function insertPrice(item) {
-        console.log("SCOOT! ", item);
         if ("priceList" in localStorage) {
-        // if (getty("priceList") !== undefined) {
-          console.log("CREB!");
           if (localStorage.getItem("priceList")[`${item.id}`] !== undefined) {
             var priceL = getty("priceList");
-            console.log("RIP Steve Mackey! ", item);
             priceL[item.id] = item.price;
-            // localStorage.setItem("priceList", JSON.stringify(priceL));
             setty("priceList", priceL);
           } else {
             var priceL = getty("priceList");
             priceL[item.id] = item.price;
             setty("priceList", priceL);
-            console.log("MACK NO LIST FOUND! Getting it and adding to it.")
             };
         } else {
-            console.log("Not in local storage apparently. Macking new one and adding to it.")
             var priceL = {};
             priceL[item.id] = item.price;
-            // localStorage.setItem("priceList", JSON.stringify(priceL));
             setty("priceList", priceL);
         }
       };
@@ -84,11 +71,10 @@ export default function PropProvider({children}) {
     function totUp(quants) {
         var currTotal = 0;
         var prices = getty("priceList");
-        // NEW DISCOUNT MULTIPLIER!
         var discount = parseFloat(getty("discount"));
         for (let i in quants) {
-            console.log("Prices! ", prices[i]);
-            console.log("Quant: ", quants[i]);
+            // console.log("For testing: Prices!", prices[i]);
+            // console.log("For testing: Quantity! ", quants[i]);
             var iQuant = quants[i];
             var iPrices = prices[i];
             if (iQuant < 0) {
@@ -98,33 +84,23 @@ export default function PropProvider({children}) {
                 iPrices = 0;
             };
             currTotal += (iQuant * iPrices);
-            // console.log("iQuant: ", iQuant);
-            // setNew_quant(iQuant);
         };
-        console.log("She's a River! ", currTotal);
         if (currTotal < 0) {
             return 0;
         };
-        // NEW DISCOUNT MULTIPLIER!
+        // DISCOUNT MULTIPLIER:
         currTotal *= discount;
-        
-        console.log("CROUDACEIE! BLOWY! ", currTotal);
         localStorage.setItem("amount", currTotal);
         return currTotal;
     };
 
     function begin() {
-        // if (!"priceList" in localStorage) {
         if (getty("priceList") === null) {
-            // localStorage.setItem("priceList", JSON.stringify({}));
             setty("priceList", {});
         };
-        // if (!"itemsList" in localStorage) {
         if (getty("itemsList") === null) {
-            // localStorage.setItem("itemsList", JSON.stringify({}));
             setty("itemsList", {});
         };
-        // if (!"discount" in localStorage) {
         if (getty("discount") === null) {
             localStorage.setItem("discount", JSON.parse(1));
         };
@@ -132,13 +108,11 @@ export default function PropProvider({children}) {
     };
 
     function adjOrder(id){
-        // var newy = parseInt(localStorage.getItem("new"));
         var newy = parseInt(getty("new"));
 
         if(newy > 0) {
             var index = parseInt(id);
             if ("order" in localStorage) {
-                // var ord = JSON.parse(localStorage.getItem("order"));
                 var ord = getty("order");
             } else {
                 var ord = [];
@@ -147,34 +121,25 @@ export default function PropProvider({children}) {
             if (ord.indexOf(parseInt(index)) === -1){
                 ord.push(index);
             };
-            console.log("GAUDY! ", ord);
-            // localStorage.setItem("order", JSON.stringify(ord));
             setty("order", ord);
         } else {
             if ("order" in localStorage) {
-                // var ord = JSON.parse(localStorage.getItem("order"));
                 var ord = getty("order");
             } else {
                 var ord = [];
             };
 
             if (parseInt(getty("new")) + parseInt(getty("itemsList")[`${id}`]) <= 0) {
-                    ord = ord.filter(val => val !== parseInt(`${id}`));
-                    console.log("Bundle: ", ord);
+                ord = ord.filter(val => val !== parseInt(`${id}`));
             } else {
-                console.log("CABBAGE!", parseInt(getty("new")) + parseInt(getty("itemsList")[`${id}`]));
-            }
-            console.log("PUCE!!", ord);
-            // localStorage.setItem("order", JSON.stringify(ord));
+                // console.log("For testing: New proposed quantity:", parseInt(getty("new")) + parseInt(getty("itemsList")[`${id}`]));
+            };
             setty("order", ord);
         };
     };
 
     const updateTotal = () => {
-        // var beat = JSON.parse(localStorage.getItem("itemsList"));
         var beat = getty("itemsList");
-        // var discount = parseInt(getty("discount"));
-        // console.log("It is confusing!", discount);
         var newTotal = 0;
         for (let i in beat) {
             if (beat[`${i}`] < 0) {
@@ -182,44 +147,33 @@ export default function PropProvider({children}) {
             } else {
                 newTotal += beat[`${i}`];
             };
-            console.log(counto, newTotal);
         };
-        // newTotal *= discount;
-        console.log("GETTY2: ", beat);
-
         if (newTotal < 0) {
             setTotal(0);
         } else {
             setTotal(newTotal);
         };
-        console.log("Begint! ", begin());
         setAmount(totUp(beat));
     };
 
     function section(array_list, subset) {
-        // if (prods) {
-            var page_nums = [];
-            var new_section = page[0] * page[1];
-            var sub_section = getty(array_list).slice(new_section, new_section + page[1]);
-            var many = [...Array(Math.ceil(prods.length/page[1])).keys()];
-            console.log("Pages! ", many);
-            for (let i in many) {
-                console.log("YAHOO! ", i);
-                page_nums.push(many[i]);
-            }
+        var page_nums = [];
+        var new_section = page[0] * page[1];
+        var sub_section = getty(array_list).slice(new_section, new_section + page[1]);
+        var many = [...Array(Math.ceil(prods.length/page[1])).keys()];
+        for (let i in many) {
+            page_nums.push(many[i]);
+        }
 
-            setSubset(sub_section);
-            setNumbers(page_nums);
-            setty("sub_section", sub_section);
-            setty("page_nums", page_nums);
-            console.log("Picadilly Palare! ", numbers, many);
-        // }
+        setSubset(sub_section);
+        setNumbers(page_nums);
+        setty("sub_section", sub_section);
+        setty("page_nums", page_nums);
     };
 
     function page_click(page_num) {
         var new_page = [page_num, page[1]];
         setPage(new_page);
-        console.log("Now I'm here! ", new_page);
     };
 
     function getAllCats() {
@@ -227,14 +181,11 @@ export default function PropProvider({children}) {
 
         function goose(listu) {
             for (let i in listu) {
-                console.log("Deus does not exist!");
                 if (all_cats.indexOf(listu[i]["prod_cat"]) === -1) {
                     all_cats.push(listu[i]["prod_cat"]);
-                    console.log("The jark of the gethil! ", listu[i]["prod_cat"]);
                 };
                 if (all_cats.indexOf(listu[i]["prod_subcat"]) === -1) {
                     all_cats.push(listu[i]["prod_subcat"]);
-                    console.log("The mark of the bevol! ", listu[i]["prod_subcat"]);
                 };
             };
             setAllcats(all_cats);
@@ -245,12 +196,10 @@ export default function PropProvider({children}) {
             axios(`https://polar-coast-39563.herokuapp.com/api/products/`)
             .then((res) => goose(res.data))
             .catch(err => console.log("Error: ", err));
-        // return all_cats;
 }
 
     async function prods_api() {
         var quest = await getAllCats();
-        console.log("The subcats quest!", quest);
     };
 
     return <PropContext.Provider value={{totally, setTotal, totUp, updateTotal, setAmount, amount, insertPrice, 
