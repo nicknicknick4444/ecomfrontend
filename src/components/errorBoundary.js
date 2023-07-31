@@ -8,11 +8,7 @@ export class ErrorBoundary extends React.Component {
             errorItself: "",
             errorInfo: []
         };
-    }
-
-    // static getDerivedStateFromError(error) {
-    //     return {hasError: true};
-    // }
+    };
 
     componentDidCatch(error, info) {
         this.setState({
@@ -20,9 +16,8 @@ export class ErrorBoundary extends React.Component {
             errorItself: error,
             errorInfo: info
         });
-        console.log("GRAH!!!!", this.state.errorInfo);
-        // this.logErrorToMyService(error, info.componentStack);
-    }
+        console.log("ERROR!", this.state.errorInfo);
+    };
 
     render() {
         if (this.state.hasError) {
@@ -32,8 +27,8 @@ export class ErrorBoundary extends React.Component {
                     <p>{this.state.errorItself.toString()}</p>
                 </>
             );
-        }
+        };
 
         return this.props.children;
-    }
-}
+    };
+};

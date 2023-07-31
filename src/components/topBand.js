@@ -1,12 +1,4 @@
-// import React, {useEffect, useState} from "react";
-// import {Link} from "react-router-dom";
-// import {useProps} from "./hooks/prop-hooks.js";
-// import {setty, getty, toTitle} from "./hooks/hooks.js";
-// import {BasketPage} from "./basketList.js";
-// import axios from "axios";
-// import "../App.css";
-
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
 import "../App.css";
 

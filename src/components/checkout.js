@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import {useProps} from "./hooks/prop-hooks.js";
-import {getty, setty, toTitle, empty, back_reset} from "./hooks/hooks.js";
+import {getty, setty, empty} from "./hooks/hooks.js";
 import {BasketList} from "./basketList.js";
 import {Header} from "./header.js";
 import {Footer} from "./footer.js";
@@ -15,9 +15,8 @@ export function Checkout() {
     const [typing, setTyping] = useState("");
     const [coupons, setCoupons] = useState("");
     const {updateTotal, dis, cou, setCou, setDis, setSearched, fillingdeets, setFillingdeets, 
-        checking, setChecking, bought, setBought, boughtReset, setBoughtreset, 
-        mand, setMand, emailval, setEmailval, telval, setTelval, typingAddress, setTypingaddress, 
-        burger, setBurger, setMag} = useProps();
+        checking, setChecking, bought, setBought, mand, setMand, emailval, setEmailval, 
+        telval, setTelval, typingAddress, setTypingaddress, setBurger, setMag} = useProps();
 
     var order_ref = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
 
@@ -47,13 +46,9 @@ export function Checkout() {
         if (checking) {
             setBought(false);
         };
-        console.log("Bought Reset", getty("boughtReset"));
-        console.log("Checking! ", checking);
         if (cou === "NONE") {
             setCou("");
         };
-        console.log("DELVQ: ", delvq);
-        console.log("ADDRESS! ", getty("address"), Object.keys(getty("address")).length);
         window.scrollTo(0, 0);
     }, [])
     
@@ -65,12 +60,6 @@ export function Checkout() {
         };
         setty("delvq", delvq);
     }, [delvq]);
-
-    // useEffect(() => {
-    //     if (bought) {
-    //         setBurger(true);
-    //     };
-    // }, [burger]);
 
     useEffect(() => {
         setMand(false);
@@ -105,12 +94,8 @@ export function Checkout() {
 
     function check_email() {
         if (getty("address")["billing_email"].indexOf("@") === -1)  {
-            console.log("POOKSGREEN! THE BRAVERY!");
-            // setEmailval(true);
             return true;
         } else {
-            console.log("FINEY FINEMAN FINE!");
-            // setEmailval(false);
             return false;
         };
     };
@@ -122,10 +107,10 @@ export function Checkout() {
             var tel = "";
         }
         if (tel.match(/^[0-9]+$/) !== null && tel !== undefined) {
-            console.log("VALID TEL!");
+            // console.log("For testing: VALID TEL!");
             return false;
         } else {
-            console.log("INVALID TEL!");
+            // console.log("For testing: INVALID TEL!");
             return true;
         };
     };
@@ -134,19 +119,19 @@ export function Checkout() {
         // Check mandataory fields set
         if (check_mand()) {
             setMand(true);
-            console.log("Missing some mand fields!");
+            // console.log("For testing: Missing some mand fields!");
         } else {
             setMand(false);
-            console.log("All mand fields set!");
+            // console.log("For testing: All mand fields set!");
         };
 
         // Check email contains @ symbol
         if (check_email()) {
             setEmailval(true);
-            console.log("Invalid email!");
+            // console.log("For testing: Invalid email!");
         } else {
             setEmailval(false);
-            console.log("Valid email!");
+            // console.log("For testing: Valid email!");
         };
 
         if (check_number()) {
@@ -157,59 +142,42 @@ export function Checkout() {
     };
 
     async function makeReceipt() {
-        // var line = {};
         var line2 = [];
         var totalArr = [];
         const ord = getty("order");
         var items = getty("itemsList");
         var prices = getty("priceList");
-        // console.log(ord);
         for (let i in ord) {
             var stuff = "";
             var liney = await api_call(ord[i]);
             var quanto = items[parseInt(ord[i])];
             var price = prices[parseInt(ord[i])];
-            console.log("Quanto! ", quanto);
             stuff += quanto.toString();
             stuff += " x ";
             stuff += liney.prod_title;
             stuff += (" @ £" + price.toString());
             stuff += " - line total : £" + (quanto * price).toFixed(2).toString();
             totalArr.push(quanto * price);
-            console.log("Titol! ", liney.prod_title);
             line2.push(stuff);
         };
         const grandTotal = totalArr.reduce(
             (acc, curr) => acc + curr, 0);
-        console.log("TOTALE!", grandTotal);
         setGrandTotal(grandTotal * dis);
         setOrder(line2);
-        console.log("Branksome! ", line2);
     };
 
-    // function buy() {
     function buy() {
-        // setBought(() => !bought);
-        // setBoughtreset(true);
         setty("boughtReset", true);
-        console.log("Bought Reset", getty("boughtReset"));
         if (getty("coupon_name") && getty("coupon_name") !== "") {
             setCoupons(getty("coupon_name"));
         };
         makeReceipt();
-        // empty();
-        // setty("discount", 1);
         setDis(1);
-        // setCoupons(getty("coupon_name"));
         setBought(true);
         setChecking(false);
-        // setFillingdeets(false);
-        console.log("MAN WASTED MY TIME! ", getty("address"));
-        // empty(setDis, updateTotal);
     };
 
     function handleChange(e, q) {
-        // if (localStorage.getItem("address") === null) {
         if (getty("address") === null) {
             var starter_dicto = {"billing_name": "", "billing_email": "", 
             "billing_tel": ""}
@@ -221,17 +189,12 @@ export function Checkout() {
         var word = "";
         word = e.target.value;
         setTyping(word);
-        console.log("QUEGGS", word, dicto);
         dicto[q] = word;
-        // localStorage.setItem("address", JSON.stringify(dicto));
         setty("address", dicto);
         setTypingaddress(dicto);
         if (q === "billing_email") {
             check_email();
         };
-        // if (mand) {
-        //     setMand(false);
-        // };
     };
 
     function addresses() {
@@ -250,12 +213,10 @@ export function Checkout() {
 
     if (!fillingdeets && getty("address") !== null) {
         if (getty("order").length > 0) {
-        console.log("Amos aninmal. ", getty("coupon_name"));
-        // window.scrollTo(0, 0);
         return (
             <>
                 <Header />
-                <div className="checkout-container">
+                <div className="checkout-container" onClick={() => setBurger(false)}>
                     <h1><Link to={"/basket-page"}><span className="past">1. Basket</span></Link>&nbsp;&nbsp;
                     <span className="present">2. Address</span>&nbsp;&nbsp;
                     <span className="future">3. Review</span>&nbsp;&nbsp;
@@ -334,77 +295,22 @@ export function Checkout() {
                                             value={abbrev_add("country")} className="form-input"
                                     />
                                 </label><br />
-                                {/* <p>Gesp.</p> */}
                                 
                                 <div id="bottom-buttons">
-                                <Link to={{pathname: "/"}}><div id="back-to-shop"><Link to={{pathname: "/"}}>Continue Shopping</Link></div></Link>
-                                    {
-                                            check_mand() === true || check_email() === true || check_number() === true
-                                            ? 
-                                            <div id="next2" onClick={() => {set_red_messages()}}>Next</div> : 
-                                            <div id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false); 
-                                                                            setEmailval(false); setTelval(false); window.scrollTo(0, 0)}}>
-                                                Next
-                                            </div>
-                                    }
-                                    
-                                </div>
-                                
-                                
-                                
-                                </div>
-                                {/* </div> */}
-
-                                {/* <div id="delv-q">
-                                    <label for="delv_q">Different delivery address?&nbsp;
-                                        {delvq ? 
-                                        <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)}  
-                                            checked={delvq} id="checkout_checkbox"
-                                        /> : 
-                                        <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)} 
-                                            checked={delvq} id="checkout_checkbox" 
-                                        />
+                                    <Link to={{pathname: "/"}}><div id="back-to-shop"><Link to={{pathname: "/"}}>Continue Shopping</Link></div></Link>
+                                        {
+                                                check_mand() === true || check_email() === true || check_number() === true
+                                                ? 
+                                                <div id="next2" onClick={() => {set_red_messages()}}>Next</div> : 
+                                                <div id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false); 
+                                                                                setEmailval(false); setTelval(false); window.scrollTo(0, 0)}}>
+                                                    Next
+                                                </div>
                                         }
-                                    </label>
-                                </div> */}
+                                    </div>
+                                </div>
                             </div>
-                            
-
-                            {/* <div id="delivery" style={{display: `${disp}`}}> */}
                                 <div id="delivery-container">
-
-
-                            
-                                {/* <div id="delv-q">
-                                    <label for="delv_q">Different delivery address?&nbsp;
-                                        {delvq ? 
-                                        <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)}  
-                                            checked={delvq} id="checkout_checkbox"
-                                        /> : 
-                                        <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)} 
-                                            checked={delvq} id="checkout_checkbox" 
-                                        />
-                                        }
-                                    </label>
-                                </div> */}
-
-                                {/* {
-                                        getty("address")["billing_name"] === undefined || getty("address")["billing_name"] === "" || 
-                                        getty("address")["billing_email"] === undefined || getty("address")["billing_email"] === "" || 
-                                        getty("address")["billing_tel"] === undefined || getty("address")["billing_tel"] === "" || 
-                                        getty("address")["add_line_1"] === undefined || getty("address")["add_line_1"] === "" || 
-                                        getty("address")["town"] === undefined || getty("address")["town"] === "" || 
-                                        getty("address")["postcode"] === undefined || getty("address")["postcode"] === "" || 
-                                        (delvq === true && getty("address")["delv_name"] === undefined) || (delvq === true && getty("address")["delv_name"] === "") || 
-                                        (delvq === true && getty("address")["delv_add_line_1"] === undefined) || (delvq === true && getty("address")["delv_add_line_1"] === "") || 
-                                        (delvq === true && getty("address")["delv_town"] === undefined) || (delvq === true && getty("address")["delv_town"] === "") || 
-                                        (delvq === true && getty("address")["delv_postcode"] === undefined) || (delvq === true && getty("address")["delv_postcode"] === "") || 
-                                        getty("address") === null || Object.keys(getty("address")).length === 0 ? 
-                                        <div id="next2" onClick={() => {setMand(true)}}>Next</div> : 
-                                        <div id="next" onClick={() => {setFillingdeets(!fillingdeets); setChecking(true); setMand(false)}}>
-                                            Next
-                                        </div>
-                                } */}
                             
                             <div id="delivery" style={{display: `${disp}`}}>
                                 <div>
@@ -464,7 +370,6 @@ export function Checkout() {
                                         value={abbrev_add("delv_country")} className="form-input"
                                     />
                                 </label><br />
-                                        
                                 </div>
                             </div>
                         </div>
@@ -474,22 +379,18 @@ export function Checkout() {
 
 
                     <div id={delvq ? "delv-q-on" : "delv-q-off"} >
-                                    <label for="delv_q">Different delivery address?&nbsp;
-                                        {delvq ? 
-                                        <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)}  
-                                            checked={delvq} id="checkout_checkbox"
-                                        /> : 
-                                        <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)} 
-                                            checked={delvq} id="checkout_checkbox" 
-                                        />
-                                        }
-                                    </label>
+                        <label for="delv_q">Different delivery address?&nbsp;
+                            {delvq ? 
+                            <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)}  
+                                checked={delvq} id="checkout_checkbox"
+                            /> : 
+                            <input type="checkbox" name="delv_q" onChange={() => setDelvq(!delvq)} 
+                                checked={delvq} id="checkout_checkbox" 
+                            />
+                            }
+                        </label>
                     </div>
-
-
-                    {/* <Link to={{pathname: "/"}}><button id="back-to-shop">Continue Shopping</button></Link> */}
                 </div>
-                {/* <div><i><Link to="/">Home</Link></i></div> */}
                 <Footer />
             </>
             );
@@ -500,7 +401,6 @@ export function Checkout() {
                     <div onClick={() => setMag(false) }></div>
                     <h1>Checkout</h1>
                     <BasketList />
-                    {/* <div><i><Link to="/">Home</Link></i></div> */}
                     <Footer />
                 </>
             );
@@ -523,8 +423,6 @@ export function Checkout() {
                             <span id="order-ref"><b>N{order_ref}</b></span></p>
                         </div>
                     </>}
-                    {/* <div><b>TOTAL: £{(getty("amount")).toFixed(2)}</b></div> */}
-                    {/* {getty("address") === null || getty("address") === {} ? "" : <h1>Review & Complete</h1>} */}
                     <div className={delvq ? "review-addresses" : "review-only-address"}>
                         <div className={delvq ? "review-billing" : "only-address"}>
                             <h1 className="review-title"><b>{delvq ? "Billing Address:" : "Address"}</b></h1>
@@ -573,8 +471,6 @@ export function Checkout() {
                     </> 
                     :
                     <span></span>}
-                    {/* <button onClick={(() => buy())}>Reset</button> */}
-                    {/* <div><i><Link to="/">Home</Link></i></div> */}
                 </div>
                 <Footer />
             </>

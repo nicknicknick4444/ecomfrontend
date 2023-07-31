@@ -1,59 +1,42 @@
-import React, {useEffect, useState} from "react";
-import {Link, useParams, useLocation} from "react-router-dom";
+import React, {useEffect} from "react";
 import {useProps} from "./hooks/prop-hooks.js";
 import {telber, getty, setty} from "./hooks/hooks.js";
-import axios from "axios";
 import "../App.css";
 
 export function ConfirmBox(title, the_id) {
-    // var the_id = parseInt(useLocation()["pathname"].split("/").slice(-1));
     var the_id = the_id.the_id;
-    // const getty = (place) => {
-    //     return JSON.parse(localStorage.getItem(place));
-    // }
     const {vis, setVis, new_quant} = useProps();
     var product_title = title.title
-    console.log("Aimee Mann! ", vis);
 
     useEffect(() => {
         setVis("Standby");
-        console.log("ID? ", title.the_id, title);
         telber();
-        // NEW
         if (getty("itemsList") === null) {
             setty("itemsList", {});
         } else {
-            console.log("GROOOOP! ", getty("itemsList"));
+            // console.log("For testing: itemsList showing in LS:", getty("itemsList"));
         };
     }, []);
 
     useEffect(() => {
         if (getty("itemsList")[the_id] === 0 && new_quant < 0) {
-            console.log("Removed all!", new_quant);
-            // setVis("Yes");
+            // console.log("For testing: Already removed all of item from basket.", new_quant);
         };
         if (vis === "Yes"){
-            console.log("Baspie!")
-            setTimeout(function(){setVis("No");}, 60000);
-            // clearTimeout(endTime);
+            setTimeout(function(){setVis("No");}, 500);
         }
         if (vis === "First") {
-            console.log("Gorbets!!!!!");
-            setTimeout(function(){setVis("No");}, 60000);
+            setTimeout(function(){setVis("No");}, 500);
         }
         if (vis === "No"){
-            // clearTimeout(startTime);
-            console.log("GLAGGY!")
             setTimeout(function(){setVis("Standby");}, 500);
         }
         if (vis === "Emptied") {
-            setTimeout(function(){setVis("No");}, 60000);
-            // clearTimeout(endTime);
+            setTimeout(function(){setVis("No");}, 500);
         }
     }, [vis]);
 
     if (vis === "Yes") {
-        console.log("GLAG! ", new_quant);
         return (
             <>
                 <div className="confirm">
