@@ -28,7 +28,6 @@ export default function PropProvider({children}) {
     const [page, setPage] = useState([0,9]);
     const [numbers, setNumbers] = useState([]);
     const [subset, setSubset] = useState([]);
-    // const [bought, setBought] = useState(false);
     const [bought, setBought] = useState(false);
     const [boughtReset, setBoughtreset] = useState(false);
     const [fillingdeets, setFillingdeets] = useState(false);
@@ -74,7 +73,7 @@ export default function PropProvider({children}) {
         var discount = parseFloat(getty("discount"));
         for (let i in quants) {
             // console.log("For testing: Prices!", prices[i]);
-            // console.log("For testing: Quantity! ", quants[i]);
+            // console.log("For testing: Quantities!", quants[i]);
             var iQuant = quants[i];
             var iPrices = prices[i];
             if (iQuant < 0) {
@@ -88,7 +87,6 @@ export default function PropProvider({children}) {
         if (currTotal < 0) {
             return 0;
         };
-        // DISCOUNT MULTIPLIER:
         currTotal *= discount;
         localStorage.setItem("amount", currTotal);
         return currTotal;
@@ -130,10 +128,10 @@ export default function PropProvider({children}) {
             };
 
             if (parseInt(getty("new")) + parseInt(getty("itemsList")[`${id}`]) <= 0) {
-                ord = ord.filter(val => val !== parseInt(`${id}`));
+                    ord = ord.filter(val => val !== parseInt(`${id}`));
             } else {
-                // console.log("For testing: New proposed quantity:", parseInt(getty("new")) + parseInt(getty("itemsList")[`${id}`]));
-            };
+                // console.log("For testing: Latest typing:", parseInt(getty("new")) + parseInt(getty("itemsList")[`${id}`]));
+            }
             setty("order", ord);
         };
     };
@@ -148,27 +146,29 @@ export default function PropProvider({children}) {
                 newTotal += beat[`${i}`];
             };
         };
+
         if (newTotal < 0) {
             setTotal(0);
         } else {
             setTotal(newTotal);
         };
+        begin();
         setAmount(totUp(beat));
     };
 
     function section(array_list, subset) {
-        var page_nums = [];
-        var new_section = page[0] * page[1];
-        var sub_section = getty(array_list).slice(new_section, new_section + page[1]);
-        var many = [...Array(Math.ceil(prods.length/page[1])).keys()];
-        for (let i in many) {
-            page_nums.push(many[i]);
-        }
+            var page_nums = [];
+            var new_section = page[0] * page[1];
+            var sub_section = getty(array_list).slice(new_section, new_section + page[1]);
+            var many = [...Array(Math.ceil(prods.length/page[1])).keys()];
+            for (let i in many) {
+                page_nums.push(many[i]);
+            }
 
-        setSubset(sub_section);
-        setNumbers(page_nums);
-        setty("sub_section", sub_section);
-        setty("page_nums", page_nums);
+            setSubset(sub_section);
+            setNumbers(page_nums);
+            setty("sub_section", sub_section);
+            setty("page_nums", page_nums);
     };
 
     function page_click(page_num) {

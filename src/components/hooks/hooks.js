@@ -63,7 +63,6 @@ export function empty(setDis, updateTotal, setFillingdeets) {
 };
 
 export function back_reset(bought, setBought, setDis, updateTotal) {
-    // console.log("For testing: Bought?", bought);
     if (bought) {
         empty(setDis, updateTotal);
         setBought(false);
