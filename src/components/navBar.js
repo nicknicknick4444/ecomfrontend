@@ -90,7 +90,7 @@ export function Navbar() {
                             <Link to={{pathname: "/Appliances"}}>Appliances</Link>
                         </span>
                         <span className="navbar">
-                            <Link to={{pathname: "/Cleaning%20&%20Hygiene"}}>Cleaning & Hygiene</Link>
+                            <Link to={{pathname: "/Cleaning%20&%20Hygiene"}}>Cleaning</Link>
                         </span>
                     </div>
 
@@ -109,7 +109,7 @@ export function Navbar() {
                         <span className="navbar-mob"><Link to={{pathname: "/Kitchenware"}}>Kitchenware</Link></span><br />
                         <span className="navbar-mob"><Link to={{pathname: "/Furniture"}}>Furniture</Link></span><br />
                         <span className="navbar-mob"><Link to={{pathname: "/Appliances"}}>Appliances</Link></span><br />
-                        <span className="navbar-mob"><Link to={{pathname: "/Cleaning%20&%20Hygiene"}}>Cleaning & Hygiene</Link></span><br />
+                        <span className="navbar-mob"><Link to={{pathname: "/Cleaning"}}>Cleaning</Link></span><br />
                         <span className="navbar-mob"><Link to={{pathname: "/about-us"}}>About Us</Link></span><br />
                         <span className="navbar-mob"><Link to={{pathname: "/contact-us"}}>Contact Us</Link></span>
                     </div> : null}
