@@ -305,7 +305,7 @@
 
 	@supports (-webkit-hyphens: none) {
 		#nav-main {
-			padding-bottom: 4px;
+			padding-top: 2px;
 		}
 	}
 	
