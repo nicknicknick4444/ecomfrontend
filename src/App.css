@@ -280,7 +280,7 @@
 	
 	#resume {
 		margin-top: -34px;
-		padding-top: 2px;
+		padding-top: 1px;
 	}
 	
 	#resume2 {
@@ -301,6 +301,12 @@
 	#back-to-shop:hover {
 		background-color: #6194d1;
 		border: 1px #6194d1 solid;
+	}
+
+	@supports (-webkit-hyphens: none) {
+		#resume, #resume2, #back-to-shop, .navbar {
+			padding-bottom: 100px;
+		}
 	}
 	
 	#delv-q-on, #delv-q-off {
