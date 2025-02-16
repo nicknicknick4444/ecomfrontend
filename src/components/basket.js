@@ -57,7 +57,7 @@ export function Basket() {
                     <div className="basket-pc" onMouseOver={() => {setDroplist(true); get_location()}} onMouseLeave={() => setDroplist(false)} 
                         style={{ width: widthCond()}}>
                         <Link to="/basket-page">
-                        <div><img src="images/cart-icon.png" className="basket-icon" /></div>
+                        <div><img src="http://weallgetthingscheaperwhenwebuyinagroup.com/images/cart-icon.png" className="basket-icon" /></div>
                         <div className="basket-words">
                             <div>Items: <span className="basket_total">{!bought ? totally < 0 ? "0.00" : totally : 0 }</span></div>
                             <div>Total: &nbsp;<span className="price_pad">£{!bought ? parseInt(amount) === 0 ? "0.00" : amount.toFixed(2) : "0.00"}</span></div>
